@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServerV1\AppPortal\ewApps.AppPortal.Entity\ewApps.AppPortal.Entity.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Support\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ewApps.Core.BaseService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.BaseService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.ExceptionService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.ExceptionService.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

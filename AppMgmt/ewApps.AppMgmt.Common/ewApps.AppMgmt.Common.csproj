@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="ewApps.Core.CommonService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.CommonService.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

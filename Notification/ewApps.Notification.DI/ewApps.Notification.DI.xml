@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Notification.DI</name>
+    </assembly>
+    <members>
+        <member name="M:ewApps.Notification.DI.NotificationServiceCollection.AddNotificationDataServiceDependency(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method will add data service depenency
+            </summary>
+            <param name="services">An instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add DI contract of dependencies.</param>
+            <returns>Returns updated instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="M:ewApps.Notification.DI.NotificationServiceCollection.AddNotificationDataDependency(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method will add data layer depenency
+            </summary>
+        </member>
+        <member name="M:ewApps.Notification.DI.NotificationServiceCollection.AddNotificationOtherDependency(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            This method will add other dependency like app settings, automapper etc.
+            </summary>
+            <param name="services">An instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add DI contract of dependencies.</param>
+            <param name="configuration">An instance of <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/> to get and set application configuration.</param>
+            <returns>Returns updated instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="M:ewApps.Notification.DI.NotificationServiceCollection.AddNotificationMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Adds the notification api middleware(s).
+            </summary>
+            <param name="app">The instance of application builder to append middleware(s).</param>
+            <returns>Returns updated application budiler instance.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.SerilogLoggingService</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Core.SerilogLoggingService.EmailLoggerModel">
+            <summary>
+            Model class for Email Logging defination
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.EmailLoggerModel.DeploymentName">
+            <summary>
+            Deployment Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.EmailLoggerModel.SenderEmail">
+            <summary>
+            Sender Email Address
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.EmailLoggerModel.ReceiverEmail">
+            <summary>
+            Receiver Email Address
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.EmailLoggerModel.EmailServer">
+            <summary>
+            Email Server
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.EmailLoggerModel.EmailServerPort">
+            <summary>
+            Email Server port
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.EmailLoggerModel.EmailServerSSLEnabled">
+            <summary>
+            Email Server port
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.EmailLoggerModel.UserName">
+            <summary>
+            Network User Name 
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.EmailLoggerModel.Password">
+            <summary>
+            Network USer Password
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.EmailLoggerModel.EmailSubject">
+            <summary>
+            Email Subject
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.SerilogLoggingService.LoggerModel">
+            <summary>
+            Model class for Email Logging defination
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.LoggerModel.AppName">
+            <summary>
+            Application Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.LoggerModel.AppVersion">
+            <summary>
+            Application Version
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.LoggerModel.DeploymentName">
+            <summary>
+            Deployment Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.LoggerModel.LoggingLevel">
+            <summary>
+            Minimum Logging Level
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.LoggerModel.SeqSinkRequired">
+            <summary>
+            Email Sink is Required or not
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.LoggerModel.SeqURL">
+            <summary>
+            Seq installed URL
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.LoggerModel.ConsoleSinkRequired">
+            <summary>
+            Email Sink is Required or not
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.LoggerModel.ConsoleOutputTemplate">
+            <summary>
+            All properties required to defined Email Sink
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.LoggerModel.RollingFileSinkRequired">
+            <summary>
+            Email Sink is Required or not
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.LoggerModel.RollingFileOutputTemplat">
+            <summary>
+            All properties required to defined Email Sink
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.SerilogLoggingService.LoggerModel.RollingFileLocation">
+            <summary>
+            All properties required to defined Email Sink
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.SerilogLoggingService.SerilogHttpMiddleware">
+            <summary>
+            Middleware to log all incoming requests by serilog
+            It logs all incoming request with the 
+            RequestId, UserId, TenantId and SessionId along with Time taken by the request to execute.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.SerilogLoggingService.SerilogHttpMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Options.IOptions{ewApps.Core.SerilogLoggingService.SerilogHttpMiddlewareOptions})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:ewApps.Core.SerilogLoggingService.SerilogHttpMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invoke whenever this middleware is called in request pipeline
+            </summary>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.SerilogLoggingService.SerilogHttpMiddleware.LogForErrorContext(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Sets error template forserilog middleware
+            </summary>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Core.SerilogLoggingService.SerilogLogger">
+            <summary>
+            Static class to define different type of logger
+            with the predefined Enricher and configurations
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.SerilogLoggingService.SerilogLogger.Configure(ewApps.Core.SerilogLoggingService.LoggerModel,Serilog.LoggerConfiguration)">
+            <summary>
+            Gets Logger
+            It logs to Console, RolloingFile define with Date, and Seq
+            Properties : Application Name,Application Version,Context Name, Thread Id
+            It also overides the Microsoft default Information Logging
+            Values will be set only if it isavailable in the model
+            </summary>
+            <param name="model">Parameters to define application and other arguments</param>
+            <param name="lConfiguration">Any extra configuration that need to be added with the logger</param>
+            <returns>Ilogger</returns>
+        </member>
+        <member name="M:ewApps.Core.SerilogLoggingService.SerilogLogger.GetEmailLogger(ewApps.Core.SerilogLoggingService.EmailLoggerModel,Serilog.LoggerConfiguration)">
+            <summary>
+            Returns Email logger
+            </summary>
+            <param name="model">Email Logger model</param>
+            <param name="lConfiguration">Logger configuration object</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.SerilogLoggingService.SerilogLogger.MapStringToLoggingLevel(System.String,Serilog.LoggerConfiguration)">
+            <summary>
+            Maps string to Logging level
+            </summary>
+            <param name="loggerLevel">string value of logging level</param>
+            <param name="lc">Loffer configuration</param>
+        </member>
+        <member name="M:ewApps.Core.SerilogLoggingService.SerilogLogger.GetDefaultSeqLogger(ewApps.Core.SerilogLoggingService.LoggerModel)">
+            <summary>
+            Default logger with Seq
+            It logs to Console, RolloingFile define with Date, and Seq
+            Properties : Application Name,Application Version,Context Name, Thread Id
+            It also overides the Microsoft default Information Logging
+            </summary>
+            <param name="model">Parameters to define application and other arguments</param>
+            <returns>Ilogger</returns>
+        </member>
+    </members>
+</doc>

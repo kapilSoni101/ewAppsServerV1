@@ -1,0 +1,2302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.ExceptionService</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Core.ExceptionService.ExceptionAppSettings">
+            <summary>
+            This class contains application settings.
+            Note that AppSettings objects are parsed from json.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.Constants">
+            <summary>
+            This class provides all the constants used in the application.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.IsOriginaleKey">
+            <summary>
+            Original Exception flag key.
+            </summary>  
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.IsWrapperKey">
+            <summary>
+            Wrapper Exception flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.IsPassThroughKey">
+            <summary>
+            Pass Through Exception flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.IsRethrowKey">
+            <summary>
+            Re-throw Exception flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.IsNewKey">
+            <summary>
+            New Exception flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.SeverityKey">
+            <summary>
+            Exception Severity key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.AdditionalMsgKey">
+            <summary>
+            Additional message key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.IsLoggedKey">
+            <summary>
+            Exception is logged flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.HttpStatusCodeKey">
+            <summary>
+            Http status code.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.PassThroughPolicyKey">
+            <summary>
+            PassThrough Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.NewPolicyKey">
+            <summary>
+            New Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.LogPolicyKey">
+            <summary>
+            Log Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.DataPolicyKey">
+            <summary>
+            Data Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.DataServicePolicyKey">
+            <summary>
+            DataService Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.SyncPolicyKey">
+            <summary>
+            DataService Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.Constants.AdminRoleNames">
+            <summary>
+            Admin role name list.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.FieldIsRequired">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.FieldIsLessThenOrEqualCharacters">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.LengthExeeded">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.Permission">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.MethodNotSupported">
+            <exclude />
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.ReferenceItemExists">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.DataConcurrency">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.SQLConTimeOut">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.MailServerUnavailable">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.NullEntity">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.InvalidVersionNo">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.LowDiskSpace">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.InvalidEntity">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.TokenIsRequired">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.InvalidLoginToken">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.InvalidRequest">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.InvalidArgument">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.InvalidParameterValue">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.ConcurrentMessage">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.FieldConcurrentMessage">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.DatabaseOperationErrorMessage">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.GeneralDBErrorMessage">
+            <exclude/>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorMessages.DuplicateAddressLabelErrorMessage">
+            <exclude/>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpError">
+            <summary>
+            Struct hold the structure of error. It contain all necessary information of generated error.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpError.#ctor">
+            <summary>
+            Initializes a new instance of the EwpError class.  
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpError.#ctor(ewApps.Core.ExceptionService.ErrorType,System.Collections.Generic.List{System.String},System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Initializes a new instance of the EwpError class.  
+            </summary>
+            <param name="errorType">Error Type</param>
+            <param name="msgs">Message List</param>
+            <param name="dataList">Data List</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpError.ToJSON(ewApps.Core.ExceptionService.EwpError)">
+            <summary>
+            To the json.
+            </summary>
+            <param name="ewpError">The ewp error.</param>
+            <returns>Returns a srting of Json type </returns>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.EwpError.ErrorType">
+            <summary>
+            Error type indicate the type of error. It may be validation, system error.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.EwpError.MessageList">
+            <summary>
+            Message array hold the array of messages to show.
+            </summary>   
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.EwpError.EwpErrorDataList">
+            <summary>
+            The ewp error data list.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpError.ToXmlWriter(ewApps.Core.ExceptionService.EwpError)">
+            <summary>
+            To the XML writer.
+            </summary>
+            <param name="ewpError">The ewp error.</param>
+            <returns>Returns the xml documents </returns>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpErrorData">
+            <summary>
+            This class contains the error properties for service. 
+            It is used to handle webfault exception with custom xml element.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpErrorData.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpErrorData.#ctor(System.Int32,System.Object,System.String)">
+            <summary>
+            Initializes a new instance of the Error Data class.  
+            </summary>
+            <param name="errorSubType">Error sub type enum value.</param>
+            <param name="data">Error data.</param>
+            <param name="msg">Error message.</param>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.EwpErrorData.ErrorSubType">
+            <summary>
+            Eexception message.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.EwpErrorData.Data">
+            <summary>
+            Detail information of exception.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.EwpErrorData.Message">
+            <summary>
+            Http status code.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.ErrorData">
+            <summary>
+            This class contains the error properties for service. 
+            It is used to handle webfault exception with custom xml element.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ErrorData.#ctor(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Initializes a new instance of the Error Data class.  
+            </summary>
+            <param name="message">Title of exception.</param>
+            <param name="detailedInformation">Detail information of exception.</param>
+            <param name="statusCode">Error Status code.</param>
+            <param name="severity">Severity.</param>
+            <param name="url">Url.</param>
+            <param name="validVersion">Valid Version.</param>
+            <param name="error">Error.</param>
+            <param name="reportUrl">Report Url.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ErrorData.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.ErrorData.Message">
+            <summary>
+            Eexception message.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.ErrorData.DetailedInformation">
+            <summary>
+            Detail information of exception.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.ErrorData.StatusCode">
+            <summary>
+            Http status code.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.ErrorData.Severity">
+            <summary>
+            Exception severity.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.ErrorData.ServiceUrl">
+            <summary>
+            Valid Service Url for current version
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.ErrorData.ValidVersion">
+            <summary>
+            Return true if version is valid else return false.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.ErrorData.Error">
+            <summary>
+            Return true if version is valid else return false.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.ErrorData.ReportUrl">
+            <summary>
+            Report URL.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.SystemErrorSubType">
+            <summary>
+            Defines enum for System Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.SystemErrorSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.SystemErrorSubType.ConnectionTimeOut">
+            <summary>
+            Connection TimeOut
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.InvalidVersionErrorSubType">
+            <summary>
+            Defines enum for InvalidVersion Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidVersionErrorSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidVersionErrorSubType.DatabaseVersion">
+            <summary>
+            Database Version
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidVersionErrorSubType.AppSuiteVersion">
+            <summary>
+            App Suite Version
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidVersionErrorSubType.ApplicationVersion">
+            <summary>
+            Application Version
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.DatabaseErrorSubType">
+            <summary>
+            Defines enum for Database Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.DatabaseErrorSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.DatabaseErrorSubType.ConnectionTimeOut">
+            <summary>
+            Connection TimeOut
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.DatabaseErrorSubType.SQLLogin">
+            <summary>
+            SQL Login
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.DatabaseErrorSubType.Transaction">
+            <summary>
+            Transaction
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.DatabaseErrorSubType.Deadlock">
+            <summary>
+            Deadlock
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.DatabaseErrorSubType.Unique_Key_Violation">
+            <summary>
+            Unique key violation error
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.AuthenticationErrorSubType">
+            <summary>
+            Defines enum for Authentication Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.AuthenticationErrorSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.AuthenticationErrorSubType.InvalidLoginToken">
+            <summary>
+            Invalid login token
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.AuthenticationErrorSubType.InvalidEmail">
+            <summary>
+            Invalid Email
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.AuthenticationErrorSubType.InvalidPassword">
+            <summary>
+            Invalid Password
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.AuthenticationErrorSubType.UserLocked">
+            <summary>
+            User is locked
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.SecurityErrorSubType">
+            <summary>
+            Defines enum for Security Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.SecurityErrorSubType.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.SecurityErrorSubType.AccessDenied">
+            <summary>
+            Do not have permission to add/update/delete.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.SecurityErrorSubType.View">
+            <summary>
+            Do not have permission to view record.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.SecurityErrorSubType.Add">
+            <summary>
+            Do not have permission to add record.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.SecurityErrorSubType.Update">
+            <summary>
+            Do not have permission to update record.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.SecurityErrorSubType.Delete">
+            <summary>
+            Do not have permission to delete record.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.SecurityErrorSubType.UpdateField">
+            <summary>
+            Do not have permission to update field value.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.ValidationErrorSubType">
+            <summary>
+            Defines enum for Validation Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ValidationErrorSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ValidationErrorSubType.FieldRequired">
+            <summary>
+            Required
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ValidationErrorSubType.LengthExceeded">
+            <summary>
+            Length Exceeded
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ValidationErrorSubType.OutOfRange">
+            <summary>
+            Range
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ValidationErrorSubType.InvalidDataType">
+            <summary>
+            Invalid Data Type
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ValidationErrorSubType.MaxInstanceLimit">
+            <summary>
+            When user define filed exceed from supported field
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ValidationErrorSubType.InvalidTokenInfo">
+            <summary>
+            The invlid token info
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ValidationErrorSubType.InvalidFieldValue">
+            <summary>
+            Invalid Field Value
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ValidationErrorSubType.CirculerReference">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.DuplicateErrorSubType">
+            <summary>
+            Defines enum for Duplicate Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.DuplicateErrorSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.ConcurrencyErrorSubType">
+            <summary>
+            Defines enum for Concurrency Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ConcurrencyErrorSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.ImportDataErrorSubType">
+            <summary>
+            Defines enum for ImportData Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ImportDataErrorSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ImportDataErrorSubType.ImportFileNotFound">
+            <summary>
+            File not found
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ImportDataErrorSubType.OLEDBConnectionError">
+            <summary>
+            Oledb connection error
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ImportDataErrorSubType.InvalidFileType">
+            <summary>
+            Invalid file type
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ImportDataErrorSubType.ImportPermissionDenied">
+            <summary>
+            Does not have import permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ImportDataErrorSubType.InvalidFieldValue">
+            <summary>
+            Invalid field value
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ImportDataErrorSubType.SheetNotFound">
+            <summary>
+            Sheet not found in excel file
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ImportDataErrorSubType.FieldRequired">
+            <summary>
+            The field required
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ImportDataErrorSubType.InvitedEmployeeAlreadyExists">
+            <summary>
+            The invited employee already exists
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ImportDataErrorSubType.InvalidExcelFile">
+            <summary>
+            The invalidExcelFile
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.NotImplementedErrorSubType">
+            <summary>
+            Defines enum for ImportData Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.NotImplementedErrorSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.InvalidRequestArgumentErrorSubType">
+            <summary>
+            Defines enum for InvalidRequestArgument Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidRequestArgumentErrorSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.InvalidFieldReferenceErrorSubType">
+            <summary>
+            Defines enum for InvalidReference Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidFieldReferenceErrorSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidFieldReferenceErrorSubType.ReferenceDeleted">
+            <summary>
+            ReferenceDeleted
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidFieldReferenceErrorSubType.ReferenceExists">
+            <summary>
+            ReferenceExists
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.SyncExceptionSubType">
+            <summary>
+            Defines enum for SyncException Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.SyncExceptionSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.SyncExceptionSubType.ReInit">
+            <summary>
+            The re initialize
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.IgnoreExceptionSubType">
+            <summary>
+            Defines enum for Ignore Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.IgnoreExceptionSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.ResponseExceptionSubType">
+            <summary>
+            Defines enum for ResponseException Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ResponseExceptionSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.InvalidOperationExceptionSubType">
+            <summary>
+            Defines enum for InvalidOperation Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidOperationExceptionSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidOperationExceptionSubType.MethodNotSupported">
+            <summary>
+            Method not supported
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidOperationExceptionSubType.BusinessRuleViolation">
+            <summary>
+            BusinessRuleVoilation
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidOperationExceptionSubType.InactiveUser">
+            <summary>
+            The inactive user
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidOperationExceptionSubType.MinMemberCountReached">
+            <summary>
+            The minimum member count reached
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.InvalidOperationExceptionSubType.MaxMemberCountReached">
+            <summary>
+            The maximum member count reached
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.PassThroughExceptionSubType">
+            <summary>
+            Defines enum for PassThrough Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.PassThroughExceptionSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.RecoverableExceptionSubType">
+            <summary>
+            Defines enum for Recoverable Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.RecoverableExceptionSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.DataServiceExceptionSubType">
+            <summary>
+            Defines enum for DataService Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.DataServiceExceptionSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.DataExceptionSubType">
+            <summary>
+            Defines enum for DataException Error Sub Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.DataExceptionSubType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.PushExceptionSubType">
+            <summary>
+            Defines enum for push exception error sub type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.PushExceptionSubType.None">
+            <summary>
+            The none
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.PushExceptionSubType.RegistrationError">
+            <summary>
+            The registration error
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.OpenfireServerExceptionSubType">
+            <summary>
+            Defines enum for push exception error sub type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.OpenfireServerExceptionSubType.None">
+            <summary>
+            The none
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.OpenfireServerExceptionSubType.ServiceDownError">
+            <summary>
+            The openfire service down error
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.ErrorType">
+            <summary>
+            Defines enum for Error Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.Success">
+            <summary>
+            Success
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.System">
+            <summary>
+            System Error
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.InvalidVersion">
+            <summary>
+            Invalid Database Version
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.Database">
+            <summary>
+            User Status
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.Authentication">
+            <summary>
+            Authentication Error.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.Security">
+            <summary>
+            Security Error
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.Validation">
+            <summary>
+            Validation Error
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.Duplicate">
+            <summary>
+            Duplicate.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.Concurrency">
+            <summary>
+            Concurrency Error
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.ImportData">
+            <summary>
+            Import Data Error.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.InvalidDeviceId">
+            <summary>
+            Invalid Device Id
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.NullRequestArgument">
+            <summary>
+            Request arguement is invalid.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.InvalidTimeZone">
+            <summary>
+            Invalid timezone.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.InvalidFieldReference">
+            <summary>
+            Invalid Reference.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.SyncException">
+            <summary>
+            The synchronize exception
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.IgnoreException">
+            <summary>
+            The ignore exception
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.ResponseException">
+            <summary>
+            The response exception
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.InvalidOperation">
+            <summary>
+            The invalid operation
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.PassThroughException">
+            <summary>
+            The pass through exception
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.RecoverableException">
+            <summary>
+            The recoverable exception
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.DataServiceException">
+            <summary>
+            The data service exception
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.DataException">
+            <summary>
+            The data exception
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.PushException">
+            <summary>
+            The push exception
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.DowntimeException">
+            <summary>
+            The downtime exception
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ErrorType.OpenFireServerException">
+            <summary>
+            The Openfire exception
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.ExceptionCategoryEnum">
+            <summary>
+            Specifies the exception category. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ExceptionCategoryEnum.None">
+            <summary>
+            Specifies that the no category.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ExceptionCategoryEnum.PassThrough">
+            <summary>
+            Specifies that the exception is PassThrough category.
+            It passes through the exception without any change, sort of Rethrow. 
+            It may log the exception.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ExceptionCategoryEnum.Rethrow">
+            <summary>
+            Specifies that the exception is Rethrow category.
+            It rethrows an exception which is different than the original, in data or type.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ExceptionCategoryEnum.Wrap">
+            <summary>
+            Specifies that the exception is Wrap category.
+            Rethrows a different exception with the original exception as an inner exception.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.ExceptionService.ExceptionCategoryEnum.New">
+            <summary>
+            Specifies that the exception is New category.
+            New exception generated at this layer. The other three were generated at a lower layer.
+            This category is always wrapped. 
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.BaseException">
+            <summary>
+            It is a base exception class inherited from System.ApplicationException class.
+            All other custom exception will be inherited from this class.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.BaseException.#ctor">
+            <summary>
+            Initializes a new instance of the BaseException class.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.BaseException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the BaseException class with a specified error message.
+            </summary>
+            <param name="message">The error message that describe the error.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.BaseException.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the BaseException class with a specified error message
+            and a reference to the inner exception that is the cause of this exception.
+            </summary>   
+            <param name="inner">
+            The exception that is the cause of the current exception, or a null reference
+            if no inner exception is specified.
+            </param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.BaseException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the BaseException class with a specified error message
+            and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that describe the error.</param>
+            <param name="inner">
+            The exception that is the cause of the current exception, or a null reference
+            if no inner exception is specified.
+            </param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.BaseException.SetData(System.String,System.Object)">
+            <summary>
+            Add extra information in excetpion.
+            </summary>
+            <param name="key">Extra information key.</param>
+            <param name="data">Extra information of.</param>    
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.BaseException.GetData(System.String)">
+            <summary>
+            Get extra information from exception.
+            </summary>
+            <param name="key">Extra information key.</param>
+            <returns>Entity object.</returns>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.BaseException.ErrorDataList">
+            <summary>
+            Property to Get or Set list of error data.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.BaseException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.BaseException.EwpError">
+            <summary>
+            Gets the ewp error.
+            </summary>
+            <value>
+            The ewp error.
+            </value>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.BaseException.InitEwpEror">
+            <summary>
+            Initializes the ewp eror.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpDatabaseException">
+            <summary>
+            It is a custom exception class inherited to base exception. It is use for Database Exception.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDatabaseException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDatabaseException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDatabaseException.#ctor(System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDatabaseException.#ctor(System.String,System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDatabaseException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <returns></returns>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpDataConcurrencyException">
+            <summary>
+            It is a custom exception class inherited to base exception. It is use for duplicate name found.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataConcurrencyException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataConcurrencyException.#ctor(System.String)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataConcurrencyException.#ctor(System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataConcurrencyException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataConcurrencyException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message.</param>
+            <param name="fields">Concurrent field dictionary.</param>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.EwpDataConcurrencyException.FieldList">
+            <summary>
+            It provide field collection.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataConcurrencyException.AddConcurrency(System.String,System.String)">
+            <summary>
+            Add new field in field list.
+            </summary>
+            <param name="fieldName">Name of the concurrent field.</param>
+            <param name="message">Concurrency message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataConcurrencyException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDowntimeException.#ctor">
+            <summary>
+            Initializes constructor with no parameter.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDowntimeException.#ctor(System.String)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDowntimeException.#ctor(System.String,ewApps.Core.ExceptionService.DowntimeExceptionSubType,System.Object)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="subType">Inner exception.</param>
+            <param name="data">operation name.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDowntimeException.#ctor(System.String,System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>    
+            <param name="message">Error message.</param>
+            <param name="dataList">Validation data.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDowntimeException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpDuplicateNameException">
+            <summary>
+            It is a custom exception class inherited to base exception. It is use for duplicate name found.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDuplicateNameException.#ctor">
+            <summary>
+            Initializes constructor with no parameter.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDuplicateNameException.#ctor(System.String)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDuplicateNameException.#ctor(System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDuplicateNameException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDuplicateNameException.#ctor(System.String,System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>    
+            <param name="message">Error message.</param>
+            <param name="dataList">Validation data.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDuplicateNameException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpImportDataException">
+            <summary>
+            It is a custom exception class inherited from base exception class. 
+            It is use for import data opration 
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpImportDataException.#ctor">
+            <summary>
+            Initialize default constructor.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpImportDataException.#ctor(System.String)">
+            <summary>
+            Initialize parameterized constructor.
+            </summary>
+            <param name="message">Exception message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpImportDataException.#ctor(System.Exception)">
+            <summary>
+            Initialize parameterized constructor.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpImportDataException.#ctor(System.String,System.Collections.Generic.List{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Initialize parameterized constructor.
+            </summary>
+            <param name="message">Exception message.</param>
+            <param name="erros">The erros.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpImportDataException.#ctor(System.Collections.Generic.List{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Initialize parameterized constructor.
+            </summary>
+            <param name="erros">The erros.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpImportDataException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpInvalidAppVersionException">
+            <summary>
+            It is a custom exception class inherited to base exception. It is use for invalid database version.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidAppVersionException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidAppVersionException.#ctor(System.String)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidAppVersionException.#ctor(System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidAppVersionException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.EwpInvalidAppVersionException.LatestApplicationVersion">
+            <summary>
+            Latest application verion on server
+            </summary>  
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidAppVersionException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpInvalidDBVersionException">
+            <summary>
+            It is a custom exception class inherited to base exception. It is use for invalid database version.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidDBVersionException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidDBVersionException.#ctor(System.String)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidDBVersionException.#ctor(System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidDBVersionException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.EwpInvalidDBVersionException.LatestDBVersion">
+            <summary>
+            Latest DB verion on server
+            </summary>  
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidDBVersionException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpInvalidDeviceIdException">
+            <summary>
+            It is a custom exception class inherited to base exception. It is use for invalid or unregister device for Sync name found.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidDeviceIdException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidDeviceIdException.#ctor(System.String)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidDeviceIdException.#ctor(System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidDeviceIdException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidDeviceIdException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpInvalidFieldReferenceException">
+            <summary>
+            It is a custom exception class inherited to base exception. It is use for invalid Reference.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidFieldReferenceException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidFieldReferenceException.#ctor(System.String)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">InvalidReference message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidFieldReferenceException.#ctor(System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidFieldReferenceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidFieldReferenceException.#ctor(System.String,System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>    
+            <param name="message">Error message.</param>
+            <param name="dataList">Validation data.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidFieldReferenceException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpInvalidLoginEmailIdException">
+            <summary>
+            It is a custom exception class inherited from base exception class.
+            It is used when login emial id is wrong.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidLoginEmailIdException.#ctor">
+            <summary>
+            Initialize constructor.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidLoginEmailIdException.#ctor(System.String)">
+            <summary>
+            Initialize constructor.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidLoginEmailIdException.#ctor(System.Exception)">
+            <summary>
+            Initialize constructor.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidLoginEmailIdException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialize constructor.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidLoginEmailIdException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpInvalidLoginTokenException">
+            <summary>
+            It is a custom exception class inherited to base exception. It is use for invalid token.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidLoginTokenException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidLoginTokenException.#ctor(System.String)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidLoginTokenException.#ctor(System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidLoginTokenException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidLoginTokenException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpInvalidOperationException">
+            <summary>
+            It is a custom exception class inherited from base exception class. 
+            It is used to pass exception when operation is invalid.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidOperationException.#ctor">
+            <summary>
+            Initialize constructor.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidOperationException.#ctor(System.String,ewApps.Core.ExceptionService.InvalidOperationExceptionSubType,System.Object)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="subType">Inner exception.</param>
+            <param name="data">operation name.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidOperationException.SetData(System.String)">
+            <summary>
+            This method set operation name in excetpion.
+            </summary>
+            <param name="opName">Operation name.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidOperationException.GetData">
+            <summary>
+            This Method get operation name from exception.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidOperationException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpInvalidPasswordException">
+            <summary>
+            It is a custom exception class inherited from base exception class.
+            It is used when login password is wrong.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidPasswordException.#ctor">
+            <summary>
+            Initialize constructor.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidPasswordException.#ctor(System.String)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidPasswordException.#ctor(System.Exception)">
+            <summary>
+            Initialize constructor.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidPasswordException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialize constructor.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidPasswordException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpInvalidTimeZoneException">
+            <summary>
+            It is a custom exception class inherited from base exception class.
+            It is used to invalid time zone .
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidTimeZoneException.#ctor">
+            <summary>
+            Initialize constructor.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidTimeZoneException.#ctor(System.String)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidTimeZoneException.#ctor(System.String,System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>    
+            <param name="message">Error message.</param>
+            <param name="dataList">Validation data.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidTimeZoneException.#ctor(System.Exception)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="innerException">inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidTimeZoneException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidTimeZoneException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpInvalidVersionException">
+            <summary>
+            It is a custom exception class inherited to base exception. It is use for Invalid Version Exception.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidVersionException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidVersionException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidVersionException.#ctor(System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidVersionException.#ctor(System.String,System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpInvalidVersionException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <returns></returns>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpNullRequestArgumentException">
+            <summary>
+            It is a custom exception class inherited to base exception. It is use for invalid Request Arguments.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpNullRequestArgumentException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpNullRequestArgumentException.#ctor(System.String)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">InvalidReference message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpNullRequestArgumentException.#ctor(System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpNullRequestArgumentException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpNullRequestArgumentException.#ctor(System.String,System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>    
+            <param name="message">Error message.</param>
+            <param name="dataList">Validation data.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpNullRequestArgumentException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpSecurityException">
+            <summary>
+            It is a custom exception class inherited from base exception class. 
+            It is used to pass exception when operation is invalid.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSecurityException.#ctor">
+            <summary>
+            Initialize constructor.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSecurityException.#ctor(System.String)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSecurityException.#ctor(System.Exception)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSecurityException.#ctor(System.String,System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>    
+            <param name="message">Error message.</param>
+            <param name="dataList">Validation data.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSecurityException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpSystemException">
+            <summary>
+            It is a custom exception class inherited to base exception. It is use for duplicate name found.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSystemException.#ctor">
+            <summary>
+            Initializes constructor with no parameter.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSystemException.#ctor(System.String)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSystemException.#ctor(System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSystemException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSystemException.#ctor(System.String,System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>    
+            <param name="message">Error message.</param>
+            <param name="dataList">Validation data.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSystemException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpUserLockedException">
+            <summary>
+            It is a custom exception class inherited from base exception class.
+            It is used to when user is locked due to wrong authentication.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpUserLockedException.#ctor">
+            <summary>
+            Initialize constructor.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpUserLockedException.#ctor(System.String)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpUserLockedException.#ctor(System.Exception)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpUserLockedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpUserLockedException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpValidationException">
+            <summary>
+            It is a custom exception class inherited from base exception class.
+            It is used to validate entity object like required field or field length etc.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpValidationException.#ctor">
+            <summary>
+            Initialize constructor.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpValidationException.#ctor(System.String)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpValidationException.#ctor(System.String,System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>    
+            <param name="message">Error message.</param>
+            <param name="dataList">Validation data.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpValidationException.#ctor(System.Exception)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="innerException">inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpValidationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpValidationException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpDataException">
+            <summary>
+            The exception that is thrown by exception handling block.It logs the original message and replace the original exception,
+            occurred in Data layer, with a user friendly message.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataException.#ctor(System.String,System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <returns></returns>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpDataServiceException">
+            <summary>
+            The exception that is thrown by exception handling block to replace the original exception,
+            occurred in DataService layer, with a user friendly message.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataServiceException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataServiceException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataServiceException.#ctor(System.String,System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpDataServiceException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpHttpResponseException">
+            <summary>
+            It is a custom exception class inherited to base exception. It is use for service call.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpHttpResponseException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpHttpResponseException.#ctor(System.String)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Concurrency message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpHttpResponseException.#ctor(System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpHttpResponseException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Error message</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpHttpResponseException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Error mesage.</param>
+            <param name="responseExMessage">The response ex message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpHttpResponseException.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Initializes constructor with required parameter.
+            </summary>
+            <param name="message">Error mesage.</param>
+            <param name="responseExMessage">The response ex message.</param>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.EwpHttpResponseException.ResponseExceptionMessage">
+            <summary>
+            Gets the response exception message.
+            </summary>
+            <value>
+            The response exception message.
+            </value>
+        </member>
+        <member name="P:ewApps.Core.ExceptionService.EwpHttpResponseException.ResponseStatusCode">
+            <summary>
+            Gets the response exception message.
+            </summary>
+            <value>
+            The response exception message.
+            </value>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpHttpResponseException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpIgnoredException">
+            <summary>
+            It is a custom exception class inherited from base exception class.
+            It is used to ignore.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpIgnoredException.#ctor">
+            <summary>
+            Intialize class constructor.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpIgnoredException.#ctor(System.String)">
+            <summary>
+            Intitialize constructor with required parameter.
+            </summary>
+            <param name="message">Message from exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpIgnoredException.#ctor(System.Exception)">
+            <summary>
+            Intitialize constructor with required parameter.
+            </summary>
+            <param name="innerException">Inner exception message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpIgnoredException.#ctor(System.String,System.Exception)">
+            <summary>
+            Intitialize constructor with required parameter.
+            </summary>
+            <param name="message">Exception message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpIgnoredException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpPassThroughException">
+            <summary>
+            The exception that is thrown by the exception handling block to replace the exception from data layer.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpPassThroughException.#ctor">
+            <summary>
+            Initialize constructor.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpPassThroughException.#ctor(System.String)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpPassThroughException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="inner">Inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpPassThroughException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpRecoverableException">
+            <summary>
+            It is a base exception class inherited from System.ApplicationException class.
+            All other custom exception will be inherited from this class.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpRecoverableException.#ctor">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpRecoverableException.#ctor(System.String)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpRecoverableException.#ctor(System.Exception)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="innerException">inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpRecoverableException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="innerException">inner exception.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpRecoverableException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EwpSyncException">
+            <summary>
+            The exception that is thrown by exception handling block to replace the original exception,
+            occurred in DataService layer, with a user friendly message.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSyncException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSyncException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSyncException.#ctor(System.String,System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSyncException.#ctor(System.String,System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Initialize constructor with required parameter.
+            </summary>    
+            <param name="message">Error message.</param>
+            <param name="dataList">Validation data.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EwpSyncException.GetEwpErrorType">
+            <summary>
+            Gets the type of the ewp error.
+            </summary>
+            <returns></returns>
+            <value>
+            The type of the ewp error.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.ErrorHandlingMiddleware">
+            <summary>
+            This class globaly handle all types of exception and retun ewp error object in response.
+            It also log exception in log file.
+            Status code of all types of error is 500
+            If excetpion is system => type is system, subtype is non
+            If excetpion is custome => type is custome exceptin type, subtype is custome excetpion subtype
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ErrorHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Options.IOptions{ewApps.Core.ExceptionService.ExceptionAppSettings})">
+            <summary>
+            Initializes a new instance of the ErrorHandlingMiddleware class.  
+            </summary>
+            <param name="next">Instance of reqeust delegate</param>
+            <param name="logger">Instance of logger service</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ErrorHandlingMiddleware.HandleExceptionAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception)">
+            <summary>
+            This method is responsible to 
+            [a] Parse exception to ewp error object
+            [b] Log exception 
+            [c] Serialize ewp object to json
+            [d] Write ewp json to http response 
+            </summary>
+            <param name="context">http context </param>
+            <param name="ex">Exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ErrorHandlingMiddleware.LogForErrorContext(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Sets error template forserilog middleware
+            </summary>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ErrorHandlingMiddleware.LogException(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.String)">
+            <summary>
+            Logs the exception.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+            <param name="ex">The ex.</param>
+            <param name="ewpError">The ewp error.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ErrorHandlingMiddleware.SendLogEmail(System.Exception,Microsoft.AspNetCore.Http.HttpContext,System.String)">
+            <summary>
+            Sends the log email.
+            </summary>
+            <param name="exception">The exception.</param>
+            <param name="httpContext">The HTTP context.</param>
+            <param name="ewpError">The ewp error.</param>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.EnumUtils">
+            <summary>
+            This class provides utility methods for enum functionality.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EnumUtils.ToEnum``1(System.String,``0)">
+            <summary> 
+            This method converts enum string value to given enum type.
+            If value does not falls in enum type it returns default value.
+            </summary>
+            <typeparam name="TEnum">Enum type.</typeparam>
+            <param name="strEnumValue">String enum value.</param>
+            <param name="defaultValue">Default value of enum if string not found in enum.</param>
+            <returns>Enum value.</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EnumUtils.ToEnum``1(System.Int32,``0)">
+            <summary> 
+            This method converts enum string value to given enum type.
+            If value does not falls in enum type it returns default value.
+            </summary>
+            <typeparam name="TEnum">Enum type.</typeparam>
+            <param name="strEnumValue">Int enum value.</param>
+            <param name="defaultValue">Default value of enum if string not found in enum.</param>
+            <returns>Enum value.</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.EnumUtils.ToEnum``1(System.String)">
+            <summary> 
+            This method converts enum string value to given enum type.
+            </summary>
+            <typeparam name="TEnum">Enum type.</typeparam>
+            <param name="strEnumValue">String enum value.</param>
+            <returns>Enum value.</returns>
+        </member>
+        <member name="T:ewApps.Core.ExceptionService.ExceptionUtils">
+            <summary>
+            This class provides utility methods for exception handling.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.GetInnermostException(System.Exception)">
+            <summary>
+            This method provides most last exception.
+            </summary>
+            <param name="e">Exception</param>
+            <returns>Exception</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.GetOriginalException(System.Exception)">
+            <summary>
+            This method provides original exception.
+            <remarks>
+            If orginal exception is not found it returns null value.
+            </remarks>
+            </summary>
+            <param name="ex">Source exception.</param>
+            <returns>Original exception.</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.IsWrapper(System.Exception)">
+            <summary>
+            This method is used to check for original exception.
+            </summary>
+            <param name="ex">Exception.</param>
+            <returns>If true, this exception is wrapped else fale.</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.MarkAsWrapper(System.Exception)">
+            <summary>
+            This method is used to set wrapper flag in an exception.
+            </summary>
+            <param name="ex">Exception.</param>   
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.IsOriginal(System.Exception)">
+            <summary>
+            This method is used to check for original exception.
+            </summary>
+            <param name="ex">Exception.</param>
+            <returns>If true, this exception is wrapped else fale.</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.MarkAsOriginal(System.Exception)">
+            <summary>
+            This method is used to set original flag in an exception.
+            </summary>
+            <param name="ex">Exception.</param>   
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.IsPassThrough(System.Exception)">
+            <summary>
+            This method is used to check for pass through an exception.
+            </summary>
+            <param name="ex">Exception.</param>
+            <returns>If true, this exception is pass through else false.</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.MarkAsPassThrough(System.Exception)">
+            <summary>
+            This method is used to set pass through flag in an exception.
+            </summary>
+            <param name="ex">Exception.</param>   
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.IsRethrow(System.Exception)">
+            <summary>
+            This method is used to check for rethrow type exception.
+            </summary>
+            <param name="ex">Exception.</param>
+            <returns>If true, this exception is rethrow else false.</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.MarkAsRethrow(System.Exception)">
+            <summary>
+            This method is used to set pass through flag in an exception.
+            </summary>
+            <param name="ex">Exception.</param>   
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.IsNew(System.Exception)">
+            <summary>
+            This method is used to check for rethrow type exception.
+            </summary>
+            <param name="ex">Exception.</param>
+            <returns>If true, this exception is rethrow else false.</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.MarkAsNew(System.Exception)">
+            <summary>
+            This method is used to set pass through flag in an exception.
+            </summary>
+            <param name="ex">Exception.</param>   
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.IsLogged(System.Exception)">
+            <summary>
+            This method is used to check for logged.
+            </summary>
+            <param name="ex">Exception.</param>
+            <returns>If true, this exception is logged else false.</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.MarkAsLogged(System.Exception)">
+            <summary>
+            This method is used to set pass through flag in an exception.
+            </summary>
+            <param name="ex">Exception.</param>   
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.SetSeverity(System.Exception,System.Diagnostics.TraceEventType)">
+            <summary>
+            This method provides to set severity of exception.
+            </summary>
+            <param name="ex">Exception.</param>
+            <param name="severity">Severity.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.GetSeverity(System.Exception)">
+            <summary>
+            This method provides to get Severity of given exception.
+            </summary>
+            <param name="ex">Exception</param>
+            <returns>Trace event type</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.SetAdditionalMsg(System.Exception,System.String)">
+            <summary>
+            This method provides to add additional messages in a given exception.
+            </summary>
+            <param name="ex">Exception.</param>
+            <param name="msg">Message.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.GetAdditionalMsg(System.Exception)">
+            <summary>
+            This method provides to get additional message from a given exception.
+            </summary>
+            <param name="ex">exception</param>
+            <returns>Additional string message.</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.SetData(System.Exception,System.String,System.Object)">
+            <summary>
+            Adds extra information in an exception.
+            </summary>
+            <param name="ex">Exception.</param>
+            <param name="key">Extra information key.</param>
+            <param name="data">Extra information of.</param>    
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.GetData(System.Exception,System.String)">
+            <summary>
+            Gets extra information from exception.
+            </summary>
+            <param name="ex">Exception.</param>
+            <param name="key">Extra information key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.SetCommonProperties(System.Exception@,System.String,System.Diagnostics.TraceEventType)">
+            <summary>
+             Sets common exception properties.
+            </summary>
+            <param name="ex">Exception.</param>
+            <param name="message">Message.</param>
+            <param name="severity">Severity.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.SetHttpSatusCode(System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            This method provide to set severity of exception.
+            </summary>
+            <param name="ex">Exception.</param>
+            <param name="statusCode">Http Status Code.</param>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.GetHttpSatusCode(System.Exception)">
+            <summary>
+            This method provides to get Severity of given exception.
+            </summary>
+            <param name="ex">Exception</param>
+            <returns>Http status code.</returns>
+        </member>
+        <member name="M:ewApps.Core.ExceptionService.ExceptionUtils.RaiseValidationException(System.String,System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData})">
+            <summary>
+            Validate entity based on broken rulles.
+            </summary>
+            <param name="entityName">Entity Name.</param>    
+            <param name="errorDataList">Error Data List.</param>
+            <returns>True if entity passes all validation rules.</returns>
+        </member>
+    </members>
+</doc>

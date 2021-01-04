@@ -1,0 +1,749 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.BusinessEntity.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.BACustomerController.#ctor(ewApps.BusinessEntity.DS.IBACustomerDS,ewApps.BusinessEntity.DS.ICustomerSignupDS)">
+            <summary>
+            initalize constructor.
+            </summary>
+            <param name="customerDS"></param>
+            <param name="customerSignupDS">Customer signup service.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.BACustomerController.CustomerSignupAsync(ewApps.BusinessEntity.DTO.SignUpBACustomerDTO,System.Threading.CancellationToken)">
+            <summary>
+            Signup BAcustomer.
+            </summary>
+            <param name="signupCustDTO">Customer detail object.</param>
+            <param name="token"></param>
+            <returns>return business detail  model.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.BACustomerController.GetCustomerListByTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Customer list by tenant Id.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.BACustomerController.GetCustomerListByStatusAndTenantIdAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get Customer list by tenant Id.
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ewApps.BusinessEntity.WebApi.Controllers.BACustomerController.GetCustomerDetailByIdAsync(System.Guid,System.Threading.CancellationToken)" -->
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.BACustomerController.GetCustomerListForBizSetupApp(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get Customer list by tenant Id.
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ewApps.BusinessEntity.WebApi.Controllers.BACustomerController.GetCustomerDetailForBizSetupApp(System.Guid,System.Threading.CancellationToken)" -->
+        <!-- Badly formed XML comment ignored for member "M:ewApps.BusinessEntity.WebApi.Controllers.BACustomerController.GetCustomerDetailByIdAsyncForCust(System.Guid,System.Threading.CancellationToken)" -->
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.BACustomerController.BACustomerUpdateAsync(ewApps.BusinessEntity.DTO.CustConfigurationUpdateDTO,System.Threading.CancellationToken)">
+            <summary>
+            Update Customer 
+            </summary>
+            <param name="custConfigurationUpdateDTO"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusBAASNController.#ctor(ewApps.BusinessEntity.DS.IBusBAASNDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.WebApi.Controllers.Business.BusBAASNController"/> class.
+            </summary>
+            <param name="busBAASNDS">The bus baasnds.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusBAASNController.GetASNListByBusinessTenantIdAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the asn list by business tenant id and provided filter.
+            </summary>
+            <param name="businessTenantId">The business tenant id.</param>
+            <param name="listDateFilterDTO">The list date filter dto.</param>
+            <param name="cancellationToken">The cancellation token to cancel async task.</param>
+            <returns>Returns list of ASN list that matches provided </returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusBAASNController.GetASNDetailByASNIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the ASN detail by ASN identifier.
+            </summary>
+            <param name="asnId">The asn identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns ASN detail with line items that matches provided asn id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusBAASNController.GetVendorASNListByBusinessTenantIdAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the asn list by business tenant id and provided filter.
+            </summary>
+            <param name="businessTenantId">The business tenant id.</param>
+            <param name="listDateFilterDTO">The list date filter dto.</param>
+            <param name="cancellationToken">The cancellation token to cancel async task.</param>
+            <returns>Returns list of ASN list that matches provided </returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusBAASNController.GetVendorASNDetailByASNIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the ASN detail by ASN identifier.
+            </summary>
+            <param name="asnId">The asn identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns ASN detail with line items that matches provided asn id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusBAContractController.#ctor(ewApps.BusinessEntity.DS.IBusBAContractDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.WebApi.Controllers.Business.BusBAContractController"/> class.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusBAContractController.GetContractListByBusinessIdAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the contract list by business tenant id.
+            </summary>
+            <param name="businessTenantId">The business tenant id to filter contract list.</param>
+            <param name="listDateFilterDTO">The DTO to filter contract list.</param>
+            <param name="cancellationToken">The token to cancel async operation.</param>
+            <returns>Returns contract list that matches given tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusBAContractController.GetContractDetailByContractIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the contract detail by business tenant id and contract identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <param name="contractId">The contract identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns contract detail that matches given business tenant  and contract id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusCustomerController.#ctor(ewApps.BusinessEntity.DS.IBACustomerDS,ewApps.BusinessEntity.DS.IBAARInvoiceDS)">
+            <summary>
+            initalize constructor.
+            </summary>
+            <param name="customerDS"></param>
+            <param name="invoiceDS">Invoice Dataservice.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusCustomerController.UpdateCustomerDetail(ewApps.BusinessEntity.DTO.BACustomerDTO,System.Threading.CancellationToken)">
+            <summary>
+            Update BAcustomer.
+            </summary>
+            <param name="custDTO">Customer detail object.</param>
+            <param name="token"></param>
+            <returns>return business detail  model.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusCustomerController.UpdateCustomerAndCustomerContactDetail(ewApps.BusinessEntity.DTO.BusBACustomerDetailDTO,System.Threading.CancellationToken)">
+            <summary>
+            Update BAcustomer and customer contact.
+            </summary>
+            <param name="custDTO">Customer and contact detail object.</param>
+            <param name="token"></param>
+            <returns>return business detail  model.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusCustomerController.UpdateCustomerDetailForBizSetupApp(ewApps.BusinessEntity.DTO.BusCustomerUpdateDTO,System.Threading.CancellationToken)">
+            <summary>
+            Update BAcustomer.
+            </summary>
+            <param name="custDTO">Customer detail object.</param>
+            <param name="token"></param>
+            <returns>return business detail  model.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.BusCustomerController.DeleteCustomer(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Delete BAcustomer and associtaed data.
+            </summary>
+            <param name="bacustomerId">BACustomerId.</param>
+            <param name="token"></param>
+            <returns>return business detail  model.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.CustBAContractController.#ctor(ewApps.BusinessEntity.DS.ICustBAContractDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.WebApi.Controllers.Business.BusBAContractController"/> class.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.CustBAContractController.GetContractListByBusinessIdAsyncForCust(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the contract list by business tenant id.
+            </summary>
+            <param name="businessTenantId">The business tenant id to filter contract list.</param>
+            <param name="listDateFilterDTO">The DTO to filter contract list.</param>
+            <param name="cancellationToken">The token to cancel async operation.</param>
+            <returns>Returns contract list that matches given tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.CustBAContractController.GetContractDetailByContractIdAsyncForCust(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the contract detail by business tenant id and contract identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <param name="contractId">The contract identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns contract detail that matches given business tenant  and contract id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.WebApi.Controllers.Business.CustBADeliveryController">
+            <summary>
+            This controller contains methods to execute <see cref="T:ewApps.BusinessEntity.Entity.BADelivery"/> entity related operations.
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.CustBADeliveryController.#ctor(ewApps.BusinessEntity.DS.ICustBADeliveryDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.WebApi.BusBADeliveryController"/> class.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.CustBADeliveryController.GetDeliveryListByBusinessTenantIdAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the delivery list by business tenant identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBADeliveryDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Business.CustBADeliveryController.GetDeliveryDetailByDeliveryIdAsyncForCust(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the delivery list by business tenant identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant id.</param>
+            <param name="deliveryId">The business tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBADeliveryDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.BusVendorController.#ctor(ewApps.BusinessEntity.DS.IBAVendorDS)">
+            <summary>
+            initalize constructor.
+            </summary>
+            <param name="vendorDS"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.BusVendorController.GetVendorListByTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Customer list by tenant Id.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.BusVendorController.GetVendorListByStatusAndTenantIdAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get Customer list by tenant Id.
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ewApps.BusinessEntity.WebApi.Controllers.BusVendorController.GetVendorDetailByIdAsync(System.Guid,System.Threading.CancellationToken)" -->
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.BusVendorController.GetVendorListForBizSetupApp(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get Customer list by tenant Id.
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ewApps.BusinessEntity.WebApi.Controllers.BusVendorController.GetVendorDetailForBizSetupApp(System.Guid,System.Threading.CancellationToken)" -->
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.BusVendorController.UpdateVendorDetailForBizSetupApp(ewApps.BusinessEntity.DTO.BusVendorUpdateDTO,System.Threading.CancellationToken)">
+            <summary>
+            Update BAcustomer.
+            </summary>
+            <param name="custDTO">Customer detail object.</param>
+            <param name="token"></param>
+            <returns>return business detail  model.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Customer.CustBAASNController.#ctor(ewApps.BusinessEntity.DS.ICustBAASNDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.WebApi.Controllers.Customer.CustBAASNController"/> class.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Customer.CustBAASNController.GetASNListByBusinessTenantIdAsyncForCust(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the asn list by business tenant id and provided filter.
+            </summary>
+            <param name="businessPartnerTenantId">The business tenant id.</param>
+            <param name="listDateFilterDTO">The list date filter dto.</param>
+            <param name="cancellationToken">The cancellation token to cancel async task.</param>
+            <returns>Returns list of ASN list that matches provided </returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.Customer.CustBAASNController.GetASNDetailByASNIdAsyncForCust(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the ASN detail by ASN identifier.
+            </summary>
+            <param name="asnId">The asn identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns ASN detail with line items that matches provided asn id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.WebApi.Controllers.PurchaseOrderController">
+            <summary>
+            Provide add/update/get method for PurchaseOrder.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.PurchaseOrderController.#ctor(ewApps.BusinessEntity.DS.IBAPurchaseOrderDS,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            To initilize initial local variables.
+            </summary>
+            <param name="purchaseOrderDS"></param>
+            <param name="contextAccessor"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.PurchaseOrderController.AddPurchaseOrderAsync(System.Threading.CancellationToken)">
+            <summary>
+            Add invoice in standalone case.
+            </summary>
+            <param name="token"></param>
+            <returns>return invoice response object.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.PurchaseOrderController.GetPurchaseOrderListByBusinessTenantIdAsync(ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get purchase order list by TenantId.
+            </summary>
+            <param name="listDateFilterDTO"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.PurchaseOrderController.GetPurcahseDetailByPOIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get purchase order by id.
+            </summary>
+            <param name="businessTenantId">businessTenantId</param>
+            <param name="purchaseOrderId">PurchaseOrderId</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.Controllers.PurchaseOrderController.GetPurchaseOrderAttachmentListByOrderIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get purchase order attachment list.
+            </summary>
+            <param name="purchaseOrderId">Unique purchaseOrder id.</param>
+            <param name="token"></param>
+            <returns>return attachment list.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.WebApi.BEPreferenceController">
+            <summary>
+            Get the preferences list
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BEPreferenceController.#ctor(ewApps.BusinessEntity.DS.ITenantUserAppPreferenceDS)">
+            <summary>
+            BusPaymentPreferenceController
+            </summary>
+            <param name="tenantUserAppPreferenceDS"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BEPreferenceController.GetBusBEPreferenceListAsync(System.Guid)">
+            <summary>
+            Get Business Protal payment preferences list
+            <paramref name="appid"></paramref>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BEPreferenceController.GetCustBEPreferenceListAsync(System.Guid)">
+            <summary>
+            Get Customer Protal payment preferences list
+            <paramref name="appid"></paramref>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BEPreferenceController.GetVendorBEPreferenceListAsync(System.Guid)">
+            <summary>
+            Get Customer Protal payment preferences list
+            <paramref name="appid"></paramref>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BEPreferenceController.UpdateBusBEPreferenceListAsync(ewApps.BusinessEntity.DTO.PreferenceUpdateDTO)">
+            <summary>
+            Update business portal payment app preferece list
+            </summary>
+            <param name="preferenceUpdateDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BEPreferenceController.UpdateCustBEPreferenceListAsync(ewApps.BusinessEntity.DTO.PreferenceUpdateDTO)">
+            <summary>
+            Update customer potal payment app preferece list
+            </summary>
+            <param name="preferenceUpdateDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BEPreferenceController.UpdateVendorBEPreferenceListAsync(ewApps.BusinessEntity.DTO.PreferenceUpdateDTO)">
+            <summary>
+            Update customer potal payment app preferece list
+            </summary>
+            <param name="preferenceUpdateDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BEPreferenceController.AddBusBEPreferenceListAsync(ewApps.BusinessEntity.DTO.PreferenceUpdateDTO)">
+            <summary>
+            Add business portal payment app preferece list
+            </summary>
+            <param name="preferenceUpdateDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BEPreferenceController.AddCustBEPreferenceListAsync(ewApps.BusinessEntity.DTO.PreferenceUpdateDTO)">
+            <summary>
+            Add customer potal payment app preferece list
+            </summary>
+            <param name="preferenceUpdateDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.WebApi.BusBADeliveryController">
+            <summary>
+            This controller contains methods to execute <see cref="T:ewApps.BusinessEntity.Entity.BADelivery"/> entity related operations.
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BusBADeliveryController.#ctor(ewApps.BusinessEntity.DS.IBusBADeliveryDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.WebApi.BusBADeliveryController"/> class.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BusBADeliveryController.GetDeliveryListByBusinessTenantIdAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the delivery list by business tenant identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBADeliveryDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BusBADeliveryController.GetDeliveryItemNameListByDeliveryIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the delivery item name list by delivery id.
+            </summary>
+            <param name="deliveryId">The delivery to find delivery items.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of delivery item name list that matches provided delivery id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BusBADeliveryController.GetDeliveryDetailByDeliveryIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the delivery list by business tenant identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant id.</param>
+            <param name="deliveryId">The business tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBADeliveryDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BusBASalesOrderController.#ctor(ewApps.BusinessEntity.DS.IBusBASalesOrderDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.WebApi.BusBASalesOrderController"/> class.
+            </summary>
+            <param name="busBASalesOrderDS">The business sales order data service instance.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BusBASalesOrderController.GetSalesOrderListByBusinessTenantIdAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the delivery list by business tenant identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <param name="listDateFilterDTO">The DTO to filter contract list.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBADeliveryDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BusBASalesOrderController.GetSalesOrderDetailBySOIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets sales order detail that matches the provided business tenant id and sales order id.
+            </summary>
+            <param name="businessTenantId">The business tenant id.</param>
+            <param name="soId">The sales order identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns <see cref="T:ewApps.BusinessEntity.DTO.BusBASalesOrderViewDTO"/> that matches provided business tenant and sales order id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.WebApi.BusBASalesQuotationController">
+            <summary>
+            This controller contains methods to execute <see cref="!:BASalesQuotation"/> entity related operations.
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BusBASalesQuotationController.#ctor(ewApps.BusinessEntity.DS.IBusBASalesQuotationDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.WebApi.BusBASalesQuotationController"/> class.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BusBASalesQuotationController.GetSalesQuotationListByBusinessTenantIdAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the SalesQuotation list by business tenant identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <param name="listDateFilterDTO">The date filter values to filter sales quatation data on Document Date.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBADeliveryDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.BusBASalesQuotationController.GetSalesQuotationDetailBySalesQuotationIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the delivery list by business tenant identifier.
+            </summary>
+            <param name="deliveryId">The business tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBADeliveryDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.CustBASalesOrderController.#ctor(ewApps.BusinessEntity.DS.ICustBASalesOrderDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.WebApi.BusBASalesOrderController"/> class.
+            </summary>
+            <param name="busBASalesOrderDS">The business sales order data service instance.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.CustBASalesOrderController.GetSalesOrderListByBusinessTenantIdAsyncForCust(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the delivery list by business tenant identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <param name="listDateFilterDTO">The DTO to filter contract list.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBADeliveryDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.CustBASalesOrderController.GetSalesOrderDetailBySOIdAsyncForCust(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets sales order detail that matches the provided business tenant id and sales order id.
+            </summary>
+            <param name="businessTenantId">The business tenant id.</param>
+            <param name="soId">The sales order identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns <see cref="T:ewApps.BusinessEntity.DTO.BusBASalesOrderViewDTO"/> that matches provided business tenant and sales order id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.WebApi.CustBASalesQuotationController">
+            <summary>
+            This controller contains methods to execute <see cref="!:BASalesQuotation"/> entity related operations.
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.CustBASalesQuotationController.#ctor(ewApps.BusinessEntity.DS.ICustBASalesQuotationDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.WebApi.BusBASalesQuotationController"/> class.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.CustBASalesQuotationController.GetSalesQuotationListByPartnerTenantIdAsyncForCust(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the SalesQuotation list by business tenant identifier.
+            </summary>
+            <param name="businessPartnerTenantId">The business tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBADeliveryDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.CustBASalesQuotationController.GetSalesQuotationDetailBySalesQuotationIdAsyncForCust(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the delivery list by business tenant identifier.
+            </summary>
+            <param name="deliveryId">The business tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBADeliveryDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.WebApi.ERPConnectorConfigController">
+            <summary>
+            Provide add/update/get method for ERPConnector Configuration.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.ERPConnectorConfigController.#ctor(ewApps.BusinessEntity.DS.IERPConfigDS)">
+            <summary>
+            initlize local variables.
+            </summary>
+            <param name="erpConfigDS"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.ERPConnectorConfigController.GetBusinessAppConnectorConfigByBusinessIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Establish app connection with SAPB1
+            </summary>
+            <returns></returns>        
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.ERPConnectorConfigController.AddBusinessConnectorConfigsAsync(System.Collections.Generic.List{ewApps.BusinessEntity.DTO.ERPConnectorConfigDTO},System.Threading.CancellationToken)">
+            <summary>
+            Add ERP connector setting.
+            </summary>
+            <param name="configDTOList">List of connector setting</param>
+            <param name="token"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.ERPConnectorConfigController.AddUpdateBusinessConnectorConfigsAsync(System.Collections.Generic.List{ewApps.BusinessEntity.DTO.ERPConnectorConfigDTO},System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Add/Update ERP connector setting.
+            </summary>
+            <param name="configDTOList">List of connector setting</param>
+            <param name="tenantId">Tenantid</param>
+            <param name="token"></param>
+        </member>
+        <member name="T:ewApps.BusinessEntity.WebApi.ERPConnectorController">
+            <summary>
+            Provide add/update/get method for ERPConnector 
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.ERPConnectorController.#ctor(ewApps.BusinessEntity.DS.IERPConnectorDS)">
+            <summary>
+            Connector List
+            </summary>
+            <param name="erpConnectorDS"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.ERPConnectorController.GetERPConnectorAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get connection list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.WebApi.InvoiceController">
+            <summary>
+            Provide add/update/get method for ERPConnector 
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.InvoiceController.#ctor(ewApps.BusinessEntity.DS.IBAARInvoiceDS,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            invoice controller.
+            </summary>
+            <param name="bAARInvoiceDS"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.InvoiceController.AddInvoiceAsync(ewApps.BusinessEntity.DTO.AddBAARInvoiceDTO,System.Threading.CancellationToken)">
+            <summary>
+            Add invoice in standalone case.
+            </summary>
+            <param name="request">Invoice dto model.</param>
+            <param name="token"></param>
+            <returns>return invoice response object.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.InvoiceController.UpdateInvoiceAmountAsync(System.Collections.Generic.List{ewApps.BusinessEntity.DTO.BAARInvoiceEntityDTO},System.Threading.CancellationToken)">
+            <summary>
+            Add invoice in standalone case.
+            </summary>
+            <param name="request">Invoice dto model.</param>
+            <param name="token"></param>
+            <returns>return invoice response object.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.InvoiceController.AddInvoiceAsync(System.Threading.CancellationToken)">
+            <summary>
+            Add invoice in standalone case.
+            </summary>
+            <param name="token"></param>
+            <returns>return invoice response object.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.InvoiceController.DeleteInvoiceAttachmentAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Delete attahcment.
+            </summary>
+            <param name="invoiceId">InvoiceId</param>
+            <param name="documentid">documentid to delete.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.InvoiceController.CancelInvoiceAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            cancel invoice in standalone case.
+            </summary>
+            <param name="invoiceid">Invoice id.</param>
+            <param name="token"></param>
+            <returns>return invoice response object.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.InvoiceController.GetInvoiceAttachmentListByInvoiceIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice attachment list.
+            </summary>
+            <param name="invoiceId">Unique invoiceId id.</param>
+            <param name="token"></param>
+            <returns>return attachment list.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.VendBAPurchaseOrderController.#ctor(ewApps.BusinessEntity.DS.IVendBAPurchaseOrderDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.WebApi.BusBASalesOrderController"/> class.
+            </summary>
+            <param name="vendBAPurchaseOrderDS">The business sales order data service instance.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.VendBAPurchaseOrderController.GetPurchaseOrderListByBusinessTenantIdAsyncForVend(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the delivery list by business tenant identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <param name="listDateFilterDTO">The DTO to filter contract list.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBADeliveryDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.VendorBAContractController.#ctor(ewApps.BusinessEntity.DS.IVendorBAContractDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.WebApi.VendorBAContractController"/> class.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.VendorBAContractController.GetContractListByBusinessIdAsyncForVendorAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the contract list by business tenant id.
+            </summary>
+            <param name="businessTenantId">The business tenant id to filter contract list.</param>
+            <param name="listDateFilterDTO">The DTO to filter contract list.</param>
+            <param name="cancellationToken">The token to cancel async operation.</param>
+            <returns>Returns contract list that matches given tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.WebApi.VendorBAContractController.GetContractDetailByContractIdAsyncForVendorAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the contract detail by business tenant id and contract identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <param name="contractId">The contract identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns contract detail that matches given business tenant and contract id.</returns>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Common.SalesOrderStatusEnum.Open">
+            <summary>
+            Shows that order is open.
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Common.SalesOrderStatusEnum.Incomplete">
+            <summary>
+            Shows that order is incomplete.
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Common.SalesOrderStatusEnum.Completed">
+            <summary>
+            Shows that order is completed.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Common.SyncResponseEnum">
+            <summary>
+            SyncResponseEnum to identify the Sync Response.
+            </summary>
+        </member>
+        <member name="T:BusinessEntity.WebApi.Controllers.BASyncController">
+            <summary>
+            Conatins method to test/add connection and init  data with V1 connector.
+            </summary>
+        </member>
+        <member name="M:BusinessEntity.WebApi.Controllers.BASyncController.#ctor(ewApps.BusinessEntity.DS.IAppSyncServiceDS,ewApps.BusinessEntity.DS.ISyncTimeLogDS)">
+            <summary>
+            initalize constructor.
+            </summary>
+            <param name="syncService"></param>
+        </member>
+        <member name="M:BusinessEntity.WebApi.Controllers.BASyncController.TestConnectionAsync(ewApps.BusinessEntity.DTO.BATestConnectionReqDTO,System.Threading.CancellationToken)">
+            <summary>
+            Test app connection with SAPB1
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessEntity.WebApi.Controllers.BASyncController.ManageConnectorConfigsAsync(System.Collections.Generic.List{ewApps.BusinessEntity.DTO.ERPConnectorConfigDTO},System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Test app connection with SAPB1
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessEntity.WebApi.Controllers.BASyncController.PullERPDataAsync(ewApps.BusinessEntity.DTO.PullERPDataReqDTO,System.Threading.CancellationToken)">
+            <summary>
+            Sync entity data from SAPB1 connector.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessEntity.WebApi.Controllers.BASyncController.GetAttachmentFromERP(ewApps.BusinessEntity.DTO.AttachmentReqDTO,System.Threading.CancellationToken)">
+            <summary>
+            Sync entity data from SAPB1 connector.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessEntity.WebApi.Controllers.BASyncController.PushSalesOrderDataInERPAsync(System.Guid,ewApps.BusinessEntity.DTO.BASalesOrderSyncDTO,System.Threading.CancellationToken)">
+            <summary>
+            Sync entity data from SAPB1 connector.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessEntity.WebApi.Controllers.BASyncController.PostERPCustomerDataAsync(System.Guid,System.Collections.Generic.List{ewApps.BusinessEntity.DTO.BACustomerSyncDTO},System.Threading.CancellationToken)">
+            <summary>
+            Sync entity data from SAPB1 connector.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessEntity.WebApi.Controllers.BASyncController.PushSalesQuotationDataInERPAsync(System.Guid,ewApps.BusinessEntity.DTO.BASalesQuotationSyncDTO,System.Threading.CancellationToken)">
+            <summary>
+            Sync entity data from SAPB1 connector.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessEntity.WebApi.Controllers.BASyncController.GetSyncTimeLogAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get connection list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessEntity.WebApi.Controllers.BASyncController.NotifyApplicationAsync(ewApps.BusinessEntity.DTO.NotifyAppDTO,System.Threading.CancellationToken)">
+            <summary>
+            Notify Application for chnage at SAPB1
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessEntity.WebApi.Controllers.BASyncController.PullItemPriceAsync(ewApps.BusinessEntity.DTO.PullItemPriceReqDTO,System.Threading.CancellationToken)">
+            <summary>
+            Sync entity data from SAPB1 connector.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

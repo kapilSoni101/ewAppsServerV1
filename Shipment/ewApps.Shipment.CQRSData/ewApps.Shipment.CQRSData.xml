@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Shipment.QData</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Shipment.QData.MasterData">
+            <summary>
+            This class is responsible to generate master data at the time of database creation
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.QData.MasterData.Init(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Startup method to generate master data. It is called from DB Context on database creation.
+            </summary>
+            <param name="builder">The model builder</param>
+        </member>
+        <member name="T:ewApps.Shipment.QData.QShipmentDbContext">
+            <summary>  
+            This class contains a session of core database and can be used to query and 
+            save instances of core entities. It is a combination of the Unit Of Work and Repository patterns.  
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.QData.QShipmentDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Shipment.QData.QShipmentDbContext},System.String)">
+            <summary>
+            Default constructor to initialize member variables (if any).
+            </summary>
+            <param name="options">The DbContextOptions instance carries configuration information such as: 
+            (a) The database provider to use, UseSqlServer or UseSqlite
+            (b) Connection string or identifier of the database instance    
+            </param>
+            <param name="connString">The Core database connection string.</param>
+        </member>
+        <member name="M:ewApps.Shipment.QData.QShipmentDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Shipment.QData.QShipmentDbContext},Microsoft.Extensions.Options.IOptions{ewApps.Shipment.Common.ShipmentAppSettings})">
+            <summary>
+            Constructor to initialize member variables (if any).
+            </summary>
+            <param name="options">The DbContextOptions instance carries configuration information such as: 
+            (a) The database provider to use, UseSqlServer or UseSqlite
+            (b) Connection string or identifier of the database instance    
+            </param>
+            <param name="appSetting">Instance of Appsettings object that contains core database 
+            connection string.
+            </param>
+        </member>
+        <member name="M:ewApps.Shipment.QData.QShipmentDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />  
+        </member>
+        <member name="M:ewApps.Shipment.QData.QShipmentDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <inheritdoc />  
+        </member>
+    </members>
+</doc>

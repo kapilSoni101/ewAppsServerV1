@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.ThumbnailService</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Core.ThumbnailService.WindowsThumbnail">
+            <summary>
+            This class impliments windows thumbanil methods.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.CommonService.ThumbnailGeneratorNew">
+            <summary>
+            This classs impliments the methods to generate thumbanil. It reduce the size of file.
+            It generate thumbanil for video,images and documents. 
+            The generated thumbanil dimension wil be 100*100.
+            The output file extension will be PNG
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.ThumbnailGeneratorNew.GenerateThumbnail(System.String,System.String,System.Int32@,System.Int32@)">
+            <summary>
+            Gets the thumbnail base64.
+            </summary>
+            <param name="filePath">The base64 string.</param>
+            <param name="fileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.ThumbnailGeneratorNew.GenerateThumbnailForImage(System.String)">
+            <summary>
+            Genereates the thumbnail for Image file.
+            </summary>
+            <param name="fileFullPath">The file.</param>
+            <returns>Thumbnail file of image</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.ThumbnailGeneratorNew.GenerateThumbnailForVideo(System.String,System.Int32,System.Int32)">
+            <summary>
+            Genereates the thumbnailfrom Image file.
+            </summary>
+            <param name="fileFullPath"></param>
+            <param name="actualWidth"></param>
+            <param name="actualHeight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.ThumbnailGeneratorNew.GetVideoHeightAndWidth(System.String,System.Int32@,System.Int32@)">
+            <summary>
+            Get video file height and width according to frame.
+            </summary>
+            <param name="fileFullPath">file full path.</param>
+            <param name="width">return video width </param>
+            <param name="height">return video height</param>
+        </member>
+        <member name="M:ewApps.Core.CommonService.ThumbnailGeneratorNew.GetBase64FromFilePath(System.String)">
+            <summary>
+            Genereates the Base64 for Constant file.
+            </summary>
+            <param name="file">The file.</param>
+            <returns>Base64 for Constat file</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.ThumbnailGeneratorNew.GetBase64FromBitmap(System.Drawing.Image)">
+            <summary>
+            Generate Base64 from Bitmap.
+            </summary>
+            <param name="img"></param>
+            <returns>Base64 for video file</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.ThumbnailGeneratorNew.ConvertMOVToMP4(System.String,System.String)">
+            <summary>
+            Genereates the thumbnailfrom video file.
+            </summary>
+            <param name="file">The file.</param>
+            <returns>Thumbnail file of video</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.ThumbnailGeneratorNew.GetThumbnailUrl(System.Guid,System.String,System.String)">
+            <summary>
+            Gets the thumbnail URL.
+            </summary>
+            <param name="thumbnailId">The thumbnail identifier.</param>
+            <param name="fileName">Name of the file.</param>
+            <param name="tenantId">The tenant identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.ThumbnailGeneratorNew.GetBase64StringFromBitmap(System.Drawing.Image)">
+            <summary>
+            Gets the base64 string from bitmap.
+            </summary>
+            <param name="bImage">The b image.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

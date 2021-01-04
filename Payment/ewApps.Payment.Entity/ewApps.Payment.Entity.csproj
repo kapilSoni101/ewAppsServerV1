@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<Import Project="..\..\..\ewAppsAssets\AssemblyVersions\ServerVersion.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServer\Payment\ewApps.Payment.Entity\ewApps.Payment.Entity.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="ewApps.Core.BaseService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.BaseService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.ExceptionService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.ExceptionService.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

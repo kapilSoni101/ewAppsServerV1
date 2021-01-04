@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Shipment.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Platform.WebApi.SwaggerUIRequestHeaderFilter">
+            <summary>
+            Operation filter to add the custom header parameters.
+            </summary>
+        </member>
+    </members>
+</doc>

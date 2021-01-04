@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.GeocodingService</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Core.GeocodingService.GeocodeResponse">
+            <summary>
+            Response of Geocoding api.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.GeocodeResponse.results">
+            <summary>
+            A single geocoder result retrieved from the geocode server in response of geocoding api.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.GeocodeResponse.status">
+            <summary>
+            The status returned by the Geocoder on the completion of a call to geocode Api.
+            </summary>
+            <value>
+            Possible values are ERROR, INVALID_REQUEST, OK, OVER_QUERY_LIMIT, REQUEST_DENIED, UNKNOWN_ERROR and ZERO_RESULTS.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.GeocodingService.AddressComponent">
+            <summary>
+            Google geocoding API response has different parts.
+            This class represents a street address component in the format used by the national postal service of the country concerned, 
+            received in geocoding api response.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.AddressComponent.long_name">
+            <summary>
+            Address long name.
+            </summary>
+            <remarks>Address long name and short name value can be same depending on type.
+            Ex. In-case of Type='Street Number', long and short names are same for address '1600 Amphitheatre Parkway, Mountain View, CA'.
+            </remarks>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.AddressComponent.short_name">
+            <summary>
+            Address short name.
+            </summary>
+            <remarks>Address long name and short name value can be same depending on type.
+            Ex. In-case of Type='Street Number', long and short names are same for address '1600 Amphitheatre Parkway, Mountain View, CA'.
+            </remarks>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.AddressComponent.types">
+            <summary>
+            The address type indicates the current address component. Ex. 'street_number', 'locality' etc.
+            </summary>
+            <remarks>
+            A single address component can have multiple types.
+            Ex. For address '1600 Amphitheatre Parkway, Mountain View, CA', 'Mountain View' address part has two types "locality", "political".
+            </remarks>
+        </member>
+        <member name="T:ewApps.Core.GeocodingService.Viewport">
+            <summary>
+            This class represents view port that contains the recommended viewport for displaying the returned result. 
+            Generally the viewport is used to frame a result when displaying it to a user.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Viewport.northeast">
+            <summary>
+            The latitude-longitude pair from North-East geographic coordinate system.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Viewport.southwest">
+            <summary>
+            The latitude-longitude pair from South-West geographic coordinate system.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.GeocodingService.Bounds">
+            <summary>
+            Google geocoding API response has different parts. This class represents Bound use to stores the bounding box which can fully contain the returned result.
+            </summary>
+            <remarks>
+            These bounds may not match the recommended viewport. 
+            (For example, San Francisco includes the Farallon islands, which are technically part of the city, 
+            but probably should not be returned in the viewport.)
+            </remarks>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Bounds.northeast">
+            <summary>
+            The latitude-longitude pair from North-East geographic coordinate system.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Bounds.southwest">
+            <summary>
+            The latitude-longitude pair from South-West geographic coordinate system.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.GeocodingService.Geometry">
+            <summary>
+            This class represents different set of point in form of latitude and longitude points.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Geometry.location">
+            <summary>
+            The Latitude-Longitude pair for location.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Geometry.location_type">
+            <summary>
+            The type of location returned in location/address.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Geometry.viewport">
+            <summary>
+            The bounds of the recommended viewport for displaying this address result.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Geometry.bounds">
+            <summary>
+            The precise bounds of this GeocoderResult.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.GeocodingService.Result">
+            <summary>
+            This class represents Google Geocoding Api response.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Result.address_components">
+            <summary>
+            This property contains the list of different types of address component like street address etc.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Result.formatted_address">
+            <summary>
+            This property contains formatted address string.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Result.geometry">
+            <summary>
+            Different set of point in form of latitude and longitude points.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Result.partial_match">
+            <summary>
+            Whether the geocoder did not return an exact match for the original request, though it was able to match part of the requested address.
+            </summary>
+            <value>
+              <c>true</c> if [partial match]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Result.place_id">
+            <summary>
+            The place ID associated with the location. Place IDs uniquely identify a place in the Google Places database and on Google Maps.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.Result.type">
+            <summary>
+            An array of strings denoting the type of the returned geocoded element.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.GeocodingService.LatLongPoints">
+            <summary>
+            The latitude-longitude pair that represent the a point coordinates at geographic coordinate system.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.LatLongPoints.lat">
+            <summary>
+            The latitude point (in degree).
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.LatLongPoints.lng">
+            <summary>
+            The longitude point (in degree).
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.GeocodingService.EntityModel.LocationAndTimeZoneModel">
+            <summary>
+            This entity model contains google geocoding API response information.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.GeocodingService.EntityModel.LocationAndTimeZoneModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.GeocodingService.EntityModel.LocationAndTimeZoneModel"/> class.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.EntityModel.LocationAndTimeZoneModel.IANATimeZoneId">
+            <summary>
+            The iana time zone id corresponding to requested address.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.EntityModel.LocationAndTimeZoneModel.LocationType">
+            <summary>
+            The type of the location defines the accuracy of address.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.EntityModel.LocationAndTimeZoneModel.Latitude">
+            <summary>
+            The latitude point corrsponding to requested address.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.EntityModel.LocationAndTimeZoneModel.Longitude">
+            <summary>
+            The longitude point corrsponding to requested address.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.GeocodingService.EntityModel.GeoAddressModel">
+            <summary>
+            This model class contain address information to find time zone and location related information using google geocode API.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.EntityModel.GeoAddressModel.Address">
+            <summary>
+            The address as string to find location and time zone related information.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.GeocodingService.EntityModel.GoogleTimeZoneResponse">
+            <summary>
+            This class represents a time zone response from Google TimeZone API.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.EntityModel.GoogleTimeZoneResponse.dstOffset">
+            <summary>
+             The DayLight Saving Time UTC offset value in minutes.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.EntityModel.GoogleTimeZoneResponse.rawOffset">
+            <summary>
+             The raw UTC offset value in minutes.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.EntityModel.GoogleTimeZoneResponse.status">
+            <summary>
+            The status.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.EntityModel.GoogleTimeZoneResponse.timeZoneId">
+            <summary>
+            The IANA time zone id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.GeocodingService.EntityModel.GoogleTimeZoneResponse.timeZoneName">
+            <summary>
+            The name of the IANA time zone.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.GeocodingService.GeocodingAPI">
+            <summary>
+            This class contains methods to get information related to time zone and geocode information.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.GeocodingService.GeocodingAPI.FindLatitudeLongitudeFromAddress(ewApps.Core.GeocodingService.EntityModel.GeoAddressModel)">
+            <summary>
+            Finds the latitude longitude from address.
+            </summary>
+            <param name="address">The address string to find geometry information.</param>
+            <returns>Returns geometry information based on input address.</returns>
+        </member>
+        <member name="M:ewApps.Core.GeocodingService.GeocodingAPI.FindIANATimeZoneIdFromALatitudeLongitudePair(System.String,System.String)">
+            <summary>
+            Finds the iana time zone identifier from a latitude longitude pair.
+            </summary>
+            <param name="latitude">Geographic latitude.</param>
+            <param name="longitude">Geographic longitude.</param>
+            <returns>Returns IANA timezone based on input latitude and longitude.</returns>
+        </member>
+        <member name="M:ewApps.Core.GeocodingService.GeocodingAPI.GetTimeZoneFromAddress(ewApps.Core.GeocodingService.EntityModel.GeoAddressModel)">
+            <summary>
+            Gets the time zone from address.
+            </summary>
+            <param name="address">The address information to find IANA time zone.</param>
+            <returns>Returns IANA timezone information based on input latitude and longitude.</returns>
+        </member>
+        <member name="M:ewApps.Core.GeocodingService.GeocodingAPI.GetTimeZoneAndGeoPointsPairFromAddress(ewApps.Core.GeocodingService.EntityModel.GeoAddressModel)">
+            <summary>
+            Gets the time zone and geo points pair from address.
+            </summary>
+            <param name="address">The address to find geographical points and IANA timezone information.</param>
+            <returns>Returns IANA timezone and location latitude-longitude pair.</returns>
+        </member>
+        <member name="M:ewApps.Core.GeocodingService.GeocodingAPI.FindGeocodeResponseFromAddress(ewApps.Core.GeocodingService.EntityModel.GeoAddressModel)">
+            <summary>
+            Finds the geocode response from raw address string.
+            </summary>
+            <param name="address">The raw address string to find exction address infomration.</param>
+            <returns>Returns address information based on input raw address string.</returns>
+        </member>
+        <member name="M:ewApps.Core.GeocodingService.GeocodingAPI.FindRegionCodeFromLatitudeLongitude(System.Double,System.Double)">
+            <summary>
+            Finds the region code from latitude longitude.
+            </summary>
+            <param name="latitude">The latitude.</param>
+            <param name="longitude">The longitude.</param>
+            <returns>Returns region code corresponding to input latitude and longitude points.</returns>
+        </member>
+    </members>
+</doc>

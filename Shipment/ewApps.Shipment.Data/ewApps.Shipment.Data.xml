@@ -1,0 +1,350 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Shipment.Data</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Shipment.Data.MasterData">
+            <summary>
+            This class is responsible to generate master data at the time of database creation
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.MasterData.Init(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Startup method to generate master data. It is called from DB Context on database creation.
+            </summary>
+            <param name="builder">The model builder</param>
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.PackageMasters">
+            <summary>
+            DbSet&lt;PackageMaster&gt; can be used to query and save instances of PackageMaster entity. 
+            Linq queries can written using DbSet&lt;PackageMaster&gt; that will be translated to sql query and executed against database PackageMaster table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.CarrierPackageDetail">
+            <summary>
+            DbSet&lt;PackageMaster&gt; can be used to query and save instances of CarrierPackageDetail entity. 
+            Linq queries can written using DbSet&lt;CarrierPackageDetail&gt; that will be translated to sql query and executed against database CarrierPackageDetail table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.CarrierPackageLinking">
+            <summary>
+            DbSet&lt;CarrierPackageLinking&gt; can be used to query and save instances of CarrierPackageLinking entity. 
+            Linq queries can written using DbSet&lt;CarrierPackageLinking&gt; that will be translated to sql query and executed against database CarrierPackageLinking table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.FavouriteShipmentPkgSetting">
+            <summary>
+            DbSet&lt;FavouriteShipmentPkgSetting&gt; can be used to query and save instances of FavouriteShipmentPkgSetting entity. 
+            Linq queries can written using DbSet&lt;FavouriteShipmentPkgSetting&gt; that will be translated to sql query and executed against database FavouriteShipmentPkgSetting table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.SalesOrderPkg">
+            <summary>
+            DbSet&lt;SalesOrderPkg&gt; can be used to query and save instances of SalesOrderPkg entity. 
+            Linq queries can written using DbSet&lt;SalesOrderPkg&gt; that will be translated to sql query and executed against database SalesOrderPkg table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.SalesOrderPkgItem">
+            <summary>
+            DbSet&lt;SalesOrderPkgItem&gt; can be used to query and save instances of SalesOrderPkgItem entity. 
+            Linq queries can written using DbSet&lt;SalesOrderPkgItem&gt; that will be translated to sql query and executed against database SalesOrderPkgItem table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.Shipment">
+            <summary>
+            DbSet&lt;Shipment&gt; can be used to query and save instances of Shipment entity. 
+            Linq queries can written using DbSet&lt;Shipment&gt; that will be translated to sql query and executed against database Shipment table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.ShipmentItem">
+            <summary>
+            DbSet&lt;ShipmentItem&gt; can be used to query and save instances of ShipmentItem entity. 
+            Linq queries can written using DbSet&lt;ShipmentItem&gt; that will be translated to sql query and executed against database ShipmentItem table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.ShipmentPkgItem">
+            <summary>
+            DbSet&lt;ShipmentPkgItem&gt; can be used to query and save instances of ShipmentPkgItem entity. 
+            Linq queries can written using DbSet&lt;ShipmentPkgItem&gt; that will be translated to sql query and executed against database ShipmentPkgItem table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.VerifiedAddress">
+            <summary>
+            DbSet&lt;VerifiedAddress&gt; can be used to query and save instances of VerifiedAddress entity. 
+            Linq queries can written using DbSet&lt;VerifiedAddress&gt; that will be translated to sql query and executed against database VerifiedAddress table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.Role">
+            <summary>
+            DbSet&lt;Role&gt; can be used to query and save instances of Role entity. 
+            Linq queries can written using DbSet&lt;role &gt; that will be translated to sql query and executed against database role table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.RoleLinking">
+            DbSet&lt;role linking&gt; can be used to query and save instances of role linking entity. 
+            Linq queries can written using DbSet&lt;RL&gt; that will be translated to sql query and executed against database role linking table.    /// DbSet&lt;VerifiedAddress&gt; can be used to query and save instances of VerifiedAddress entity. 
+        </member>
+        <member name="P:ewApps.Shipment.Data.ShipmentDbContext.TenantUserAppPreference">
+            DbSet&lt;role linking&gt; can be used to query and save instances of TenantUserAppPreference entity. 
+            Linq queries can written using DbSet&lt;RL&gt; that will be translated to sql query and executed against database role linking table.    /// DbSet&lt;VerifiedAddress&gt; can be used to query and save instances of TenantUserAppPreference entity. 
+        </member>
+        <member name="T:ewApps.Shipment.Data.ICarrierPackageLinkingRepository">
+            <summary>
+            This interface provides method to execute add,updated,deleted query agianst respective entity type.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Data.IFavourateShipmentPkgSettingRepository">
+            <summary>
+            This interface provides method to execute add,updated,deleted query agianst respective entity type.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Data.IPackageMasterRepository">
+            <summary>
+            This interface provides method to execute add,updated,deleted query agianst respective entity type.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Data.IRoleLinkingRepository">
+            <summary>
+            Manages the role linking related CRUD methods
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Data.IRoleRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are intrecting with the DB for retriving the data related to Role entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.IRoleRepository.GetRoleAsync(System.Int64,System.Nullable{System.Guid},System.Int32)">
+            <summary>
+            Get the role on the basis of bit mask.
+            </summary>
+            <param name="maskingBit"></param>
+            <param name="appId"></param>
+            <param name="userType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Shipment.Data.ISalesOrderPkgItemRepository">
+            <summary>
+            This interface provides method to execute add,updated,deleted query agianst respective entity type.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Data.ISalesOrderPkgRepository">
+            <summary>
+            This interface provides method to execute add,updated,deleted query agianst respective entity type.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Data.IShipmentItemRepository">
+            <summary>
+            This interface provides method to execute add,updated,deleted query agianst respective entity type.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Data.IShipmentPkgItemRepository">
+            <summary>
+            This interface provides method to execute add,updated,deleted query agianst respective entity type.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Data.IShipmentPkgRepository">
+            <summary>
+            This interface provides method to execute add,updated,deleted query agianst respective entity type.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Data.IShipmentRepository">
+            <summary>
+            This interface provides method to execute add,updated,deleted query agianst respective entity type.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Data.IVerifiedAddressRepository">
+            <summary>
+            This interface provides method to execute add,updated,deleted query agianst respective entity type.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Data.CarrierPackageDetailRepository">
+            <summary>
+            This class implements standard database logic and operations for CarrierPackageDetail entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Data.FavourateShipmentPkgSettingRepository">
+            <summary>
+            This class implements standard database logic and operations for FavourateShipmentPkgSetting entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.FavourateShipmentPkgSettingRepository.#ctor(ewApps.Shipment.Data.ShipmentDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="T:ewApps.Shipment.Data.PackageMasterRepository">
+            <summary>
+            This class implements standard database logic and operations for PackageMaster entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.PackageMasterRepository.#ctor(ewApps.Shipment.Data.ShipmentDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="T:ewApps.Shipment.Data.RoleLinkingRepository">
+            <summary>
+            This class implements standard database logic and operations for RoleLinking entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.RoleLinkingRepository.#ctor(ewApps.Shipment.Data.ShipmentDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="T:ewApps.Shipment.Data.RoleRepository">
+            <summary>
+            This class implements standard database logic and operations for Role entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.RoleRepository.#ctor(ewApps.Shipment.Data.ShipmentDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+             <param name="connectionManager"></param>
+        </member>
+        <member name="M:ewApps.Shipment.Data.RoleRepository.GetRoleAsync(System.Int64,System.Nullable{System.Guid},System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.Shipment.Data.SalesOrderPkgDetailRepository">
+            <summary>
+            This class implements standard database logic and operations for SalesOrderPkgDetail entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.SalesOrderPkgDetailRepository.#ctor(ewApps.Shipment.Data.ShipmentDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="T:ewApps.Shipment.Data.SalesOrderPkgRepository">
+            <summary>
+            This class implements standard database logic and operations for SalesOrderPackage entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.SalesOrderPkgRepository.#ctor(ewApps.Shipment.Data.ShipmentDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="T:ewApps.Shipment.Data.ShipmentItemRepository">
+            <summary>
+            This class implements standard database logic and operations for ShipmentItem entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.ShipmentItemRepository.#ctor(ewApps.Shipment.Data.ShipmentDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="T:ewApps.Shipment.Data.ShipmentPkgItemRepository">
+            <summary>
+            This class implements standard database logic and operations for ShipmentPkgDetail entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.ShipmentPkgItemRepository.#ctor(ewApps.Shipment.Data.ShipmentDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="T:ewApps.Shipment.Data.ShipmentPkgRepository">
+            <summary>
+            This class implements standard database logic and operations for SalesOrderPackage entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.ShipmentPkgRepository.#ctor(ewApps.Shipment.Data.ShipmentDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="T:ewApps.Shipment.Data.ShipmentRepository">
+            <summary>
+            This class implements standard database logic and operations for Shipment entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.ShipmentRepository.#ctor(ewApps.Shipment.Data.ShipmentDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="T:ewApps.Shipment.Data.VerifiedAddressRepository">
+            <summary>
+            This class implements standard database logic and operations for VerifiedAddress entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.VerifiedAddressRepository.#ctor(ewApps.Shipment.Data.ShipmentDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="T:ewApps.Shipment.Data.IShipmentUnitOfWork">
+            <summary>
+            UnitOfWork for Shipment Enitities
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.IShipmentUnitOfWork.Save">
+            <summary>
+            Saves this instance.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.IShipmentUnitOfWork.SaveAsync">
+            <summary>
+            Saves the asynchronous.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Shipment.Data.IShipmentUnitOfWork.SaveAll(System.Boolean)">
+            <summary>
+            Saves all.
+            </summary>
+            <param name="enableSaveChnages">if set to <c>true</c> [enable save chnages].</param>
+        </member>
+        <member name="M:ewApps.Shipment.Data.ShipmentUnitOfWork.#ctor(ewApps.Shipment.Data.ShipmentDbContext,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Shipment.Data.ShipmentUnitOfWork"/> class.
+            </summary>
+            <param name="appDbContext">The application database context.</param>
+            <param name="coreDbContext">The core database context.</param>
+            <param name="disableSaveChanges">if set to <c>true</c> [disable save changes].</param>
+        </member>
+        <member name="M:ewApps.Shipment.Data.ShipmentUnitOfWork.Save">
+            <summary>
+            Saves this instance.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.Data.ShipmentUnitOfWork.SaveAsync">
+            <summary>
+            Saves the asynchronous.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Shipment.Data.ShipmentUnitOfWork.SaveAll(System.Boolean)">
+            <summary>
+            Saves all.
+            </summary>
+            <param name="enableSaveChnages">if set to <c>true</c> [enable save chnages].</param>
+        </member>
+    </members>
+</doc>

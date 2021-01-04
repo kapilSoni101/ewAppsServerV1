@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<Import Project="..\..\..\ewAppsAssets\AssemblyVersions\ServerVersion.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServer\Payment\ewApps.Payment.Data\ewApps.Payment.Data.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AppSettings\**" />
+    <EmbeddedResource Remove="AppSettings\**" />
+    <None Remove="AppSettings\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ewApps.Payment.Common\ewApps.Payment.Common.csproj" />
+    <ProjectReference Include="..\ewApps.Payment.DTO\ewApps.Payment.DTO.csproj" />
+    <ProjectReference Include="..\ewApps.Payment.Entity\ewApps.Payment.Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ewApps.Core.BaseService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.BaseService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.CommonService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.CommonService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.DbConProvider">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.DbConProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.ExceptionService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.ExceptionService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.NotificationService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.NotificationService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.UserSessionService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.UserSessionService.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

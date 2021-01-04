@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <Import Project="..\..\..\ewAppsAssets\AssemblyVersions\CoreServiceVersion.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NodaTime" Version="2.4.7" />
+  </ItemGroup>
+
+</Project>

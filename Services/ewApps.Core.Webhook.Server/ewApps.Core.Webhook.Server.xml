@@ -1,0 +1,780 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.Webhook.Server</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Core.Webhook.Server.WebhookDbContextDesignTimeDbContextFactory">
+            <summary>
+            Context factory responsible to provide the Database instance
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDbContextDesignTimeDbContextFactory.CreateNewInstance(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Core.Webhook.Server.WebhookDBContext})">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Server.PendingWebhookEventDTO">
+            <summary>
+            DTO to send events to the subscribers when demanded
+            Similar to WebhookeventDTO with DeliveryLogId property
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.PendingWebhookEventDTO.ServerName">
+            <summary>
+            Server Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.PendingWebhookEventDTO.SubscriptionName">
+            <summary>
+            Subscription Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.PendingWebhookEventDTO.EventName">
+            <summary>
+            Generated event name 
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.PendingWebhookEventDTO.Payload">
+            <summary>
+            Event Payload as a JSON string
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.PendingWebhookEventDTO.DeliveryLogId">
+            <summary>
+            Event Delivery Log Id
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Server.WebhookEventDTO">
+            <summary>
+            DTO to send events to the subscribers
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDTO.ServerName">
+            <summary>
+            Server Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDTO.SubscriptionName">
+            <summary>
+            Subscription Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDTO.EventName">
+            <summary>
+            Generated event name 
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDTO.Payload">
+            <summary>
+            Event Payload as a JSON string
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Server.WebhookServerSubscriptionDTO">
+            <summary>
+            DTO object to send servername and subscription Name to the 
+            Subscription on shutdown callback
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookServerSubscriptionDTO.ServerName">
+            <summary>
+            Webhook Server NAme
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookServerSubscriptionDTO.SubscriptionName">
+            <summary>
+            Subscription Name
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Server.WebhookEvent">
+            <summary>
+            Entity Class - Linked with Database WebhookEventQueue Table
+            1. It keeps track of all the Events raised by the Webhook Server, 
+            2. Data is immediately entered in to a queue when event is raise.
+            3. It is Scheduler's reponsibility to process and dequeues Events for delivery.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEvent.ID">
+            <summary>
+            Uniue key of the table row
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEvent.EventName">
+            <summary>
+            Name of the Event raised by the Server
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEvent.Payload">
+            <summary>
+            Event payload as JSON string
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEvent.CreatedDate">
+            <summary>
+            Event generation time
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Server.WebhookEventDeliveryLog">
+            <summary>
+            When the server makes an attempt to deliver a WebhookEvent to a subscriber, 
+            it logs delivery details in to the log table. 
+            Note that the delivery may fails, 
+            and is tried multiple times.
+            Delivery status maintains the status of the last delivery.
+            There are three possible statuses, as follows:
+            InProgress: When a new log entry is created, before any delivery attempt.
+            Failure: After a delivery attempt has failed.
+            Success: After a delivery attempt has succeeded.
+            Delivery attempt count is also kept to avoild multiple tries for delivery.
+            If Delivery failed and falls in the criteria that the Scheduler stops delivery the event,
+            the subscriber can gets the event
+            by getting it directly from the server 
+            and this process will also marked the status as Suceess. 
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDeliveryLog.ID">
+            <summary>
+            Uniue key of the table row
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDeliveryLog.ServerName">
+            <summary>
+            Name of the Webhook Server
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDeliveryLog.SubscriptionName">
+            <summary>
+            Name of the subscription
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDeliveryLog.EventName">
+            <summary>
+            Name of the event
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDeliveryLog.Payload">
+            <summary>
+            Event payload as JSon string
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDeliveryLog.SubscriptionCallBack">
+            <summary>
+            Subscriber's Callback endpoint
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDeliveryLog.EventQueueTime">
+            <summary>
+            Time, When the event is queued
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDeliveryLog.DeliveryAttempts">
+            <summary>
+            Number of attempts scheduler makes to delivere event
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDeliveryLog.DeliveryStatus">
+            <summary>
+            Last delivery status: Success, Failure and InProgress
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookEventDeliveryLog.LastDeliveryTime">
+            <summary>
+            Time of Last delivery attempt
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Server.WebhookServer">
+            <summary>
+            A Webhook server primarily raises its events and delivers them to its subscribers.
+            An app may include many Webhook servers. 
+            Each webhook server may have many subscribers,
+            each subscriber subscribing for a sub-set of server's events.
+             </summary>
+             
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookServer.ID">
+            <summary>
+            Uniue key of the table row
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookServer.ServerName">
+            <summary>
+            Name of the webhook Server
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookServer.ServerEvents">
+            <summary>
+             Comma Seperated List of events raised by the server
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookServer.ServerEventsAsList">
+            <summary>
+            List of events raised by the server in form of Generic List 
+            mapped to the Comma Seperated ServerEvents
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Server.WebhookSubscription">
+            <summary>
+            A subscriber may subscribe to events raised by a Webhook Server.
+            It registers its subscription for the targeted Webhook Server.
+            It may subscriber for a subset of the server events.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookSubscription.ID">
+            <summary>
+            Uniue key of the table row
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookSubscription.SubscriptionName">
+            <summary>
+            Name of the subscription
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookSubscription.ServerName">
+            <summary>
+            Webhook server name for which the subscription is made
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookSubscription.SubscribeEvents">
+            <summary>
+            Comma seperated list of Events on whcih this subscription is listening
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookSubscription.CallbackEndPoint">
+            <summary>
+            Callback endpoint for the webhook for this subscription
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookSubscription.ServerShutDownCallBackEndPoint">
+            <summary>
+            Callback endpoint when server is shutting down 
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookSubscription.IsActive">
+            <summary>
+            Subscription is active or not 
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookSubscription.SubscribeEventsAsList">
+            <summary>
+            Event list on which Subscription is listning as the generic list form of the SubscribeEvents
+            </summary>
+            <remarks>It uses comma seperated events and converts in to list</remarks>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Server.WebhookEventDispatcher">
+            <summary>
+            Scheduler service running in background to dequeue Webhook Server's raised events 
+            <para>1. Dequeue Events from EventQueue</para>
+            <para>2. Add Event the Dispatch log for Subscriber</para>
+            <para>3. Deliver Events to subscribers</para>
+            4. Maintain Event Delivery Status
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookEventDispatcher.#ctor(Microsoft.Extensions.Logging.ILogger{ewApps.Core.Webhook.Server.WebhookEventDispatcher},Microsoft.Extensions.DependencyInjection.IServiceScopeFactory,Microsoft.Extensions.Options.IOptions{ewApps.Core.Webhook.Server.WebhookServerAppSettings})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="logger">Default microsoft Logger DI</param>
+            <param name="scopeFactory">System Defined Factory class to get the dependencies</param>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookEventDispatcher.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Starts the dispatch service on application start
+            </summary>
+            <param name="token">Cancellation token</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookEventDispatcher.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Stop triggers when application is shutdown gracefully
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookEventDispatcher.ExecuteDispatcherAsync(System.Threading.CancellationToken)">
+            <summary>
+            Execute operations on the scheduled time
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookEventDispatcher.AddEventsToDeliveryLogAsync(System.Threading.CancellationToken)">
+            <summary>
+            <para>1. It dequeue the events from EventQueue</para>
+            <para>2. Gets event Server/Subscribers</para>
+            <para>3. Add the Events to the Delivery Log</para>
+            </summary>
+            <param name="stoppingToken">Cancellation Token</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookEventDispatcher.DispatchEventsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Send events to subscribers in the batch
+            </summary>
+            <param name="token">Cancellation Token</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookEventDispatcher.DispatchEventToSubscriptionAsync(System.Collections.Generic.List{ewApps.Core.Webhook.Server.WebhookEventDTO},System.String,System.Threading.CancellationToken)">
+            <summary>
+            Dispatch Events by Http Client to Subscribers in batch
+            </summary>
+            <param name="events">List of webhook Event DTOs</param>
+            <param name="subscriptionEndPoint">Subscription End point for Http Call</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Boolean for success</returns>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Server.WebhookServerController">
+            <summary>
+            It handles all request coming for webhook
+            As this is in a seperate dll the implementor has to Add this dll as part of application
+            Using following code -
+            <code> 
+            Public void ConfigServices(IServiceCollection services)
+                 services.AddMVC().AddApplicationPart(Assembly.Load(new AssemblyName("Name"));
+            </code>
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerController.#ctor(Microsoft.Extensions.Logging.ILogger{ewApps.Core.Webhook.Server.WebhookServerController},ewApps.Core.Webhook.Server.WebhookServerManager)">
+            <summary>
+            This is the constructor with webhookManager dependancy injection
+            </summary>
+            <param name="WebhookServerManager">WebhookServerManager</param>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerController.GetWebhookServersAsync">
+            <summary>
+            Get all the Servers defined with this WebhookHost.
+            </summary>
+            <returns>List of Webhook Servers</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerController.AddWebhookSubscriptionAsync(ewApps.Core.Webhook.Server.WebhookSubscription,System.Threading.CancellationToken)">
+            <summary>
+            Add webhook subscription
+            </summary>
+            <returns>Added Webhook subscription</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerController.UpdateWebhookSubscriptionAsync(ewApps.Core.Webhook.Server.WebhookSubscription)">
+            <summary>
+            Update webhook subscription
+            </summary>
+            <returns>Updated Webhook subscription</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerController.RemoveWebhookSubscriptionAsync(ewApps.Core.Webhook.Server.WebhookServerSubscriptionDTO)">
+            <summary>
+            Delete webhook subscription
+            </summary>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerController.SynchronizeSubscription(ewApps.Core.Webhook.Server.WebhookServerSubscriptionDTO,System.Threading.CancellationToken)">
+            <summary>
+            It synschronizes the subscription for its availability.
+            All the pending events for delivery are marked available for delivery and picked up by the scheduler in next cycle.
+            </summary>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerController.RaiseEvent(System.Threading.CancellationToken)">
+            <summary>
+            RaiseEvent just for Test
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerController.GetPendingEventsForSubscriptionAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Add webhook subscription
+            </summary>
+            <returns>Added Webhook subscription</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerController.MarkPendingEventsSucessAsync(System.Collections.Generic.List{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+            Add webhook subscription
+            </summary>
+            <returns>Added Webhook subscription</returns>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Server.WebhookServerManager">
+            <summary>
+            WebhookServerManager class manages all Webhook Servers in the app.
+            It is a singleton class. It provides support for:
+            (1) Manage all Webhook servers.
+            (2) Manage subscriptions.  
+            (3) Handle all events raised by Webhook servers
+            (4) Raises Server Start Event on Initialization.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.#ctor(ewApps.Core.Webhook.Server.WebhookDBContext,Microsoft.Extensions.Options.IOptions{ewApps.Core.Webhook.Server.WebhookServerAppSettings},Microsoft.Extensions.Logging.ILogger{ewApps.Core.Webhook.Server.WebhookServerManager})">
+            <summary>
+            Webhook Server Manager Constructor
+            </summary>
+            <param name="dbContext">Database Context</param>
+            <param name="appSetting">App setting Options</param>
+            <param name="logger">DI for logger</param>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookServerManager.IsInitialized">
+            <summary>
+            Checks webhook server manager initialization is completed or not.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.InitializeLocalServerCache">
+            <summary>
+            Initialize the local cache from Database
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.GetAllWebhookServersAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets all the WebhookServers defined by host
+            </summary>
+            <param name="token"> cancellation Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.AddWebhookServerAsync(ewApps.Core.Webhook.Server.WebhookServer,System.Threading.CancellationToken)">
+            <summary>
+            Adds Webhook Server
+            </summary>
+            <param name="webhookServer">Webhook server defination that need to be added</param>
+            <param name="token"> cancellation Token</param>
+            <returns>Added webhookServer Entity</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.UpdateWebhookServerAsync(ewApps.Core.Webhook.Server.WebhookServer,System.Threading.CancellationToken)">
+            <summary>
+            Updates webhook Server
+            </summary>
+            <param name="webhookServer">Webhook server defination that need to be updated</param>
+            <param name="token"> cancellation Token</param>
+            <returns>Updated webhookServer Entity</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.DeleteWebhookServerAsync(ewApps.Core.Webhook.Server.WebhookServer,System.Threading.CancellationToken)">
+            <summary>
+            Deletes webhook Server along with all ites subscriptions
+            </summary>
+            <param name="webhookServer">Webhook server defination that need to be deleted</param>
+            <param name="token"> cancellation Token</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.RaiseWebhookEventAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Process raised event by adding it to the event queue.
+            </summary>
+            <param name="eventName">Event name </param>
+            <param name="payload">Object involve in the action</param>
+            <param name="token">cancellation Token</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.RaiseWebhookEvent(System.String,System.Object)">
+            <summary>
+            Process raised event by adding it to the event queue.
+            </summary>
+            <param name="eventName">Event name </param>
+            <param name="payload">Object involve in the action</param>
+            <returns>Void</returns>
+            <remarks>Synchronous version of RaiseWebhook Event</remarks>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.InitializeLocalSubscriptionCache">
+            <summary>
+            Initialize the local cache from Database
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.GetAllWebhookSubscriptionsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets all the WebhookSubscriptions 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.AddWebhookSubscriptionAsync(ewApps.Core.Webhook.Server.WebhookSubscription,System.Threading.CancellationToken)">
+            <summary>
+            Adds Webhook Subscription
+            </summary>
+            <param name="webhookSubscription"> Webhook Subscription object that need to be added</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Added Subscription Entity</returns>
+            <remarks>Subscription Name is suppose to be unique and if Subscription already exist for the Server Existing Subscription will be used.</remarks>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.UpdateWebhookSubscriptionAsync(ewApps.Core.Webhook.Server.WebhookSubscription,System.Threading.CancellationToken)">
+            <summary>
+            Updates webhook Subscription
+            </summary>
+            <param name="webhookSubscription"> Webhook Subscription object that need to be updated</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Updated subscription Entity</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.DeleteWebhookSubscriptionAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Deletes webhook Subscription
+            </summary>
+            <param name="serverName"> Server NAme</param>
+            <param name="SubscriptionName"> Subscription NAme</param>
+            <param name="token">Cancellation Token</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.GetWebhookServersByEvent(System.String)">
+            <summary>
+            Gets all the WebhookServers for the Event
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.GetWebhookSubscriptionsByEvent(System.String,System.String)">
+            <summary>
+            Gets all the WebhookSubscriptions of Event for given server
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.GetWebhookEventQueueAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets all the WebhookServers for the Event
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.DeleteWebhookEventAsync(ewApps.Core.Webhook.Server.WebhookEvent,System.Threading.CancellationToken)">
+            <summary>
+            Deletes webhook Event
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.GetPendingDeliveryLogAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets all the pending event by subscription
+            </summary>
+            <returns>List<WebhookEvent></WebhookEvent></returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.GetWebhookDeliveryLogForDispatchAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets all the pending event by subscription
+            </summary>
+            <returns>List<WebhookEvent></WebhookEvent></returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.MarkPendingDeliveryLog(System.Collections.Generic.List{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+            Mark the list of events success by Client - Not used
+            </summary>
+            <param name="eventLogIds">List of Delivery log id </param>
+            <param name="token">Cancellation Token</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.AddWebhookEventToDeliveryLogAsync(ewApps.Core.Webhook.Server.WebhookSubscription,ewApps.Core.Webhook.Server.WebhookEvent)">
+            <summary>
+            Adds Event to WebhookEventDeliveryLog
+            <para>1. Generate DeliveryLogobject from EventQueue</para>
+            <para>2. Add to Delivery Log</para>
+            <para>3. Remove/Dequeue the Event from EventQueue</para>
+            </summary>
+            <param name="subscription">Webhook Subscription for the Event</param>
+            <param name="webhookEvent">Webhook Event to Deliver</param>
+            <returns>Void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.UpdateDeliveryLogForInitAsync(ewApps.Core.Webhook.Server.WebhookEventDeliveryLog,System.Threading.CancellationToken)">
+            <summary>
+            Update the Delivery Log item for Subscription Initialization, 
+            So that It can be processed again by scheduler
+            </summary>
+            <param name="log">Delivery Log Object to be updated</param>
+            <param name="token">Cancellation Token</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.UpdateEventToDeliveryLogAsync(System.Collections.Generic.List{ewApps.Core.Webhook.Server.WebhookEventDeliveryLog},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Update events to Delivery log for Success/Failure
+            </summary>
+            <param name="deliveryLog">List of delivery log to be updated</param>
+            <param name="isSuccess">Mark the Delivery Log as Sucess or failure</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.ProcessServerStart">
+            <summary>
+            Raise Server start Event on Server Initialization
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookServerManager.ProcessServerShutDownASync(System.Threading.CancellationToken)">
+            <summary>
+            Notify all the subscriptions about the server shutdown
+            </summary>
+            <param name="token">Cancellation Token</param>
+            <returns>void</returns>
+            <remarks>Should be called from graceful shutdown event
+            Consider the IhostService StopAsyn iscalled on Shuting down, so called from there</remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ewApps.Core.Webhook.Server.WebhookServerManager.ServerShutDownNotificationAsync(System.String,System.String,System.String,System.Threading.CancellationToken)" -->
+        <member name="T:ewApps.Core.Webhook.Server.WebhookServerMiddleware">
+            <summary>
+            Not used - This Middleware will check all incoming request for the 
+            Webhook Server and handles it.
+            Not in Use
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Server.WebhookEventHelper">
+            <summary>
+            Helper class to Centralize all the logic for delivery log
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookEventHelper.GetDeliveryLogObject">
+            <summary>
+            Creates new Object for Delivery log
+            </summary>
+            <returns> WebhookEventDeliveryLog object</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookEventHelper.SetDeilveryLogForSucess(ewApps.Core.Webhook.Server.WebhookEventDeliveryLog)">
+            <summary>
+            Sets the Delivery log for Sucess Status
+            </summary>
+            <param name="obj">Delivery Log object </param>
+            <returns>Updated Delivery log Object</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookEventHelper.SetDeilveryLogForInit(ewApps.Core.Webhook.Server.WebhookEventDeliveryLog)">
+            <summary>
+            Sets the Delivery Log Object as New delivery Log
+            </summary>
+            <param name="obj"> Object that need to be Updated</param>
+            <returns>Updated object</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookEventHelper.MarkDeilveryLogForSuccess(ewApps.Core.Webhook.Server.WebhookEventDeliveryLog)">
+            <summary>
+            Sets the object for Sucessful Delivery/Dispatch
+            </summary>
+            <param name="obj">Object need to be updated</param>
+            <returns>Updated Object</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookEventHelper.MarkDeilveryLogForFailure(ewApps.Core.Webhook.Server.WebhookEventDeliveryLog)">
+            <summary>
+            Set the Object for Failure DElivery
+            </summary>
+            <param name="obj"> Object need to be Updated</param>
+            <returns>Updated Object</returns>
+        </member>
+        <member name="F:ewApps.Core.Webhook.Server.WebhookEventHelper.PendingForDispatchDefault">
+            <summary>
+            Predicate/Condition to get the Delivery log for dispatch by Scheduler
+            1. Entry should not be older then 24 hours
+            2. Should have max 5 attempts for delivery if has failure status
+            3. or item is still in Progress status
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.Webhook.Server.WebhookEventHelper.PendingForDispatchForced">
+            <summary>
+            Predicate/Condition to get the Delivery log failed to deliver
+            1. Entry should be with Failure status
+            2. or last delivery time is less then 24 hours with IN progress status
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Server.WebhookDBContext">
+            <summary>
+            Database context for Webhook Operations  for
+            WebhookServer
+            Webhook Subscriptions
+            WebhookEventQueue
+            WebhookEventDeliveryLog
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Core.Webhook.Server.WebhookDBContext},Microsoft.Extensions.Options.IOptions{ewApps.Core.Webhook.Server.WebhookServerAppSettings})">
+            <summary>
+            Constructor with AppSetting
+            </summary>
+            <param name="options"></param>
+            <param name="appSetting"></param>
+            <param name="loggingService"></param>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Defines all the configuratiion option for the Database
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookDBContext.WebhookServers">
+            <summary>
+            Webhook Server DataSet
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookDBContext.WebhookSubscriptions">
+            <summary>
+            Subscriptions DataSet
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookDBContext.WebhookEventQueue">
+            <summary>
+            Server Event Queue
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Server.WebhookDBContext.WebhookEventDeliveryLog">
+            <summary>
+            Server Delivery Queue
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.GetAllWebhookServersAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get list of all the Webhook Servers
+            </summary>
+            <param name="token">Cancellation Token</param>
+            <returns>List of Webhook Server defined with this Host</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.GetAllWebhookServers">
+            <summary>
+            GEt List of All Webhook Servers defined with this Host.
+            </summary>
+            <returns>List of Webhook Server object</returns>
+            <remarks> Synschronous version</remarks>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.GetWebhookServerAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets Webhook Server for the Given Name 
+            </summary>
+            <param name="webhookServerName">Wehbook Server name</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Webhook Server Object</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.GetAllWebhookSubscriptionsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get all Subscriptions defined with host Server
+            </summary>
+            <param name="token">Cancellation Token</param>
+            <returns>List of Webhook Subscription object</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.GetAllWebhookSubscriptions">
+            <summary>
+            Get all Subscriptions defined with host Server
+            </summary>
+            <param name="token">Cancellation Token</param>
+            <returns>List of Webhook Subscription object</returns>
+            <remarks>Synschronous Version</remarks>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.GetWebhookSubscriptionAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets webhook Subscription by the server name
+            </summary>
+            <param name="webhookServerName">Server NAae</param>
+            <param name="webhookSubscriptionName">Subscription Name</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Webhook Subscription object</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.GetWebhookEventQueueAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets all the event from Event queue,which are pending for dispatch
+            </summary>
+            <param name="token">Cancellation Token</param>
+            <returns>List of WebhookEvent Object</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.DeleteWebhookEventAsync(ewApps.Core.Webhook.Server.WebhookEvent,System.Threading.CancellationToken)">
+            <summary>
+            Deletes the given webhookEvents
+            </summary>
+            <param name="webhookEvent">webhook Event oject to be deleted</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.GetWebhookDeliveryLogForDispatchAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets event from Delivery log for Dispatch
+            </summary>
+            <returns>List of WebhookEventDeliveryLog object</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.GetPendingWebhookDeliveryLogAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets pending events from Delivery log taht not dispatched by Scheduler
+            </summary>
+            <returns>List of webhookEventDeliveryLog Pending for Dispatch</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.AddEventToDeliveryLogAsync(ewApps.Core.Webhook.Server.WebhookEventDeliveryLog)">
+            <summary>
+            Add events to Delivery log for Dispatch
+            </summary>
+            <param name="deliveryLog">Delivery log object to be added</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Server.WebhookDBContext.UpdateEventToDeliveryLogAsync(System.Collections.Generic.List{ewApps.Core.Webhook.Server.WebhookEventDeliveryLog},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Update events to Delivery log for Success/Failure
+            </summary>
+            <param name="deliveryLog">List of delivery log to be updated</param>
+            <param name="isSuccess">Mark the Delivery Log as Sucess or failure</param>
+            <returns>void</returns>
+        </member>
+    </members>
+</doc>

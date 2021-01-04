@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Payment.Entity</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Payment.Entity.Payment">
+            <summary>
+            Contains payment table property.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.BusinessId">
+            <summary>
+            ewApps Business Id (corresponds to MerchantId)
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.PartnerId">
+            <summary>
+            ewApps Partner Id (corresponds to CustomerId)
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.Amount">
+            <summary>
+            The transaction value (or amount)
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.Description">
+            <summary>
+            Description of the transaction
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.Type">
+            <summary>
+            String ('debit', 'credit')
+            Debit is ACH transaction that is intended to withdraw funds from a Receiver’s account 
+            for deposit into Merchant’s Settlement Account
+            Credit is ACH transaction that is intended to deposit funds into a Receiver’s account 
+            which has been withdrawn from Merchant’s Settlement Account.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.CheckNumber">
+            <summary>
+            The check_number is the identifying number of a check
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.CheckImageFront">
+            <summary>
+            Front image copy of the check associated with the account as Base64 encoded string
+            Needed for POP, ICL, BOC
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.CheckImageBack">
+            <summary>
+            Back image copy of the check associated with the account as Base64 encoded string
+            Needed for POP, ICL, BOC
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.CustomerName">
+            <summary>
+            Full customer credentials which includes name, routing number, account number and account type, or customer id token that begins with prefix 'cus_xxxxxxxxxxx'.
+            An object: either id or whole object with fields: name, account_number, routing_number, account_type
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.OriginationDate">
+            <summary>
+            Date of transaction origination
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.LastStatusUpdateDate">
+            <summary>
+            Last known status update date/time
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.LastTransactionStatusId">
+            <summary>
+            Last Known Status record Id
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.Status">
+            <summary>
+            Last known status value
+            
+            Possible values:
+            'A', Pending, 
+            The transaction has been initiated and accepted for processing by VeriCheck.
+            Transactions can be voided while in 'Pending' status.
+            Transactions automatically change from 'Pending' status at 6PM Eastern Time.
+            
+            'B', Originated
+            Transaction has been pulled from the system for processing through the Federal Reserve.
+            Transaction may not be reversed or voided in this state
+            
+            'R', Returned
+            Transaction has been returned by the customer's bank.
+            For more information on types and reasons for returns, see: http://www.vericheck.com/ach-return-codes/
+            
+            'S', Settled
+            Transaction has been funded to the Merchant's Bank.
+            Transaction can be reversed/refunded in this state*/
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.Reason">
+            <summary>
+            Last known status reason, if any
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.AppServiceId">
+            <summary>
+            Id of AppService table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.Payment.AppServiceAttributeId">
+            <summary>
+            Id of AppServiceAttribute table. 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.PaymentInvoiceLinking.PaymentId">
+            <summary>
+            Invoice payment transection id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.PaymentInvoiceLinking.Amount">
+            <summary>
+            The transaction value (or amount)
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.PaymentInvoiceLinking.InvoiceId">
+            <summary>
+            ewApps Invoice Id for which the transaction is issued
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Entity.PaymentLog">
+            <summary>
+            Contains PaymentLog table property.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.PaymentLog.ClientIP">
+            <summary>
+            Client Ip address where Payment done 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.PaymentLog.ClientBrowser">
+            <summary>
+            Client Browser Information where Payment Done 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.PaymentLog.ClientOS">
+            <summary>
+            Client Operating System Information where Payment Done 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.PaymentLog.PaymentId">
+            <summary>
+            payment transection id.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Entity.RecurringPayment">
+            <summary>
+            Contains recurring payment table property.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.ID">
+            <summary>
+            ewApps recurring payment primary Id 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.RecurringPeriod">
+            <summary>
+            ewApps recurring period 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.RecurringTerms">
+            <summary>
+            ewApps recurring terms
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.StartDate">
+            <summary>
+            start date 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.EndDate">
+            <summary>
+            end date 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.RemainingTermCount">
+            <summary>
+            remaining term count
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.NextPaymentdate">
+            <summary>
+            next payment date 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.CustomerId">
+            <summary>
+            customer Id 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.OrderId">
+            <summary>
+            order Id 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.TermAmount">
+            <summary>
+            Amount for each pay.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.TotalAmount">
+            <summary>
+            Total amount to pay
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.Status">
+            <summary>
+            Active/Inactive
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.InvoiceTax">
+            <summary>
+            Tax apply on each pay
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPayment.CustomerAccountId">
+            <summary>
+            Customer Account detail id.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.Entity.RecurringPayment.Validate(System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData}@)">
+            <summary>
+            Validating Recurring Payment.
+            </summary>
+            <param name="brokenRules"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Entity.RecurringPayment.BrokenRules(ewApps.Payment.Entity.RecurringPayment)">
+            <inheritdoc />
+        </member>
+        <member name="T:ewApps.Payment.Entity.RecurringPaymentLog">
+            <summary>
+            Contains payment table property.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPaymentLog.ID">
+            <summary>
+            ewApps recurring payment primary Id 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPaymentLog.RecurringPaymentId">
+            <summary>
+            recurring payment id 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPaymentLog.ScheduledDate">
+            <summary>
+            scheduled date 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPaymentLog.ProcessingDate">
+            <summary>
+            processing date 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPaymentLog.Status">
+            <summary>
+            status
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPaymentLog.CreatedDate">
+            <summary>
+            created date 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.Entity.RecurringPaymentLog.ModifiedDate">
+            <summary>
+            modified date 
+            </summary>
+        </member>
+    </members>
+</doc>

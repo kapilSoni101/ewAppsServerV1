@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Shipment.DS</name>
+    </assembly>
+    <members>
+        <member name="M:ewApps.Shipment.DS.ICarrierAccountDS.AddUpdateCarrierAccountInfoAsync(System.Collections.Generic.List{ewApps.Shipment.DTO.AppServiceAccDetailIdDTO},System.Threading.CancellationToken)">
+            <summary>
+            add/update/delete shipper account info in connector.
+            </summary>
+            <param name="listAddUpdateAccount"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Shipment.DS.ICarrierAccountDS.AddUpdateShipperAccountDetailAsync(ewApps.Shipment.DTO.ShipperAccountDTO,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Save carrier account detail for shipper.
+            </summary>
+            <param name="shipperAccountRequestDTO"> entity to be added</param>
+            <param name="isAdd">Whether add/update account detail.</param>
+            <returns>return account detail for shipper.</returns>
+        </member>
+        <member name="M:ewApps.Shipment.DS.ICarrierAccountDS.DeleteShipperAccountDetailAsync(ewApps.Shipment.DTO.ShipperAccountDTO,System.Threading.CancellationToken)">
+            <summary>
+            Delete shipper account detail.
+            </summary>
+            <param name="shipperAccountRequestDTO"> shipper account to delete</param>
+        </member>
+        <member name="M:ewApps.Shipment.DS.ICarrierAccountDS.GetShipperAccountListAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get shipper account list by shipperid and carriercode.
+            </summary>
+            <param name="shipperId">Shipperid, for example TenantId or CustomerId.</param>
+            <param name="carrierCode">CarrierCode for example FedEx, UPS etc.</param>
+            <returns>Added entity</returns>
+        </member>
+        <member name="T:ewApps.Shipment.DS.ICarrierPackageDetailDS">
+            <summary>
+            Represents all the operations to be performed on CarrierPackageDetail entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.IFavouriteShipmentPkgSettingDS">
+            <summary>
+            Represents all the operations to be performed on FavourateShipmentPkgSetting entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.IPackageMasterDS">
+            <summary>
+            Represents all the operations to be performed on PackageMaster entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.IRoleDS">
+            <summary>
+            Responsible for exposing all the methods that are intrecting with the DB for retriving the data related to Role entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.DS.IRoleDS.GetAdminRoleIdByAppIdAndUserTypeAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get admin rol by application id.
+            </summary>
+            <param name="appId">Unique application id.</param>
+            <param name="userType">UserType</param>
+            <param name="token">Async token</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Shipment.DS.IRoleDS.GetOrCreateRoleAsync(System.Int64,System.Guid,System.Int32,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Creates the role if not exists else retuen the existinf roleId.
+            </summary>
+            <param name="userPermissionbitMask">permission bit mask of the user</param>
+            <param name="appId">appliation identitfier of the user</param>
+            <param name="userType">User tyep of the user</param>
+            <param name="loginTenantUserId">Login user tenantUser id to identitify the user</param>
+            <param name="token">canclation token for the async methods</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Shipment.DS.IRoleDS.GetEntityByAppUserAndAppId">
+            <summary>
+            Gets the role entity by appid and userid.
+            </summary>
+            <returns>Role entity.</returns>
+        </member>
+        <member name="T:ewApps.Shipment.DS.IRoleLinkingDS">
+            <summary>
+            Responsible for exposing all the methods that are intrecting with the DB for retriving the data related to RoleLinking entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.DS.IRoleLinkingDS.AddShipmentRolelinkingAsync(ewApps.Shipment.DTO.TenantUserAppManagmentDTO,System.Threading.CancellationToken)">
+            <summary>
+            Adds the user rolelinking for the shipment application.
+            </summary>
+            <param name="roleLinkingDTO">Data trasfer object collection of the data required for the creating the rolelinkin of the user.</param>
+            <param name="cancellationToken">cacelllation token for the therading.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Shipment.DS.ISalesOrderPkgDS">
+            <summary>
+            Represents all the operations to be performed on SalesOrderPackageDS entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.ISalesOrderPkgItemDS">
+            <summary>
+            Represents all the operations to be performed on SalesOrderPkgDetail entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.IShipmentAppServiceDS">
+            <summary>
+            Represents all the operations to be performed on VerifiedAddress entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.IShipmentDS">
+            <summary>
+            Represents all the operations to be performed on Shipment entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.IShipmentItemDS">
+            <summary>
+            Represents all the operations to be performed on Shipment entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.IShipmentPkgDS">
+            <summary>
+            Represents all the operations to be performed on ShipmentPackage entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.IShipmentPkgItemDS">
+            <summary>
+            Represents all the operations to be performed on ShipmentPkgDetail entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.IVerifiedAddressDS">
+            <summary>
+            Represents all the operations to be performed on VerifiedAddress entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.DS.CarrierAccountDS.AddUpdateCarrierAccountInfoAsync(System.Collections.Generic.List{ewApps.Shipment.DTO.AppServiceAccDetailIdDTO},System.Threading.CancellationToken)">
+            <summary>
+            add/update/delete shipper account info in connector.
+            </summary>
+            <param name="listAddUpdateAccount"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Shipment.DS.CarrierAccountDS.AddUpdateShipperAccountDetailAsync(ewApps.Shipment.DTO.ShipperAccountDTO,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Save carrier account detail for shipper.
+            </summary>
+            <param name="shipperAccountRequestDTO"> entity to be added</param>
+            <param name="isAdd">Whether add/update account detail.</param>
+            <returns>return account detail for shipper.</returns>
+        </member>
+        <member name="M:ewApps.Shipment.DS.CarrierAccountDS.DeleteShipperAccountDetailAsync(ewApps.Shipment.DTO.ShipperAccountDTO,System.Threading.CancellationToken)">
+            <summary>
+            Delete shipper account detail.
+            </summary>
+            <param name="shipperAccountRequestDTO"> shipper account to delete</param>
+        </member>
+        <member name="M:ewApps.Shipment.DS.CarrierAccountDS.GetShipperAccountFromService(ewApps.Shipment.DTO.AppServiceAcctDetailDTO,System.String,System.String)">
+            <summary>
+            Get shipper account list by shipperid, shippertype and carriercode.
+            If carriercode is empty then return all supportive carriers account.
+            </summary>
+            <param name="shipperId">Shipperid, for example TenantId or CustomerId.</param>
+            <param name="shipperType">shipper entity type</param>
+            <param name="carrierCode">CarrierCode for example FedEx, UPS, empty etc.</param>
+            <param name="includeDeleted">Include deleted accounts.</param>        
+            <param name="token"></param>
+            <returns>return all accounts list configure for carriers.</returns>
+        </member>
+        <member name="M:ewApps.Shipment.DS.CarrierAccountDS.GetShipperAccountListAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get shipper account list by shipperid and carriercode.
+            </summary>
+            <param name="shipperId">Shipperid, for example TenantId or CustomerId.</param>
+            <param name="carrierCode">CarrierCode for example FedEx, UPS etc.</param>
+            <returns>Added entity</returns>
+        </member>
+        <member name="T:ewApps.Shipment.DS.CarrierPackageDetailDS">
+            <summary>
+            This class performs basic CRUD operation on CarrierPackageDetail entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.DS.CarrierPackageDetailDS.#ctor(ewApps.Shipment.Data.ICarrierPackageLinkingRepository)">
+            <summary>
+            Initialinzing local variables.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.FavouriteShipmentPkgSettingDS">
+            <summary>
+            This class performs basic CRUD operation on FavourateShipmentPkgSetting entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.PackageMasterDS">
+            <summary>
+            This class performs basic CRUD operation on PackageMaster entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.RoleDS">
+            <summary>
+            This class implements standard business logic and operations for role entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.DS.RoleDS.#ctor(ewApps.Shipment.Data.IRoleRepository,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="roleRepository"></param>
+            <param name="unitOfWork"></param>
+            <param name="mapper"></param>
+            <param name="sessionmanager"></param>
+        </member>
+        <member name="M:ewApps.Shipment.DS.RoleDS.GetAdminRoleIdByAppIdAndUserTypeAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Shipment.DS.RoleDS.GetOrCreateRoleAsync(System.Int64,System.Guid,System.Int32,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Shipment.DS.RoleDS.GetEntityByAppUserAndAppId">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.Shipment.DS.RoleLinkingDS">
+            <summary>
+             This class implements standard business logic and operations for roleLinking entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.DS.RoleLinkingDS.#ctor(ewApps.Shipment.Data.IRoleLinkingRepository,ewApps.Shipment.DS.IRoleDS,ewApps.Shipment.Data.IShipmentUnitOfWork)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="roleLinkingRep"></param>
+            <param name="roleDS"></param>
+        </member>
+        <member name="T:ewApps.Shipment.DS.SalesOrderPkgDS">
+            <summary>
+            This class performs basic CRUD operation on SalesOrderPackage entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.SalesOrderPkgItemDS">
+            <summary>
+            This class performs basic CRUD operation on SalesOrderPkgDetail entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.ShipmentAppServiceDS">
+            <summary>
+            This class performs basic CRUD operation on AppService entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.Shipment.DS.ShipmentAppServiceDS.#ctor">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="verifiedAddressRepository"></param>
+            <param name="cacheService"></param>
+        </member>
+        <member name="T:ewApps.Shipment.DS.ShipmentDS">
+            <summary>
+            This class performs basic CRUD operation on Shipment entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.ShipmentItemDS">
+            <summary>
+            This class performs basic CRUD operation on ShipmentItem entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.ShipmentPkgDS">
+            <summary>
+            This class performs basic CRUD operation on ShipmentPackage entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.ShipmentPkgItemDS">
+            <summary>
+            This class performs basic CRUD operation on ShipmentPkgDetail entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.DS.VerifiedAddressDS">
+            <summary>
+            This class performs basic CRUD operation on VerifiedAddress entity.
+            </summary>
+        </member>
+    </members>
+</doc>

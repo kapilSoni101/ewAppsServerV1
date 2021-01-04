@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.RedisLUAServer</name>
+    </assembly>
+    <members>
+        <member name="M:ewApps.Core.RedisLUAServer.Controllers.LUAScriptController.#ctor(ewApps.Core.RedisLUAServer.ILUAScriptExecutor)">
+            <summary>
+            Controller
+            </summary>
+            <param name="executor"></param>
+        </member>
+    </members>
+</doc>

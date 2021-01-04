@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+ <Import Project="..\..\..\ewAppsAssets\AssemblyVersions\CoreServiceVersion.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServer\Services\ewApps.Core.EmailService\ewApps.Core.EmailService.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ewApps.Core.DeeplinkServices\ewApps.Core.DeeplinkServices.csproj" />
+    <ProjectReference Include="..\ewApps.Core.ScheduledJobServices\ewApps.Core.ScheduledJobService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.UserSessionService\ewApps.Core.UserSessionService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.Webhook.Server\ewApps.Core.Webhook.Server.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.Options">
+      <HintPath>..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.options\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,135 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServerV1\BusinessEntity\ewApps.BusinessEntity.DS\ewApps.BusinessEntity.DS.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MimeMapping" Version="1.0.1.17" />
+    <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ewApps.Core.AppDeeplinkService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.AppDeeplinkService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.BaseService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.BaseService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.CommonService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.CommonService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.DeeplinkServices">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.DeeplinkServices.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.DMService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.DMService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.EmailService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.EmailService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.ExceptionService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.ExceptionService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.Money">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.Money.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.NotificationService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.NotificationService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.ServiceProcessor">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.ServiceProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.SMSService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.SMSService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.UniqueIdentityGeneratorService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.UniqueIdentityGeneratorService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.UserSessionService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.UserSessionService.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ewApps.BusinessEntity.CQRSData\ewApps.BusinessEntity.QData.csproj" />
+    <ProjectReference Include="..\ewApps.BusinessEntity.Data\ewApps.BusinessEntity.Data.csproj" />
+    <ProjectReference Include="..\ewApps.BusinessEntity.DTO\ewApps.BusinessEntity.DTO.csproj" />
+    <ProjectReference Include="..\ewApps.BusinessEntity.Entity\ewApps.BusinessEntity.Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Notification\XSL\AS\Dheeraj\CustARInvoiceUpdated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\AS\en\BizUserDraftDeliveryAdd.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\AS\en\BizUserDraftDeliveryUpdate.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\AS\en\BizUserSalesOrderAdd.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\AS\en\BizARInvoiceUpdated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\AS\en\BizUserNewBulkARInvoiceIsGenerated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\AS\Dheeraj\BizUserSalesOrderAdd.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\AS\en\CustUserNewARInvoiceIsGenerated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\AS\en\BizUserNewARInvoiceIsGenerated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\AS\en\ExistingCustomerIsUpdated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\AS\en\BizUserNewContractUpdate.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\AS\en\BizUserNewContractAdd.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\AS\en\NewCustomerIsGenerated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\Email\Dheeraj\CustARInvoiceUpdated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\Email\en\BizARInvoiceUpdated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\Email\en\BizUserSalesOrderAdd.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\Email\en\BizUserSalesOrderAdd.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\Email\en\NewCustomerIsGenerated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\Email\en\BizUserNewARInvoiceIsGenerated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\Email\en\BizUserNewBulkARInvoiceIsGenerated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Notification\XSL\SMS\en\NewARInvoiceIsGenerated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Notification\XSL\Email\Dheeraj\" />
+  </ItemGroup>
+
+</Project>

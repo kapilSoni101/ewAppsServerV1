@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.DeeplinkServices</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Core.DeeplinkServices.BranchAPIInterface">
+            <summary>
+            This class provides the methods to generate any url based on input information.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.BranchAPIInterface.#ctor(ewApps.Core.DeeplinkServices.Link,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.DeeplinkServices.BranchAPIInterface"/> class.
+            </summary>
+            <param name="linkInstance">The link instance.</param>
+        </member>
+        <member name="P:ewApps.Core.DeeplinkServices.BranchAPIInterface.DeepLink">
+            <summary>
+            The link model contains link related data.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.BranchAPIInterface.GetBranchObject">
+            <summary>
+            Gets the branch object.
+            </summary>
+            <returns>Returns 'BranchDeepLinkModel' instance with branch key and deep link data.</returns>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.BranchAPIInterface.GenerateShortURL">
+            <summary>
+            Generates the short URL based on branch key and link data.
+            </summary>
+            <returns>Returns generated short url.</returns>
+        </member>
+        <member name="T:ewApps.Core.DeeplinkServices.BranchDeepLinkModel">
+            <summary>
+            This class model a branch's request to generate short deeplink uri.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.DeeplinkServices.BranchDeepLinkModel.branch_key">
+            <summary>
+            The Branch key string to communicate with branch API.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.DeeplinkServices.BranchDeepLinkModel.data">
+            <summary>
+            The data required to generate deep link through Branch API.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.DeeplinkServices.BranchKeyDecisionPayload">
+            <summary>
+            This class helps to find the branch key.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.DeeplinkServices.BranchKeyDecisionPayload.AppKey">
+            <summary>
+            App key.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.DeeplinkServices.BranchKeyDecisionPayload.UserType">
+            <summary>
+            User type.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.DeeplinkServices.BranchResult">
+            <summary>
+            This class modes response of branch api for short url generation.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.DeeplinkServices.BranchResult.url">
+            <summary>
+            The URL.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.DeeplinkServices.Deeplink">
+            <summary>
+            Sets up data for Deeplink
+            It contains: Actions, One RelativeUrl, Other parameters as K-V pairs
+            It is derived from LINK class from the Commonruntime
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.Deeplink.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.DeeplinkServices.Deeplink"/> class.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.Deeplink.SetLinkParameters(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Sets the deeplink parameters.
+            Extract the ACtions and RelativeURL from other parameters..
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.DeeplinkServices.DeepLinkModel">
+            <summary>
+            This class model a request data required to generate deep link uri.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.DeepLinkModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.DeeplinkServices.DeepLinkModel"/> class and member variables.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.DeeplinkServices.DeepLinkModel.action">
+            <summary>
+            Action list.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.DeeplinkServices.DeepLinkModel.parameters">
+            <summary>
+            Action related parameter list.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.DeeplinkServices.DeeplinkPayload.ModuleId">
+            <summary>
+            The parent module id.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.DeeplinkServices.DeeplinkPayload.EventId">
+            <summary>
+            The event id.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.DeeplinkServices.DeeplinkPayload.DeeplinkInfo">
+            <summary>
+            The deeplink information.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.DeeplinkServices.DeeplinkPayload.DeeplinkInfoList">
+            <summary>
+            Deeplink information list.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.DeeplinkServices.DeeplinkInfo">
+            <summary>
+            This class contains deeplink related information.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.DeeplinkServices.DeeplinkResultSet">
+            <summary>
+            It contains the result from the deeplink generated in a Dictionary for each link
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.DeeplinkServices.DeeplinkResult">
+            <summary>
+            Each link generated from Branch API keepsthe information on DeeplinkURL and DeeplinkJSON
+            For error case we marked the hasDeeplink error flag true.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.DeeplinkServices.DeepLinkResultSetList">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:ewApps.Core.DeeplinkServices.DeeplinkService">
+            <summary>
+            This deeplink serivce is provide service to generate deeplink using third party branch API.
+            </summary>
+            <seealso cref="T:ewApps.Core.DeeplinkServices.IDeeplinkService" />
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.DeeplinkService.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.DeeplinkServices.DeeplinkService"/> class.
+            </summary>
+            <param name="deeplinkApiUrl">The deeplink API URL.</param>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.DeeplinkService.GenerateDeeplinkAsync(ewApps.Core.DeeplinkServices.DeeplinkPayload,System.Threading.CancellationToken)">
+            <summary>
+            Generates deeplinks using Branch.io service protocol. <see cref="!:BranchAPI" />.
+            It setups the return data from Branch.io like URL and jSON data as DeeplinkPayload.
+            Note that input and output Payloads are distinct, not the same.
+            </summary>
+            <param name="payload">The deeplink payload information to generate deeplink.</param>
+            <returns>Returns generated deeplink.</returns>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.DeeplinkService.GetDeeplinkList(ewApps.Core.DeeplinkServices.DeeplinkPayload)">
+            <summary>
+            Generates all the deeplink data and Branch.io link creation.
+            </summary>
+            <param name="payload">Deeplink payload information.</param>
+            <returns>Generated deeplink information.</returns>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.DeeplinkService.AddBranchURL(ewApps.Core.DeeplinkServices.Deeplink,System.String)">
+            <summary>
+            Generates Branch.io data for the deeplink 
+            </summary>
+            <param name="link"></param>
+            <param name="deeplinkJson"></param>
+            <param name="deeplinkUrl"></param>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.DeeplinkService.SetCommonLinkParametersFromPayload(System.String,ewApps.Core.DeeplinkServices.DeeplinkPayload)">
+            <summary>
+            Sets common information from deeplink payload to deeplink payload information.
+            </summary>
+            <param name="deeplinkKey">Key to get data from deeplink info object from deeplink payload.</param>
+            <param name="payload">DeeplinkPayload to read/update information.</param>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.DeeplinkService.SetDependentLinkParameter(System.String,ewApps.Core.DeeplinkServices.DeeplinkPayload,ewApps.Core.DeeplinkServices.DeeplinkResultSet)">
+            <summary>
+            Sets value in the deeplink from the already created deeplinks
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.DeeplinkServices.IDeeplinkService">
+            <summary>
+            Interface for Deeplink
+            This interface is common for all ewApps deeplinks, from various modules.
+            It gathers all data required data for the deeplink.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.IDeeplinkService.GenerateDeeplinkAsync(ewApps.Core.DeeplinkServices.DeeplinkPayload,System.Threading.CancellationToken)">
+            <summary>
+            generates deeplink in the branch and setup the return data from branch like URL and jSON back to deeplink object. 
+            </summary>
+            <param name="deeplinkPayload"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Core.DeeplinkServices.Link">
+            <summary>
+            This class provides common methods properties for link prepration.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.Link.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.DeeplinkServices.Link"/> class and its member variables.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.DeeplinkServices.Link.GetAction">
+            <summary>
+            Action list.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.DeeplinkServices.Link.GetParamaters">
+            <summary>
+            The parameter list.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.DeeplinkServices.Link.GetBaseDesktopURL">
+            <summary>
+            Base desktop url as configured.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.DeeplinkServices.Link.ActionAndPara">
+            <summary>
+            Deeplink model instance contains all related data.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.Link.AddAction(System.String)">
+            <summary>
+            Adds the action.
+            </summary>
+            <param name="action">The action string.</param>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.Link.AddParameter(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+            Adds the parameter.
+            </summary>
+            <param name="parameter">The parameter.</param>
+        </member>
+        <member name="M:ewApps.Core.DeeplinkServices.Link.SetDesktopURL(System.String)">
+            <summary>
+            Sets the desktop URL.
+            </summary>
+            <param name="relativeUrl">The relative URL.</param>
+        </member>
+    </members>
+</doc>

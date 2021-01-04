@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.AppMgmt.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:ewApps.AppMgmt.WebApi.Controllers.AppController.GetApplicationListAsync(System.Boolean,ewApps.AppMgmt.Common.AppSubscriptionModeEnum)">
+            <summary>
+            Gets the application list that matches input parameters.
+            </summary>
+            <param name="active">if set to <c>true</c> [active] only active applications will fetch.</param>
+            <param name="subscriptionMode">The subscription mode to filter applications.</param>
+            <returns>Returns application list that matches given input parameters.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.Controllers.AppController.GetBusinessNameByAppIdAsync(System.Guid,System.Guid)">
+            <summary>
+            Get all the business for the app by AppId.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.Controllers.AppController.GetBusinessNameByAppIdPlatAsync(System.Guid)">
+            <summary>
+            Get all the business for the app by AppId.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.Controllers.AppController.UpdateAppAndServiceAsync(ewApps.AppMgmt.DTO.AppAndServiceDTO)">
+            <summary>
+            Update the app details and its thumbnail.
+            </summary>
+            <param name="appAndServiceDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.Controllers.AppServiceController.UpdateBusinessAppServiceInfoAsync(System.Collections.Generic.List{ewApps.AppMgmt.DTO.PayAppServiceDetailDTO},System.Guid,System.Guid)">
+            <summary>
+            Update the app details and its thumbnail.
+            </summary>
+            <param name="appAndServiceDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.BrandingController.UpdatePlatformBrandingDetail(ewApps.AppMgmt.DTO.BrandingDTO)">
+            <summary>
+            Update Platfrom Branding 
+            </summary>
+            <returns>ResponseModel</returns>
+            <param name="brandingDTO">platform branding model</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.BrandingController.UpdatePublisherBrandingDetail(ewApps.AppMgmt.DTO.BrandingDTO)">
+            <summary>
+            Update Publisher Branding 
+            </summary>
+            <returns>ResponseModel</returns>
+            <param name="brandingDTO">platform branding model</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.BrandingController.UpdatebusinessBrandingDetail(ewApps.AppMgmt.DTO.BusinessBrandingDTO)">
+            <summary>
+            Update Business Branding 
+            </summary>
+            <returns>ResponseModel</returns>
+            <param name="businessbrandingDTO">platform branding model</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.BrandingController.UpdateShipAppBrandingAsync(ewApps.AppMgmt.DTO.AppPortalBrandingDTO)">
+            <summary>
+            Update ship-app Branding 
+            </summary>
+            <returns>ResponseModel</returns>
+            <param name="shipAppBrandingDTO">ship-app branding model</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.BrandingController.UpdatePayAppBrandingAsync(ewApps.AppMgmt.DTO.AppPortalBrandingDTO)">
+            <summary>
+            Update pay-app Branding 
+            </summary>
+            <returns>ResponseModel</returns>
+            <param name="payAppBrandingDTO">pay-app branding model</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.BrandingController.UpdateCustAppBrandingAsync(ewApps.AppMgmt.DTO.AppPortalBrandingDTO)">
+            <summary>
+            Update cust-app Branding 
+            </summary>
+            <returns>ResponseModel</returns>
+            <param name="custAppBrandingDTO">cust-app branding model</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.BrandingController.UpdateVendAppBrandingAsync(ewApps.AppMgmt.DTO.AppPortalBrandingDTO)">
+            <summary>
+            Update vend-app Branding 
+            </summary>
+            <returns>ResponseModel</returns>
+            <param name="vendAppBrandingDTO">vend-app branding model</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.ConfigurationController.#ctor(ewApps.AppMgmt.DS.IConfigurationDS)">
+            <summary>
+            
+            </summary>
+            <param name="configurationDS"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.ConfigurationController.UpdatePublisherConfigurationDetail(ewApps.AppMgmt.DTO.ConfigurationDTO)">
+            <summary>
+            Update Publisher configuration
+            </summary>
+            <returns>ResponseModel</returns>
+            <param name="publisherConfigurationDTO">publisher configuration model</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.SubscriptionPlanController.AddSubscriptionPlanWithAttribute(ewApps.AppMgmt.DTO.SubscriptionAddUpdateDTO,System.Threading.CancellationToken)">
+            <summary>
+            Adds a subscription with services and their attributes.
+            </summary>
+            <param name="addUdpateDTO">add update dto </param>
+            <param name="token">token</param>
+            <returns>Success response objedt..</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.SubscriptionPlanController.UpdateSubscriptionPlanWithAttribute(ewApps.AppMgmt.DTO.SubscriptionAddUpdateDTO,System.Threading.CancellationToken)">
+            <summary>
+            Adds a subscription with services and their attributes.
+            </summary>
+            <param name="addUdpateDTO">add update dto </param>
+            <param name="token">token</param>
+            <returns>Success response objedt..</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.SubscriptionPlanController.DeleteSubscriptionPlanWithAttribute(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a subscription with services and their attributes.
+            </summary>
+            <param name="planId">plan id to delete</param>
+            <param name="token"> token </param>
+            <returns>Success response objedt..</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.SubscriptionPlanController.GetSubscriptionPlanListByAppIdAsync(System.Guid,ewApps.Core.BaseService.BooleanFilterEnum,System.Threading.CancellationToken)">
+            <summary>
+            Gets the subscription plan list by application identifier and plan state.
+            </summary>
+            <param name="appId">The application identifier to get application specific subscription.</param>
+            <param name="planState">The plan state to filter subscription plan.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns subscription plan list that matches the input parameters.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.SubscriptionPlanController.GetSubscriptionPlanListByPlanAndTenantAsync(System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets the subscription plan list by tenant identifier and plan state.
+            </summary>
+            <param name="planState">The plan state to filter subscription plan.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns subscription plan list that matches the input parameters.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.SubscriptionPlanController.GetPlanServiceAndAttributeListByPlanIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the plan service and attribute list of provided plan id.
+            </summary>
+            <param name="planId">The plan identifier to get corresponding service and attributes.</param>
+            <param name="cancellationToken">The cancellation token to cancel async task.</param>
+            <returns>Returns Service and Attributes list corresponding to provided plan id.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.SubscriptionPlanController.GetPubSubscriptionPlanListByStateAsync(System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets the subscription plan list for pub tenant by plan state.
+            </summary>
+            <param name="planState">The plan state to filter subscription plan.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns subscription plan list that matches the input parameters.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.SubscriptionPlanController.GetSubscriptionServiceNameListBySubscriptionPlanIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the subscription service name list by subscription plan identifier asynchronous.
+            </summary>
+            <param name="subsPlanId">The subs plan identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns service name list that matches provided sbuscription plan id.</returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.WebApi.TenantController">
+            <summary>
+            Conatins method to add/update business tenant and supported data.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantController.#ctor(ewApps.AppMgmt.DS.ITenantUpdateForPublisherDS,ewApps.AppMgmt.DS.ITenantSignUpForPublisherDS,ewApps.AppMgmt.DS.ITenantSignUpForCustomerDS,ewApps.AppMgmt.DS.ITenantSignUpForBusinessDS,ewApps.AppMgmt.DS.ITenantUserDS,ewApps.AppMgmt.DS.ITenantForBusinessDS,ewApps.AppMgmt.DS.ITenantUpdateForBusinessDS,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.AppMgmt.DS.ITenantDS,ewApps.AppMgmt.DS.ITenantLinkingDS)">
+            <summary>
+            Initilize local variables.
+            </summary>
+            <param name="tenantBusinessDS">A tenant business wrapper class.</param>
+            <param name="tenantUserDS">Tenant user service class.</param>
+            <param name="customerSignUpDS"></param>
+            <param name="singUpTenantAndTenantUserDS"></param>
+            <param name="tenantForBusinessDS"></param>
+            <param name="tenantUpdateForBusinessDS"></param>
+            <param name="userSessionManager">User session manager.</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantController.BusinessSignupAsync(ewApps.AppMgmt.DTO.BusinessSignUpDTO,System.Threading.CancellationToken)">
+            <summary>
+            Add tenant and its supported entities.
+            </summary>
+            <param name="reqDto">Publisher get request model.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantController.UpdateBusinessAsync(ewApps.AppMgmt.DTO.UpdateTenantModelDTO,System.Threading.CancellationToken)">
+            <summary>
+            Add tenant and its supported entities.
+            </summary>
+            <param name="reqDto">Publisher get request model.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantController.TenantSignUpForCustomerAsync(System.Collections.Generic.List{ewApps.AppMgmt.DTO.TenantSignUpForCustomerReqDTO},System.Threading.CancellationToken)">
+            <summary>
+            Tenants the sign up for customer asynchronous.
+            </summary>
+            <param name="reqDto">The req dto.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantController.GetBusinessUpdateModelAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get tenant model update model creatyed for business.
+            </summary>
+            <param name="tenantId">Tenant Id</param>
+            <param name="token"></param>
+            <returns>return tenant and related entity object for business.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantController.GetTenantByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get tenant by TenantId.
+            </summary>
+            <param name = "tenantId" > Tenant Id</param>
+            <returns>return tenant and related entity </returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantController.GetTenantLinkingByTenantIdAndTypeAsync(System.Guid,ewApps.Core.BaseService.TenantType,System.Threading.CancellationToken)">
+            <summary>
+            Get tenant by TenantId .
+            </summary>
+            <param name="tenantId">Tenant Id</param>        
+            <returns>return tenant and related entity </returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantController.DeleteBusinessAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Delete busines tenant.
+            </summary>
+            <param name="tenantId">Tenantid of business.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantUserController.#ctor(ewApps.AppMgmt.DS.ITenantUserSignUpForPlatformDS,ewApps.AppMgmt.DS.ITenantUserUpdateForPlatformDS,ewApps.AppMgmt.DS.ITenantUserForPlatformDS,ewApps.AppMgmt.DS.ITenantUserForPublisherDS,ewApps.AppMgmt.DS.ITenantUserSignUpForPublisherDS,ewApps.AppMgmt.DS.ITenantUserDeleteForPlatformDS,ewApps.AppMgmt.DS.ITenantUserSignUpForBusiness,ewApps.AppMgmt.DS.ITenantUserUpdateForPublisherDS,ewApps.AppMgmt.DS.ITenantUserDeleteForPublisherDS,ewApps.AppMgmt.DS.ITenantUpdateForCustomerDS,ewApps.AppMgmt.DS.ITenantUserUpdateForBusinessDS,ewApps.AppMgmt.DS.ITenantUserExtDS,ewApps.AppMgmt.DS.ITenantUserSignUpForCustomer,ewApps.AppMgmt.DS.ITenantUserDeleteForBusinessDS,ewApps.AppMgmt.DS.ITenantUserDeleteForCustomerDS,ewApps.AppMgmt.DS.ITenantUserUpdateForCustomerDS,ewApps.AppMgmt.DS.ITenantUpdateForVendorDS)">
+            <summary>
+            Initialize user realted data services.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantUserController.AddPlatformUser(ewApps.AppMgmt.DTO.TenantUserSignUpDTO)">
+            <summary>
+            Add platform user.
+            </summary>
+            <param name="tenantUserSignUpDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantUserController.AddPublisherUser(ewApps.AppMgmt.DTO.TenantUserSignUpDTO)">
+            <summary>
+            Add platform user.
+            </summary>
+            <param name="tenantUserSignUpDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantUserController.AddBusinessUser(ewApps.AppMgmt.DTO.TenantUserSignUpDTO)">
+            <summary>
+            Add Busienss user.
+            </summary>
+            <param name="tenantUserSignUpDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantUserController.AddCustomerUSer(ewApps.AppMgmt.DTO.TenantUserSignUpDTO)">
+            <summary>
+            Add Busienss user.
+            </summary>
+            <param name="tenantUserSignUpDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantUserController.AddVendorUser(ewApps.AppMgmt.DTO.TenantUserSignUpDTO)">
+            <summary>
+            Add Vendor user.
+            </summary>
+            <param name="tenantUserSignUpDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantUserController.AddCustomerUserFromCustomerSetup(ewApps.AppMgmt.DTO.TenantUserSignUpDTO)">
+            <summary>
+            Add Busienss user.
+            </summary>
+            <param name="tenantUserSignUpDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantUserController.GetUserInfoByIdAsync(System.Guid)">
+            <summary>
+            Get User Detail By User Id.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.TenantUserController.Update(ewApps.AppMgmt.DTO.TenantUserProfileDTO)">
+            <summary>
+            Update Profile
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.WebApi.UserTenantLinkingController.GetTenantPrimaryUserAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get  tenant primary user.
+            </summary>
+            <param name="tenantid"></param>
+            <param name="userType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.ApiService.Controllers.AuthenticationController">
+            <summary>
+            Authenticate Controller expose all authenticate related api's.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.ApiService.Controllers.AuthenticationController.#ctor(ewApps.AppMgmt.DS.ITenantDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppMgmt.ApiService.Controllers.AuthenticationController"/> class.
+            </summary>
+            <param name="tenantDS">The authenticate ds.</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.ApiService.Controllers.AuthenticationController.GetTenantInfoByTenantIdAsync(System.Guid,System.Int32)">
+            <summary>
+            Get tenant info details by tenantid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.ApiService.Controllers.AuthenticationController.GetTenantInfoBySubdomainAsync(System.String,System.Int32)">
+            <summary>
+            Get tenant info details by subdomain
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

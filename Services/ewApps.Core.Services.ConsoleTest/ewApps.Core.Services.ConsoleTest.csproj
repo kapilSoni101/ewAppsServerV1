@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <Import Project="..\..\..\ewAppsAssets\AssemblyVersions\CoreServiceVersion.props" />
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServer\Services\ewApps.Core.Services.ConsoleTest\ewApps.Core.Services.ConsoleTest.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ewApps.Core.AppDeeplinkService\ewApps.Core.AppDeeplinkService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.BaseService\ewApps.Core.BaseService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.CommonService\ewApps.Core.CommonService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.DbConProvider\ewApps.Core.DbConProvider.csproj" />
+    <ProjectReference Include="..\ewApps.Core.DeeplinkServices\ewApps.Core.DeeplinkServices.csproj" />
+    <ProjectReference Include="..\ewApps.Core.DM\ewApps.Core.DMService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.EmailService\ewApps.Core.EmailService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.ExceptionMiddleware\ewApps.Core.ExceptionService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.ExportService\ewApps.Core.ExportService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.GeocodingService\ewApps.Core.GeocodingService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.Money\ewApps.Core.Money.csproj" />
+    <ProjectReference Include="..\ewApps.Core.NotificationService\ewApps.Core.NotificationService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.ScheduledJobServices\ewApps.Core.ScheduledJobService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.SerilogLoggingService\ewApps.Core.SerilogLoggingService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.ServiceProcessor\ewApps.Core.ServiceProcessor.csproj" />
+    <ProjectReference Include="..\ewApps.Core.Services.DI\ewApps.Core.Services.DI.csproj" />
+    <ProjectReference Include="..\ewApps.Core.SignalRService\ewApps.Core.SignalRService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.SMSService\ewApps.Core.SMSService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.TimeZoneService\ewApps.Core.TimeZoneService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.UniqueIdentityGeneratorService\ewApps.Core.UniqueIdentityGeneratorService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.UserSessionService\ewApps.Core.UserSessionService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.Webhook.Server\ewApps.Core.Webhook.Server.csproj" />
+    <ProjectReference Include="..\ewApps.Core.Webhook.Subscription\ewApps.Core.Webhook.Subscription.csproj" />
+  </ItemGroup>
+
+</Project>

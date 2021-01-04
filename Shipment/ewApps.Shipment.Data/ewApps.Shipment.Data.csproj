@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<Import Project="..\..\..\ewAppsAssets\AssemblyVersions\ServerVersion.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServerV1\Shipment\ewApps.Shipment.Data\ewApps.Shipment.Data.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Repository\SalesOrderRepository.cs~RF2f5691a3.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ewApps.Shipment.Common\ewApps.Shipment.Common.csproj" />
+    <ProjectReference Include="..\ewApps.Shipment.DTO\ewApps.Shipment.DTO.csproj" />
+    <ProjectReference Include="..\ewApps.Shipment.Entity\ewApps.Shipment.Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ewApps.Core.BaseService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.BaseService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.DbConProvider">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.DbConProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.NotificationService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.NotificationService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.UserSessionService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.UserSessionService.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+
+</Project>

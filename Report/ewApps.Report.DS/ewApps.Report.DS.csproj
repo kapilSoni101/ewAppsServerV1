@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<Import Project="..\..\..\ewAppsAssets\AssemblyVersions\ServerVersion.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServer\Report\ewApps.Report.DS\ewApps.Report.DS.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ewApps.Report.Common\ewApps.Report.Common.csproj" />
+    <ProjectReference Include="..\ewApps.Report.DTO\ewApps.Report.DTO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ewApps.Core.BaseService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.BaseService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.CommonService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.CommonService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.Money">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.Money.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.SerilogLoggingService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.SerilogLoggingService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.UserSessionService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.UserSessionService.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

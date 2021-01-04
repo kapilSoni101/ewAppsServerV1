@@ -1,0 +1,674 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Shipment.Entity</name>
+    </assembly>
+    <members>
+        <member name="P:ewApps.Shipment.Entity.CarrierPackageDetail.CarrierCode">
+            <summary>
+            Carrier Code for package
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.CarrierPackageDetail.CarrierPackageCode">
+            <summary>
+            Package Code
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.CarrierPackageDetail.PackageMasterId">
+            <summary>
+            Package Master ID
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.CarrierPackageDetail.ContainerType">
+            <summary>
+            Carrier Package ContainerType 
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.CarrierPackageLinking">
+            <summary>
+            CarrierPackageDetail table represting all Shipment CarrierPackageDetail Data Information.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.CarrierPackageLinking.CarrierCode">
+            <summary>
+            The Code of Carrier  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.CarrierPackageLinking.CarrierPackageCode">
+            <summary>
+            The Code of Carrier Package
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.CarrierPackageLinking.ContainerType">
+            <summary>
+            Package conatiner type.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.CarrierPackageLinking.PackageMasterId">
+            <summary>
+            Identity number to Identify Package Master Detail.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.FavouriteShipmentPkgSetting">
+            <summary>
+            FavourateShipmentPkgSetting table represting all FavourateShipmentPkgSetting Detail Information.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.FavouriteShipmentPkgSetting.CustomerId">
+            <summary>
+            Identity number to Identify Customer Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.FavouriteShipmentPkgSetting.BusinessId">
+            <summary>
+            Identity number to Identify Business Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.FavouriteShipmentPkgSetting.PackageId">
+            <summary>
+            Identity number to Identify Package Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.FavouriteShipmentPkgSetting.TenantId">
+            <summary>
+            Identity number to Identify Tenant Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.FavouriteShipmentPkgSetting.ItemIds">
+            <summary>
+            Identity number to Identify Items Detail.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.PackageMaster">
+            <summary>
+            PackageMaster table represting all Shipment Package Master Data Information.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.PackageMaster.IdentityNumber">
+            <summary>
+            Package Refrence Id 
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.PackageMaster.PkgName">
+            <summary>
+            Name of Package 
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.PackageMaster.Weight">
+            <summary>
+            The Weight of Package  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.PackageMaster.WeightUnit">
+            <summary>
+            The Weight of Unit  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.PackageMaster.Height">
+            <summary>
+            The Height of Package  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.PackageMaster.HeightUnit">
+            <summary>
+            The Height of Unit  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.PackageMaster.Width">
+            <summary>
+            The Width of Package  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.PackageMaster.WidthUnit">
+            <summary>
+            The Width of Unit  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.PackageMaster.Length">
+            <summary>
+            The Length of Package  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.PackageMaster.LengthUnit">
+            <summary>
+            The Length of Unit  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.PackageMaster.Status">
+            <summary>
+            The Status of Package  
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.Role">
+            <summary>
+            A user role is a customizable set of rights and privileges. 
+            Two roles are pre-defined in the system and cannot be edited or deleted 
+            i.e. Administrator and System Administrator. Role table contains different 
+            user role (rights and privileges) for users.
+            System role will be identified by system field in role table.
+            </summary>
+            <remarks>
+            Following fields are mandatory:
+            <list type="bullet">  
+            <item>RoleId (System generated)</item>
+            <item>Name</item>
+            <item>Active</item> 
+            <item>CreatedBy</item> 
+            <item>CreatedDate</item> 
+            <item>ModifiedBy</item> 
+            <item>ModifiedDate</item> 
+            <item>TenantId</item>  
+            <item>ApplicationId</item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Role.RoleName">
+            <summary>
+            Name of the role admin for admin else ID which is a guid.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Role.RoleKey">
+            <summary>
+            Admin for admin else same as name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Role.PermissionBitMask">
+            <summary>
+            PermissionBitMask is integer value set of all the permission of the users.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Role.AppId">
+            <summary>
+            Application identifier of the user.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Role.Active">
+            <summary>
+            Active inactive status of the role.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Role.UserType">
+            <summary>
+            Defines the portal to which this role belongs.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Role.TenantId">
+            <summary>
+            Tenant identifier of the role this column is not required in this table beacause role is a master table does not belong to a particular tenant.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.RoleLinking">
+            <summary>
+            It contains linking between User and Role.
+            </summary>
+            <remarks>
+            Following fields are mandatory:
+            <list type="bullet"> 
+            <item>RoleLinkingId [System Generated]</item>  
+            <item>UserId</item>    
+            <item>RolePermissionId</item>   
+            </list>
+            </remarks>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.RoleLinking.TenantUserId">
+            <summary>
+            App user for which this role linking belongs to .
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.RoleLinking.RoleId">
+            <summary>
+            Role identifier of the user.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.RoleLinking.AppId">
+            <summary>
+            App identifier of the user.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.SalesOrderPkg">
+            <summary>
+            SalesOrderPkgDetail table represting all Sales Order Package Detail Information.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkg.SalesOrderId">
+            <summary>
+            Identity number to Identify Sales Order Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkg.PackageId">
+            <summary>
+            Identity number to Identify Package Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkg.PkgName">
+            <summary>
+            Name of Package 
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkg.Weight">
+            <summary>
+            The Weight of Package  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkg.WeightUnit">
+            <summary>
+            The Weight of Unit  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkg.Height">
+            <summary>
+            The Height of Package  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkg.HeightUnit">
+            <summary>
+            The Height of Unit  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkg.Width">
+            <summary>
+            The Width of Package  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkg.WidthUnit">
+            <summary>
+            The Width of Unit  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkg.Length">
+            <summary>
+            The Length of Package  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkg.LengthUnit">
+            <summary>
+            The Length of Unit  
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.SalesOrderPkgItem">
+            <summary>
+            SalesOrderPkgDetail table represting all Sales Order Package Detail Information.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkgItem.SalesOrderPackageId">
+            <summary>
+            UniqueId of SalesOrderPackage.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkgItem.SalesOrderId">
+            <summary>
+            Identity number to Identify Sales Order Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkgItem.PackageId">
+            <summary>
+            Identity number to Identify Package Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkgItem.SalesOrderItemId">
+            <summary>
+            Identity number to Identify Sales Order Item Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.SalesOrderPkgItem.AddedQuantity">
+            <summary>
+            Added Quantity in Sales Order Package
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.Shipment">
+            <summary>
+            Shipment table represting all Shipment Package Detail Information.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Entity.Shipment.EntityName">
+            <summary>
+            The entity name Shipment.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.ShipmentRefId">
+            <summary>
+            Represents shipment ref id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.ShipmentType">
+            <summary>
+            The Type of Shipment
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.SalesOrderId">
+            <summary>
+            Identity number to Identify Sales Order  Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.CustomerId">
+            <summary>
+            Identity number to Identify Customer Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.PostingOn">
+            <summary>
+            The Data and Time of Shipment Posting.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.DeliveryDate">
+            <summary>
+            The Shipment Delivery Date.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.Amount">
+            <summary>
+            The Amount of Shipment 
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.Description">
+            <summary>
+            The Description of Shipment  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.TaxRate">
+            <summary>
+            Shipment Tax Rate 
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.SubTotal">
+            <summary>
+            The SubTotal of Shipment 
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.Discount">
+            <summary>
+            The Discount of Shipment
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.Freight">
+            <summary>
+            Freight shipment
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.Tax">
+            <summary>
+            The Tax of Shipment  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.TotalAmount">
+            <summary>
+            Total Amount of Shipment
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.Status">
+            <summary>
+            The Status of Shipment
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.StatusText">
+            <summary>
+            The Status of Shipment
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.CarrierId">
+            <summary>
+            Identity number to Identify Carrier Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.CarrierPlanId">
+            <summary>
+            The Carrier Plan Id 
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.CarrierPickupDate">
+            <summary>
+            The CarrierPickupDate of Shipment
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.CarrierTransitDays">
+            <summary>
+            The CarrierTransitDays of Shipment
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.CarrierExpectedDeliveryDate">
+            <summary>
+            The Shipment CarrierExpectedDeliveryDate 
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.CarrierFreight">
+            <summary>
+            The Carrier Freight 
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.BillingAddressId">
+            <summary>
+            Identity number to Identify Billing Address Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.ShippingAddressId">
+            <summary>
+            Identity number to Identify Shipping Address Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.CarrierAccNo">
+            <summary>
+            Carrier Account No 
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.FromAddressId">
+            <summary>
+            From address id field.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.ShipperAccountNo">
+            <summary>
+            Shipper account number. 
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.ShipperAccountKey">
+            <summary>
+            Shipper act key of customer
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.Shipment.UseCustomerCarrierAccNo">
+            <summary>
+            True, ofif use customer carrier acc num.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.ShipmentItem">
+            <summary>
+            ShipmentItem table represting all Shipment Item Detail Information.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.ShipmentId">
+            <summary>
+            Identity number to Identify Shipment  Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.SalesOrderItemId">
+            <summary>
+            Identity number to Identify Sales Order Item Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.ItemId">
+            <summary>
+            Identity number to Identify Item Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.ItemQuantity">
+            <summary>
+            Item Quantity in Shipment
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.ItemUnitPrice">
+            <summary>
+            The Unit Price of Item  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.Discount">
+            <summary>
+            The Discount On Shipment Item  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.Tax">
+            <summary>
+            The Tax on Shipment
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.ItemTotatPrice">
+            <summary>
+            Total Item Price  
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.ItemName">
+            <summary>
+            Name of item
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.ItemCode">
+            <summary>
+            Item code value of item
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.Weight">
+            <summary>
+            The Weight of Item  
+            </summary>   
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.WeightUnit">
+            <summary>
+            The Weight of Unit  
+            </summary>   
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.Height">
+            <summary>
+            The Height of Package  
+            </summary>    
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.Width">
+            <summary>
+            The Width of Package  
+            </summary>    
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.Length">
+            <summary>
+            The Length of Package  
+            </summary>    
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentItem.SizeUnit">
+            <summary>
+            The Size unit
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.ShipmentPkg">
+            <summary>
+            ShipmentPackage table represting all ShipmentPackage Detail Information.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentPkg.SalesOrderId">
+            <summary>
+            Identity number to Identify Sales Order Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentPkg.PackageId">
+            <summary>
+            Identity number to Identify Package Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentPkg.TotalItems">
+            <summary>
+            Total items in a package
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentPkg.ShipmentId">
+            <summary>
+            shipment id 
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.ShipmentPkgItem">
+            <summary>
+            ShipmentPkgDetail table represting all Shipment Package Detail Information.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentPkgItem.ShipmentId">
+            <summary>
+            Identity number to Identify Shipment  Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentPkgItem.PackageId">
+            <summary>
+            Identity number to Identify Package Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentPkgItem.ShipmentItemId">
+            <summary>
+            Identity number to Identify Shipment Item Detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.ShipmentPkgItem.AddedQuantity">
+            <summary>
+            Added Quantity in Shipment
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.TenantUserAppPreference">
+            <summary>
+            AppUserPreference table represting all the applications and tenant wise notification preferences data.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Entity.TenantUserAppPreference.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.TenantUserAppPreference.TenantUserId">
+            <summary>
+            TenantUser Identifier.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.TenantUserAppPreference.AppId">
+            <summary>
+            App to which this linking belowngs to.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.TenantUserAppPreference.EmailPreference">
+            <summary>
+            Email preference bit mask of the user for the application in this tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.TenantUserAppPreference.SMSPreference">
+            <summary>
+            SMS preference bit mask of the user for the application in this tenant.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Entity.VerifiedAddress">
+            <summary>
+            VerifiedAddress table represting all VerifiedAddress Detail Information.
+            </summary>    
+        </member>
+        <member name="P:ewApps.Shipment.Entity.VerifiedAddress.CarrierId">
+            <summary>
+            ID of carrier in which adrress is verified .
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.VerifiedAddress.AddressId">
+            <summary>
+            Unique id for address.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.VerifiedAddress.VarifiedOn">
+            <summary>
+            On Which Date and Time Address Verified .
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.VerifiedAddress.VerifiedBy">
+            <summary>
+             Id of user whom is verified address.
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.VerifiedAddress.Verified">
+            <summary>
+            The Verified Flag for Address
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.Entity.VerifiedAddress.Description">
+            <summary>
+            Verified description of address
+            </summary>
+        </member>
+    </members>
+</doc>

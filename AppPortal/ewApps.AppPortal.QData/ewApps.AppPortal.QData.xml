@@ -1,0 +1,1451 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.AppPortal.QData</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.AppPortal.QData.MasterData">
+            <summary>
+            This class is responsible to generate master data at the time of database creation
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.MasterData.Init(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Startup method to generate master data. It is called from DB Context on database creation.
+            </summary>
+            <param name="builder">The model builder</param>
+        </member>
+        <member name="T:ewApps.AppPortal.QData.QAppPortalDbContext">
+            <summary>  
+            This class contains a session of core database and can be used to query and 
+            save instances of core entities. It is a combination of the Unit Of Work and Repository patterns.  
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QAppPortalDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.AppPortal.QData.QAppPortalDbContext},System.String)">
+            <summary>
+            Default constructor to initialize member variables (if any).
+            </summary>
+            <param name="options">The DbContextOptions instance carries configuration information such as: 
+            (a) The database provider to use, UseSqlServer or UseSqlite
+            (b) Connection string or identifier of the database instance    
+            </param>
+            <param name="connString">The Core database connection string.</param>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QAppPortalDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.AppPortal.QData.QAppPortalDbContext},Microsoft.Extensions.Options.IOptions{ewApps.AppPortal.Common.AppPortalAppSettings})">
+            <summary>
+            Constructor to initialize member variables (if any).
+            </summary>
+            <param name="options">The DbContextOptions instance carries configuration information such as: 
+            (a) The database provider to use, UseSqlServer or UseSqlite
+            (b) Connection string or identifier of the database instance    
+            </param>
+            <param name="appSetting">Instance of Appsettings object that contains core database 
+            connection string.
+            </param>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QAppPortalDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />  
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QAppPortalDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <inheritdoc />  
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.platformBrandingDQQuery">
+            <summary>
+            This is use to get PlatformBrandingDQ view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of PlatformBrandingDQ.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.publisherBrandingDQQuery">
+            <summary>
+            This is use to get PublisherBrandingDQ view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of PublisherBrandingDQ.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.businessBrandingDQQuery">
+            <summary>
+            This is use to get BusinessBrandingDQ view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusinessBrandingDQ.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.appPortalBrandingDQQuery">
+            <summary>
+            This is use to get AppPortalBrandingDQ view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of AppPortalBrandingDQ.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.configurationDQQuery">
+            <summary>
+            This is use to get ConfigurationDQ view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of ConfigurationDQ.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.AppDetailDTOQuery">
+            <summary>
+            This is use to get AppDetailDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of AppDetailDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.TenantAppServiceDQQuery">
+            <summary>
+            TenantAppServiceDQ
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.AppDQQuery">
+            <summary>
+            AppDQQuery
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.TenantApplicationSubscriptionDQQuery">
+            <summary>
+            TenantApplicationSubscriptionDQ
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.PlatBusinessDTOQuery">
+            <summary>
+            This is use to get PlatBusinessDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of PlatBusinessDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.SubscriptionPlanInfoDTOQuery">
+            <summary>
+            This is use to get SubscriptionPlanInfoDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of SubscriptionPlanInfoDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.SubsPlanServiceInfoDTOQuery">
+            <summary>
+            This is use to get SubsPlanServiceInfoDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of SubsPlanServiceInfoDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.SubsPlanServiceAttributeInfoDTOQuery">
+            <summary>
+            This is use to get SubsPlanServiceAttributeInfoDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of SubsPlanServiceAttributeInfoDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.PublisherListDTOQuery">
+            <summary>
+            This is use to get PublisherListDTOQuery view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of PublisherListDTOQuery.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.PubBusinessAppSubscriptionInfoDTOQuery">
+            <summary>
+            This is use to get PubBusinessAppSubscriptionInfoDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of PubBusinessAppSubscriptionInfoDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.BusConfigurationDTOQuery">
+            <summary>
+            This is use to get BusConfigurationDTOQuery view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusConfigurationDTOQuery.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.PubAppSettingDTOQuery">
+            <summary>
+            This is use to get PubAppSettingDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of PubAppSettingDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.AppDetailInfoDTOQuery">
+            <summary>
+            This is use to get AppDetailInfoDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of AppDetailInfoDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.AppServiceDetailDTOQuery">
+            <summary>
+            This is use to get AppServiceDetailDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of AppServiceDetailDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.AppServiceAttributeDetailDTOQuery">
+            <summary>
+            This is use to get AppServiceAttributeDetailDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of AppServiceAttributeDetailDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.PublisherViewDTOQuery">
+            <summary>
+            This is use to get PublisherViewDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of PublisherViewDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.BusAppServiceDTOQuery">
+            <summary>
+            Business subscribed service.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.BusAppServiceAttributeDTOQuery">
+            <summary>
+            Business subscribed service.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.StringDTOQuery">
+            <summary>
+            Business subscribed service.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.QData.QAppPortalDbContext.TenantUserAppPermissionDTOQuery">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQAppPortalRepository.GetShipAppBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Ship-App branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQAppPortalRepository.GetPayAppBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Pay-App branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQAppPortalRepository.GetCustAppBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Cust-App branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQAppPortalRepository.GetVendAppBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Vend-App branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.QData.IQBACustomerRepository">
+            <summary>
+            interfcae expose method to get customer and related info.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBACustomerRepository.GetCustomerInfoAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer info by business entity customer id.
+            </summary>
+            <param name="baCustomerId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBACustomerRepository.GetCustomerInfoByBusinessPartnerIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer info by business partner id.
+            </summary>
+            <param name="businessPartnerId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBACustomerRepository.GetBusinessAppServiceListByAppIdsAndTenantIdAsync(System.Collections.Generic.List{System.Guid},System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get business app service list by application and tenant id.
+            </summary>
+            <param name="appIdList">Application id list.</param>
+            <param name="tenantId">Tenantid.</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBACustomerRepository.GetBusinessAppServiceAttributeListByServiceIdsAsync(System.Collections.Generic.List{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+            Get service attribute list by service ids.
+            </summary>
+            <param name="serviceIdList">List of AppService Id.</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBACustomerRepository.GetBusinessAppServiceListByAppKeyAndTenantIdAsync(System.String,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get app service by appkey and tenantid.
+            </summary>
+            <param name="appKey"></param>
+            <param name="tenantId"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBACustomerRepository.GetAppServiceAccountDetailByCustomerIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get service account detail.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="entityId"></param>
+            <returns>return service account detail.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessAndUserRepository.GetFilterBusinessListByTenantIdAsync(ewApps.AppPortal.DTO.ListDateFilterDTO,System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get filtered business list.
+            </summary>
+            <param name="filter">Filter the business list by filter object.</param>
+            <param name="homeAppId">Home application id.</param>
+            <param name="tenantId">tenantid</param>
+            <param name="token"></param>
+            <returns>return filtered business list.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessAndUserRepository.GetBusinessAppSubscriptionInfoDTOByBusinessIdAsync(System.Guid,System.Guid,System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get all the Application list subscribed by a business tenant.
+            </summary>
+            <param name="businessId">Id of Business Tenant</param>
+            <returns>return list of application.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessAndUserRepository.GetBusinessConfigurationDetailAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Configuration Detail For Business Async 
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessAndUserRepository.GetBusinessBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Business branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessAndUserRepository.GetAllCustomerUserByBusinessPartnerId(System.Guid)">
+            <summary>
+            Get all the customer with application count ignoring the customer setup app.
+            </summary>
+            <param name="businessPartnerTenantId">business partner tenant identifiers.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessAndUserRepository.GetAllVendorUserByBusinessPartnerId(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="businessPartnerTenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessAndUserRepository.GetCustomerUserAsignedAppInfo(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get list of all the asiged application to the user and breif details.
+            </summary>
+            <param name="businessPartnerTenantId">tenantid of the customer</param>
+            <param name="tenantUserId">user identifier for which we need to retrive the data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessAndUserRepository.GetTenantUserDetails(System.Guid,System.Guid,System.String)">
+            <summary>
+            Get tenantUser details.
+            </summary>
+            <param name="tenantUserId"></param>
+            <param name="tenantId"></param>
+            <param name="appKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessAndUserRepository.GetBusinessNameListByPublisherId(System.Guid,ewApps.Core.BaseService.BooleanFilterEnum)">
+            <summary>
+            Gets the business name list by publisher id and business active state filter.
+            </summary>
+            <param name="publisherId">The publisher identifier.</param>
+            <param name="businessActiveState">Business active state to filter business records.</param>
+            <returns>Returns list of business names that matches provided publisher id and business active state filter.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessAndUserRepository.GetBusinessUserPermissionChangeNotificationGeneralDataAsync(System.Guid,System.Guid,System.Guid,System.String)">
+            <summary>
+            Permission changes notification data 
+            </summary>
+            <param name="tenantUserId"></param>
+            <param name="invitedTenantUserId"></param>
+            <param name="tenantId"></param>
+            <param name="appKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessAndUserRepository.CheckUserIsLastBusinessAdminUserAsync(System.Guid,System.Int32,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="tenantId"></param>
+            <param name="userType"></param>
+            <param name="appId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.QData.IQConfigurationRepository">
+            <summary>
+            Configuration details
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQConfigurationRepository.GetConfigurationDetailAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Customer configuration
+            </summary>
+            <param name="buspartnertenantid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQConfigurationRepository.GetCustomerAddressListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer address list
+            </summary>
+            <param name="CustomerID"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQConfigurationRepository.GetCustomerContactListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer contact list
+            </summary>
+            <param name="CustomerID"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQConfigurationRepository.GetCustomerAccListByCustomerIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer account detail
+            </summary>
+            <param name="CustomerID"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQConfigurationRepository.GetVendorConfigurationDetailAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Customer configuration
+            </summary>
+            <param name="buspartnertenantid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQConfigurationRepository.GetVendorAddressListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer address list
+            </summary>
+            <param name="CustomerID"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQConfigurationRepository.GetVendorContactListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer contact list
+            </summary>
+            <param name="CustomerID"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQCustomerAndUserRepository.GetCustomerSetupOnBoardDetailByAppAndBusinessAndUserIdAsync(System.String,System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Customer Setup User OnBoard
+            </summary>
+            <param name="appKey"></param>
+            <param name="businessTenantId"></param>
+            <param name="businessPartnerTenantId"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQCustomerAndUserRepository.CheckUserIsLastCustomerAdminUserAsync(System.Guid,System.Int32,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="tenantId"></param>
+            <param name="userType"></param>
+            <param name="appId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQNotesRepository.GetBusinessInfoWithQuotationByEntityId(System.Guid,System.Guid,System.Guid,System.Guid,System.Int32)">
+            <summary>
+            Get Business Information with Quotation 
+            </summary>
+            <param name="entityId"></param>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="userId"></param>
+            <param name="userType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQNotesRepository.GetBusinessInfoWithContractByEntityId(System.Guid,System.Guid,System.Guid,System.Guid,System.Int32)">
+            <summary>
+            Get Business Information with Contract 
+            </summary>
+            <param name="entityId"></param>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="userId"></param>
+            <param name="userType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQNotesRepository.GetBusinessInfoWithDraftDeliveryByEntityId(System.Guid,System.Guid,System.Guid,System.Guid,System.Int32)">
+            <summary>
+            Get Business Information With Draft Delivery
+            
+            </summary>
+            <param name="entityId"></param>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="userId"></param>
+            <param name="userType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQNotesRepository.GetBusinessInfoWithDeliveryByEntityId(System.Guid,System.Guid,System.Guid,System.Guid,System.Int32)">
+            <summary>
+            Get Business Information With Delivery
+            </summary>
+            <param name="entityId"></param>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="userId"></param>
+            <param name="userType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQNotesRepository.GetBusinessInfoWithSalesOrderByEntityId(System.Guid,System.Guid,System.Guid,System.Guid,System.Int32)">
+            <summary>
+            Get Business Information With Sales Order 
+            </summary>
+            <param name="entityId"></param>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="userId"></param>
+            <param name="userType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.QData.IQPlatBusinessRepository">
+            <summary>
+            Platfrom business respository for exposing the methods related to platform business database intrection.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPlatformAndUserRepository.GetAppDetailsAsync">
+            <summary>
+            Gets the application details asynchronous.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPlatformAndUserRepository.GetAppDetailsByAppIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the application details by application identifier asynchronous.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetPublisherSubscribedAppSubdomainAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+             Get subscribed application list by a publisher tenant subdomain.
+            </summary>
+            <param name="subdomainName"></param>
+            <param name="includeInactive">Include inactive application also.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetPublisherAppServiceByTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get application sub services subscribed by a Tenant applications.
+            </summary>
+            <param name="tenantId">Id of publisher Tenant</param>
+            <returns>return application sub services and Application id.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetAppSubscriptionAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get publisher created subscription plan or master subscription plan.
+            </summary>
+            <param name="appId"></param>
+            <param name="publisherTenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetSubscriptionPlanListByAppAndPubTenantIdAsync(System.Guid,System.Guid,ewApps.Core.BaseService.BooleanFilterEnum,System.Threading.CancellationToken)">
+            <summary>
+            Gets the subscription plan list by application identifier and plan state.
+            </summary>
+            <param name="appId">The application identifier to get application specific subscription plan.</param>
+            <param name="publisherTenantId">The publisher tenant id to get publisher's business app subscription plan.</param>
+            <param name="planState">The plan state to filter subscription plan.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns subscription plan list that matches the input parameters.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetAppDetailsPublisherAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the application details publisher asynchronous.
+            </summary>
+            <param name="publisherTenantId">The publisher tenant identifier.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetAllPublishersAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets all publishers.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of publishers detail.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetPubBusinessAppListByPubTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the pub business application list by pub tenant identifier.
+            </summary>
+            <param name="publisherTenantId">The publisher tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token to cnacel async operation.</param>
+            <returns>Returns all application assigned to publisher for business for given publisher tenant id.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetPublisherDetailByPublisherIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the publisher detail by publisher identifier.
+            </summary>
+            <param name="publisherId">The publisher identifier to find publisher detail.</param>
+            <param name="cancellationToken">The cancellation token to cnacel async operation.</param>
+            <returns>Returns publisher details that matches provided publisher id.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetPublishersBusinessSubscriptionPlanListByAppIdsAndPublisherTenantIdAsync(System.Collections.Generic.List{System.Guid},System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the publishers business subscription plan list by application ids and publisher tenant identifier asynchronous.
+            </summary>
+            <param name="appIdList">The application identifier list.</param>
+            <param name="publisherTenantId">The publisher tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns all saved publisher's business app subscirption plan information that matches provided app id and publisher tenant id.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetPubAppSettingListByPublisherTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the pub application setting list by publisher tenant identifier asynchronous.
+            </summary>
+            <param name="publisherTenantId">The publisher tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns publisher application setting list that matches given publisher tenant id.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetPublisherNameByBusinessTenantId(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the publisher name by business tenant identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetPublisherNameByPartnerTenantId(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the publisher name by partner tenant identifier.
+            </summary>
+            <param name="partnerTenantId">The partner tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQPublisherAndUserRepository.GetPublisherNameByTenantId(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the publisher name by tenant identifier.
+            </summary>
+            <param name="tenantId">The tenant identifier.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBizNotificationRecipientData.GetInvitedBusinessUser(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get the invited business users where is is of businesss type.
+            </summary>
+            <param name="tenantId">tenant identifier for the user</param>
+            <param name="tenantUserId"> tenant user identitfier for the tenant user</param>
+            <param name="appId">application id for the user to which user belongs</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.#ctor(ewApps.AppPortal.QData.QAppPortalDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.QData.QBizNotificationRecipientData"/> class.
+            </summary>
+            <param name="qAppPortalDbContext">The q application portal database context.</param>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetBizCustUserOnBoardRecipients(System.Guid,System.Guid,System.Guid,System.Int64)">
+            <summary>
+            Get Business portal customer app useronBoard 
+            </summary>
+            <param name="appId"></param>
+            <param name="businessTenantId"></param>
+            <param name="onboardedUserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetAppUserOnBusiness(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetAppUserAccessUpdateOnBusiness(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetAppUserPermissionOnBusiness(System.Guid,System.Guid,System.Guid,System.Int64,System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetBusinessUsersForNotes(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetBusinessCustomerUsersForNotes(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetCustomerUsersCustAppForNotes(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetCustomerUsersCustAppSalesQuotationForNotes(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetCustomerUsersCustAppSalesOrderForNotes(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetCustomerUsersCustAppDeliveryForNotes(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetCustomerUsersCustAppDraftDeliveryForNotes(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetCustomerUsersCustAppContactForNotes(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetCustomerPayAppUsersForNotes(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetCustomerUser(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetAppListByBusinessTenantIdAsync(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetInvitedBusinessUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBizNotificationRecipientData.GetAllPublisherUsersWithPreference(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessNotificationRecepientRepository.GetInvitedBusinessUser(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get the invited business users where is is of businesss type.
+            </summary>
+            <param name="tenantId">tenant identifier for the user</param>
+            <param name="tenantUserId"> tenant user identitfier for the tenant user</param>
+            <param name="appId">application id for the user to which user belongs</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessNotificationRecepientRepository.GetInvitedDeletedBusinessUser(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get the invited business deleted users where is is of businesssPartner type.
+            </summary>
+            <param name="tenantId">tenant identifier for the user</param>
+            <param name="tenantUserId"> tenant user identitfier for the tenant user</param>
+            <param name="appId">application id for the user to which user belongs</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessNotificationRecepientRepository.GetInvitedBusinessPartnerUser(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get the invited business partner users where is is of businesssPartner type.
+            </summary>
+            <param name="tenantId">tenant identifier for the user</param>
+            <param name="tenantUserId"> tenant user identitfier for the tenant user</param>
+            <param name="appId">application id for the user to which user belongs</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessNotificationRecepientRepository.GetInvitedBusinessPartnerDeletedUser(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get the invited business partner deleted users where is is of businesssPartner type.
+            </summary>
+            <param name="tenantId">tenant identifier for the user</param>
+            <param name="tenantUserId"> tenant user identitfier for the tenant user</param>
+            <param name="appId">application id for the user to which user belongs</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessNotificationRecepientRepository.GetPublisherUserWithPermissionAndPrefrence(System.Guid,System.Guid,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Get all the publisher users with given permissons  and preference.
+            </summary>
+            <param name="tenantId">tenant identifier for the user</param>
+            <param name="appId">application id for the user to which user belongs</param>
+            <param name="firstPermission">permissions of the user that user should have</param>
+            <param name="secondPermission">permissions of the user that user should have</param>
+            <param name="eventPrefrence">prefrences that should be on to receive this mail</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessNotificationRecepientRepository.GetAllBusinessUser(System.Guid,System.Guid)">
+            <summary>
+            Get all the business user of the particular tennat.
+            </summary>
+            <param name="tenantId">tenant identifier</param>
+            <param name="appId">business application id to be passed.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessNotificationRecepientRepository.GetAllBusinessUserWithPrefrence(System.Guid,System.Guid,System.Int64)">
+            <summary>
+            Get all the business user of the particular tennat and having prefeence flag.
+            </summary>
+            <param name="tenantId">tenant identifier</param>
+            <param name="appId">business application id to be passed.</param>
+            <param name="emailPreference">user prefence .</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessNotificationRecepientRepository.GetAllBusinessUserWithPermissionAndPrefrence(System.Guid,System.Guid,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Get all the business  user having particular permission(either first permission or having second permission) and a perticular notification perefence on.
+            </summary>
+            <param name="tenantId">tenant identifier for the tenantuser</param>
+            <param name="appId">application identifier for the tenantuser</param>
+            <param name="emailPreference">emeail preferece bitmask</param>
+            <param name="smsPreference">sms preferece bitmask</param>
+            <param name="firstpermission">first permission permission bitmask</param>
+            <param name="secondPermission">sesond permission bitmask</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.IQBusinessNotificationRecepientRepository.GetAllBusinessPartnerUserWithPermissionAndPrefrence(System.Guid,System.Guid,System.Guid,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Get all the business partner user having particular permission(either first permission or having second permission) and a perticular notification perefence on.
+            </summary>
+            <param name="tenantId">tenant identifier for the tenantuser</param>
+            <param name="appId">application identifier for the tenantuser</param>
+            <param name="businessPastnerTenantId">business partner tenant identifier to identify to wich customer the partner belongs</param>
+            <param name="emailPreference">emeail preferece bitmask</param>
+            <param name="smsPreference">sms preferece bitmask</param>
+            <param name="firstpermission">first permission permission bitmask</param>
+            <param name="secondPermission">sesond permission bitmask</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository">
+            <summary>
+            Repository for implementing all the receipent get methods for the business setup notification events.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository.#ctor(ewApps.AppPortal.QData.QAppPortalDbContext)">
+            <summary>
+            Initalizing local variable and DI.
+            </summary>
+            <param name="businessDbContext">object of business db context</param>
+            <param name="sessionManager">Session manger object for passing to base class.</param>
+            <param name="connectionManager">connection manager for transaction mangment.</param>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository.GetInvitedUserRecipientList(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository.GetForgotPasswordBusinessUser(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository.GetInvitedBusinessUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository.GetInvitedDeletedBusinessUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository.GetInvitedBusinessPartnerUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository.GetInvitedBusinessPartnerDeletedUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository.GetPublisherUserWithPermissionAndPrefrence(System.Guid,System.Guid,System.Int64,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository.GetAllBusinessUser(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository.GetAllBusinessUserWithPrefrence(System.Guid,System.Guid,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository.GetAllBusinessPartnerUserWithPermissionAndPrefrence(System.Guid,System.Guid,System.Guid,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessNotificationRecepientRepository.GetAllBusinessUserWithPermissionAndPrefrence(System.Guid,System.Guid,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustNotificationRecipientsData.#ctor(ewApps.AppPortal.QData.QAppPortalDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.QData.QBizNotificationRecipientData"/> class.
+            </summary>
+            <param name="qAppPortalDbContext">The q application portal database context.</param>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustNotificationRecipientsData.GetCustomerUsersForNotes(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustNotificationRecipientsData.GetCustomerPayUsersForNotes(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustNotificationRecipientsData.GetBusinessUsersForNotes(System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustNotificationRecipientsData.GetBusinessCustomerUsersForNotes(System.Guid,System.Guid,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustNotificationRecipientsData.GetCustomerUserOnAppDeletedRecipients(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustNotificationRecipientsData.GetCustomerUserOnAppPermissionRecipients(System.Guid,System.Guid,System.Guid,System.Int64,System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustNotificationRecipientsData.GetAllPublisherUsersWithPreference(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformNotificationRecipientRepository.GetInvitedPlatformUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformNotificationRecipientRepository.GetForgotPasswordPlatformUser(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformNotificationRecipientRepository.GetInvitedPublisherUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformNotificationRecipientRepository.GetInvitedUserWithPrefrence(System.Guid,System.Guid,System.Guid,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformNotificationRecipientRepository.GetAllPublisherUsers(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformNotificationRecipientRepository.GetAllPlatformUsersWithPreference(System.Guid,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformNotificationRecipientRepository.GetPlatformUsersWithApplicationPermissionAndPreference(System.Guid,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformNotificationRecipientRepository.GetPublisherSupportUsersWithPreference(System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherNotificationRecipientRepository.GetInvitedUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherNotificationRecipientRepository.GetForgotPasswordPublisherUser(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherNotificationRecipientRepository.GetInvitedUserWithPrefrence(System.Guid,System.Guid,System.Int64,System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherNotificationRecipientRepository.GetAllPlatformUsersWithPreference">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherNotificationRecipientRepository.GetBusinessUserWithApplicationAccess(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherNotificationRecipientRepository.GetBusinessUserWithApplicationAccessWithoutStatus(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherNotificationRecipientRepository.GetBusinessPartnerUserWithApplicationAccess(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherNotificationRecipientRepository.GetAllBusinessUsers(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherNotificationRecipientRepository.GetAllBusinessPartnerUsers(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherNotificationRecipientRepository.GetPublisherUserWithPermissionAndPrefrence(System.Guid,System.Guid,System.Int64,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherNotificationRecipientRepository.GetPublisherSupportUsers">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherNotificationRecipientRepository.GetPublisherSupportUsersWithPreference(System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QVendorNotificationRecipientsData.GetVendorUserAppOnBoardRecipients(System.Guid,System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QAppPortalRepository.#ctor(ewApps.AppPortal.QData.QAppPortalDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.QData.QBusinessAndUserRepository"/> class.
+            </summary>
+            <param name="context">Instance of CQRSAppPortalDbContext to executes database operations.</param>        
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QAppPortalRepository.GetShipAppBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Ship-App branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QAppPortalRepository.GetPayAppBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Pay-App branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QAppPortalRepository.GetCustAppBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Cust-App branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QAppPortalRepository.GetVendAppBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Cust-App branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.QData.QBACustomerRepository">
+            <summary>
+            Provide customer and related service info.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBACustomerRepository.#ctor(ewApps.AppPortal.QData.QAppPortalDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.QData.QBusinessAndUserRepository"/> class.
+            </summary>
+            <param name="context">Instance of CQRSAppPortalDbContext to executes database operations.</param>        
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBACustomerRepository.GetCustomerInfoAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer info by business entity customer id.
+            </summary>
+            <param name="baCustomerId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBACustomerRepository.GetCustomerInfoByBusinessPartnerIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer info by business entity customer id.
+            </summary>
+            <param name="businessPartnerId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBACustomerRepository.GetBusinessAppServiceListByAppIdsAndTenantIdAsync(System.Collections.Generic.List{System.Guid},System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBACustomerRepository.GetBusinessAppServiceListByAppKeyAndTenantIdAsync(System.String,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get app service by appkey and tenantid.
+            </summary>
+            <param name="appKey"></param>
+            <param name="tenantId"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBACustomerRepository.GetBusinessAppServiceAttributeListByServiceIdsAsync(System.Collections.Generic.List{System.Guid},System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBACustomerRepository.GetAppServiceAccountDetailByCustomerIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get service account detail.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="entityId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.#ctor(ewApps.AppPortal.QData.QAppPortalDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.QData.QBusinessAndUserRepository"/> class.
+            </summary>
+            <param name="context">Instance of CQRSAppPortalDbContext to executes database operations.</param>        
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetBusinessBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Platform branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetAllUsersByUserTypeAsync(System.Int32,System.Guid,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetAllPaymentUsersByUserTypeAsync(System.Int32,System.Guid,System.Guid,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetAllShipmentUsersByUserTypeAsync(System.Int32,System.Guid,System.Guid,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetAllCustomerAppUsersByUserTypeAsync(System.Int32,System.Guid,System.Guid,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetAllVendorAppUsersByUserTypeAsync(System.Int32,System.Guid,System.Guid,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetAllCustomerUserByBusinessPartnerId(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetAllVendorUserByBusinessPartnerId(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetCustomerUserAsignedAppInfo(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetTenantUserDetails(System.Guid,System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetApplicationForUserAsync(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetFilterBusinessListByTenantIdAsync(ewApps.AppPortal.DTO.ListDateFilterDTO,System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get filtered business list.
+            </summary>
+            <param name="filter">Filter the business list by filter object.</param>
+            <param name="homeAppId">Home application id.</param>
+            <param name="tenantId">tenantid</param>
+            <param name="token"></param>
+            <returns>return filtered business list.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetBusinessAppSubscriptionInfoDTOByBusinessIdAsync(System.Guid,System.Guid,System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get all the Application list subscribed by a business tenant.
+            </summary>
+            <param name="businessId">Id of Business Tenant</param>
+            <returns>return list of application.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetBusinessUserNotificationGeneralDataAsync(System.Guid,System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetBusinessUserNotificationGenDataAsync(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.GetBusinessUserPermissionChangeNotificationGeneralDataAsync(System.Guid,System.Guid,System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAndUserRepository.CheckUserIsLastBusinessAdminUserAsync(System.Guid,System.Int32,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessAppRepository.#ctor(ewApps.AppPortal.QData.QAppPortalDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.QData.QBusinessAppRepository"/> class.
+            </summary>
+            <param name="context">Instance of CQRSAppPortalDbContext to executes database operations.</param>        
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessUserSessionRepository.GetBusinessPortalUserSessionInfoAsync(System.Guid,System.Guid,System.String,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QBusinessUserSessionRepository.GetSessionAppDetailsAsync(System.Guid,System.Guid,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QConfigurationRepository.GetConfigurationDetailAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get configuration details
+            </summary>
+            <param name="customerId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QConfigurationRepository.GetCustomerAddressListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QConfigurationRepository.GetCustomerContactListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QConfigurationRepository.GetCustomerAccListByCustomerIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QConfigurationRepository.GetVendorConfigurationDetailAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Vendor Configuration details
+            </summary>
+            <param name="vendorId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QConfigurationRepository.GetVendorAddressListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QConfigurationRepository.GetVendorContactListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustomerAndUserRepository.GetAllCustomerSetupUsersAsync(System.Int32,System.Guid,System.Guid,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustomerAndUserRepository.GetApplicationForCustomerUserAsync(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustomerAndUserRepository.GetPaymentAppCustomerUser(System.Int32,System.Guid,System.Guid,System.Guid,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustomerAndUserRepository.GetCustomerAppCustomerUsers(System.Int32,System.Guid,System.Guid,System.Guid,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustomerAndUserRepository.GetTenantUserDetails(System.Guid,System.Guid,System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustomerAndUserRepository.GetAdminCustomerUsersDetailsAsync(System.Int32,System.Guid,System.Guid,System.Guid,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustomerAndUserRepository.GetCustomerOnBoardDetailByAppAndBusinessAndUserIdAsync(System.String,System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustomerAndUserRepository.GetCustomerSetupOnBoardDetailByAppAndBusinessAndUserIdAsync(System.String,System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>   
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustomerAndUserRepository.GetCustomerUserNotificationGeneralDataAsync(System.Guid,System.Guid,System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustomerAndUserRepository.GetCustomerUserPermissionChangeNotificationGeneralDataAsync(System.Guid,System.Guid,System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustomerAndUserRepository.CheckUserIsLastCustomerAdminUserAsync(System.Guid,System.Int32,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustomerAppRepository.GetAllCustomerApplicationsAsync(System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustUserSessionRepository.GetCustomerPortalUserSessionInfoAsync(System.Guid,System.Guid,System.String,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QCustUserSessionRepository.GetSessionAppDetailsAsync(System.Guid,System.Guid,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppPortal.QData.QPlatBusinessRepository">
+            <summary>
+            Dependency injection for reposity base classes only.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatBusinessRepository.GetTenantListOnPlatformAsync(ewApps.AppPortal.DTO.ListDateFilterDTO,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformAndUserRepository.GetPlatformBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Platform branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformAndUserRepository.GetAppDetailsAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformAndUserRepository.GetAppDetailsByAppIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformAndUserRepository.GetPlatformTenantUsers(System.Int32,System.Guid,System.Guid,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformAndUserRepository.CheckUserIsLastAdminUserAsync(System.Guid,System.Int32,System.Guid,System.Nullable{System.Guid})">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformUserSessionRepository.GetPlaformPortalUserSessionInfoAsync(System.Guid,System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPlatformUserSessionRepository.GetSessionAppDetailsAsync(System.Guid,System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetPublisherBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Platform branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetPublisherSubscribedAppByTenantAsync(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+             Get subscribed application list by a publisher.
+            </summary>
+            <param name="publisherTenantID"></param>
+            <param name="includeInactive">Include inactive application also.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetPublisherSubscribedAppSubdomainAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+             Get subscribed application list by a publisher tenant subdomain.
+            </summary>
+            <param name="publisherTenantID"></param>
+            <param name="includeInactive">Include inactive application also.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetPublisherAppServiceByTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get application sub services subscribed by a Tenant applications.
+            </summary>
+            <param name="tenantId">Id of publisher Tenant</param>
+            <returns>return application sub services and Application id.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetAppSubscriptionAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get publisher created subscription plan or master subscription plan.
+            </summary>
+            <param name="appId"></param>
+            <param name="publisherTenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetSubscriptionPlanListByAppAndPubTenantIdAsync(System.Guid,System.Guid,ewApps.Core.BaseService.BooleanFilterEnum,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetAppDetailsPublisherAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetAppDetailsFromPubAppSettingIDAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetAllPublishersAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetPubBusinessAppListByPubTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetPubBusinessAppServiceListByAppIdsAsync(System.Collections.Generic.List{System.Guid},System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetPubBusinessAppServiceAttributeListByServiceIdsAsync(System.Collections.Generic.List{System.Guid},System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetPublisherDetailByPublisherIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetPubBusinessAppServiceListByAppIdsAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetPublishersBusinessSubscriptionPlanListByAppIdsAndPublisherTenantIdAsync(System.Collections.Generic.List{System.Guid},System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetPubAppSettingListByPublisherTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetPublisherUserPermissionChangeNotificationGeneralDataAsync(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.GetAllUsersByUserTypeAsync(System.Int32,System.Guid,System.Guid,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherAndUserRepository.CheckUserIsLastPublisherAdminUserAsync(System.Guid,System.Int32,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherUserSessionRepository.GetPublisherPortalUserSessionInfoAsync(System.Guid,System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QPublisherUserSessionRepository.GetSessionAppDetailsAsync(System.Guid,System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QContactUsRepository.GetPubEmailRecipent(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QContactUsRepository.GetPlatEmailRecipent(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QVendorAndUserRepository.GetAllVendorSetupUsersAsync(System.Int32,System.Guid,System.Guid,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QVendorAndUserRepository.GetTenantUserDetails(System.Guid,System.Guid,System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QVendorAppRepository.GetAllVendorApplicationsAsync(System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QVendUserSessionRepository.GetVendorPortalUserSessionInfoAsync(System.Guid,System.Guid,System.String,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.QData.QVendUserSessionRepository.GetSessionAppDetailsAsync(System.Guid,System.Guid,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IQPubBusinessSubsPlanAppServiceRepository.GetSubscriptionPlanServiceByPlanIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the subscription plan service by publisher's business app subscription plan id.
+            </summary>
+            <param name="pubBusSubsPlanId">The publisher's business app subscription plan.</param>
+            <param name="cancellationToken">The cancellation token to cancel async task.</param>
+            <returns>Returns service and attribute list that matches given publisher's business app subscription plan id.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IQPubBusinessSubsPlanAppServiceRepository.GetPlanServicesByPlanIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get subscribed services by PlanId.
+            </summary>
+            <param name="pubBusSubsPlanId">PubBusinessSubsPlanId</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IQPubBusinessSubsPlanAppServiceRepository.GetSubscriptionPlanAttributeByPlanIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the subscription plan attribute by publisher's business app subscription plan id.
+            </summary>
+            <param name="pubBusSubsPlanId">The publisher's business app subscription plan.</param>
+            <param name="cancellationToken">The cancellation token to cancel async task.</param>
+            <returns>Returns attribute list that matches given publisher's business app subscription plan id.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.QPubBusinessSubsPlanAppServiceRepository.#ctor(ewApps.AppPortal.QData.QAppPortalDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.Data.QPubBusinessSubsPlanAppServiceRepository"/> class.
+            </summary>
+            <param name="context">Instance of CQRSAppPortalDbContext to executes database operations.</param>        
+        </member>
+        <member name="M:ewApps.AppPortal.Data.QPubBusinessSubsPlanAppServiceRepository.GetSubscriptionPlanServiceByPlanIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.QPubBusinessSubsPlanAppServiceRepository.GetPlanServicesByPlanIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get subscribed services by PlanId.
+            </summary>
+            <param name="pubBusSubsPlanId">PubBusinessSubsPlanId</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

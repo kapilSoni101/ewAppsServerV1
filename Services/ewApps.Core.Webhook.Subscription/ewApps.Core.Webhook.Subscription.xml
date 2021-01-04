@@ -1,0 +1,461 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.Webhook.Subscription</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDbContextDesignTimeDbContextFactory">
+            <summary>
+            Factory class to provides the Database instance
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDbContextDesignTimeDbContextFactory.CreateNewInstance(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext})">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Subscriber.WebhookServerSubscriberDTO">
+            <summary>
+            DTO object to send servername and subscription Name to the 
+            subscriber on shutdown callback
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookServerSubscriberDTO.ServerName">
+            <summary>
+            Webhook Server Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookServerSubscriberDTO.SubscriptionName">
+            <summary>
+            Subscription Name
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDTO">
+            <summary>
+            DTO class to send the Subscriber object to the Webhook Server to Add by Http Call
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDTO.SubscriptionName">
+            <summary>
+            Name of the subscription
+            </summary>  
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDTO.ServerName">
+            <summary>
+            Webhook server name for which the subscription is made
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDTO.SubscribeEvents">
+            <summary>
+            Event list for the subscription
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDTO.CallbackEndPoint">
+            <summary>
+            Callback endpoint for the webhook for this subscription
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDTO.IsActive">
+            <summary>
+            Subscription is active or not 
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Subscriber.WebhookEvent">
+            <summary>
+            Events send by the Server to the subscription are logged by this Entity Table. 
+            Further Scheduler picks all incoming events from this Queue
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookEvent.ID">
+            <summary>
+            Uniue key of the table row
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookEvent.ServerName">
+            <summary>
+            Server Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookEvent.SubscriptionName">
+            <summary>
+            Subscription Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookEvent.EventName">
+            <summary>
+            Generated event name from Webhook Server
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookEvent.Payload">
+            <summary>
+            Event object as a JSON string
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookEvent.ReceivedDate">
+            <summary>
+            Event received time
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Subscriber.WebhookSubscription">
+            <summary>
+            A subscriber may subscribe to events raised by a Webhook Server.
+            It registers its subscription for the targeted Webhook Server.
+            It may subscriber for a subset of the server events.
+            </summary>
+            
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscription.ID">
+            <summary>
+            Uniue key of the table row
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscription.SubscriptionName">
+            <summary>
+            Name of the subscription
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscription.ServerName">
+            <summary>
+            Webhook server name for which the subscription is made
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscription.ServerHostEndPoint">
+            <summary>
+            Webhook server Host End Point
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscription.SubscribedEvents">
+            <summary>
+            Event list for the subscription
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ewApps.Core.Webhook.Subscriber.WebhookSubscription.SubscribedEventsAsList" -->
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscription.CallBackEndPoint">
+            <summary>
+            Call back endpoint
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscription.ServerShutDownCallBackEndPoint">
+            <summary>
+            Sutdown event call back endpoint
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscription.EventDelegation">
+            <summary>
+            Event delegate defined by client to handle the callbacks
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscription.IsActive">
+            <summary>
+            Subscription is active or not 
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Subscriber.WebhookEventHandler">
+             <summary>
+             Scheduler service running in background to handle the webhook events received by the server. 
+             <para>1. Gets Events from ClientEventQueue</para>
+            <para> 2. Process Events and call Delegates</para>
+             <para>3. Dequeue events from the ClientEventQueue</para>
+             </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookEventHandler.#ctor(Microsoft.Extensions.Logging.ILogger{ewApps.Core.Webhook.Subscriber.WebhookEventHandler},Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="logger">Logger DI</param>
+            <param name="scopeFactory">System Defined Factory class to get the dependencies</param>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookEventHandler.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Start the dispatch service when application starts
+            </summary>
+            <param name="token">Cancellation token</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookEventHandler.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Stop triggers when application is shutdown gracefully
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookEventHandler.Dispose">
+            <summary>
+            When the class is collected by GC
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookEventHandler.OnTimerCallback(System.Object)">
+            <summary>
+            Function call on timer tick
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookEventHandler.ExecuteAsync(System.Threading.CancellationToken)">
+             <summary>
+             <para>1. Dequeue the Events from the ClientEventqueue </para>
+             <para>2. Group them to handle by single delegate </para>
+            <para> 3. Call Delegate to handle those events. </para>
+             </summary>
+             <param name="token">cancellation Token</param>
+             <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookEventHandler.HandleEventsAsync(System.Collections.Generic.List{ewApps.Core.Webhook.Subscriber.WebhookEvent},ewApps.Core.Webhook.Subscriber.WebhookSubscription,System.Threading.CancellationToken)">
+            <summary>
+            Handle events and pass to the manager to call the Delegate
+            </summary>
+            <param name="events">List ofEvents</param>
+            <param name="subscription">Subscription</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Boolean for Success</returns>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionController">
+            <summary>
+            It handles all request coming from webhook Server
+            As this is in a seperate dll the implementor has to Add this dll as part of application
+            Using following code -
+            <code> 
+            Public void ConfigServices(IServiceCollection services)
+                 services.AddMVC().AddApplicationPart(Assembly.Load(new AssemblyName("Name"));
+            </code>
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionController.ReceiveEventsAsync(System.Collections.Generic.List{ewApps.Core.Webhook.Subscriber.WebhookEvent},System.Threading.CancellationToken)">
+            <summary>
+            Receives the Webhook Event send by the Server
+            </summary>
+            <param name="events">Webhook Event List</param>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionController.HandleServerShutDownEventAsync(ewApps.Core.Webhook.Subscriber.WebhookServerSubscriberDTO,System.Threading.CancellationToken)">
+            <summary>
+            Receives the Webhook Event send by the Server
+            </summary>
+            <param name="dto">ServerShutDown Dto that has Servername and SubscriptionName</param>
+            <returns>void</returns>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager">
+            <summary>
+            WebhookSubscriberManager class manages all Webhook Subscriptions in the app.
+            It is a singleton class. It provides support for:
+            <para>(1) Callback endpoint for client.</para>
+            <para>(2) Manage subscriptions. </para> 
+            <para>(3) Handle all events received by client.</para>
+            <para>(4) Send Notification to the Webhook Server for the Subscription Initialization, to get all the Pending events.</para>
+            <para>(5) Server ShutDown event is Handled and Added as the Event to the EventQueue, 
+                 And will be handled by the Subscribers as other events.</para>
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.#ctor(ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext,Microsoft.Extensions.Options.IOptions{ewApps.Core.Webhook.Subscription.WebhookSubscriptionAppSettings},Microsoft.Extensions.Logging.ILogger{ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="dbContext">DB constant Instance</param>
+            <param name="appSetting">App Setting Instance</param>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.IsInitialized">
+            <summary>
+            Checks webhook server manager initialization is completed or not.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.SubscriptionCallBack">
+            <summary>
+            Controller  Callback endpoint for Subscription
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.ServerShutDownCallBackEndPoint">
+            <summary>
+            Controller  Callback endpoint for Subscription
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.InitializeLocalSubscriptionCache">
+            <summary>
+            Initialize the local cache from Database
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.GetAllWebhookSubscriptionsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets all the WebhookSubscriptions 
+            </summary>
+            <returns>List of Webhook Subscriptions</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.GetWebhookSubscription(System.String)">
+            <summary>
+            Gets  the WebhookSubscription 
+            </summary>
+            <returns>Webhook Subscriptions</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.AddWebhookSubscriptionAsync(ewApps.Core.Webhook.Subscriber.WebhookSubscription,System.Threading.CancellationToken)">
+            <summary>
+            Adds Webhook Subscription
+            </summary>
+            <returns>Added webhook Subscription Entity</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.UpdateWebhookSubscriptionAsync(ewApps.Core.Webhook.Subscriber.WebhookSubscription,System.Threading.CancellationToken)">
+            <summary>
+            Updates webhook Subscription
+            </summary>
+            <returns>Updated webhook Subscription Entity</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.DeleteWebhookSubscriptionAsync(ewApps.Core.Webhook.Subscriber.WebhookSubscription,System.Threading.CancellationToken)">
+            <summary>
+            Deletes webhook Subscription
+            </summary>
+            <returns>void</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.AttachDelegatesAsync(System.Collections.Generic.Dictionary{System.String,ewApps.Core.Webhook.Subscriber.WebhookEventDelegate.WebhookEventHandlerAsync})">
+            <summary>
+            Attach the Delegate to the Subscription, 
+            It should be called at the Time of Initialization
+            To make sure all the Subscriptions has Delegates by the implementor.
+            It is also called on Add Subscription to add Delegate for given Subscription.
+            </summary>
+            <param name="eventDelegates">Dictionary - Subscription Name and EventDelegate</param>
+            <returns>void</returns>
+            <remarks>It adds Delegates to the given list of subscribtion, but does not alter any other subscription</remarks>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.AddEventsToEventQueueAsync(System.Collections.Generic.List{ewApps.Core.Webhook.Subscriber.WebhookEvent})">
+            <summary>
+            Add Event to Database Event queue received from Server
+            </summary>
+            <param name="events">List of WebhookEvents Received</param>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.ExecuteEventsAsync(ewApps.Core.Webhook.Subscriber.WebhookSubscription,System.Collections.Generic.List{ewApps.Core.Webhook.Subscriber.WebhookEvent},System.Threading.CancellationToken)">
+            <summary>
+            Execute Event delegate 
+            </summary>
+            <param name="subscription"> webhook subscription which will handle the Event by Delegate</param>
+            <param name="events">List of Event that are queued to handle by this Subscription </param>
+            <param name="token">Cancellation Token</param>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.ExecuteServerShutDownEventAsync(System.String,System.String,System.Threading.CancellationToken)">
+             <summary>
+             Execute Server ShutDown Event, It calls Same Subscription Delegate with Server.Shutdown Event.
+             </summary>
+             <param name="serverName">WebhookServer Name</param>
+             <param name="subscriptionName">Webhook  supbscription Name</param>
+            <remarks>This Event will call the Same Subscription Delegate with Server.ShutDown Event Name</remarks>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.AddSubscriptionToServerAsync(ewApps.Core.Webhook.Subscriber.WebhookSubscription,System.Threading.CancellationToken)">
+            <summary>
+            Add Subscription to Server by Http Client 
+             </summary>
+            <param name="token"></param>
+            <returns>Boolean for success</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.UpdateSubscriptionToServerAsync(ewApps.Core.Webhook.Subscriber.WebhookSubscription,System.Threading.CancellationToken)">
+            <summary>
+            Update Subscription to Server by Http Client 
+             </summary>
+            <param name="token"></param>
+            <returns>Boolean for success</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.RemoveSubscriptionFromServerAsync(ewApps.Core.Webhook.Subscriber.WebhookSubscription,System.Threading.CancellationToken)">
+            <summary>
+            Delete Subscription to Server by Http Client 
+             </summary>
+            <param name="token"></param>
+            <returns>Boolean for success</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager.NotifyWebhookServerAsync">
+            <summary>
+            Call same server end point as of Add, Server will check and reatatch the subscription
+            </summary>
+            <returns>void</returns>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionMiddleware">
+            <summary>
+            Not Used - Middleware which will check all incoming request for the 
+            Webhook Subscriber and handles it.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Subscriber.WebhookEventDelegate">
+            <summary>
+            Static class to define delegate 
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Subscriber.WebhookEventDelegate.WebhookEventHandlerAsync">
+            <summary>
+            Delegate defination for handling the call back
+            </summary>
+            <param name="subscription">Subscription object as the subscriber can defined multiple subscriptions</param>
+            <param name="webhookEvent">List of event to handle</param>
+            <param name="token">cancellation token</param>
+            <returns>void</returns>
+        </member>
+        <member name="T:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext">
+            <summary>
+            Database context for Webhook Operations  for
+            Webhook Subscriptions
+            WebhookEventQueue
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext},System.String)">
+            <summary>
+            Constructor with Context Options
+            </summary>
+            <param name="context"></param>
+            <param name="loggingService"></param>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext},Microsoft.Extensions.Options.IOptions{ewApps.Core.Webhook.Subscription.WebhookSubscriptionAppSettings},Microsoft.Extensions.Logging.ILogger{ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext})">
+            <summary>
+            Constructor with AppSetting
+            </summary>
+            <param name="options"></param>
+            <param name="appSetting"></param>
+            <param name="loggingService"></param>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Configure DB options
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext.WebhookSubscriptions">
+            <summary>
+            Dataset for Webhook Subscription 
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext.WebhookEventQueue">
+            <summary>
+            Datataset for Webhook Event Received by the subscriber
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext.GetAllWebhookSubscriptionsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets all webhook Subscriptions
+            </summary>
+            <param name="token">cancellation Token</param>
+            <returns>List of Webhook Subscriptions</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext.GetAllWebhookSubscriptions">
+            <summary>
+            Gets all Webhook Subscriptions
+            </summary>
+            <returns>List of Webhook Subscription</returns>
+            <remarks>Synchronous version</remarks>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext.GetWebhookSubscriptionAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets single Webhook Subscription based on Server Name and SubscriptionNAme
+            </summary>
+            <param name="webhookServerName">Server Name</param>
+            <param name="webhookSubscriptionName">Subscription NAme</param>
+            <param name="token">Cancellation Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext.GetWebhookEventQueueAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get all the events from queue pending for process
+            Ordered by Subscription.
+            </summary>
+            <param name="token">Cancellation Token</param>
+            <returns>List of WebhookEvent Object</returns>
+        </member>
+        <member name="M:ewApps.Core.Webhook.Subscriber.WebhookSubscriptionDBContext.DequeueWebhookEvents(System.Collections.Generic.List{ewApps.Core.Webhook.Subscriber.WebhookEvent},System.Threading.CancellationToken)">
+            <summary>
+            Deletes the Event from the eventQueue
+            </summary>
+            <param name="lastEventQueueId">Id of event that was processed at the last</param>
+            <param name="token">Cancellation Token</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

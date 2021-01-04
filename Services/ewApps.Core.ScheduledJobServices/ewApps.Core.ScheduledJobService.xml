@@ -1,0 +1,529 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.ScheduledJobService</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Core.ScheduledJobService.ScheduledJobAppSettings">
+            <summary>
+            This class contains all configuration information required to execute scheduler service.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobAppSettings.ConnectionString">
+            <summary>
+            Database connection string to get scheduler and scheduled job information.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobAppSettings.EnableDebugLog">
+            <summary>
+            A value indicating whether [enable debug log].
+            </summary>
+            <value>
+              if <c>true</c> [debug log becomes enable]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="F:ewApps.Core.ScheduledJobService.BaseSchedulerService._inProgress">
+            <summary>
+            If it is true, skip schduler execution.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.BaseSchedulerService.#ctor(System.Int32,Microsoft.Extensions.Logging.ILogger{ewApps.Core.ScheduledJobService.BaseSchedulerService},Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.ScheduledJobService.BaseSchedulerService"/> class.
+            </summary>
+            <param name="timerTickInterval">The timer tick interval.</param>
+            <param name="logger">The logger instace to log any error and/or information.</param>
+            <param name="scopeFactory">The scope factory instance to create object using DI.</param>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.BaseSchedulerService.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Starts when application starts.
+            </summary>
+            <param name="token">A token that can be use to propogate async operation cancel notification. 
+            Using this token async operation duration can be control.
+            </param>
+            <returns>Returns async task instace.</returns>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.BaseSchedulerService.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Stop triggers when application is shutdown gracefully.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.BaseSchedulerService.Dispose">
+            <summary>
+            Dispose is called by GC.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.BaseSchedulerService.ExecuteAsync(System.DateTime,System.Threading.CancellationToken)">
+            <summary>
+            Executes the operation on every inteval of scheduled timer.
+            </summary>
+            <param name="currentSchedulingTimeInUTC">The current scheduling time in UTC.</param>
+            <param name="token">The task cancellation token to handle task cancellation.</param>
+            <returns>Returns async task instance.</returns>
+        </member>
+        <member name="T:ewApps.Core.ScheduledJobService.ScheduledJobDBContext">
+            <summary>
+            This class contains a session of scheduler database and can be used to query and 
+            save instances of related entities. It is a combination of the 'Unit Of Work' and 'Repository' patterns.  
+            </summary>
+            <seealso cref="T:Microsoft.EntityFrameworkCore.DbContext" />
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Core.ScheduledJobService.ScheduledJobDBContext},System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.ScheduledJobService.ScheduledJobDBContext"/> class.
+            </summary>
+            <param name="contextOption">The DbContextOptions instance carries configuration information such as: 
+            (a) The database provider to use, UseSqlServer or UseSqlite
+            (b) Connection string or identifier of the database instance    
+            </param>
+            <param name="connectionString">The scheduler database connection string.</param>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Core.ScheduledJobService.ScheduledJobDBContext},Microsoft.Extensions.Options.IOptions{ewApps.Core.ScheduledJobService.ScheduledJobAppSettings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.ScheduledJobService.ScheduledJobDBContext"/> class.
+            </summary>
+            <param name="contextOption">The DbContextOptions instance carries configuration information such as: 
+            (a) The database provider to use, UseSqlServer or UseSqlite
+            (b) Connection string or identifier of the database instance    
+            </param>
+            <param name="appSetting">An instance of <see cref="T:ewApps.Core.ScheduledJobService.ScheduledJobAppSettings"/> options to get configuration information.</param>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobDBContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Initates master data generation process.
+            </summary>
+            <param name="builder">The model builder instance to generate database records.</param>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobDBContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Defines all the configuration option for the Database.
+            </summary>
+            <param name="optionsBuilder">An instance of DbContextOptionsBuilder to assign database connection string.</param>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobDBContext.ScheduledJobs">
+            <summary>
+            DbSet&lt;ScheduledJob&gt; can be used to query and save instances of ScheduledJob entity. 
+            Linq queries can written using DbSet&lt;ScheduledJob&gt; that will be translated to sql query and executed against database ScheduledJob table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobDBContext.ScheduledJobLogs">
+            <summary>
+            DbSet&lt;ScheduledJobLog&gt; can be used to query and save instances of ScheduledJobLog entity. 
+            Linq queries can written using DbSet&lt;ScheduledJobLog&gt; that will be translated to sql query and executed against database ScheduledJobLog table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobDBContext.Scheduler">
+            <summary>
+            DbSet&lt;Scheduler&gt; can be used to query and save instances of Scheduler entity. 
+            Linq queries can written using DbSet&lt;Scheduler&gt; that will be translated to sql query and executed against database Scheduler table.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ScheduledJobService.SchedulerMasterData">
+            <summary>
+            This class contains scheduler master data to be initialized on new database setup.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.SchedulerMasterData.Init(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Generates scheduler master data.
+            </summary>
+            <param name="builder">The model builder instance to generate database records..</param>
+        </member>
+        <member name="T:ewApps.Core.ScheduledJobService.ResponseDTO">
+            <summary>
+            This class represents a general response object that constains response type and response as raw string.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ResponseDTO.ReponseType">
+            <summary>
+            The type of the reponse.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ResponseDTO.Response">
+            <summary>
+            The response in form of string.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ScheduledJobService.ScheduledJobDTO">
+            <summary>
+            This class is DTO (Data Transfer Object) contains scheduled job information.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobDTO.ID">
+            <summary>
+            The system generated unique id.
+            </summary>   
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobDTO.JobName">
+            <summary>
+            Name of Job
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobDTO.ScheduledTime">
+            <summary>
+            Scheduler's next schedule time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobDTO.SourceName">
+            <summary>
+            The parent source entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobDTO.SourceId">
+            <summary>
+            The parent source entity id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobDTO.SourceEventName">
+            <summary>
+            The parent entity's scheduler event name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobDTO.SourceEventPayload">
+            <summary>
+            The parent source entity event payload.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobDTO.SourceCallback">
+            <summary>
+            The source module call back API url.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobDTO.MapTo(ewApps.Core.ScheduledJobService.ScheduledJobDTO)">
+            <summary>
+            Map the ScheduledJob DTO model to ScheduledJob database entity.
+            </summary>
+            <param name="scheduledJobDTO">ScheduledJob DTO to be map ScheduledJob entity.</param>   
+            <returns>Return ScheduledJob database entity mapped from .</returns>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobDTO.MapFrom(ewApps.Core.ScheduledJobService.ScheduledJob)">
+            <summary>
+            Map the ScheduledJob database entity to ScheduledJob DTO.
+            </summary>
+            <param name="scheduledJob">ScheduledJob entity to be map to ScheduledJob DTO.</param>   
+            <returns>Return ScheduledJob DTO entity mapped from ScheduledJob entity.</returns>
+        </member>
+        <member name="T:ewApps.Core.ScheduledJobService.ScheduledJobUpdateDTO">
+            <summary>
+            Contains the property to update ScheduleJob, Log, Status and reson.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobUpdateDTO.ScheduleJobId">
+            <summary>
+            The parent scheduler job id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobUpdateDTO.LogId">
+            <summary>
+            The system generated unique id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobUpdateDTO.Reason">
+            <summary>
+            Reason for current status change.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobUpdateDTO.Status">
+            <summary>
+            Current status change of scheduler.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.ID">
+            <summary>
+            The system generated unique id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.JobName">
+            <summary>
+            Name of Job
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.ScheduledTime">
+            <summary>
+            The scheduler execution time.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.SourceName">
+            <summary>
+            The source entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.SourceId">
+            <summary>
+            The source entity id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.SourceEventName">
+            <summary>
+            The source event name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.SourceEventPayload">
+            <summary>
+            The event payload.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.SourceCallback">
+            <summary>
+            Source entity call back url.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.Processed">
+            <summary>
+            A value indicating whether this <see cref="T:ewApps.Core.ScheduledJobService.ScheduledJob"/> is processed.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.Status">
+            <summary>
+            The current status of scheduler job.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.CreatedDate">
+            <summary>
+            Job record creation date-time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.ModifiedDate">
+            <summary>
+            Job record last modified date-time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJob.Deleted">
+            <summary>
+            A value indicating whether this <see cref="T:ewApps.Core.ScheduledJobService.ScheduledJob"/> is delete.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.ID">
+            <summary>
+            Uniue key of the table row
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.ScheduledJobId">
+            <summary>
+            ScheduledJobId
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.ScheduledTime">
+            <summary>
+            ScheduledTime
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.WorkflowStep">
+            <summary>
+            WorkflowStep
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.InProcessQueueTime">
+            <summary>
+            InProcessQueueTime
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.InProcessQueueStatus">
+            <summary>
+            InProcessQueueStatus
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.InProcessQueueReason">
+            <summary>
+            InProcessQueueReason
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.SourceCallbackTime">
+            <summary>
+            SourceCallbackTime
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.SourceCallbackStatus">
+            <summary>
+            SourceCallbackStatus
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.SourceCallbackReason">
+            <summary>
+            SourceCallbackReason
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.CompletionTime">
+            <summary>
+            CompletionTime
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.CompletionStatus">
+            <summary>
+            CompletionStatus
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.CompletionReason">
+            <summary>
+            CompletionReason
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.CreatedDate">
+            <summary>
+            CreatedDate
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.ScheduledJobLog.ModifiedDate">
+            <summary>
+            ModifiedDate
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.Scheduler.#ctor">
+            <summary>
+            Default contstructor to initialize variables (if any).
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.Scheduler.ID">
+            <summary>
+            Gets or sets the Scheduler Id.
+            </summary>
+            <value>
+            The Scheduler Id.
+            </value>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.Scheduler.SchedulerName">
+            <summary>
+            Job Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.Scheduler.Active">
+            <summary>
+            Job Active Status
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.Scheduler.FrequencyType">
+            <summary>
+            Frequency Type.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.Scheduler.FrequencyValue">
+            <summary>
+            Frequency Value.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.Scheduler.EndDate">
+            <summary>
+            End Date (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.Scheduler.LastExecutionTime">
+            <summary>
+            Last Execution Time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.Scheduler.NextExecutionTime">
+            <summary>
+            Next Execution Time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.ScheduledJobService.Scheduler.ModifiedOn">
+            <summary>
+            The modified date-time (in UTC).
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.ScheduledJobService.ScheduledJobServiceCollection">
+            <summary>
+            This class provides the collection of ScheduledServices with it's DI scope.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobServiceCollection.ScheduledJobDependency(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Registered scheduled job library service scope in DI framework.
+            </summary>
+            <param name="services">The services to get register with DI framework.</param>
+            <returns>Returns <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> instance with registerd services.</returns>
+        </member>
+        <member name="T:ewApps.Core.ScheduledJobService.IScheduledJobManager">
+            <summary>
+            This interface provides method definations to manage <see cref="T:ewApps.Core.ScheduledJobService.ScheduledJob"/> and <see cref="T:ewApps.Core.ScheduledJobService.ScheduledJobLog"/> data.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.IScheduledJobManager.GetScheduler(System.String,System.DateTime)">
+            <summary>
+            Gets the Scheduler entity that matches given scheduler name and scheduled time.
+            </summary>
+            <param name="schedulerName">Name of the scheduler.</param>
+            <param name="scheduleTimeInUTC">The schedule time in UTC.</param>
+            <returns>Returns Scheduler entity that matches given scheduler name and scheduled time.</returns>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.IScheduledJobManager.GetScheduledJobListAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the ScheduledJob based on input source entity id.
+            </summary>
+            <param name="sourceId">Source entity id to getch ScheduledJob record.</param>
+            <param name="token">A token that can be use to propogate async operation cancel notification. Using this token async operation duration can be control.</param>
+            <returns>Returns ScheduledJob entity based on input SQL and parameters.</returns>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.IScheduledJobManager.GetScheduledJobList(System.DateTime,System.String)">
+            <summary>
+            Gets the scheduled job list that matches given scheduled date time (in UTC).
+            </summary>
+            <param name="scheduledTimeInUTC">The scheduled time in UTC to find all scheduled jobs.</param>
+            <param name="jobName">Name of the job.</param>
+            <returns>Returns list of ScheduledJob that matches given scheduled time and job name.</returns>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.IScheduledJobManager.AddScheduledJobList(System.Collections.Generic.List{ewApps.Core.ScheduledJobService.ScheduledJobDTO})">
+            <summary>
+            Adds the scheduled job list.
+            </summary>
+            <param name="scheduledJobList">The scheduled job list to be added in database.</param>
+            <returns>Returns record count to be added.</returns>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.IScheduledJobManager.UpdateScheduledJob(ewApps.Core.ScheduledJobService.ScheduledJob)">
+            <summary>
+            Updates the scheduled job record.
+            </summary>
+            <param name="scheduledJob">The scheduled job entity instance with updated information.</param>
+            <returns>Returns true if entity get updated without any error.</returns>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.IScheduledJobManager.UpdateScheduledJobAndLog(ewApps.Core.ScheduledJobService.ScheduledJobUpdateDTO)">
+            <summary>
+            Update status in <see cref="T:ewApps.Core.ScheduledJobService.ScheduledJob"/> and creats a <see cref="T:ewApps.Core.ScheduledJobService.ScheduledJobLog"/> for current status change.
+            </summary>
+            <param name="scheduleJobDTO">A DTO instance that contains status and other related information.</param>
+            <returns>Returns number of records get affected in current update operation.</returns>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.IScheduledJobManager.DeleteUnProcessedScheduledJob(System.Guid)">
+            <summary>
+            Deletes the un processed scheduled job that maches the given source entity id.
+            </summary>
+            <param name="sourceEntityId">The source entity id to find all scheduled jobs.</param>
+            <returns>Returns number of unprocessed ScheduledJob records that are marked deleted based on input source entity id.</returns>
+        </member>
+        <member name="T:ewApps.Core.ScheduledJobService.ScheduledJobManager">
+            <summary>
+            This class provides methods to manage <see cref="T:ewApps.Core.ScheduledJobService.ScheduledJob"/> and <see cref="T:ewApps.Core.ScheduledJobService.ScheduledJobLog"/> data.
+            </summary>
+            <seealso cref="T:ewApps.Core.ScheduledJobService.IScheduledJobManager" />
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobManager.#ctor(ewApps.Core.ScheduledJobService.ScheduledJobDBContext,Microsoft.Extensions.Logging.ILogger{ewApps.Core.ScheduledJobService.ScheduledJobManager})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.ScheduledJobService.ScheduledJobManager"/> class and dependecies.
+            </summary>
+            <param name="dbContext">The database context to query on database.</param>
+            <param name="logger">The logger instance to log information.</param>
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobManager.GetScheduledJobListAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobManager.GetScheduler(System.String,System.DateTime)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobManager.GetScheduledJobList(System.DateTime,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobManager.AddScheduledJobList(System.Collections.Generic.List{ewApps.Core.ScheduledJobService.ScheduledJobDTO})">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobManager.UpdateScheduledJobAndLog(ewApps.Core.ScheduledJobService.ScheduledJobUpdateDTO)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobManager.UpdateScheduledJob(ewApps.Core.ScheduledJobService.ScheduledJob)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Core.ScheduledJobService.ScheduledJobManager.DeleteUnProcessedScheduledJob(System.Guid)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

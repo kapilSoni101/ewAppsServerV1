@@ -1,0 +1,740 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Payment.Data</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Payment.Data.IConfigurationRepository">
+            <summary>
+            This interface provides method to execute query agianst respective entity type.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.Data.IConfigurationRepository.GetBusinessConfigurtaionData(System.Guid,System.Guid)">
+            <summary>
+            Get payment business configuration detail by current tenantId AND current session AppId.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+        </member>
+        <member name="M:ewApps.Payment.Data.IConfigurationRepository.GetPartnerConfigurationDataAsync(System.Guid,System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get payment customer configuration detail by customerId AND current session TenantId.
+            <param name="tenantId"></param>
+            <param name="busPartnerTenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.Data.IConfigurationRepository.GetBusinessPaymentSubscribedAppServiceAccountDetail(System.Guid)">
+            <summary>
+            Get business subscribed payment services and attribute list.
+            </summary>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Payment.Data.IPaymentBrandingRepository">
+            <summary>
+            Business interface exposing all the Business methods.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Data.IPaymentInvoiceLinkingRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentInvoiceLinkingRepository.GetPaymentInvoiceLinkingByPaymentIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get paid invoices list by Paymentid.
+            </summary>
+            <param name="paymentId">Unique paymentid.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetPaymentHistoryByPaymentIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get payment history by paymentid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetPaymentDTOAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets Payment DTO given its  id and inventoryid.
+            </summary>
+            <param name="id">  Id, unique key</param>
+            <param name="invoiceId">  invoiceId</param>
+            <param name="token">Cancellation token</param>
+            <returns>Found Payment DTO</returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetPaymentHistoryByCustomerOrderIdAsync(System.Guid,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get payment list by cusomerid and orderid.
+            </summary>
+            <param name="customerId"></param>
+            <param name="orderId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetPaymentDTOListAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets list of Payments by given Payment id.
+            </summary>
+            <param name="paymentId">  Id, unique key</param>        
+            <param name="token">Cancellation token</param>
+            <returns>Found Payment DTO</returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetPaymentHistoryAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get payment list by partnerid.
+            </summary>
+            <param name="partnerId">CustomerID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetCustomerFilterPaymentHistoryAsync(ewApps.Core.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get filter payment history list.
+            </summary>
+            <param name="filter"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetInvoicesByPaymentId(System.Guid)">
+            <summary>
+            Get the list of invoices paid in a single transection(payment).
+            </summary>        
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetInvoicesByPaymentIdAndInvoiceId(System.Guid,System.Guid)">
+            <summary>
+            Get the list of invoices paid in a single transection(payment).
+            </summary>        
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetFilterTenantPaymentHistoryAsync(ewApps.Core.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get filter payment history list by tenantid.
+            </summary>
+            <param name="filter"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetVoidFilterTenantPaymentHistoryAsync(ewApps.Core.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get paending status payment list by tenantid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetSattledFilterTenantPaymentHistoryAsync(ewApps.Core.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get sattled status payment list by tenantid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetPaymentHistoryByTenantAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get payment list by tenant.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetPaymentHistoryByInvoiceAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="invoiceId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetOutstandingPaymentByCustomer(System.Guid)">
+            <summary>
+            Get sum of outstanding amount.
+            </summary>
+            <param name="partnerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentRepository.GetPaymentDTOAsyncByPaymentId(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets list of Payments by given Payment id.
+            </summary>
+            <param name="paymentId">  Id, unique key</param>        
+            <param name="token">Cancellation token</param>
+            <returns>Found Payment DTO</returns>
+        </member>
+        <member name="T:ewApps.Payment.Data.IRecurringPaymentRepository">
+            <summary>
+            Provide support method for add/update recurring schedule.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.Data.IRecurringPaymentRepository.GetRecurrtingPaymentAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get recurring payment detail list.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IRecurringPaymentRepository.GetRecurrtingPaymentByCustomerAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get recurring payment detail list by customerid.
+            </summary>
+            <param name="customerid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IRecurringPaymentRepository.GetRecurrtingPaymentByCustomerOrderAsync(System.Guid,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get recurring payment schedule by customerid and order.
+            </summary>
+            <param name="customerid"></param>
+            <param name="orderId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IRecurringPaymentRepository.GetRecurringModelById(System.Guid)">
+            <summary>
+            Get recurring detail model by id.
+            </summary>
+            <param name="recurringId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IRecurringPaymentRepository.IsOrderIdExist(System.String,System.Guid,System.Guid)">
+            <summary>
+            Checking whether orderid exist.
+            </summary>
+            <param name="orderId"></param>
+            <param name="tenantId"></param>
+            <param name="recId">unique recurring id.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Payment.Data.IPaymentNotificationRecipientRepository">
+            <summary>Exposing all the notification recepient method.</summary>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetAllBusinessUser(System.Guid,System.Guid)">
+            <summary>
+            Get all the business user of the particular tennat.
+            </summary>
+            <param name="tenantId">tenant identifier</param>
+            <param name="appId">business application id to be passed.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetInvitedDeletedBusinessUser(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get deleted user
+            </summary>
+            <param name="tenantId">tenant identifier</param>
+            <param name="appId">business application id to be passed.</param>
+            <param name="tenantUserId">business application id to be passed.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetAllBusinessUserWithPrefernce(System.Guid,System.Guid,System.Int64)">
+            <summary>
+            Get all the business user with preferences
+            </summary>
+            <param name="tenantId">tenant identifier for the tenantuser</param>
+            <param name="appId">application identifier for the tenantuser</param>
+            <param name="emailPreference">emeail preferece bitmask</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetAllBusinessPartnerUser(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get all the business partner users.
+            </summary>
+            <param name="tenantId">tenant identifier</param>
+            <param name="appId">business application id to be passed.</param>
+            <param name="businessPartnerTenantId">business partner tenant identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetAllBusinessPartnerDeletedUser(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get all the business partner deleted users.
+            </summary>
+            <param name="tenantId">tenant identifier</param>
+            <param name="appId">business application id to be passed.</param>
+            <param name="businessPartnerTenantId">business partner tenant identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetAllBusinessPartnerUserWithPrefernce(System.Guid,System.Guid,System.Guid,System.Int64)">
+            <summary>
+            Get all the business partner user with preferences
+            </summary>
+            <param name="tenantId">tenant identifier for the tenantuser</param>
+            <param name="appId">application identifier for the tenantuser</param>
+            <param name="businessPartnerTenantId">business partner tenant identifier to identify to wich customer the partner belongs</param>
+            <param name="emailPreference">emeail preferece bitmask</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetBusinessSupporUserList(System.Guid,System.Int32,System.Guid)">
+            <summary>Get all the business support users</summary>
+            <param name="tenantId"></param>
+            <param name="userType"></param>
+            <param name="appId"></param>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetBusinessSupportUsersWithPreference(System.Int64,System.Guid,System.Guid)">
+            <summary>
+            Get business support users with preference.
+            </summary>
+            <param name="emailPreferencEvent"></param>
+            <param name="appId"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetTicketOwnerWithPreference(System.Int64,System.Guid,System.Guid,System.Int32)">
+            <summary>
+            Get Ticket owner with preferences.
+            </summary>
+            <param name="emailPreferencEvent"></param>
+            <param name="appUserId"></param>
+            <param name="appId"></param>
+            <param name="userType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetBusinessInvoicePermissionUserNotificationListWithPrefernce(System.Int64,System.Guid,System.Guid)">
+            <summary>
+            Get all the business with invoice permission with preferences.
+            </summary>
+            <param name="emailPreferencEvent"></param>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetBusinessPartnerInvoicePermissionUserNotificationListWithPrefernce(System.Int64,System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get all the business partner with invoice permission with preferences.
+            </summary>
+            <param name="emailPreferencEvent"></param>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="parentRefId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetInvitedBusinessUser(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get the invited business users where is is of businesss type.
+            </summary>
+            <param name="tenantId">tenant identifier for the user</param>
+            <param name="tenantUserId"> tenant user identitfier for the tenant user</param>
+            <param name="appId">application id for the user to which user belongs</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetInvitedBusinessPartnerUser(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get the invited business partner users where is is of businesssPartner type.
+            </summary>
+            <param name="tenantId">tenant identifier for the user</param>
+            <param name="tenantUserId"> tenant user identitfier for the tenant user</param>
+            <param name="appId">application id for the user to which user belongs</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetInvitedBusinessPartnerDeletedUser(System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get the invited business partner deleted users where is is of businesssPartner type.
+            </summary>
+            <param name="tenantId">tenant identifier for the user</param>
+            <param name="tenantUserId"> tenant user identitfier for the tenant user</param>
+            <param name="appId">application id for the user to which user belongs</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetAllBusinessPartnerUserWithPermissionAndPrefrence(System.Guid,System.Guid,System.Guid,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Get all the business partner user having particular permission(either first permission or having second permission) and a perticular notification perefence on.
+            </summary>
+            <param name="tenantId">tenant identifier for the tenantuser</param>
+            <param name="appId">application identifier for the tenantuser</param>
+            <param name="businessPastnerTenantId">business partner tenant identifier to identify to wich customer the partner belongs</param>
+            <param name="emailPreference">emeail preferece bitmask</param>
+            <param name="smsPreference">sms preferece bitmask</param>
+            <param name="firstpermission">first permission permission bitmask</param>
+            <param name="secondPermission">sesond permission bitmask</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetAllBusinessUserWithPermissionAndPrefrence(System.Guid,System.Guid,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Get all the business user having particular permission(either first permission or having second permission) and a perticular notification perefence on.
+            </summary>
+            <param name="tenantId">tenant identifier for the tenantuser</param>
+            <param name="appId">application identifier for the tenantuser</param>
+            <param name="emailPreference">email preferece bitmask</param>
+            <param name="smsPreference">sms preferece bitmask</param>
+            <param name="firstpermission">first permission permission bitmask</param>
+            <param name="secondPermission">sesond permission bitmask</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.IPaymentNotificationRecipientRepository.GetAllBusinessUserWithMultiplePermissionAndPrefrence(System.Guid,System.Guid,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Get all the business user having multiple permission(either first second , 3rd or 4th permission) and a perticular notification perefence on.
+            </summary>
+            <param name="tenantId">tenant identifier for the tenantuser</param>
+            <param name="appId">application identifier for the tenantuser</param>
+            <param name="emailPreference">email preferece bitmask</param>
+            <param name="smsPreference">sms preferece bitmask</param>
+            <param name="firstpermission">first permission permission bitmask</param>
+            <param name="secondPermission">sesond permission bitmask</param>
+            <param name="thirdPermission">third permission permission bitmask</param>
+            <param name="fourthPermission">forth permission bitmask</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Payment.Data.PaymentNotificationRecipientRepository">
+            <summary>Implementing all the notification recepient method.</summary>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.#ctor(ewApps.Payment.Data.PaymentDBContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializing the local variables.
+            </summary>
+            <param name="context">payment db context for quering the database.</param>
+            <param name="sessionManager">Sessoin manager object.</param>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetInvitedBusinessUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetInvitedDeletedBusinessUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetInvitedBusinessPartnerUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetInvitedBusinessPartnerDeletedUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetAllBusinessUser(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetAllBusinessUserWithPrefernce(System.Guid,System.Guid,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetAllBusinessPartnerUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetAllBusinessPartnerDeletedUser(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetAllBusinessPartnerUserWithPrefernce(System.Guid,System.Guid,System.Guid,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetAllBusinessPartnerUserWithPermissionAndPrefrence(System.Guid,System.Guid,System.Guid,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetAllBusinessUserWithPermissionAndPrefrence(System.Guid,System.Guid,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetAllBusinessUserWithMultiplePermissionAndPrefrence(System.Guid,System.Guid,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetBusinessSupporUserList(System.Guid,System.Int32,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetBusinessSupportUsersWithPreference(System.Int64,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetTicketOwnerWithPreference(System.Int64,System.Guid,System.Guid,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetBusinessInvoicePermissionUserNotificationListWithPrefernce(System.Int64,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetBusinessPartnerInvoicePermissionUserNotificationListWithPrefernce(System.Int64,System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentNotificationRecipientRepository.GetBusinessPartnerInvoicePermissionUserSMSNotificationListWithPrefernce(System.Int64,System.Guid,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.Payment.Data.ConfigurationRepository">
+            <summary>
+            This repository to implements get configuration detail.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ewApps.Payment.Data.ConfigurationRepository.#ctor(ewApps.Payment.Data.PaymentDBContext,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.Core.DbConProvider.IConnectionManager)" -->
+        <member name="M:ewApps.Payment.Data.ConfigurationRepository.GetBusinessConfigurtaionData(System.Guid,System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Payment.Data.ConfigurationRepository.GetPartnerConfigurationDataAsync(System.Guid,System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.Payment.Data.ConfigurationRepository.GetBusinessPaymentSubscribedAppServiceAccountDetail(System.Guid)">
+            <summary>
+            Get business subscribed payment services and attribute list.
+            </summary>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Payment.Data.PaymentBrandingRepository">
+            <summary>
+            This class implement all the Payment methods.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentBrandingRepository.#ctor(ewApps.Payment.Data.PaymentDBContext,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.Core.DbConProvider.IConnectionManager)">
+            <summary>
+            Initializing all the dependency.
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+            <param name="connectionManager"></param>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentBrandingRepository.GetPaymentBrandingDetailAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+            <summary>
+            Get Business by Tenantid, AppID, AppKey.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            /// <param name="token"></param>
+            <returns>
+            Returns BusinessBrandingDTO instance if found otherwise returns null.
+            </returns>
+        </member>
+        <member name="T:ewApps.Payment.Data.PaymentInvoiceLinkingRepository">
+            <summary>
+            It will create link for each invoice transection and payment.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentInvoiceLinkingRepository.#ctor(ewApps.Payment.Data.PaymentDBContext,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.Core.DbConProvider.IConnectionManager)">
+            <summary>
+            Default construction with necessary DI object.
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+            <param name="connectionManager"></param>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentInvoiceLinkingRepository.GetPaymentInvoiceLinkingByPaymentIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get paid invoices list by Paymentid.
+            </summary>
+            <param name="paymentId">Unique paymentid.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentLogRepository.AddPaymentLogAsync(ewApps.Payment.Entity.PaymentLog,System.Threading.CancellationToken)">
+            <summary>
+            Add PaymentLog entity 
+            </summary>
+            <param name="paymentlog">Paymentlog entity to add</param>
+            <param name="token">For cancellation</param>
+            <returns>Payment Entity</returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get all payments made for a tenant ordered by OriginationDate. It skips deleted entities.
+            </summary>
+            <param name="token">For cancellation</param>
+            <returns>Collection of all Payment entities</returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetAllByPartnerAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get all Payment entities for a given Partner ordered by Originated Date.
+            It skips deleted entities.
+            </summary>
+            <param name="businessId">BusinessId/MerchantId of the customer</param>
+            <param name="token">For cancellation</param>
+            <returns>Collection of all payment entities</returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetAllByBusinessAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get all Payment entities for a given Business ordered by Originated Date
+            It skips deleted entities.
+            </summary>
+            <param name="businessId">BusinessId/MerchantId of the customer</param>
+            <param name="token">For cancellation</param>
+            <returns>Collection of all payment entities</returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetDTOAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets Payment DTO given its  id.
+            </summary>
+            <param name="id">  Id, unique key</param>
+            <param name="token">Cancellation token</param>
+            <returns>Found Payment DTO</returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetPaymentDTOAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets Payment DTO given its  id and inventoryid.
+            </summary>
+            <param name="id">  Id, unique key</param>
+            <param name="invoiceId">  invoiceId</param>
+            <param name="token">Cancellation token</param>
+            <returns>Found Payment DTO</returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetPaymentDTOAsyncByPaymentId(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets Payment DTO given its  id and inventoryid.
+            </summary>
+            <param name="id">  Id, unique key</param>
+            <param name="invoiceId">  invoiceId</param>
+            <param name="token">Cancellation token</param>
+            <returns>Found Payment DTO</returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetPaymentDTOListAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets list of Payments by given Payment id.
+            </summary>
+            <param name="paymentId">  Id, unique key</param>        
+            <param name="token">Cancellation token</param>
+            <returns>Found Payment DTO</returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetPaymentHistoryAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get payment list by partnerid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetCustomerFilterPaymentHistoryAsync(ewApps.Core.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get payment list by partnerid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetPaymentHistoryByPaymentIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get payment history by paymentid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetFilterTenantPaymentHistoryAsync(ewApps.Core.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get payment list by tenantid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetVoidFilterTenantPaymentHistoryAsync(ewApps.Core.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get paending status payment list by tenantid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetSattledFilterTenantPaymentHistoryAsync(ewApps.Core.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get sattled status payment list by tenantid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetInvoicesByPaymentId(System.Guid)">
+            <summary>
+            Get the list of invoices paid in a single transection(payment).
+            </summary>        
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetInvoicesByPaymentIdAndInvoiceId(System.Guid,System.Guid)">
+            <summary>
+            Get the list of invoices paid in a single transection(payment).
+            </summary>        
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetPaymentHistoryByInvoiceAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get payment list by invoiceId.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetPaymentHistoryByCustomerOrderIdAsync(System.Guid,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get payment list by cusomerid and orderid.
+            </summary>
+            <param name="customerId"></param>
+            <param name="orderId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetPaymentHistoryByTenantAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get payment list by tenant.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetOutstandingPaymentByCustomer(System.Guid)">
+            <summary>
+            Get outstanding payment amount by partnerid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.GetCustomerInvoicePaymentAndExchangeRate(System.Guid)">
+            <summary>
+            Get customer invoice info with currency exchnage rate.
+            </summary>
+            <param name="partnerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.AddAsync(ewApps.Payment.Entity.Payment,System.Threading.CancellationToken)">
+            <summary>
+            Add Payment entity 
+            </summary>
+            <param name="payment">Payment entity to add</param>
+            <param name="token">For cancellation</param>
+            <returns>Payment Entity</returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.UpdateAsync(ewApps.Payment.Entity.Payment,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Update Payment entity - Not required as payment can not be updated once done
+            </summary>
+            <param name="payment">Payment entity</param>
+            <param name="id">Id</param>
+            <param name="token">For cancellation</param>
+            <returns>Updated Payment Entity</returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentRepository.DeleteAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Delete payment entity given its Id
+            </summary>
+            <param name="id"> Id</param>
+            <param name="token">For cancellation</param>
+            <returns>void</returns>
+        </member>
+        <member name="T:ewApps.Payment.Data.RecurringPaymentRepository">
+            <summary>
+            Dataclass for recurring payment.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.Data.RecurringPaymentRepository.GetRecurrtingPaymentAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get recurring payment schedule by tenantid.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.RecurringPaymentRepository.GetRecurrtingPaymentByCustomerAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get recurring payment schedule by customerid.
+            </summary>
+            <param name="customerid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.RecurringPaymentRepository.GetRecurrtingPaymentByCustomerOrderAsync(System.Guid,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get recurring payment schedule by customerid and order.
+            </summary>
+            <param name="customerid"></param>
+            <param name="orderId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.RecurringPaymentRepository.GetRecurringModelById(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="recurringId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Data.RecurringPaymentRepository.IsOrderIdExist(System.String,System.Guid,System.Guid)">
+            <summary>
+            Checking whether orderid exist.
+            </summary>
+            <param name="orderId"></param>
+            <param name="tenantId"></param>
+            <param name="recId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Payment.Data.IPaymentUnitOfWork">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Data.PaymentUnitOfWork">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentUnitOfWork.Save">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.Data.PaymentUnitOfWork.SaveAsync">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

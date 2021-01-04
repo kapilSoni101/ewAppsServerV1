@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Shipment.Common</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Shipment.Common.Constants">
+            <summary>
+            This class provides all the constants used in the application.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.IsOriginaleKey">
+            <summary>
+            Original Exception flag key.
+            </summary>  
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.IsWrapperKey">
+            <summary>
+            Wrapper Exception flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.IsPassThroughKey">
+            <summary>
+            Pass Through Exception flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.IsRethrowKey">
+            <summary>
+            Re-throw Exception flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.IsNewKey">
+            <summary>
+            New Exception flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.SeverityKey">
+            <summary>
+            Exception Severity key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.AdditionalMsgKey">
+            <summary>
+            Additional message key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.IsLoggedKey">
+            <summary>
+            Exception is logged flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.HttpStatusCodeKey">
+            <summary>
+            Http status code.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.PassThroughPolicyKey">
+            <summary>
+            PassThrough Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.NewPolicyKey">
+            <summary>
+            New Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.LogPolicyKey">
+            <summary>
+            Log Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.DataPolicyKey">
+            <summary>
+            Data Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.DataServicePolicyKey">
+            <summary>
+            DataService Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.SyncPolicyKey">
+            <summary>
+            DataService Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.AdminRoleNames">
+            <summary>
+            Admin role name list.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.AdminRoleKey">
+            <summary>
+            Value of admin role key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.AppKey">
+            <summary>
+            Value of admin role key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.PackageIdPrefix">
+            <summary>
+            PackageId prefix for PackageMaster.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.Constants.PackageIdPrefixCount">
+            <summary>
+            PackageId prefix number for PackageMaster.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum">
+            <summary>
+            Email preferece of the business user for the shipment application.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.None">
+            <summary>
+            No prefernces.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.NewCustomerOnBoard">
+            <summary>
+            New Customer OnBoard.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.CustomerAccountStatusChanged">
+            <summary>
+            Customer Account Status Changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.NewSalesOrderCreated">
+            <summary>
+            New Sales Order Created.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.SalesOrderUpdated">
+            <summary>
+            Sales Order quote generated
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.SalesOrderDeliveryInitiated">
+            <summary>
+            Sales Order delivery initiated
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.SalesOrderClosed">
+            <summary>
+            Sales Order is closed
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.NewDeliveryInitiated">
+            <summary>
+            New Delivery initiated
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.ScheduledDeliveryCancelled">
+            <summary>
+            Scheduled Delivery is cancelled
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.DeliveryTrackingStatusChanged">
+            <summary>
+            Delivery tracking status is changed
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.NewItemAdded">
+            <summary>
+            New Item added
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.ItemStatusChanged">
+            <summary>
+            Item status is changed
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.ExistingItemUpdated">
+            <summary>
+             Existing Item is updated
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.NewPackagingAdded">
+            <summary>
+            New Packaging added
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.PackagingStatusChanged">
+            <summary>
+            Packaging status is changed
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.ExistingPackagingUpdated">
+            <summary>
+            Existing Packaging is updated
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.MyPermissionsChanged">
+            <summary>
+            My permissions changed
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.MyUserAccountStatusChanged">
+            <summary>
+            My user account status changed
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.NewPortalUserJoined">
+            <summary>
+            New portal user joined
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.MyTicketStatusChanged">
+            <summary>
+            My ticket status is changed
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.MyTicketReassigned">
+            <summary>
+            My ticket is reassigned
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.MyTicketPriorityChanged">
+            <summary>
+            My ticket priority is changed
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.MyTicketNewCommentAdded">
+            <summary>
+             New comment added in my ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.MyTicketNewAttachmentAdded">
+            <summary>
+            New attachment added in my ticket
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.CustomerTicketsStatusChanged">
+            <summary>
+            Customer tickets status is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.CustomerTicketReassigned">
+            <summary>
+             Customer ticket is reassigned.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.CustomerTicketPriorityChange">
+            <summary>
+             Customer ticket priority is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.CustomerTicketNewCommentAdded">
+            <summary>
+            New comment added in customers ticket
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.CustomerTicketNewAttachmentAdded">
+            <summary>
+             New attachment added in customer ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessEmailPreferenceEnum.All">
+            <summary>
+            All the perfrences are on.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Common.ShipmentBusinessSMSPreferenceEnum">
+            <summary>
+            SMS preferece of the business user for the shipment application.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessSMSPreferenceEnum.None">
+            <summary>
+            No prefernces.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentBusinessSMSPreferenceEnum.All">
+            <summary>
+            All the perfrences are on.
+            </summary>
+        </member>
+        <member name="T:ewApps.Shipment.Common.ShipmentTokenTypeEnum">
+            <summary>
+            Token Type enum for payment.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentTokenTypeEnum.ShipmentBusinessUserNewEmailInvite">
+            <summary>
+            Shipment Business User New Email Invite.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentTokenTypeEnum.ShipmentBusinessUserExistingEmailInvite">
+            <summary>
+            Shipment Business User Existing Email Invite.
+            </summary>
+        </member>
+        <member name="F:ewApps.Shipment.Common.ShipmentTokenTypeEnum.ShipmentUserForgotPassword">
+            <summary>
+            Forgot password mail.
+            </summary>
+        </member>
+    </members>
+</doc>

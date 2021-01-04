@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.ServiceRegistration.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.ServiceRegistration.WebApi.RegistrationController">
+             <summary>
+            Api to support Service Registration CRUD operations
+             </summary>
+        </member>
+        <member name="M:ewApps.ServiceRegistration.WebApi.RegistrationController.#ctor(ewApps.ServiceRegistration.DS.IRegistrationDS)">
+            <summary>
+            This is the constructor injecting app dataservice
+            </summary>
+            <param name="serviceRegistrationDS">Service Registration Data Service DI</param>
+        </member>
+        <member name="M:ewApps.ServiceRegistration.WebApi.RegistrationController.GetRegisteredServiceAsync(ewApps.ServiceRegistration.DTO.ServiceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Gets Service Regitration details 
+            </summary>
+            <param name="request">ServiceName and PreferenceCriteria</param>
+            <param name="token">cancellation Token</param>
+            <returns>Service Registration Info</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ewApps.ServiceRegistration.WebApi.RegistrationController.GetRegisteredServiceAsync(System.String,System.Threading.CancellationToken)" -->
+        <member name="M:ewApps.ServiceRegistration.WebApi.RegistrationController.RegisterServiceAsync(ewApps.ServiceRegistration.Entity.ServiceRegistry,System.Threading.CancellationToken)">
+            <summary>
+            Registeres the service
+            </summary>
+            <param name="serviceRegistery">Service Registration Object</param>
+            <param name="token">Cancellation Token</param>
+            <returns>Registered service object</returns>
+        </member>
+        <member name="M:ewApps.ServiceRegistration.WebApi.RegistrationController.UnregisterServiceAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Unregisters the Service.
+            </summary>
+            <param name="serviceRefId">service reference Id</param>
+            <param name="token"> Cancellation Token</param>
+            <returns>Status code  Deleted</returns>
+        </member>
+    </members>
+</doc>

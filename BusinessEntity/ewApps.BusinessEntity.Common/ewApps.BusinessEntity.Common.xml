@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.BusinessEntity.Common</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.BusinessEntity.Common.BusinessEntityConstants">
+            <summary>
+            This class provides all the constants used in the application.
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Common.BusinessEntityConstants.PublisherApplicationId">
+            <summary>
+            Publisher application Guid.
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Common.SalesOrderStatusEnum.Open">
+            <summary>
+            Shows that order is open.
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Common.SalesOrderStatusEnum.Incomplete">
+            <summary>
+            Shows that order is incomplete.
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Common.SalesOrderStatusEnum.Completed">
+            <summary>
+            Shows that order is completed.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Common.SyncResponseEnum">
+            <summary>
+            SyncResponseEnum to identify the Sync Response.
+            </summary>
+        </member>
+    </members>
+</doc>

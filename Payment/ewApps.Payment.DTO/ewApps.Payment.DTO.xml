@@ -1,0 +1,1301 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Payment.DTO</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Payment.DTO.BusAppServiceAttributeDTO">
+            <summary>
+            Contains chhild attribute for AppService.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.BusAppServiceDTO">
+            <summary>
+            Contains chhild attribute for AppService.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.PaymentBrandingDTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentBrandingDTO.ID">
+            <summary>
+            Unique identifier for the TenantAppSetting table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentBrandingDTO.TenantId">
+            <summary>
+            Unique indentifer for Tenant Table
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentBrandingDTO.Name">
+            <summary>
+            Name of the application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentBrandingDTO.ThemeId">
+            <summary>
+            Theme Unique identifier of the application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentBrandingDTO.ThemeKey">
+            <summary>
+            Themekey of the application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentBrandingDTO.ThumbnailId">
+            <summary>
+            Thumbnail Unique identifier of the application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentBrandingDTO.ThumbnailUrl">
+            <summary>
+            ThumbnailUrl of the application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentBrandingDTO.ThumbnailAddUpdateModel">
+            <summary>
+            Thumbnail details model of the application
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.PaymentOutStandingDTO">
+            <summary>
+            Contains application and user id values.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentOutStandingDTO.OutStanding">
+            <summary>
+            OUtStanding Sum Id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentOutStandingDTO.BusinessOutStandingAmount">
+            <summary>
+            OUtStanding Sum before exchange rate.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentUserSessionDTO.UserSessionCurrency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentUserSessionDTO.CustomerRefId">
+            <summary>
+            Custome ref id for the custome user. (Check)
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentUserSessionDTO.Configured">
+            <summary>
+            Configured flag. (Yes)
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentUserSessionDTO.PublisherName">
+            <summary>
+            Custome ref id for the custome user. (Check)
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentUserSessionDTO.PublisherTenantId">
+            <summary>
+            Custome ref id for the custome user. (Check)
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentUserSessionDTO.PartnerTenantId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentUserSessionDTO.PartnerType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentUserSessionDTO.LeftBusinessName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentUserSessionDTO.LeftBusinessLogoUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentUserSessionDTO.TenantWebsite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentUserSessionDTO.LeftPartnerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.HTMLConvertDTO">
+            <summary>
+            This class contains all the properties requires to convert HTML file to PDF document
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.RecurringDTO">
+            <summary>
+            Contains recurring defination, it contains all the information of a scheduled payment.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.StartDate">
+            <summary>
+            When scheduled event occured at first time. 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.EndDate">
+            <summary>
+            When scheduled event occured at last time. 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.RecurringPeriod">
+            <summary>
+            ewApps recurring period 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.RecurringTerms">
+            <summary>
+            ewApps recurring terms
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.Status">
+            <summary>
+            Active/Inactive
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.TotalAmount">
+            <summary>
+            Total amount to pay
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.RecurringPaymentDetail">
+            <summary>
+            Contains detail of a payment object.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.CustomerAccountId">
+            <summary>
+            Customer Account detail id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.CreatedBy">
+            <summary>
+            Created by user.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.CreatedByName">
+            <summary>
+            Created by user name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.CreatedOn">
+            <summary>
+            Recurring Creation date.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.RemainingTermCount">
+             <summary>
+            Remaining pay count.
+             </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.FromCurrencyCode">
+            <summary>
+            Business currency code.
+            </summary>    
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.ToCurrencyCode">
+            <summary>
+            customer currency code.
+            </summary>    
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringDTO.ExchangeRate">
+            <summary>
+            Currency conversion rate FromCurrency to ToCurrency.
+            </summary>    
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentDTO.OrderId">
+            <summary>
+            order Id 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentDTO.BankName">
+            <summary>
+            Customer Bank Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentDTO.ABARoutingNumber">
+            <summary>
+            Bank Routing Number
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentDTO.AccountNumber">
+            <summary>
+            Customer account number to be used for payment
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentDTO.AccountType">
+            <summary>
+            Account type:Saving,Checking
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentDTO.PaymentEntryType">
+            <summary>
+             Its CCD, SSD
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.RecurringPaymentViewDTO">
+            <summary>
+            Detail of a recurring payment.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentViewDTO.StartDate">
+            <summary>
+            When scheduled event occured at first time. 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentViewDTO.EndDate">
+            <summary>
+            When scheduled event occured at first time. 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentViewDTO.NextPaymentdate">
+            <summary>
+            Next payment date.
+            Upcoming Pay On: date of the upcoming payment.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentViewDTO.RecurringPeriod">
+            <summary>
+            ewApps recurring period(TermPeriod, Month, Quater, yearly)
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentViewDTO.RecurringTerms">
+            <summary>
+            ewApps recurring terms
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentViewDTO.TermAmount">
+            <summary>
+            Payment for each pay.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentViewDTO.TotalAmount">
+            <summary>
+            Total amount to pay
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringPaymentViewDTO.RemainingTermCount">
+            <summary>
+            remaining term count
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.AddInvoiceAndPay">
+            <summary>
+            Class contains the invoice detail and payment object to make payment.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddInvoiceAndPay.InvoiceDTO">
+            <summary>
+            Contains invoice detail object.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddInvoiceAndPay.AddPaymentDTO">
+            <summary>
+            Contains payment detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.CheckImageFront">
+            <summary>
+            Front image copy of the check associated with the account as Base64 encoded string
+            Needed for POP, ICL, BOC
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.CheckImageBack">
+            <summary>
+            Back image copy of the check associated with the account as Base64 encoded string
+            Needed for POP, ICL, BOC
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.Customer">
+            <summary>
+            Adding customer DTO to get customer detail 
+            from application when actual payment is made intead of creating it when it is added to application.
+            COnnector has responsibility to add and update it whenever required.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.AppServiceId">
+            <summary>
+            Serviceid from which source payment is going to make.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.AppServiceAttributeId">
+            <summary>
+            Service attrubute id from which source payment is going to make.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.FromCurrencyCode">
+            <summary>
+            Business currency code.
+            </summary>    
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.ToCurrencyCode">
+            <summary>
+            customer currency code.
+            </summary>    
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.ExchangeRate">
+            <summary>
+            Currency conversion rate FromCurrency to ToCurrency.
+            </summary>    
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.ClientIP">
+            <summary>
+            Client Ip address where Payment done 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.CustomerAccountId">
+            <summary>
+            Payment account id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.SaveAccountInfo">
+            <summary>
+            Save customer account info.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.ClientBrowser">
+            <summary>
+            Client Browser Information where Payment Done 
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.AddPaymentDTO.ClientOS">
+            <summary>
+            Client Operating System Information where Payment Done 
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.ConfigurationDTO">
+            <summary>
+            This class is a DTO that contains <see cref="!:Tenant"/> and it's related entities information to be use for View and Update operations.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.TenantId">
+            <summary>
+             Unique Identifier of Tenant
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.Name">
+            <summary>
+            Name of the application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.Website">
+            <summary>
+            Website Detail of Address.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.IdentityNumber">
+            <summary>
+            A system generated tenant's identity number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.InvitedOn">
+            <summary>
+            Tenant's primary user last invitation date and time.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.InvitedByFullName">
+            <summary>
+            User name who invite tenant's primary user last.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.JoinedDate">
+            <summary>
+            Date and Time when user accept invitation for current application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.Active">
+            <summary>
+            True if tenant is active.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.SubDomainName">
+            <summary>
+            A sub-domain name for tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.TenantAppSettingId">
+            <summary>
+             Unique Identifier TenantAppSettingId
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.Language">
+            <summary>
+            Language to be use for language localization for tenant's current application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.Currency">
+            <summary>
+            Tenant's current currency to be use by application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.TimeZone">
+            <summary>
+            Tenant's time zone to be use for date-time localization (Conversion from UTC to this time zone and vice-versa) for tenant's current application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.DateTimeFormat">
+            <summary>
+            Date-Time format to be use for formatting date and time values.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.AppConnectorId">
+            <summary>
+             Unique Identifier AppConnectorId
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.AppRelatedFields">
+            <summary>
+            Application related information.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.TenantSubscriptionId">
+            <summary>
+            A system generated unique tenant subscription id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.SubscriptionStartDate">
+            <summary>
+            Tenant's current subscription start date of application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.SubscriptionStartEnd">
+            <summary>
+            Tenant's current subscription end date of application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.UserLicenses">
+            <summary>
+            No. of user licenses in subscribed plan.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.PaymentCycle">
+            <summary>
+            Subscribed plan's payment cycle.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.PriceInDollar">
+            <summary>
+            Price of the application's subscribed plan (in Dollor).
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.GracePeriodInDays">
+            <summary>
+            No. of grace days allowed for current subscribed plan.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.AutoRenew">
+            <summary>
+            It's true if current subscription is configured to auto re-new on expiry.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.CurrencyCode">
+            <summary>
+            Business selected currency for example $ etc.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.GroupValue">
+            <summary>
+            Group seperator use for currency seperator after number of degits like 10000 then Groupvalue is 3 then it should be like 10,000
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.GroupSeperator">
+            <summary>
+            Group seperator charecter, for example comma(,) is a seperator then 10000 will display like 10,000
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.DecimalSeperator">
+            <summary>
+            Group seperator charecter, for example comma(,) is a seperator and decimal seperator is dot(.) then 10000.101 will display like 10,000.00
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.DecimalPrecision">
+            <summary>
+            Number of deigits use after decimal places.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.CanUpdateCurrency">
+            <summary>
+            Whether currency related fields can update or not.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.PlanName">
+            <summary>
+            Tenant's current subscription plan name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.CreditCardNo">
+            <summary>
+            Credit card number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.AddressDTO">
+            <summary>
+             Address Model
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.BusinessId">
+            <summary>
+             Unique Identifier of Bussines
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.ContactPersonName">
+            <summary>
+             contact person name of business
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.ContactPersonDesignation">
+            <summary>
+             contact person designation of business
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.ContactPersonEmail">
+            <summary>
+             contact person email of business
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationDTO.ContactPersonPhone">
+            <summary>
+             contact person phone number of business
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.ConfigurationPartnerDTO">
+            <summary>
+            Customer CRUD operations DTO defines all required fields for customer operations.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.CustomerId">
+            <summary>
+             Unique Identifier of Customer
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.CustomerName">
+            <summary>
+            Name of customer
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.Website">
+            <summary>
+            Website Detail of Address.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.Configured">
+            <summary>
+            configured to check fill detail firstTime
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.CustomerRefId">
+            <summary>
+             Unique Identifier of CustomerRef
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.InvitedOn">
+            <summary>
+            Tenant's primary user last invitation date and time.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.InvitedBy">
+            <summary>
+            User name who invite tenant's primary user last.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.JoinedDate">
+            <summary>
+            Date and Time when user accept invitation for current business.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.AdminUserId">
+            <summary>
+             Unique Identifier of User
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.AdminUserFirstName">
+            <summary>
+            first Name of user
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.AdminUserLastName">
+            <summary>
+            Last Name of user
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.AdminUserEmail">
+            <summary>
+            Email of user
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.CurrencyCode">
+            <summary>
+            Business selected currency for example $ etc.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.GroupValue">
+            <summary>
+            Group seperator use for currency seperator after number of degits like 10000 then Groupvalue is 3 then it should be like 10,000
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.GroupSeperator">
+            <summary>
+            Group seperator charecter, for example comma(,) is a seperator then 10000 will display like 10,000
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.DecimalSeperator">
+            <summary>
+            Group seperator charecter, for example comma(,) is a seperator and decimal seperator is dot(.) then 10000.101 will display like 10,000.00
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.DecimalPrecision">
+            <summary>
+            Number of deigits use after decimal places.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.CanUpdateCurrency">
+            <summary>
+            Whether currency related fields can update or not.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.Language">
+            <summary>
+            Language to be use for language localization for tenant's current application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.TimeZone">
+            <summary>
+            Tenant's time zone to be use for date-time localization (Conversion from UTC to this time zone and vice-versa) for tenant's current application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.ConfigurationPartnerDTO.DateTimeFormat">
+            <summary>
+            Date-Time format to be use for formatting date and time values.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.CustomerPaymentInfoDTO">
+            <summary>
+            Customer detail as well as account details list.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.InvoiceInfoDTO">
+            <summary>
+            Contains invoice name and Invoice number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.InvoiceInfoDTO.InvoiceName">
+            <summary>
+            Invoice name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.InvoiceInfoDTO.InvoiceNo">
+            <summary>
+            Invoice number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.InvoiceInfoDTO.OrderId">
+            <summary>
+            Order Id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.InvoiceInfoDTO.PONumber">
+            <summary>
+            PO number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.InvoiceInfoDTO.DueDate">
+            <summary>
+            Invoice DueDate.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.InvoiceInfoDTO.AmountPaid">
+            <summary>
+            Invoice Paid Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.InvoiceInfoDTO.ReceiptPaidAmount">
+            <summary>
+            Conatins the partial amount paid by invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.InvoiceInfoDTO.Amount">
+            <summary>
+            Invoice TotalAmount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.InvoiceInfoDTO.DocumentCurrencyCode">
+            <summary>
+            Business created invoice currency code. (Its business currencycode.)
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.InvoiceInfoDTO.FinalConversionRate">
+            <summary>
+            Its exchange rate of currency.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.InvoiceInfoDTO.CalculateAmountPaid">
+            <summary>
+            Its calculate amount with exchange rate.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.InvoiceInfoDTO.CalculateAmount">
+            <summary>
+            Its calculate amount with exchange rate.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.PaymentAccountNotificationDTO">
+            <summary>
+            This clss is a DTO having all the data for generating invoice and payment events.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.UserSession">
+            <summary>
+            LoggedIn user sesssion.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.TenantUser">
+            <summary>
+            Tenant User.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.UserType">
+            <summary>
+            UserType.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.InvitedUserName">
+            <summary>
+            Invited User Name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.App">
+            <summary>
+            Application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.BusinessCompanyName">
+            <summary>
+            Business Company name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.CustomerName">
+            <summary>
+            Customer name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.SubDomain">
+            <summary>
+            SubDomain.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.PortalURL">
+            <summary>
+            PortalURL.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.PortalName">
+            <summary>
+            PortalName.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.CopyRightText">
+            <summary>
+            CopyRightText.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.BusinessPartnerTenantId">
+            <summary>
+            Business Partner TenantId.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.PublisherName">
+            <summary>
+            publisher name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.Status">
+            <summary>
+            Status.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.BusinessPartnerCompanyName">
+            <summary>
+            Business Partner Company Name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.PartnerType">
+            <summary>
+            Partner Type.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.ApplicationName">
+             <summary>
+            Application Name publisher app settings table.
+             </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAccountNotificationDTO.TenantId">
+            <summary>
+            Tenant id for the loged in user
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO">
+            <summary>
+            This clss is a DTO having all the data for generating invoice and payment events.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.Invoice">
+            <summary>
+            Invoice DTO having all the invoice related data.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.InvoiceNotificationDTO">
+            <summary>
+            Invoice DTO having all the invoice related data.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.UserSession">
+            <summary>
+            LoggedIn user sesssion.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.UserType">
+            <summary>
+            User type.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.PublisherName">
+            <summary>
+            publisher name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.ApplicationName">
+            <summary>
+            Application Name publisher app settings table.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.BusinessCompanyName">
+            <summary>
+            Business Company name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.CustomerName">
+            <summary>
+            Customer name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.CustomerID">
+            <summary>
+            Customer ref id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.ActionDate">
+            <summary>
+            Action Date.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.PaymentAmount">
+            <summary>
+            Payment Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.OutstandingAmount">
+            <summary>
+            Outstanding Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.InvoiceStatus">
+            <summary>
+            Invoice Status.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.PaymentId">
+            <summary>
+            Payment Id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.SubDomain">
+            <summary>
+            SubDomain.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.PortalURL">
+            <summary>
+            PortalURL.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.PortalName">
+            <summary>
+            Portal Name
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.CopyRightText">
+            <summary>
+            Copy Right Text.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.BusinessPartnerTenantId">
+            <summary>
+            Business Partner TenantId for finding the recepients.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.PaymentDate">
+            <summary>
+            Payment Date.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.CreatedByName">
+            <summary>
+            Created By Name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.CreatedById">
+            <summary>
+            Created By Name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.AnyExtraEventDependentId">
+            <summary>
+            Depending upon the event if any extra id is required.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.RecurringPaymentEntity">
+            <summary>
+            DTO for all the required info for the recurring payment.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.NewTransctionStatus">
+            <summary>
+            Created By Name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.Currency">
+            <summary>
+            Created By Name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentAndInvoiceNotificationDTO.PaymentStatus">
+            <summary>
+            Created By Name.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.PaymentDetailDTO">
+            <summary>
+            Contains payment detail.
+            Contains all payment history with respact to invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailDTO.PaymentIdentityNo">
+            <summary>
+            Unique payment identity number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailDTO.TotalInvoice">
+            <summary>
+            Number of invoice paid for a payment.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.PaymentDetailModelDTO">
+            <summary>
+            Contains all payment information as well as billing address information.
+            </summary>    
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.ID">
+            <summary>
+            Unique Identifier
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.BusinessId">
+            <summary>
+            Ewapps Businees Entity ID
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.PartnerId">
+            <summary>
+            EwApps Partner Entity Id
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.InvoiceId">
+            <summary>
+            Invoice Id
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.TotalAmount">
+            <summary>
+            Invoice Amount
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.AmountPaid">
+            <summary>
+            Amount Paid by this Payment
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.PaymentType">
+            <summary>
+            Type of the Payment mode
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.CheckNumber">
+            <summary>
+            In case of Check payment Check Number
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.CheckImageFront">
+            <summary>
+            Front image copy of the check associated with the account as Base64 encoded string
+            Needed for POP, ICL, BOC
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.CheckImageBack">
+            <summary>
+            Back image copy of the check associated with the account as Base64 encoded string
+            Needed for POP, ICL, BOC
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.Street1">
+            <summary>
+            Billing Street1.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.Street2">
+            <summary>
+            Billing Street2.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.Street3">
+            <summary>
+            Billing Street3.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.City">
+            <summary>
+            Billing City.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.State">
+            <summary>
+            Billing State.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.ZipCode">
+            <summary>
+            Billing Zipcode.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.Country">
+            <summary>
+            Billing country.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.DocumentCurrencyCode">
+            <summary>
+            Business created invoice currency code. (Its business currencycode.)
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.FinalConversionRate">
+            <summary>
+            Its exchange rate of currency.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.CalculatetTotalAmount">
+            <summary>
+            Its calculate amount with exchange rate.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.CalculateAmount">
+            <summary>
+            Its calculate amount with exchange rate.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDetailModelDTO.businessAddress">
+            <summary>
+            Business address.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDTO.ID">
+            <summary>
+            Unique Identifier
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDTO.BusinessId">
+            <summary>
+            Ewapps Businees Entity ID
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDTO.PartnerId">
+            <summary>
+            EwApps Partner Entity Id
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDTO.InvoiceId">
+            <summary>
+            Invoice Id
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDTO.TotalAmount">
+            <summary>
+            Invoice Amount
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDTO.AmountPaid">
+            <summary>
+            Amount Paid by this Payment
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDTO.PaymentType">
+            <summary>
+            Type of the Payment mode
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDTO.CheckNumber">
+            <summary>
+            In case of Check payment Check Number
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDTO.CheckImageFront">
+            <summary>
+            Front image copy of the check associated with the account as Base64 encoded string
+            Needed for POP, ICL, BOC
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentDTO.CheckImageBack">
+            <summary>
+            Back image copy of the check associated with the account as Base64 encoded string
+            Needed for POP, ICL, BOC
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.PaymentHistoryDTO">
+            <summary>
+            Contains all payment history with respact to invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentHistoryDTO.PaymentIdentityNo">
+            <summary>
+            Unique payment identity number.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.PaymentStatusDTO">
+            <summary>
+            Status information of a payment.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentStatusDTO.PaymentId">
+            <summary>
+            payment Id
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentStatusDTO.LastStatusUpdateDate">
+            <summary>
+            Last known status update date/time
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentStatusDTO.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.PaymentStatusDTO.Reason">
+            <summary>
+            Last known status reason, if any
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.QuickPayInvoiceDetailDTO">
+            <summary>
+            Contains detail information of a invoice.
+            1) Invoice detail with all subitems, discount, taxes etc information.
+            2) Payble amount information of a invoice.
+            3) Customer information.  
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.QuickPayInvoiceDetailDTO.InvoiceDTO">
+            <summary>
+            Invoice detail object.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.QuickPayInvoiceDetailDTO.CustomerDTO">
+            <summary>
+            Customer detail object.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.QuickPayInvoiceDetailDTO.TenantId">
+            <summary>
+            Tenantid
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.QuickPayInvoiceDetailDTO.TenantLogUrl">
+            <summary>
+            TenantLogUrl contains the url.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.QuickPayInvoiceDetailDTO.DateTimeFormat">
+            <summary>
+            Datetime formate for the tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.QuickPayInvoiceDetailDTO.TimeZone">
+            <summary>
+            Timezone for the tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.QuickPayInvoiceDetailDTO.Language">
+            <summary>
+            Language for the tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.QuickPayInvoiceDetailDTO.Currency">
+            <summary>
+            Currency for the tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.QuickPayInvoiceDetailDTO.PaybleAmount">
+            <summary>
+            Amount to pay for invoice.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.DTO.RecurringAndCustomerAppServiceDetailDTO">
+            <summary>
+            Get recurring and customer appservice and account detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringAndCustomerAppServiceDetailDTO.recurringDTO">
+            <summary>
+            Recurring detail.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringAndCustomerAppServiceDetailDTO.customerBusAppServiceList">
+            <summary>
+            List of subscribed list of app service by a custom.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringAndCustomerAppServiceDetailDTO.listPaymentHistory">
+            <summary>
+            Get payment history done for recurring.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringAndCustomerAppServiceDetailDTO.CustomerName">
+            <summary>
+            Name of customer.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringAndCustomerAppServiceDetailDTO.CustomerRefId">
+            <summary>
+            Customer reference number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Payment.DTO.RecurringAndCustomerAppServiceDetailDTO.CustomerBusinessPartnerTenantId">
+            <summary>
+            Customer partner tenantid.
+            </summary>
+        </member>
+    </members>
+</doc>

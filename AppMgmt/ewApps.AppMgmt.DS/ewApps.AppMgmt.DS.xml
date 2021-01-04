@@ -1,0 +1,1609 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.AppMgmt.DS</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.AppMgmt.DS.IAppDS">
+            <summary>
+            Provide functionality to write bussiness logic on app entity by creating an object to this class.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppDS.GetAppByAppKeyAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+             Get application from appkey.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppDS.GetAppSettingByTenantTypeAndSubdomainAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+             Get tenant settings by subdomain name and tenanttype.
+            </summary>
+            <param name="subdomain"></param>
+            <param name="tenantType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppDS.GetAppInfoListByAppIdListAsync(System.Collections.Generic.List{System.Guid})">
+            <summary>
+            Method returns the app info list for the padssed appId list.
+            </summary>
+            <param name="appIdList">appid list</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppDS.GetAppInfoListByAppKeyListAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the application information list by application key list asynchronous.
+            </summary>
+            <param name="appKeyList">The application key list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppDS.UpdateAppAndServiceAsync(ewApps.AppMgmt.DTO.AppAndServiceDTO)">
+            <summary>
+            Updates the application and service asynchronous.
+            </summary>
+            <param name="appAndServiceDTO">The application and service dto.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppDS.GetAppAndServiceDetailsByAppIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the application and service details by application identifier.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppDS.GetApplicationListAsync(System.Boolean,ewApps.AppMgmt.Common.AppSubscriptionModeEnum)">
+            <summary>
+            Gets the application list that matches input parameters.
+            </summary>
+            <param name="active">if set to <c>true</c> [active] only active applications will fetch.</param>
+            <param name="subscriptionMode">The subscription mode to filter applications.</param>
+            <returns>Returns application list that matches given input parameters.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppDS.GetAppServiceAsync(System.Collections.Generic.List{AppManagement.DTO.PubBusinessSubsPlanAppServiceDTO},System.Threading.CancellationToken)">
+            <summary>
+            Gets the application service by application identifier publisher asynchronous.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <param name="tenantId">The tenant identifier.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppDS.GetBusinessNameByAppIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the business name by application identifier asynchronous.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <param name="publisherTenantId">The publisher tenant identifier.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppDS.GetServiceNameByAppIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the service name by application identifier asynchronous.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppDS.GetBusinessNameByAppIdPlatAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the business name by application identifier plat asynchronous.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppDS.GetAppServiceAttributeListAsync(System.Collections.Generic.List{AppManagement.DTO.PubBusinessSubsPlanAppServiceDTO},System.Threading.CancellationToken)">
+            <summary>
+            Gets the application service attribute list asynchronous.
+            </summary>
+            <param name="pubBusinessSubsPlanAppServiceDTO">The pub business subs plan application service dto.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.IAppServiceAttributeDS">
+            <summary>
+            Provide functionality to write bussiness logic on app entity by creating an object to this class.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppServiceAttributeDS.GetAppServiceAttributeByAppServiceAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get the Appservice attribute list by service id.
+            </summary>
+            <param name="appServiceId">ServiceId</param>
+            <param name="token"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppServiceAttributeDS.GetAppServiceAttributeListByServiceIdAsync(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets the application service attribute list by service identifier asynchronous.
+            </summary>
+            <param name="appServiceId">The application service identifier.</param>
+            <param name="skipDeleted">if set to <c>true</c> [skip deleted].</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppServiceAttributeDS.GetAppServiceAttributeListByServiceId(System.Guid,System.Boolean,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets the application service attribute list by service identifier.
+            </summary>
+            <param name="appServiceId">The application service identifier.</param>
+            <param name="onlyActive">if set to <c>true</c> [only active].</param>
+            <param name="skipDeleted">if set to <c>true</c> [skip deleted].</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppServiceAttributeDS.GetAppServiceAttributeListAsync(System.Collections.Generic.List{AppManagement.DTO.PubBusinessSubsPlanAppServiceDTO},System.Threading.CancellationToken)">
+            <summary>
+            Gets the application service attribute list asynchronous.
+            </summary>
+            <param name="pubBusinessSubsPlanAppServiceDTO">The pub business subs plan application service dto.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.IAppServiceDS">
+            <summary>
+            Manages the app services related CRUD methods.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppServiceDS.GetAppServicesDetailWithAttributesAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get appservices by application ID.
+            </summary>
+            <param name="appId">Application id.</param>
+            <param name="token"></param>
+            <returns>App services with attributes in form of list of AppServiceDTO</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppServiceDS.GetAppServicesDetailsAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the application services details asynchronous.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppServiceDS.GetAppServiceListByAppIdAsync(System.Guid,System.Boolean,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets the application service list by application identifier asynchronous.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <param name="onlyActive">if set to <c>true</c> [only active].</param>
+            <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppServiceDS.GetAppServiceAsync(System.Collections.Generic.List{AppManagement.DTO.PubBusinessSubsPlanAppServiceDTO},System.Threading.CancellationToken)">
+            <summary>
+            Gets the application service asynchronous.
+            </summary>
+            <param name="pubBusinessSubsPlanAppServiceDTO">The pub business subs plan application service dto.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IAppServiceDS.UpdateBusinessAppServiceInfoAsync(System.Collections.Generic.List{ewApps.AppMgmt.DTO.PayAppServiceDetailDTO},System.Guid,System.Guid)">
+            <summary>
+            UPdate AppService on payment business 
+            </summary>
+            <param name="updatedAppServiceList"></param>
+            <param name="appId"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.IAppUserTypeLinkingDS">
+            <summary>
+            This interface define methods to perform any type of operations on <see cref="!:ewApps.Core.Entity.AppUserTypeLinking"/> entity.
+            </summary> 
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IBrandingDS.UpdatePlatformBrandingDetail(ewApps.AppMgmt.DTO.BrandingDTO)">
+            <summary>
+            Update Platform branding
+            </summary>        
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IBrandingDS.UpdatePublisherBrandingDetail(ewApps.AppMgmt.DTO.BrandingDTO)">
+            <summary>
+            Update Publisher branding
+            </summary>        
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IBrandingDS.UpdatebusinessBrandingDetail(ewApps.AppMgmt.DTO.BusinessBrandingDTO)">
+            <summary>
+            Update business branding
+            </summary>        
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IBrandingDS.UpdateShipAppBrandingAsync(ewApps.AppMgmt.DTO.AppPortalBrandingDTO)">
+            <summary>
+            Update ship-app branding
+            </summary>        
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IBrandingDS.UpdatePayAppBrandingAsync(ewApps.AppMgmt.DTO.AppPortalBrandingDTO)">
+            <summary>
+            Update pay-app branding
+            </summary>        
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IBrandingDS.UpdateCustAppBrandingAsync(ewApps.AppMgmt.DTO.AppPortalBrandingDTO)">
+            <summary>
+            Update cust-app branding
+            </summary>        
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IBrandingDS.UpdateVendAppBrandingAsync(ewApps.AppMgmt.DTO.AppPortalBrandingDTO)">
+            <summary>
+            Update vend-app branding
+            </summary>        
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IConfigurationDS.UpdatePublisherConfigurationDetail(ewApps.AppMgmt.DTO.ConfigurationDTO)">
+            <summary>
+            
+            </summary>
+            <param name="configurationDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ICustomerAppServiceLinkingDS">
+            <summary>
+            Provide functionality to write bussiness logic on <see cref="T:ewApps.AppMgmt.Entity.CustomerAppServiceLinking"/> entity by creating an object to this class.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.IServiceAccountDetailDS">
+            <summary>
+            Provide functionality to write bussiness logic on app entity by creating an object to this class.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IServiceAccountDetailDS.UpdateAccountDetailJsonAsync(System.Guid,System.Guid,System.Guid,System.Guid,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Update app service account detail.
+            </summary>
+            <param name="appId">Application id</param>
+            <param name="appServiceId">AppService unique id like (VeriCheck, UPS/FedEx GUID)</param>
+            <param name="attrbuteId">attribute id, like Ground, FedEx Ground etc.</param>
+            <param name="entityId">For which entity data is being save</param>
+            <param name="accountJson">Json object contains account information.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IServiceAccountDetailDS.DeleteAppServiceAccountDetailAsync(System.Guid,System.Guid,System.Guid,System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Delete appservice account detail.
+            </summary>
+            <param name="appId">Application id</param>
+            <param name="appServiceId">AppService unique id like (VeriCheck, UPS/FedEx GUID)</param>
+            <param name="attrbuteId">attribute id, like Ground, FedEx Ground etc.</param>
+            <param name="entityId">For which entity data is being save</param>
+            <param name="tenantId">unique tenant id.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IServiceAccountDetailDS.GetEntityByEntityTypeAndEntityAndServiceAndAttributeId(System.Int32,System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Get Entity By Entity Type and ServiceId and Attribute ID 
+            </summary>
+            <param name="entityType"></param>
+            <param name="entityId"></param>
+            <param name="appServiceId"></param>
+            <param name="appServiceAttributeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IServiceAccountDetailDS.DeleteByEntityTypeAndEntityAndServiceId(System.Int32,System.Guid,System.Guid,System.Guid,ewApps.Core.BaseService.OperationType)">
+            <summary>
+            Delete Entity By Entity Type and Service Id 
+            </summary>
+            <param name="entityType"></param>
+            <param name="entityId"></param>
+            <param name="appServiceId"></param>
+            <param name="appServiceAttributeId"></param>
+            <param name="parentOpType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISessionMgmtDS.ClearSessionAsync(ewApps.Core.UserSessionService.UserSession)">
+            <summary>
+            Clear session that is delete the session.
+            </summary>
+            <param name="userSessionId">usersession unique identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ISubscriptionPlanDS">
+            <summary>
+            Provide functionality to write bussiness logic on app entity by creating an object to this class.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanDS.GetSubscriptionPlansByAppIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get subscrption plan by appId.
+            </summary>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanDS.GetAppSubscriptionAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get subscription plan by application id and  tenantid.
+            </summary>
+            <param name="appId">Applicationid</param>
+            <param name="publisherTenantId">tenantid</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanDS.GetSubscriptionPlanListByAppIdAsync(System.Guid,ewApps.Core.BaseService.BooleanFilterEnum,System.Threading.CancellationToken)">
+            <summary>
+            Gets the subscription plan list by application identifier and plan state.
+            </summary>
+            <param name="appId">The application identifier to get application specific subscription.</param>
+            <param name="planState">The plan state to filter subscription plan.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns subscription plan list that matches the input parameters.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanDS.GetSubscriptionPlanListByPlanIdListAsync(System.Collections.Generic.List{System.Guid},ewApps.Core.BaseService.BooleanFilterEnum,System.Threading.CancellationToken)">
+            <summary>
+            Gets the subscription plan list by plan identifier list and plan state.
+            </summary>
+            <param name="plandIdList ">The suscription plan ids list get plan information.</param>
+            <param name="planState">The plan state to filter subscription plan.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns subscription plan list that matches the input parameters.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanDS.GetSubscriptionPlanListByTenantIdAsync(System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets the subscription plan list by tenant identifier and plan state.
+            </summary>
+            <param name="appId">The application identifier to get tenant specific subscription.</param>
+            <param name="planState">The plan state to filter subscription plan.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns subscription plan list that matches the input parameters.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanDS.GetSubscriptionPlaninfoByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the subscription plan info by plan id.
+            </summary>
+            <param name="planId">Planid.</param>
+            <returns>Returns subscription plan detail info that matches given plan id.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanDS.GetSubscriptionServiceNameListBySubscriptionPlanIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the subscription service name list by subscription plan identifier asynchronous.
+            </summary>
+            <param name="subsPlanId">The subs plan identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns service name list that matches provided sbuscription plan id.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanDS.AddSubscriptionPlanWithServiceAttributeAsync(ewApps.AppMgmt.DTO.SubscriptionAddUpdateDTO,System.Threading.CancellationToken)">
+            <summary>
+            Adds a subscription with services and their attributes.
+            </summary>
+            <param name="addUdpateDTO">add update dto </param>
+            <param name="token">token</param>
+            <returns>Newly generated plan id.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanDS.UpdateSubscriptionPlanWithServiceAttributeAsync(ewApps.AppMgmt.DTO.SubscriptionAddUpdateDTO,System.Threading.CancellationToken)">
+            <summary>
+            Updates the sub plan wirhwith services and attribute.
+            </summary>
+            <param name="addUdpateDTO">add update dto </param>
+            <param name="token">token</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanDS.DeletePlanByPlanId(System.Guid)">
+            <summary>
+            Deletes a plan by given id.
+            </summary>
+            <param name="planId">plan id to delete </param>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ISubscriptionPlanServiceAttributeDS">
+            <summary>
+            Provide functionality to write bussiness logic on app entity by creating an object to this class.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanServiceAttributeDS.GetPlanServiceAttributeListByPlanIdsAsync(System.Collections.Generic.List{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+            Gets the plan service attribute list by plan ids.
+            </summary>
+            <param name="planIdList">The plan identifier list to find application service attributes.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns application service attribute list that are defined under given plan ids.</returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ISubscriptionPlanServiceDS">
+            <summary>
+            Provide functionality to write bussiness logic on app entity by creating an object to this class.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanServiceDS.GetPlanServiceAndAttributeListByPlanIdsAsync(System.Collections.Generic.List{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+            Gets the plan service and attribute list of provided plan ids.
+            </summary>
+            <param name="planIdList">The plan identifier list to get corresponding service and attributes.</param>
+            <param name="cancellationToken">The cancellation token to cancel async task.</param>
+            <returns>Returns Service and Attributes list corresponding to provided plan id list.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ISubscriptionPlanServiceDS.GetPlanServiceAndAttributeListByPlanIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the plan service and attribute list of provided plan id.
+            </summary>
+            <param name="planId">The plan identifier to get corresponding service and attributes.</param>
+            <param name="cancellationToken">The cancellation token to cancel async task.</param>
+            <returns>Returns Service and Attributes list corresponding to provided plan id.</returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ITenantAppServiceLinkingDS">
+            <summary>
+            Provide functionality to write bussiness logic on app entity by creating an object to this class.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantAppServiceLinkingDS.GetAppServiceByTenantIdAndAppIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get application subscribed services by TenantId and application id.
+            </summary>
+            <param name="businessId">Unique business id.</param>
+            <param name="appId">Application id</param>
+            <param name="token"></param>
+            <returns>return list of TenantAppService.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantAppServiceLinkingDS.GetAppServiceByBusinessIdAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get application sub services subscribed by a Tenant applications.
+            </summary>
+            <param name="businessId">Id of Business Tenant</param>
+            <param name="entityTypeEnum">Entity type</param>
+            <param name="token"></param>
+            <returns>return Guid of application sub services and Application id.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantAppServiceLinkingDS.GetEntityByAppAndTenantId(System.Guid,System.Guid,System.Boolean)">
+            <summary>
+            Get Entity by App and Tenant id 
+            </summary>
+            <param name="appId"></param>
+            <param name="tenantId"></param>
+            <param name="includeDeleted"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ITenantDS">
+            <summary>
+            Interface contains all required methods for tenant.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantDS.IsSubdomainExistAsync(System.String,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            return true if domain name already exist.
+            </summary>
+            <param name="subdomain">Domain name for tenant.</param>
+            <param name="tenantId">ID of tenant.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantDS.AddTenantAsync(ewApps.AppMgmt.Entity.Tenant)">
+            <summary>
+            Added the system field genrate new identitynumber and add tenantentity.
+            </summary>
+            <param name="tenant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantDS.GetTenantInfoByTenantIdAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Gets the tenant information by tenant identifier asynchronous.
+            </summary>
+            <param name="tenantId">The tenant identifier.</param>
+            <param name="uType">Type of the u.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantDS.GetTenantInfoBySubdomainAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Gets the tenant information by subdomain asynchronous.
+            </summary>
+            <param name="subdomain">The subdomain.</param>
+            <param name="uType">Type of the u.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantDS.GetBusinessTenantDetailModelDTOAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get tenant model by tenant id.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantDS.GetTenantByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Tenant info by tenantId 
+            </summary>
+            <param name="tenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantDS.GetBusinessNameByAppIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the business name by application identifier asynchronous.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <param name="publisherTenantId">The publisher tenant identifier.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantDS.GetBusinessNameByAppIdPlatAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the business name by application identifier plat asynchronous.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ITenantLinkingDS">
+            <summary>
+            Provide supportive methods.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantLinkingDS.GetTenantLinkingBySubdomainAndTenantTypeAsync(System.String,ewApps.Core.BaseService.TenantType,System.Threading.CancellationToken)">
+            <summary>
+            Get tenant linking by tenanttype and subdomain.
+            </summary>
+            <param name="subdomain"></param>
+            <param name="tenantType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantLinkingDS.GetTenantLinkingByTenantIdAndTypeAsync(System.Guid,ewApps.Core.BaseService.TenantType,System.Threading.CancellationToken)">
+            <summary>
+             Get tenant linking by tenantid and tenanttype.
+            </summary>    
+            <param name="tenantId"></param>
+            <param name="tenantType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantLinkingDS.GetTenantByTenantIdAndTypeAsync(System.Guid,ewApps.Core.BaseService.TenantType,System.Threading.CancellationToken)">
+            <summary>
+            Get Tenant by tenantid and tenantType
+            </summary>
+            <param name="tenantId"></param>
+            <param name="tenantType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ITenantSignUpForPublisherDS">
+            <summary>
+            This interface provides method to manage tenant signup operations.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantSignUpForPublisherDS.PublisherSignUpAsync(ewApps.AppMgmt.DTO.PublisherSignUpDTO,System.Threading.CancellationToken)">
+            <summary>
+            Add's publisher tenant, it's primary user information and other related data.
+            </summary>
+            <param name="publisherSignUpDTO">The publisher sign up dto.</param>
+            <param name="cancellationToken">The async task token to notify about task cancellation.</param>
+            <returns>Returns newly signup tenant and primary user information.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantSignUpForPublisherDS.ValidatePublisherPreSignUpRequest(ewApps.AppMgmt.DTO.PublisherPreSignUpReqDTO)">
+            <summary>
+            Validates the publisher sign up request. Also if request is valid returns data required for sign-up otherwise returns validation result in form of <see cref="!:ErrorData"/>.
+            </summary>
+            <param name="publisherPreSignUpReqDTO">The publisher pre sign up req dto.</param>
+            <returns>Returns either falied validation result or data required for publisher sign-up.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantSignUpForPublisherDS.GetPublisherPreUpdateRequestDataAsync(ewApps.AppMgmt.DTO.PublisherPreUpdateReqDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets the publisher pre update request data.
+            </summary>
+            <param name="publisherPreUpdateReqDTO">The publisher pre update req dto.</param>
+            <returns>Returns application and subscription plan list with other requested data.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantSubscriptionDS.GetTenantPrimaryUsersByTenantIdAndAppIdAndUserTypeAsync(System.Guid,System.Guid,ewApps.Core.BaseService.UserTypeEnum,System.Threading.CancellationToken)">
+            <summary>
+            Get primary user of a application by tenantid and appid.
+            </summary>
+            <param name="tenantId">Id of Business Tenant</param>
+            <param name="appId"></param>
+            <param name="uType"></param>
+            <param name="token"></param>
+            <returns>return usershort info.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantSubscriptionDS.GetTenantSubscriptionListByTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            return tenant application subscription list from tenant id.
+            </summary>
+            <param name="tenantId"></param>
+            <returns>return list of tenant subscription.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantSubscriptionDS.GetBusinessPrimaryUsersByBusinessIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get all the Application list subscribed by a business tenant.
+            </summary>
+            <param name="businessId">Id of Business Tenant</param>
+            <param name="token"></param>
+            <returns>return list of application.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantSubscriptionDS.GetBusinessSubscriptionByBusinessIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get all the Application list subscribed by a business tenant.
+            </summary>
+            <param name="businessId">Id of Business Tenant</param>
+            <param name="publisherTenantId">Publisher tenantId.</param>
+            <returns>return list of application.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantSubscriptionDS.DeleteApplicationAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Mark application as deleted.
+            </summary>
+            <param name="tenantId">Tenant id</param>
+            <param name="appId">Application id</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ITenantUserAppLastAccessInfoDS">
+            <summary>
+            Provide functionality to write bussiness logic on AppLastAccessInfo entity by creating an object to this class. 
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantUserAppLastAccessInfoDS.AddUpdateTenantUserLastAccessInfoAsync(ewApps.AppMgmt.DTO.TenantUserAppLastAccessInfoRequestDTO,System.Guid)">
+            <summary>
+            Method user add update the user last access info for a particular tenant and a specific appliation.
+            </summary>
+            <param name="tenantUserAppLastAccessInfoRequestDTO">Data Transfer object used to create/update last acces info of the user</param>
+            <returns>Returns entity added flag</returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ITenantUserAppLinkingDS">
+            <summary>
+            This class defines standard business logic and operations for TenantUserAppLinking entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ITenantUserDS">
+            <summary>
+            Methods to implement business logic for app user
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantUserDS.GetUserbyEmailAndTenantIdAsync(System.String,System.Guid)">
+            <summary>
+            Get user by email and tenantId.
+            </summary>
+            <param name="email"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantUserDS.AddTenantUserAsync(ewApps.AppMgmt.Entity.TenantUser)">
+            <summary>
+            Adds the tenant user and updates the system field along with generate identitynumber.
+            </summary>
+            <param name="tenantUser">tenant user entity</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantUserDS.GetTenantUserByEmailAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the tenant user by email asynchronous.
+            </summary>
+            <param name="userEmail">The user email.</param>
+            <returns>Returns tenant user information that matches given email.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IUserTenantLinkingDS.GetTenantPrimaryUserAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get tanant primary user .
+            </summary>
+            <param name="tenantId"></param>
+            <param name="userType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.IUserTenantLinkingDS.CheckPrimaryUserExistsForCustomer(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="businessPartnerTenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ITenantForBusinessDS">
+            <summary>
+            A wrapper class, contains a method to get business tenant and supprtive entities data.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantForBusinessDS.GetBusinessUpdateModelAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get business update model.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantForBusinessDS.DeleteBusinessTenantAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Delete business by tenantid.
+            </summary>
+            <param name="tenantId">Tenant id of business.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantSignUpForBusinessDS.BusinessSignupAsync(ewApps.AppMgmt.DTO.BusinessSignUpDTO,System.Threading.CancellationToken)">
+            <summary>
+            Method is used to singup business as well as subscribe the application for business.
+            </summary>
+            <param name="businessRegistrtionDTO"></param>
+            <param name="token"></param>
+            <returns>return response model.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantUpdateForBusinessDS.UpdateBusinessTenantAsync(ewApps.AppMgmt.DTO.UpdateTenantModelDTO,System.Threading.CancellationToken)">
+            <summary>
+            Update busines and supported entities.
+            </summary>
+            <param name="tenantRegistrtionDTO">Update tenant model.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantUserExtDS.GetUserInfoByIdAsync(System.Guid)">
+            <summary>
+            Get User Profile Info By User Id 
+            </summary>
+            <param name="appUserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ITenantUserExtDS.UpdateAppUser(ewApps.AppMgmt.DTO.TenantUserProfileDTO)">
+            <summary>
+            Update Tenant User Profile Info
+            </summary>
+            <param name="appUserDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.QSubscriptionPlanDS.GetSubscriptionPlanReferece(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.QSubscriptionPlanDS.GetSubscriptionPlanListByPubTenantIdAsync(System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc/>       
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.AppDS">
+            <summary>
+            This class implements standard business logic and operations for app entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppDS.#ctor(ewApps.AppMgmt.Data.IAppRepository,Microsoft.Extensions.Options.IOptions{ewApps.Core.DMService.DMServiceSettings},ewApps.Core.DMService.IEntityThumbnailDS,ewApps.AppMgmt.DS.IAppServiceAttributeDS,ewApps.AppMgmt.DS.IAppServiceDS,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.AppMgmt.DS.ITenantDS)">
+            <summary>
+            Initializing local variables
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppDS.GetAppDetailsAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppDS.GetAppByAppKeyAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppDS.GetAppSettingByTenantTypeAndSubdomainAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+             Get tenant settings by subdomain name and tenanttype.
+            </summary>
+            <param name="subdomain"></param>
+            <param name="tenantType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppDS.GetAppInfoListByAppIdListAsync(System.Collections.Generic.List{System.Guid})">
+            <Inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppDS.GetAppInfoListByAppKeyListAsync(System.Collections.Generic.List{System.String})">
+            <Inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppDS.GetApplicationListAsync(System.Boolean,ewApps.AppMgmt.Common.AppSubscriptionModeEnum)">
+            <Inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppDS.GetServiceNameByAppIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppDS.GetAppAndServiceDetailsByAppIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppDS.GetBusinessNameByAppIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppDS.GetBusinessNameByAppIdPlatAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppDS.UpdateAppAndServiceAsync(ewApps.AppMgmt.DTO.AppAndServiceDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.AppServiceAttributeDS">
+            <summary>
+             This class implements standard business logic and operations for ServiceAttribute entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppServiceAttributeDS.#ctor(ewApps.AppMgmt.Data.IAppServiceAttributeRepository,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="serviceAttributeRepository"></param>
+            <param name="unitOfWork"></param>
+            <param name="mapper"></param>
+            <param name="cacheService"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppServiceAttributeDS.GetAppServiceAttributeByAppServiceAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get the Appservice attribute list by service id.
+            </summary>
+            <param name="appServiceId">ServiceId</param>
+            <param name="token"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppServiceAttributeDS.GetAppServiceAttributeListByServiceIdAsync(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppServiceAttributeDS.GetAppServiceAttributeListByServiceId(System.Guid,System.Boolean,System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppServiceAttributeDS.GetAppServiceAttributeListAsync(System.Collections.Generic.List{AppManagement.DTO.PubBusinessSubsPlanAppServiceDTO},System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.AppServiceDS">
+            <summary>
+            Manages the app services related CRUD methods.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppServiceDS.GetAppServicesDetailWithAttributesAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get appservices by application ID.
+            </summary>
+            <param name="appId">Application id.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppServiceDS.GetAppServiceAsync(System.Collections.Generic.List{AppManagement.DTO.PubBusinessSubsPlanAppServiceDTO},System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppServiceDS.UpdateVCMerchantAsync(ewApps.AppMgmt.DTO.BusVCACHPayAttrDTO,System.Guid,System.Guid)">
+            <summary>
+            Adds VC Merchant.
+            </summary>
+            <param name="e"> entity to be added</param>
+            <returns>Added entity</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppServiceDS.UpdateTSYSMerchantAsync(ewApps.AppMgmt.DTO.BusTSYSCreditCardPayAttrDTO,System.Guid,System.Guid)">
+            <summary>
+            Adds VC Merchant.
+            </summary>
+            <param name="e"> entity to be added</param>
+            <returns>Added entity</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppServiceDS.GetAuthenticationMerchantKeyAsync(ewApps.AppMgmt.DTO.BusTSYSCreditCardPayAttrDTO,System.Guid,System.Guid)">
+            <summary>
+            Adds VC Merchant.
+            </summary>
+            <param name="e"> entity to be added</param>
+            <returns>Added entity</returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.AppUserTypeLinkingDS">
+            <summary>
+            This class implementes <see cref="T:ewApps.AppMgmt.DS.IAppUserTypeLinkingDS"/> to provide standard business logic and operations for <see cref="T:ewApps.AppMgmt.Entity.AppUserTypeLinking"/>.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.AppUserTypeLinkingDS.#ctor(ewApps.AppMgmt.Data.IAppUserTypeLinkingRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppMgmt.DS.AppUserTypeLinkingDS"/> class with its dependencies.
+            </summary>
+            <param name="appUserTypeLinkingRepository">An instance of <see cref="T:ewApps.AppMgmt.Data.IAppUserTypeLinkingRepository"/> to communicate with storage.</param>
+            <param name="cacheService">An instance of <see cref="!:ICacheService"/> to get and set data to/from Cache.</param>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.BrandingDS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.BrandingDS.UpdatebusinessBrandingDetail(ewApps.AppMgmt.DTO.BusinessBrandingDTO)">
+            <summary>
+             Update business branding
+            </summary>
+            <param name="businessBrandingDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.BrandingDS.UpdateShipAppBrandingAsync(ewApps.AppMgmt.DTO.AppPortalBrandingDTO)">
+            <summary>
+            
+            </summary>
+            <param name="shipAppBrandingDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.BrandingDS.UpdatePayAppBrandingAsync(ewApps.AppMgmt.DTO.AppPortalBrandingDTO)">
+            <summary>
+            
+            </summary>
+            <param name="shipAppBrandingDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.BrandingDS.UpdateCustAppBrandingAsync(ewApps.AppMgmt.DTO.AppPortalBrandingDTO)">
+            <summary>
+            
+            </summary>
+            <param name="custAppBrandingDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.BrandingDS.UpdateVendAppBrandingAsync(ewApps.AppMgmt.DTO.AppPortalBrandingDTO)">
+            <summary>
+            
+            </summary>
+            <param name="vendAppBrandingDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ConfigurationDS.UpdatePublisherConfigurationDetail(ewApps.AppMgmt.DTO.ConfigurationDTO)">
+            <summary>
+            Publisher Configuration update
+            </summary>
+            <param name="publisherConfigurationDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.CustomerAppServiceLinkingDS">
+            <summary>
+             This class implements standard business logic and operations for class CustomerAppServiceLinking entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.CustomerAppServiceLinkingDS.#ctor(ewApps.AppMgmt.Data.ICustomerAppServiceLinkingRepository,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="customerAppServiceLinkingRepository"></param>
+            <param name="unitOfWork"></param>
+            <param name="mapper"></param>
+            <param name="cacheService"></param>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ServiceAccountDetailDS">
+            <summary>
+             This class implements standard business logic and operations for ServiceAttribute entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ServiceAccountDetailDS.#ctor(ewApps.AppMgmt.Data.IAppServiceAccountDetailRepository,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="serviceAccountDetailRepository"></param>
+            <param name="unitOfWork"></param>
+            <param name="mapper"></param>
+            <param name="cacheService"></param>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.SubscriptionPlanDS">
+            <summary>
+            This class provides all the datservice methods for the subscription plans.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanDS.#ctor(ewApps.AppMgmt.Data.ISubscriptionPlanRepository,ewApps.AppMgmt.DS.IAppServiceDS,ewApps.AppMgmt.DS.IQSubscriptionPlanDS,ewApps.AppMgmt.DS.ISubscriptionPlanServiceAttributeDS,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.Core.UniqueIdentityGeneratorService.IUniqueIdentityGeneratorDS,ewApps.AppMgmt.DS.ISubscriptionPlanServiceDS)">
+            <summary>
+            Constructor initialing all the mapper, unitofwork, and repositry methods.
+            </summary>
+            <param name="subscriptionPlanRep">sub plan ref </param>
+            <param name="appServiceDS">appservice plan DS reference</param>
+            <param name="subscriptionPlanServiceAttributeDS">plan attribute class reference</param>
+            <param name="userSessionManager">Session manager class reference</param>
+            <param name="unitOfWork">unit of work class reference</param>
+            <param name="uniqueIdentityGeneratorDS">identity class generator  class reference</param>
+            <param name="subscriptionPlanServiceDS">plan service  class reference</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanDS.GetSubscriptionPlansByAppIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>    
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanDS.GetAppSubscriptionAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>    
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanDS.GetSubscriptionPlanListByAppIdAsync(System.Guid,ewApps.Core.BaseService.BooleanFilterEnum,System.Threading.CancellationToken)">
+            <inheritdoc/>       
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanDS.GetSubscriptionPlanListByPlanIdListAsync(System.Collections.Generic.List{System.Guid},ewApps.Core.BaseService.BooleanFilterEnum,System.Threading.CancellationToken)">
+            <inheritdoc/>       
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanDS.GetSubscriptionPlanListByTenantIdAsync(System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc/>       
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanDS.GetSubscriptionPlaninfoByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>       
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanDS.GetSubscriptionPlanListByPubTenantIdAsync(System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc/>       
+            <inheritdoc/>       
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanDS.AddSubscriptionPlanWithServiceAttributeAsync(ewApps.AppMgmt.DTO.SubscriptionAddUpdateDTO,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanDS.UpdateSubscriptionPlanWithServiceAttributeAsync(ewApps.AppMgmt.DTO.SubscriptionAddUpdateDTO,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanDS.DeletePlanByPlanId(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.SubscriptionPlanServiceAttributeDS">
+            <summary>
+            This class provides all the datservice methods for the subscription plans.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ewApps.AppMgmt.DS.SubscriptionPlanServiceAttributeDS.#ctor(ewApps.AppMgmt.Data.ISubscriptionPlanServiceAttributeRepository,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.AppMgmt.Data.IUnitOfWork)" -->
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanServiceAttributeDS.AddSubscriptionPlanAttribute(System.Collections.Generic.List{ewApps.AppMgmt.DTO.AppServiceAttributeDTO},System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.SubscriptionPlanServiceDS">
+            <summary>
+            This class provides all the datservice methods for the subscription plans.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanServiceDS.#ctor(ewApps.AppMgmt.Data.ISubscriptionPlanServiceRepository,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.AppMgmt.DS.ISubscriptionPlanServiceAttributeDS)">
+            <summary>
+            Constructor initialing all the mapper, unitofwork, and repositry methods.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanServiceDS.AddSubscriptionPlanServiceAndAttribute(System.Collections.Generic.List{ewApps.AppMgmt.DTO.AppServiceDTO},System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanServiceDS.UpdateAndAddSubscribedServiceAttributeAsync(ewApps.AppMgmt.DTO.SubscriptionAddUpdateDTO,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanServiceDS.GetPlanServiceAndAttributeListByPlanIdsAsync(System.Collections.Generic.List{System.Guid},System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.SubscriptionPlanServiceDS.GetPlanServiceAndAttributeListByPlanIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.TenantAppServiceLinkingDS">
+            <summary>
+             This class implements standard business logic and operations for class TenantAppServiceLinking entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantAppServiceLinkingDS.#ctor(ewApps.AppMgmt.Data.ITenantAppServiceLinkingRepository,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="tenantAppServiceLinkingRepository"></param>
+            <param name="unitOfWork"></param>
+            <param name="mapper"></param>
+            <param name="cacheService"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantAppServiceLinkingDS.GetAppServiceByTenantIdAndAppIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc></inheritdoc>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantAppServiceLinkingDS.GetAppServiceByBusinessIdAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get application sub services subscribed by a Tenant applications.
+            </summary>
+            <param name="businessId">Id of Business Tenant</param>
+            <param name="entityTypeEnum">Entity type</param>
+            <param name="token"></param>
+            <returns>return Guid of application sub services and Application id.</returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.TenantDS">
+            <summary>
+            Class will rsgiter the business tenant with all child related entities.
+            Business tenant may subscribe to muliple application in portal.
+            1) Add/update the tenant.
+            2) Add application.
+            3) Add application admin user.
+            4) Add application subscribe information.
+            5) send email to invited application user.    
+            6) Validating Tenant and its child entity.
+            7) Validating tenant entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantDS.#ctor(ewApps.AppMgmt.Data.ITenantRepository)">
+            <summary>
+            Constructor with all required services and repo classes.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantDS.IsSubdomainExistAsync(System.String,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            return true if domain name already exist.
+            </summary>
+            <param name="subdomain">Domain name for tenant.</param>
+            <param name="tenantId">ID of tenant.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantDS.AddTenantAsync(ewApps.AppMgmt.Entity.Tenant)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantDS.GetTenantInfoByTenantIdAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantDS.GetTenantInfoBySubdomainAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantDS.GetBusinessTenantDetailModelDTOAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get tenant model by tenant id.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantDS.GetBusinessNameByAppIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantDS.GetBusinessNameByAppIdPlatAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantDS.GetNextMaxNo(System.Guid,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantDS.GetTenantByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.TenantLinkingDS">
+            <summary>
+            Class provide supportinv method for tenantlinking.
+            TenantLinking contains the relationship between Platform,Publisher, Business tenants.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantLinkingDS.#ctor(ewApps.AppMgmt.Data.ITenantLinkingRepository,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.AppMgmt.DS.ITenantDS)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="tenantLinking"></param>
+            <param name="unitOfWork"></param>   
+            <param name="cacheService"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantLinkingDS.GetTenantLinkingBySubdomainAndTenantTypeAsync(System.String,ewApps.Core.BaseService.TenantType,System.Threading.CancellationToken)">
+            <summary>
+            Get tenant linking by tenanttype and subdomain.
+            </summary>
+            <param name="subdomain"></param>
+            <param name="tenantType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantLinkingDS.GetTenantLinkingByTenantIdAndTypeAsync(System.Guid,ewApps.Core.BaseService.TenantType,System.Threading.CancellationToken)">
+            <summary>
+             Get tenant linking by tenantid and tenanttype.
+            </summary>    
+            <param name="tenantId"></param>
+            <param name="tenantType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantLinkingDS.GetTenantByTenantIdAndTypeAsync(System.Guid,ewApps.Core.BaseService.TenantType,System.Threading.CancellationToken)">
+            <summary>
+             Get tenant linking by tenantid and tenanttype.
+            </summary>    
+            <param name="tenantId"></param>
+            <param name="tenantType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSubscriptionDS.GetTenantPrimaryUsersByTenantIdAndAppIdAndUserTypeAsync(System.Guid,System.Guid,ewApps.Core.BaseService.UserTypeEnum,System.Threading.CancellationToken)">
+            <summary>
+            Get primary user of a application by tenantid and appid.
+            </summary>
+            <param name="tenantId">Id of Business Tenant</param>
+            <param name="appId"></param>
+            <param name="uType"></param>
+            <param name="token"></param>
+            <returns>return usershort info.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSubscriptionDS.GetTenantSubscriptionListByTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            return tenant application subscription list from tenant id.
+            </summary>
+            <param name="tenantId"></param>
+            <returns>return list of tenant subscription.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSubscriptionDS.GetBusinessPrimaryUsersByBusinessIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get all the Application list subscribed by a business tenant.
+            </summary>
+            <param name="businessId">Id of Business Tenant</param>
+            <param name="token"></param>
+            <returns>return list of application.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSubscriptionDS.GetBusinessSubscriptionByBusinessIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get all the Application list subscribed by a business tenant.
+            </summary>
+            <param name="businessId">Id of Business Tenant</param>
+            <param name="publisherTenantId">Publisher tenantId.</param>
+            <returns>return list of application.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSubscriptionDS.DeleteApplicationAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Mark application as deleted.
+            </summary>
+            <param name="tenantId">Tenant id</param>
+            <param name="appId">Application id</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.TenantUserAppLastAccessInfoDS">
+            <summary>
+            This class implements standard business logic and operations for AppLastAccessInfo entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserAppLastAccessInfoDS.#ctor(ewApps.AppMgmt.Data.ITenantUserAppLastAccessInfoRepository)">
+            <summary>
+            Initialinzing local variables through dependency injection.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserAppLastAccessInfoDS.AddUpdateTenantUserLastAccessInfoAsync(ewApps.AppMgmt.DTO.TenantUserAppLastAccessInfoRequestDTO,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.TenantUserAppLinkingDS">
+            <summary>
+            This class implements standard business logic and operations for TenantUserAppLinking entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserAppLinkingDS.#ctor(ewApps.AppMgmt.Data.ITenantUserAppLinkingRepository,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initialinzing local variables
+            </summary>
+            <param name="userAppLinkingRep"></param>
+            <param name="unitOfWork"></param>
+            <param name="cacheService"></param>
+            <param name="userSessionManager"></param>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.TenantUserDS">
+            <summary>
+            This class implements standard business logic and operations for tenant user and user managment logics.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserDS.GetTenantPrimaryUsersByTenantIdAndAppIdAndUserTypeAsync(System.Guid,System.Guid,ewApps.Core.BaseService.UserTypeEnum,System.Threading.CancellationToken)">
+            <summary>
+            Get primary user of a application by tenantid and appid.
+            </summary>
+            <param name="tenantId">Id of Business Tenant</param>
+            <param name="appId"></param>
+            <param name="uType"></param>
+            <param name="token"></param>
+            <returns>return usershort info.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserDS.AddTenantUserAsync(ewApps.AppMgmt.Entity.TenantUser)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserDS.GetUserbyEmailAndTenantIdAsync(System.String,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.ThemeDS">
+            <summary>
+            Represents all the operations to be performed on Theme entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ThemeDS.#ctor(ewApps.AppMgmt.Data.IThemeRepository)">
+            <summary>
+             Initialinzing local variables
+            </summary>
+            <param name="themeRep"></param>
+            <param name="cacheService"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.ThemeDS.GetThemeNameAndThemeKey">
+            <summary>
+            Get Theme Name and ThemeKey
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.UserTenantLinkingDS">
+            <summary>
+            Implementing all the methods for the userlinking entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.UserTenantLinkingDS.#ctor(ewApps.AppMgmt.Data.IUserTenantLinkingRepository)">
+            <summary>
+            Initialize the local members through dependency injection.
+            </summary>
+            <param name="tenantUserLinkingRepository"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.UserTenantLinkingDS.GetTenantPrimaryUserAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.UserTenantLinkingDS.CheckPrimaryUserExistsForCustomer(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantForBusinessDS.#ctor(ewApps.AppMgmt.DS.ITenantDS,ewApps.AppMgmt.DS.ITenantSubscriptionDS,ewApps.AppMgmt.DS.ITenantAppServiceLinkingDS,ewApps.AppMgmt.DS.ITenantUserDS,ewApps.AppMgmt.DS.IAppDS,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.AppMgmt.DS.ITenantLinkingDS,ewApps.AppMgmt.DS.IServiceAccountDetailDS,ewApps.AppMgmt.DS.IUserTenantLinkingDS,ewApps.AppMgmt.DS.ITenantUserAppLinkingDS,Microsoft.Extensions.Logging.ILogger{ewApps.AppMgmt.DS.TenantForBusinessDS},ewApps.AppMgmt.Data.IUnitOfWork)">
+            <summary>
+            Constructor with services classes.
+            </summary>
+            <param name="tenantDS"></param>
+            <param name="tenantUserDS"></param>
+            <param name="tenantSubscriptionDS"></param>
+            <param name="tenantAppServiceLinkingDS"></param>
+            <param name="identityNumbersDS"></param>
+            <param name="roleDS"></param>
+            <param name="userSessionManager"></param>
+            <param name="tenantLinkingDS"></param>
+            <param name="subscriptionPlanDS"></param>
+            <param name="appDS"></param>
+            <param name="userTenantLinkingDS"></param>
+            <param name="roleLinkingDS"></param>
+            <param name="tenantUserAppLinkingDS"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantForBusinessDS.GetBusinessUpdateModelAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>       
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantForBusinessDS.GetBusinessPrimaryUser(System.Collections.Generic.List{ewApps.AppMgmt.DTO.UserShortInfoDQ})">
+            <summary>
+            Get business primary user.
+            </summary>
+            <param name="usersList"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantForBusinessDS.DeleteBusinessTenantAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Delete business by tenantid.
+            </summary>
+            <param name="tenantId">Tenant id of business.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.TenantSignUpForBusinessDS">
+            <summary>
+            A wrapper class provide support method for tenant registration.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForBusinessDS.#ctor(ewApps.AppMgmt.DS.ITenantDS,ewApps.AppMgmt.DS.ITenantSubscriptionDS,ewApps.AppMgmt.DS.ITenantAppServiceLinkingDS,ewApps.AppMgmt.DS.ITenantUserDS,ewApps.Core.UniqueIdentityGeneratorService.IUniqueIdentityGeneratorDS,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.AppMgmt.DS.ITenantLinkingDS,ewApps.AppMgmt.DS.ISubscriptionPlanDS,ewApps.AppMgmt.DS.IAppDS,ewApps.AppMgmt.DS.IServiceAccountDetailDS,ewApps.AppMgmt.DS.IUserTenantLinkingDS,ewApps.AppMgmt.DS.ITenantUserAppLinkingDS,ewApps.AppMgmt.DS.IIdentityServerDS,Microsoft.Extensions.Logging.ILogger{ewApps.AppMgmt.DS.TenantSignUpForBusinessDS},ewApps.AppMgmt.Data.IUnitOfWork)">
+            <summary>
+            Constructor with services classes.
+            </summary>
+            <param name="tenantDS"></param>
+            <param name="tenantUserDS"></param>
+            <param name="tenantSubscriptionDS"></param>
+            <param name="tenantAppServiceLinkingDS"></param>
+            <param name="identityNumbersDS"></param>
+            <param name="roleDS"></param>
+            <param name="userSessionManager"></param>
+            <param name="tenantLinkingDS"></param>
+            <param name="subscriptionPlanDS"></param>
+            <param name="appDS"></param>
+            <param name="userTenantLinkingDS"></param>
+            <param name="roleLinkingDS"></param>
+            <param name="tenantUserAppLinkingDS"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForBusinessDS.BusinessSignupAsync(ewApps.AppMgmt.DTO.BusinessSignUpDTO,System.Threading.CancellationToken)">
+            <summary>
+            Method is used to singup business as well as subscribe the application for business.
+            </summary>
+            <param name="businessRegistrtionDTO"></param>
+            <param name="token"></param>
+            <returns>return response model.</returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForBusinessDS.AddTenantAppSubServicesAsync(ewApps.AppMgmt.DTO.BusinessAppSubscriptionDTO,ewApps.AppMgmt.Entity.Tenant,ewApps.AppMgmt.DTO.UserShortInfoDQ,System.Threading.CancellationToken)">
+            <summary>
+            Adding subservices for a application subscribed by a tenant(Business).
+            </summary>
+            <param name="businessDTO">Business application subscription object.</param>
+            <param name="tenant">Tenant object.</param>
+            <param name="UserShortInfoCreator">Business creator user object.</param>
+            <param name="token"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForBusinessDS.AddAdminTenantSubscription(ewApps.AppMgmt.DTO.BusinessSignUpDTO,ewApps.AppMgmt.Entity.Tenant,System.Guid,ewApps.AppMgmt.DTO.UserShortInfoDQ,System.Threading.CancellationToken)">
+            <summary>
+             Add admin user subscription.
+            </summary>
+            <param name="businessRegistrtionDTO"></param>
+            <param name="tenant"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForBusinessDS.AddTenantAndSupportEntity(ewApps.AppMgmt.DTO.BusinessSignUpDTO,ewApps.AppMgmt.Entity.TenantLinking,ewApps.AppMgmt.DTO.UserShortInfoDQ,System.Threading.CancellationToken)">
+            <summary>
+            Add tenant/tenantlinking/business.
+            </summary>
+            <param name="businessRegistrtionDTO"></param>
+            <param name="parentTenantLinking"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForBusinessDS.ValidateTenantAsync(ewApps.AppMgmt.Entity.Tenant,System.Threading.CancellationToken)">
+            <summary>
+            Validating tenant entity with all broken rules, If any define rules faildd then entity raising exception.
+            </summary>
+            <param name="tenant"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForBusinessDS.ValidateTenantCommonData(ewApps.AppMgmt.DTO.BusinessAppSubscriptionDTO)">
+            <summary>
+            Validating tenant model object.
+            </summary>
+            <param name="tenantRegistrtionDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForBusinessDS.ValidateTenantUpdateSubscription(ewApps.AppMgmt.DTO.UpdateBusinessAppSubscriptionDTO)">
+            <summary>
+            Validatiing application user required fields.
+            If Entity validation fail then raising exception. 
+            </summary>
+            <param name="updateBusinessDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForCustomerDS.#ctor(Microsoft.Extensions.Logging.ILogger{ewApps.AppMgmt.DS.TenantSignUpForCustomerDS},ewApps.AppMgmt.Data.IUnitOfWork,ewApps.AppMgmt.DS.ITenantDS,ewApps.AppMgmt.DS.ITenantLinkingDS,ewApps.AppMgmt.DS.ITenantSubscriptionDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppMgmt.DS.TenantSignUpForPublisherDS" /> class and it's dependencies.
+            </summary>
+            <param name="loggerService">The logger service.</param>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="tenantDS">The tenant ds.</param>
+            <param name="tenantLinkingDS">The tenant linking ds.</param>
+            <param name="tenantSubscriptionDS">The tenant subscription ds.</param>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.TenantSignUpForPublisherDS">
+            <summary>
+            This class defines methods to manage tenant signup operations.
+            </summary>
+            <seealso cref="T:ewApps.AppMgmt.DS.ITenantSignUpForPublisherDS" />
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForPublisherDS.#ctor(ewApps.AppMgmt.DS.ISubscriptionPlanServiceDS,ewApps.AppMgmt.DS.ITenantUserDS,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.AppMgmt.DS.IIdentityServerDS,ewApps.AppMgmt.DS.IUserTenantLinkingDS,ewApps.AppMgmt.DS.ITenantUserAppLinkingDS,ewApps.Core.UserSessionService.IUserSessionManager,Microsoft.Extensions.Logging.ILogger{ewApps.AppMgmt.DS.TenantSignUpForPublisherDS},ewApps.AppMgmt.DS.ITenantDS,ewApps.AppMgmt.DS.ITenantLinkingDS,ewApps.AppMgmt.DS.ITenantSubscriptionDS,ewApps.AppMgmt.DS.ISubscriptionPlanDS,ewApps.AppMgmt.DS.IAppDS,ewApps.AppMgmt.DS.IServiceAccountDetailDS,ewApps.AppMgmt.DS.ITenantAppServiceLinkingDS)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppMgmt.DS.TenantSignUpForPublisherDS"/> class and it's dependencies.
+            </summary>
+            <param name="tenantUserDS">The tenant user data service instance.</param>
+            <param name="unitOfWork">The unit of work.</param>
+            <param name="identityServerDS">The identity server data service instance.</param>
+            <param name="userTenantLinkingDS">The user tenant linking data service instance.</param>
+            <param name="tenantUserAppLinkingDS">The tenant user application linking data service instance.</param>
+            <param name="userSessionManager">The user session manager.</param>
+            <param name="loggerService">The logger service.</param>
+            <param name="tenantDS">The tenant data service instance.</param>
+            <param name="tenantLinkingDS">The tenant linking data service instance.</param>
+            <param name="tenantSubscriptionDS">The tenant subscription data service instance.</param>
+            <param name="subscriptionPlanDataService">The subscription plan data service instance.</param>
+            <param name="appDS">The application data service instance.</param>
+            <param name="serviceAccountDetailDS">The service account detail data service instance.</param>
+            <param name="tenantAppServiceLinkingDS">The tenant application service linking data service instance.</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForPublisherDS.ValidatePublisherPreSignUpRequest(ewApps.AppMgmt.DTO.PublisherPreSignUpReqDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForPublisherDS.GetPublisherPreUpdateRequestDataAsync(ewApps.AppMgmt.DTO.PublisherPreUpdateReqDTO,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantSignUpForPublisherDS.PublisherSignUpAsync(ewApps.AppMgmt.DTO.PublisherSignUpDTO,System.Threading.CancellationToken)">
+            <summary>
+            Publishers the sign up asynchronous.
+            </summary>
+            <param name="publisherSignUpDTO">The publisher sign up dto.</param>
+            <param name="cancellationToken">The async task token to notify about task cancellation.</param>
+            <returns>Returns signedup tenant and user detail.</returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.TenantUpdateForBusinessDS">
+            <summary>
+            Contains method to update business tenant and supportive entities.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUpdateForBusinessDS.#ctor(ewApps.AppMgmt.DS.ITenantDS,ewApps.AppMgmt.DS.ITenantSubscriptionDS,ewApps.AppMgmt.DS.ITenantAppServiceLinkingDS,ewApps.AppMgmt.DS.ITenantUserDS,ewApps.AppMgmt.DS.IIdentityServerDS,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.AppMgmt.DS.ITenantLinkingDS,ewApps.AppMgmt.DS.ISubscriptionPlanDS,ewApps.AppMgmt.DS.IAppDS,ewApps.AppMgmt.DS.IServiceAccountDetailDS,ewApps.AppMgmt.DS.IUserTenantLinkingDS,ewApps.AppMgmt.DS.ITenantUserAppLinkingDS,Microsoft.Extensions.Logging.ILogger{ewApps.AppMgmt.DS.TenantUpdateForBusinessDS},ewApps.AppMgmt.Data.IUnitOfWork)">
+            <summary>
+            Constructor with services classes.
+            </summary>
+            <param name="tenantDS"></param>
+            <param name="tenantUserDS"></param>
+            <param name="tenantSubscriptionDS"></param>
+            <param name="tenantAppServiceLinkingDS"></param>
+            <param name="identityNumbersDS"></param>
+            <param name="roleDS"></param>
+            <param name="userSessionManager"></param>
+            <param name="tenantLinkingDS"></param>
+            <param name="subscriptionPlanDS"></param>
+            <param name="appDS"></param>
+            <param name="userTenantLinkingDS"></param>
+            <param name="roleLinkingDS"></param>
+            <param name="tenantUserAppLinkingDS"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUpdateForBusinessDS.ValidateTenantAsync(ewApps.AppMgmt.Entity.Tenant,System.Threading.CancellationToken)">
+            <summary>
+            Validating tenant entity with all broken rules, If any define rules faildd then entity raising exception.
+            </summary>
+            <param name="tenant"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUpdateForBusinessDS.ValidateTenantCommonData(ewApps.AppMgmt.DTO.BusinessAppSubscriptionDTO)">
+            <summary>
+            Validating tenant model object.
+            </summary>
+            <param name="tenantRegistrtionDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUpdateForBusinessDS.ValidateTenantUpdateSubscription(ewApps.AppMgmt.DTO.UpdateBusinessAppSubscriptionDTO)">
+            <summary>
+            Validatiing application user required fields.
+            If Entity validation fail then raising exception. 
+            </summary>
+            <param name="updateBusinessDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUpdateForBusinessDS.UpdateBusinessTenantAsync(ewApps.AppMgmt.DTO.UpdateTenantModelDTO,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUpdateForBusinessDS.UpdateTenantAsync(ewApps.AppMgmt.DTO.UpdateTenantModelDTO,System.Threading.CancellationToken)">
+            <summary>
+            Add tenant/tenantlinking/business.
+            </summary>
+            <param name="businessRegistrtionDTO"></param>    
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUpdateForBusinessDS.UpdateTenantAppSubServicesAsync(ewApps.AppMgmt.DTO.UpdateTenantModelDTO,ewApps.AppMgmt.DTO.UpdateBusinessAppSubscriptionDTO,ewApps.AppMgmt.Entity.Tenant,System.Collections.Generic.List{ewApps.AppMgmt.Entity.TenantAppServiceLinking},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Adding configuration for tenant application.
+            </summary>
+            <param name="businessDTO">Model of client object.</param>
+            <param name="tenant">Business tenant</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUpdateForBusinessDS.DeleteSubscriptionAsync(System.Collections.Generic.List{ewApps.AppMgmt.DTO.UpdateBusinessAppSubscriptionDTO},System.Collections.Generic.List{ewApps.AppMgmt.Entity.TenantSubscription})">
+            <summary>
+            Delete the subscription list if didn't get from client.
+            </summary>
+            <param name="clientSubscriptionList"></param>
+            <param name="existingSubscriptionLis"></param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUpdateForBusinessDS.MapSubscriptionFromBusiness(ewApps.AppMgmt.DTO.UpdateBusinessAppSubscriptionDTO,ewApps.AppMgmt.Entity.TenantSubscription)">
+            <summary>
+            Manually mapping subscibe application object fields from model object.
+            </summary>
+            <param name="businessSubscription">Subscription model object to map in to entity object.</param>
+            <param name="sub">subscription object to map value from model object and return it.</param>
+            <returns>return TenantSubscription object.</returns>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.TenantUpdateForPublisherDS">
+            <summary>
+            This class implements publisher tenant update operations.
+            </summary>
+            <seealso cref="T:ewApps.AppMgmt.DS.ITenantUpdateForPublisherDS" />
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUpdateForPublisherDS.#ctor(ewApps.AppMgmt.DS.ITenantDS,ewApps.AppMgmt.DS.ITenantUserDS,ewApps.AppMgmt.Data.IUnitOfWork)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppMgmt.DS.TenantUpdateForPublisherDS"/> class.
+            </summary>
+            <param name="tenantDS">The tenant ds.</param>
+            <param name="tenantUserDS">The tenant user ds.</param>
+            <param name="unitOfWork">The unit of work.</param>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUpdateForPublisherDS.UpdatePublisherTenantAsync(ewApps.AppMgmt.DTO.TenantUpdateForPublisherDTO,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserDeleteForBusinessDS.DeleteTenantUserAsync(ewApps.AppMgmt.DTO.TenantUserIdentificationDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserSignUpForBusiness.#ctor(ewApps.AppMgmt.DS.ITenantUserDS,ewApps.AppMgmt.DS.IUserTenantLinkingDS,ewApps.AppMgmt.DS.IIdentityServerDS,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.AppMgmt.DS.IAppDS,ewApps.AppMgmt.DS.ITenantUserAppLinkingDS,Microsoft.Extensions.Logging.ILogger{ewApps.AppMgmt.DS.TenantUserSignUpForBusiness})">
+            <summary>
+            Dependency injection for all other dataservices for user operations.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserSignUpForBusiness.SignUpUserAsync(ewApps.AppMgmt.DTO.TenantUserSignUpDTO,System.Threading.CancellationToken)">
+            <inhertdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserUpdateForBusinessDS.UpdateUserAsync(ewApps.AppMgmt.DTO.TenantUserUpdateRequestDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserDeleteForCustomerDS.DeleteTenantUserAsync(ewApps.AppMgmt.DTO.TenantUserIdentificationDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserSignUpForCustomer.#ctor(ewApps.AppMgmt.DS.ITenantUserDS,ewApps.AppMgmt.DS.IUserTenantLinkingDS,ewApps.AppMgmt.DS.IIdentityServerDS,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.AppMgmt.DS.IAppDS,ewApps.AppMgmt.DS.ITenantUserAppLinkingDS,Microsoft.Extensions.Logging.ILogger{ewApps.AppMgmt.DS.TenantUserSignUpForBusiness})">
+            <summary>
+            Dependency injection for all other dataservices for user operations.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserSignUpForCustomer.SignUpUserAsync(ewApps.AppMgmt.DTO.TenantUserSignUpDTO,System.Threading.CancellationToken)">
+            <inhertdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserUpdateForCustomerDS.UpdateUserAsync(ewApps.AppMgmt.DTO.TenantUserUpdateRequestDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserDeleteForPlatformDS.DeleteTenantUserAsync(ewApps.AppMgmt.DTO.TenantUserIdentificationDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppMgmt.DS.TenantUserSignUpForPlatformDS">
+            <summary>
+            A wrapper data service for the platform user operations.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserSignUpForPlatformDS.#ctor(ewApps.AppMgmt.DS.ITenantUserDS,ewApps.AppMgmt.DS.IUserTenantLinkingDS,ewApps.AppMgmt.DS.IIdentityServerDS,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.AppMgmt.DS.IAppDS,ewApps.AppMgmt.DS.ITenantUserAppLinkingDS,Microsoft.Extensions.Logging.ILogger{ewApps.AppMgmt.DS.TenantUserSignUpForPlatformDS})">
+            <summary>
+            Dependency injection for all other dataservices for user operations.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserSignUpForPlatformDS.SignUpUserAsync(ewApps.AppMgmt.DTO.TenantUserSignUpDTO,System.Threading.CancellationToken)">
+            <inhertdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserUpdateForPlatformDS.UpdateUserAsync(ewApps.AppMgmt.DTO.TenantUserDTO,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserDeleteForPublisherDS.DeleteTenantUserAsync(ewApps.AppMgmt.DTO.TenantUserIdentificationDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserForPublisherDS.GetPublisherAndUserAsync(ewApps.AppMgmt.DTO.PublisherRequestDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get publisher primary user and get userid from email.
+            </summary>
+            <param name="reqDto">Publisher request model.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserSignUpForPublisherDS.#ctor(ewApps.AppMgmt.DS.ITenantUserDS,ewApps.AppMgmt.DS.IUserTenantLinkingDS,ewApps.AppMgmt.DS.IIdentityServerDS,ewApps.AppMgmt.Data.IUnitOfWork,ewApps.Core.UserSessionService.IUserSessionManager,ewApps.AppMgmt.DS.IAppDS,ewApps.AppMgmt.DS.ITenantUserAppLinkingDS,Microsoft.Extensions.Logging.ILogger{ewApps.AppMgmt.DS.TenantUserSignUpForPublisherDS})">
+            <summary>
+            Dependency injection for all other dataservices for user operations.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserSignUpForPublisherDS.SignUpUserAsync(ewApps.AppMgmt.DTO.TenantUserSignUpDTO,System.Threading.CancellationToken)">
+            <inhertdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserUpdateForPublisherDS.UpdateUserAsync(ewApps.AppMgmt.DTO.TenantUserDTO,System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserExtDS.GetTenantUserInfoAsync(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserExtDS.GetTenantUserInfoByEmailAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserExtDS.GetUserInfoByIdAsync(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserExtDS.UpdateTenantUserInvitationStatus(ewApps.AppMgmt.DTO.TenantUserIdentificationDTO,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppMgmt.DS.TenantUserExtDS.UpdateAppUser(ewApps.AppMgmt.DTO.TenantUserProfileDTO)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

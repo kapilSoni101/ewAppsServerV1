@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.UserSessionService</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Core.UserSessionService.UserSessionAppSettings">
+            <summary>
+            This class contains application settings.
+            Note that AppSettings objects are parsed from json.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.UserSessionService.ConfigureOptions">
+            <summary>
+            Session manager configuration options
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.ConfigureOptions.LightSession">
+            <summary>
+            Gets or sets a value indicating whether [light session].
+            </summary>
+            <value>
+              <c>true</c> if [light session]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:ewApps.Core.UserSessionService.EwpSession">
+            <summary>
+            This class contains session property of TenantId, Tenant Name, User Id and User Name.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.UserSessionService.EwpSession.#ctor">
+            <summary>
+            Initialize new instance of EwAppsSession class.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.UserSessionService.EwpSession.#ctor(System.Guid,System.String,System.Guid,System.String,System.Boolean,System.Boolean,System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initialize new instance of EwAppsSession class.
+            </summary>
+            <param name="userLoginId">Logged-in user id.</param>
+            <param name="userName">Logged-in user name.</param>
+            <param name="tenantId">Logged-in user's tenant id.</param>
+            <param name="tenantName">Business Name of logged-in tenant.</param>
+            <param name="systemAdmin">System Admin flag.</param>
+            <param name="accountAdmin">Account admin flag.</param>
+            <param name="loginAppId">Application id where user going to login.</param>
+            <param name="loginAppName">Application name where user going to login.</param>
+            <param name="localRegion">The local client region.</param>
+            <param name="localIANATimeZone">The local client iana time zone.</param>
+            <param name="browser">Name of browser</param>
+            <param name="os">Operating name</param>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.LoggerExtendedProperties">
+            <summary>
+            It provides dictionary of session properties.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.TenantId">
+            <summary>
+            Login user's tenant id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.TenantName">
+            <summary>
+            Business name of logged-in tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.UserId">
+            <summary>
+            The logged-in user id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.UserName">
+            <summary>
+            Logged-in user name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.LoginTime">
+            <summary>
+            User's login date and time.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.SystemAdmin">
+            <summary>
+            User's login date and time.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.AccountAdmin">
+            <summary>
+            Is login user is Account Admin
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.RequesterId">
+            <summary>
+            Logged-in User RequesterId.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.RequesterDeviceName">
+            <summary>
+            Logged-in user RequesterDeviceName.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.LoginAppId">
+            <summary>
+            Gets or sets the id of the login application.
+            </summary>
+            <value>
+            The id of the login application.
+            </value>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.LoginAppName">
+            <summary>
+            Gets or sets the name of the login application.
+            </summary>
+            <value>
+            The name of the login application.
+            </value>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.LocalRegion">
+            <summary>
+            Gets or sets the local region.
+            </summary>
+            <value>
+            The local region.
+            </value>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.ExternalUserId">
+            <summary>
+            Gets or sets the external user identifier.
+            </summary>
+            <value>
+            The external user identifier.
+            </value>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.Browser">
+            <summary>
+            Represents browser name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.OS">
+            <summary>
+            Represents operating system name
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.UserSessionService.EwpSession.Platform">
+            <summary>
+            Client Platform 
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.UserSessionService.UserSessionManager.GetSession">
+            <summary>
+            Method responsible to information for user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.UserSessionService.UserSessionManager.SetSession(ewApps.Core.UserSessionService.ConfigureOptions)">
+            <summary>
+            Method responsible to gather information for user
+            </summary>
+            <param name="lightSession">if set to <c>true</c> [light session].</param>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:ewApps.Core.ExceptionService.EwpInvalidLoginTokenException"></exception>
+        </member>
+        <member name="M:ewApps.Core.UserSessionService.UserSessionManager.ClearSession(ewApps.Core.UserSessionService.UserSession)">
+            <summary>
+            Method responsible to user information from session 
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:ewApps.Core.UserSessionService.UserSessionMiddleware">
+            <summary>
+            Middleware extention to mange session
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.UserSessionService.UserSessionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,ewApps.Core.UserSessionService.ConfigureOptions,Microsoft.Extensions.Logging.ILogger{ewApps.Core.UserSessionService.UserSessionMiddleware})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.UserSessionService.UserSessionMiddleware"/> class.
+            </summary>
+            <param name="next">The next.</param>
+        </member>
+        <member name="M:ewApps.Core.UserSessionService.UserSessionMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the specified HTTP context.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

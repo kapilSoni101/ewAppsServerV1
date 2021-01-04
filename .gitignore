@@ -1,0 +1,8 @@
+.vs/
+/Scheduler/ewApps.Scheduler.DS/bin/Debug/netcoreapp2.1
+/Scheduler/ewApps.Scheduler.DS/obj
+/Scheduler/ewApps.Scheduler.DI/ewApps.Scheduler.DI.xml
+/Scheduler/ewApps.Scheduler.WebApi/ewApps.Scheduler.WebApi.xml
+/Scheduler/ewApps.Scheduler.Common/ewApps.Scheduler.Common.xml
+/Scheduler/ewApps.Scheduler.WebApi/Serilog/Logs
+/Notification/ewApps.Notification.WebApi/Serilog/Logs

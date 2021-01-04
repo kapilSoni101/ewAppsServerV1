@@ -1,0 +1,518 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.AppDeeplinkService</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Core.AppDeeplinkService.AppDeeplinkManager">
+            <summary>
+            AppDeeplinkManager class, for generating the deep link.
+            It is a singleton class. It provides support for:
+            (1) Generating the deep link.
+            (2) Manage to keep the clicked deeplink log..  
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.#ctor(ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext)">
+            <summary>
+            Constructor with a db context object. 
+            </summary>
+            <param name="appDeeplinkDBContext"></param>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.GeneratingDeeplink(ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Generate the deeplink with all necessary payload information.
+            Url query endparam contains all necessary information(payload) to access the page and required data.
+            </summary>
+            <param name="appDeeplinkPayloadDTO">Contains the information of url to generate.</param>
+            <param name="useShortUrl">whether generated short number should be convert into base62.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.Add(ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO,System.Int64,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Map model object into AppDeepLink entity and create deeplink entry in database. 
+            </summary>
+            <param name="appDeeplinkPayloadDTO"></param>
+            <param name="number"></param>
+            <param name="shortUrl"></param>
+            <param name="token"></param>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.GetDeeplinkAccessAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get deep link detail from short url.
+            </summary>
+            <param name="shortUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.GetDeeplinkAccessByNumberAsync(System.Int64,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get deep link detail from short url.
+            </summary>
+            <param name="number">Unique generated number for a url.</param>
+            <param name="accessMachineIpAddress">From which machine url is accessing.</param>
+            <returns>Get dto object from unique number.</returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.GetAppDeeplink(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the AppDeeplink based on input parameters.
+            </summary>
+            <param name="appDeeplinkId"></param>
+            <param name="token"></param>
+            <returns>Returns AppDeeplink entity based on input SQL and parameters.</returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.ExpireDeepLink(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Method will expire the deeplink.
+            </summary>
+            <param name="shortUrl">Unique short url key</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.ExpireDeepLink(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Method will expire the deeplink.
+            </summary>
+            <param name="tenantId">Tenant Id.</param>
+            <param name="entityId">Action data enitytid.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.AddDeeplinkAccessLog(ewApps.Core.AppDeeplinkService.AppDeeplinkAccessLog,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Add access log in database and update appdeeplink object by number of time access the url.
+            </summary>
+            <param name="appDeeplinkPayloadDTO"></param>
+            <param name="number"></param>
+            <param name="shortUrl"></param>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.GetAppDeeplinkAccessLogEntityList(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the AppDeeplinkAccessLog entity list based on input SQL and parameters.
+            </summary>
+            <param name="appDeeplinkId"></param>
+            <param name="token"></param>
+            <returns>Returns AppDeeplinkAccessLog entity list based on input SQL and parameters.</returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.mapProperties(ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO,System.Int64,System.String,System.Boolean)">
+            <summary>
+            Map the deeplink generator model to deeplink entity.
+            </summary>
+            <param name="appDeeplinkPayloadDTO">Map DTO object into AppDeepLink entity.</param>
+            <param name="number">Generated unique number for url.</param>
+            <param name="shortUrl">Generated unique number shorturl.</param>
+            <param name="isAdd">whether item is adding or updating.</param>
+            <returns>return AppDeeplink Entity object.</returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.mapPropertiesInAcesssLog(System.Guid,System.String,System.Boolean,System.String)">
+            <summary>
+            Map the deeplink generator model to deeplink entity.
+            </summary>
+            <param name="appDeeplinkPayloadDTO"></param>
+            <param name="number"></param>
+            <param name="shortUrl"></param>
+            <param name="isAdd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkManager.GenerateSecurityException(System.String)">
+            <summary>
+            Generating exception of a max instance limit reached to access a url.
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext">
+            <summary>
+            Database context for AppDeeplink Operations.
+            Save the AppDeeplink
+            AppDeepLinkAccesslog  
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext},System.String)">
+            <summary>
+            Constructor with Context Options
+            </summary>
+            <param name="context"></param>
+            <param name="connString"></param>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext},Microsoft.Extensions.Options.IOptions{ewApps.Core.AppDeeplinkService.AppDeeplinkAppSettings})">
+            <summary>
+            Constructor with AppSetting
+            </summary>
+            <param name="options"></param>
+            <param name="appSetting"></param>
+            <param name="loggingService"></param>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Defines all the configuratiion option for the Database
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext.AppDeeplink">
+            <summary>
+            AppDeeplink Server DataSet
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext.AppDeeplinkAccessLog">
+            <summary>
+            AppDeeplinkAccessLog DataSet
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext.AppDeeplinkPayloadDTOQuery">
+            <summary>
+            AppDeeplinkPayloadDTO queried model.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext.GetDeeplinkAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get deep link detail from short url.
+            </summary>
+            <param name="shortUrl">unique value of generated number.</param>
+            <returns>return AppDeeplinkPayloadDTO</returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext.GetDeeplinkByNumberAsync(System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Get deep link detail from numberId.
+            </summary>
+            <param name="numberId">unique generated number.</param>
+            <returns>return detail object of AppDeeplinkPayloadDTO</returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext.IsNumberExistAsync(System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Get deep link detail from numberId.
+            </summary>
+            <param name="numberId">unique generated number.</param>
+            <returns>return detail object of AppDeeplinkPayloadDTO</returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext.GetQueryEntityListAsync``1(System.String,System.Object[],System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously gets the entity (of type V) list based on input SQL and parameters.
+            </summary>
+            <typeparam name="V">The type of entity of result.</typeparam>
+            <param name="sql">A valid SQL string that should contains all properties of TEntity entity.</param>
+            <param name="parameters">The list of sql parameters (if null none of sql parameters applied).</param>
+            <param name="token">A token that can be use to propogate async operation cancel notification. Using this token async operation duration can be control.</param>
+            <returns>Returns entity (of type V) list based on input SQL and parameters.</returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext.ExpireDeepLink(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Method will expire the deeplink.
+            </summary>
+            <param name="shortUrl">Unique short url key</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkDBContext.ExpireDeepLink(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Method will expire the deeplink.
+            </summary>
+            <param name="tenantId">tenantId</param>
+            <param name="entityId">Action entityId.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Core.AppDeeplinkService.AppDeeplinkServiceCollection">
+            <summary>
+            Register classes for the injecting.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO">
+            <summary>
+            1) Contains all necessary information to generate deeplink.
+            2) Contains information for navigating the url and show the data on page.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO.ID">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO.UserId">
+            <summary>
+            UserId
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO.TenantId">
+            <summary>
+            TenantId
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO.Password">
+            <summary>
+            Password to access url.
+            Asha - It may be blank, as user will accessthe link from outside 
+            So we can not get password from him.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO.MaxUseCount">
+            <summary>
+            Number of time user can access the url.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO.UserAccessCount">
+            <summary>
+            Number of time user accessed the url.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO.ExpirationDate">
+            <summary>
+            Url expiration date, its optional.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO.ActionData">
+            <summary>
+            Json data, contain all necessary information required for showing the data on clicked deep link.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO.ActionEndpointUrl">
+            <summary>
+            call back url where the this action will be handled
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO.ActionName" -->
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplink.ID">
+            <summary>
+            Uniue key of the table row
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplink.NumberId">
+            <summary>
+            Rendom number generated for url.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplink.ShortUrlKey">
+            <summary>
+            short url key.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplink.UserId">
+            <summary>
+            UserId, May be, who allowed to access or who generated the deeplink.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplink.TenantId">
+            <summary>
+            TenantId  to which the link is relevent
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplink.MaxUseCount">
+            <summary>
+             Max number of time user can access the url.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplink.UserAccessCount">
+            <summary>
+            Numbe rof time user accessed the url.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplink.ExpirationDate">
+            <summary>
+            Url expiration date, its optional.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplink.Password">
+            <summary>
+            User Password to access url.Not mendatory
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplink.ActionData">
+            <summary>
+            Payload contain a object json.
+            Json data, contain all necessary information required for showing the data on clicked deep link.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ewApps.Core.AppDeeplinkService.AppDeeplink.ActionName" -->
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplink.ActionEndpointUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.AppDeeplinkService.AppDeeplinkAccessLog">
+            <summary>
+            Contains log of clicked deeplink. 
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkAccessLog.ID">
+            <summary>
+            Uniue key of the table row
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkAccessLog.AppDeeplinkId">
+            <summary>
+            Foreighn key, Key of AppDeppLink.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkAccessLog.AccessTimestamp">
+            <summary>
+            Time when the link is accessed
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkAccessLog.AccessUrl">
+            <summary>
+             Url used, (ActionEndpointUrl or Default Url)
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkAccessLog.AccessGranted">
+            <summary>
+            if stale or password wrong or error
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkAccessLog.AccessNotGrantedReason">
+            <summary>
+            Error text of not generated or error log for accessing the url.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.AppDeeplinkAccessLog.AccessorIPAddress">
+            <summary>
+            IPAddress of machine from where deeplink is accessing.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.AppDeeplinkService.IAppDeeplinkManager">
+            <summary>
+            Contains all AppDeeplink service manager class method.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.IAppDeeplinkManager.GeneratingDeeplink(ewApps.Core.AppDeeplinkService.AppDeeplinkPayloadDTO,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Generate the deeplink with all necessary payload information.
+            Url query endparam contains all necessary information(payload) to access the page and required data.
+            </summary>
+            <param name="appDeeplinkPayloadDTO"></param>
+            <param name="useShortUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.IAppDeeplinkManager.GetDeeplinkAccessAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get deep link detail from short url.
+            </summary>
+            <param name="shortUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.IAppDeeplinkManager.ExpireDeepLink(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Method will expire the deeplink.
+            </summary>
+            <param name="shortUrl">Unique short url key</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.IAppDeeplinkManager.ExpireDeepLink(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Method will expire the deeplink.
+            </summary>
+            <param name="tenantId">Id of tenant.</param>
+            <param name="entityId">Action data enitytid.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Core.AppDeeplinkService.AppDeeplinkNumberIdGenerator">
+            <summary>
+            AppDeeplinkNumberIdGenerator is a static method.
+            Class contains static method to generate the rendom number.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.AppDeeplinkService.AppDeeplinkNumberIdGenerator.random">
+            <summary>
+            Static variable to avoid getting the same value lots of times. 
+            So keep a single Random instance and keep using Next on the same instance..
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkNumberIdGenerator.GenerateRendomNumber">
+            <summary>
+            Method generate the 8 charecter long number and return as string.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkNumberIdGenerator.GenerateRendomNumberUsingDatetime">
+            <summary>
+            Method generate the rendom string using datetime.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Core.AppDeeplinkService.AppDeeplinkShortUrlKeyGenerator">
+            <summary>
+            Contains the method to  convert the string.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkShortUrlKeyGenerator.NumberToShortURL(System.Int64)">
+            <summary>
+            To generate a short url from intger. 
+            </summary>
+            <param name="n"></param>
+            <returns></returns> 
+            <remarks>Referense: https://www.geeksforgeeks.org/how-to-design-a-tiny-url-or-url-shortener/</remarks>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.AppDeeplinkShortUrlKeyGenerator.ShortURLtoID(System.String)">
+            <summary>
+             Get integer value back from a short url.
+            </summary>
+            <param name="shortURL"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Core.AppDeeplinkService.BitStream">
+            <summary>
+            Utility that read and write bits in byte array
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.BitStream.#ctor(System.Int32)">
+            <summary>
+            Initialize the stream with capacity
+            </summary>
+            <param name="capacity">Capacity of the stream</param>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.BitStream.#ctor(System.Byte[])">
+            <summary>
+            Initialize the stream with a source byte array
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.BitStream.Length">
+            <summary>
+            Bit length of the stream
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.AppDeeplinkService.BitStream.Position">
+            <summary>
+            Bit position of the stream
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.BitStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Read the stream to the buffer
+            </summary>
+            <param name="buffer">Buffer</param>
+            <param name="offset">Offset bit start position of the stream</param>
+            <param name="count">Number of bits to read</param>
+            <returns>Number of bits read</returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.BitStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            Set up the stream position
+            </summary>
+            <param name="offset">Position</param>
+            <param name="origin">Position origin</param>
+            <returns>Position after setup</returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.BitStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Write from buffer to the stream
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset">Offset start bit position of buffer</param>
+            <param name="count">Number of bits</param>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.EncodingExtensions.ToBase62(System.Byte[])">
+            <summary>
+            Convert a byte array
+            </summary>
+            <param name="original">Byte array</param>
+            <returns>Base62 string</returns>
+        </member>
+        <member name="M:ewApps.Core.AppDeeplinkService.EncodingExtensions.FromBase62(System.String)">
+            <summary>
+            Convert a Base62 string to byte array
+            </summary>
+            <param name="base62">Base62 string</param>
+            <returns>Byte array</returns>
+        </member>
+    </members>
+</doc>

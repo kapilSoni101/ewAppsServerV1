@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Shipment.DTO</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Shipment.DTO.ShipperAccountDTO">
+            <summary>
+            Keppes Shipper account related information
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.DTO.ShipperAccountDTO.Id">
+            <summary>
+            Primarykey
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.DTO.ShipperAccountDTO.ShipperId">
+            <summary>
+            ShipperId/TenantId, given by application , Composite key
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.DTO.ShipperAccountDTO.CarrierCode">
+            <summary>
+            Carrier code , for which this account setting should be used , Composite key
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.DTO.ShipperAccountDTO.UserName">
+            <summary>
+            FedEx - Developer Key
+            UPS - User 
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.DTO.ShipperAccountDTO.Password">
+            <summary>
+            FedEx - Developer Password
+            UPS -Password of the account
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.DTO.ShipperAccountDTO.AccountNumber">
+            <summary>
+            FedEx - Account Number
+            UPS -Account NUmber
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.DTO.ShipperAccountDTO.AccessKey">
+            <summary>
+            UPS - Access Key
+            FEDEX - not used
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.DTO.ShipperAccountDTO.AccountKey">
+            <summary>
+            Account Key, for which this account setting should be used , Composite key, it should be unique for a Shipper and CarrierCode
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.DTO.ShipperAccountDTO.MeterNumber">
+            <summary>
+            UPS - Not Used
+            FedEX - Meter Number
+            </summary>
+        </member>
+        <member name="P:ewApps.Shipment.DTO.ShipperAccountDTO.CreatedDate">
+            <summary>
+            Record creation time stamp
+            </summary>
+        </member>
+    </members>
+</doc>

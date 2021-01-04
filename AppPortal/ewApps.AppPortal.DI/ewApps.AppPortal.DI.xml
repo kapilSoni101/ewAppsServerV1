@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.AppPortal.DI</name>
+    </assembly>
+    <members>
+        <member name="M:ewApps.AppPortal.DI.AppPortalServiceCollection.AddAppPortalDataDependency(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

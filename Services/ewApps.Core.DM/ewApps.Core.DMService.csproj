@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="IRepository\**" />
+    <Compile Remove="Repository\**" />
+    <EmbeddedResource Remove="IRepository\**" />
+    <EmbeddedResource Remove="Repository\**" />
+    <None Remove="IRepository\**" />
+    <None Remove="Repository\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTO\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.1.1" />
+    <PackageReference Include="MimeMapping" Version="1.0.1.17" />
+    <PackageReference Include="NReco.VideoInfo" Version="1.1.1" />
+    <PackageReference Include="PhotoSauce.MagicScaler" Version="0.9.1" />
+    <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ewApps.Core.BaseService\ewApps.Core.BaseService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.CommonService\ewApps.Core.CommonService.csproj" />
+  </ItemGroup>
+
+</Project>

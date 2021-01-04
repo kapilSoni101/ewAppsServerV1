@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.EmailService</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Core.EmailService.EmailDeliveryLogDS">
+            <summary>
+            This class defines the set of operations required for <see cref="T:ewApps.Core.EmailService.EmailDeliveryLogDS"/>.
+            </summary>
+            <seealso cref="T:ewApps.Core.EmailService.IEmailDeliveryLogDS" />
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailDeliveryLogDS.#ctor(ewApps.Core.EmailService.EmailDBContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.EmailService.EmailDeliveryLogDS"/> class.
+            </summary>
+            <param name="dbContext">The database context.</param>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailDeliveryLogDS.Add(ewApps.Core.EmailService.EmailDeliveryLog)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailDeliveryLogDS.Update(ewApps.Core.EmailService.EmailDeliveryLog)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailDeliveryLogDS.Save">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailQueueDS.Add(ewApps.Core.EmailService.EmailQueue)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailQueueDS.GetPendingEmailNotificationList(System.DateTime)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailQueueDS.Save">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailQueueDS.UpdateState(System.Guid,ewApps.Core.EmailService.EmailNotificationState,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.Core.EmailService.IEmailDeliveryLogDS">
+            <summary>
+            This interface declares set of operations required for <see cref="T:ewApps.Core.EmailService.EmailDeliveryLog"/>.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.EmailService.IEmailDeliveryLogDS.Add(ewApps.Core.EmailService.EmailDeliveryLog)">
+            <summary>
+            Adds the specified email delivery log.
+            </summary>
+            <param name="emailDeliveryLog">The email delivery log.</param>
+            <returns>Returns newly added <see cref="T:ewApps.Core.EmailService.EmailDeliveryLog"/> entity.</returns>
+        </member>
+        <member name="M:ewApps.Core.EmailService.IEmailDeliveryLogDS.Update(ewApps.Core.EmailService.EmailDeliveryLog)">
+            <summary>
+            Updates the specified email delivery log.
+            </summary>
+            <param name="emailDeliveryLog">The email delivery log entity with updated information.</param>
+            <returns>Returns updated <see cref="T:ewApps.Core.EmailService.EmailDeliveryLog"/> entity.</returns>
+        </member>
+        <member name="M:ewApps.Core.EmailService.IEmailDeliveryLogDS.Save">
+            <summary>
+            Saves this instance.
+            </summary>
+            <returns>Returns total number of records get affected in this current change save.</returns>
+        </member>
+        <member name="T:ewApps.Core.EmailService.IEmailQueueDS">
+            <summary>
+            This interface declares set of operations required for <see cref="T:ewApps.Core.EmailService.EmailQueue"/>.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.EmailService.IEmailQueueDS.GetPendingEmailNotificationList(System.DateTime)">
+            <summary>
+            Gets the pending email notification list.
+            </summary>
+            <param name="fromDate">From date.</param>
+            <returns>Returns List of pending <see cref="T:ewApps.Core.EmailService.EmailQueue"/> items.</returns>
+        </member>
+        <member name="M:ewApps.Core.EmailService.IEmailQueueDS.UpdateState(System.Guid,ewApps.Core.EmailService.EmailNotificationState,System.Boolean)">
+            <summary>
+            Updates the state of <see cref="T:ewApps.Core.EmailService.EmailQueue"/> entity.
+            </summary>
+            <param name="emailQueueId">The email queue entity identifier.</param>
+            <param name="notificationState">State of email queue to be update.</param>
+            <param name="commit">if set to <c>true</c> [commit] all database changes.</param>
+        </member>
+        <member name="M:ewApps.Core.EmailService.IEmailQueueDS.Add(ewApps.Core.EmailService.EmailQueue)">
+            <summary>
+            Adds the specified notification queue.
+            </summary>
+            <param name="notificationQueue">The notification queue.</param>
+            <returns>Returns newly added <see cref="T:ewApps.Core.EmailService.EmailQueue"/> entity.</returns>
+        </member>
+        <member name="M:ewApps.Core.EmailService.IEmailQueueDS.Save">
+            <summary>
+            Saves this instance.
+            </summary>
+            <returns>Returns total number of records get affected in this current change save.</returns>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Core.EmailService.EmailDBContext},System.String)">
+            <summary>
+            Constructor with Context Options
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.Core.EmailService.EmailDBContext},Microsoft.Extensions.Options.IOptions{ewApps.Core.EmailService.EmailAppSettings})">
+            <summary>
+            Constructor with AppSetting
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailDBContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Defines all the configuratiion option for the Database
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.EmailService.EmailDBContext.EmailQueues">
+            <summary>
+            Email Queue DataSet
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.EmailService.EmailDBContext.EmailDeliveryLogs">
+            <summary>
+            Email Notification Delivery log DataSet
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailDeliveryLog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Core.EmailService.EmailDeliveryLog"/> class.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.EmailService.EmailQueue">
+            <summary>
+            This structure logs each system or user generated EmailQueue entity in database.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.EmailService.EmailNotificationState">
+            <summary>
+            Enum represents notification process status.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.EmailService.EmailNotificationState.Queued">
+            <summary>
+            The Queued
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.EmailService.EmailNotificationState.Error">
+            <summary>
+            The error
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.EmailService.EmailNotificationState.Sent">
+            <summary>
+            The sent
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailNotificationManager.ExecuteAsync(System.DateTime,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.Core.EmailService.EmailPayload">
+            <summary>
+            It has all the data required to generate email.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.EmailService.EmailPayload.EventXMLData">
+            <summary>
+            The event XML data.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.EmailService.EmailPayload.DeeplinkPayload">
+            <summary>
+            Deeplink payload to generate deeplink for the email body.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.EmailService.EmailPayload.NotificationInfo">
+            <summary>
+            Notification information like Notificationid, LinkedNotificationId
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.EmailService.EmailPayload.XSLTArguments">
+            <summary>
+            XSLT arguments that are defined in the template
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.EmailService.EmailService">
+            <summary>
+            This class is responsible to send Email.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailService.SendEmailAsync(ewApps.Core.EmailService.EmailPayload,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailService.GetEmailTitleAndBody(ewApps.Core.EmailService.EmailPayload,System.Collections.Generic.Dictionary{System.String,System.String},System.Guid,System.String)">
+            <summary>
+            Gets the Template from Cache or
+            Generate the template by XML and XSLT arguments and sets in cache fornext use.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.EmailService.EmailService.SendEmail(System.String,System.String,System.Guid,System.String,System.Guid,System.Guid,System.Guid,System.Boolean,ewApps.Core.UserSessionService.UserSession,System.Int32)">
+            <summary>Send Email and add notification queue data.</summary>
+        </member>
+        <member name="T:ewApps.Core.EmailService.IEmailService">
+            <summary>
+            Interface for Push and Alerts
+            This interface is common for all ewApps Push, from various modules.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.EmailService.IEmailService.SendEmailAsync(ewApps.Core.EmailService.EmailPayload,System.Threading.CancellationToken)">
+            <summary>
+            This method Generates all XML data,Send it to XSLT and gets the email Body
+            and generates Email notification
+            </summary>
+            <param name="emailPayload">The email payload.</param>
+            <param name="token">The async task cancellation token.</param>
+            <returns>Returns true if email queued sucessfully for delivery.</returns>
+        </member>
+    </members>
+</doc>

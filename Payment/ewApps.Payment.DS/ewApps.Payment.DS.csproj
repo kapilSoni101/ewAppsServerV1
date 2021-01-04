@@ -1,0 +1,313 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+<Import Project="..\..\..\ewAppsAssets\AssemblyVersions\ServerVersion.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServer\Payment\ewApps.Payment.DS\ewApps.Payment.DS.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="XSL\Email\NewFolder\**" />
+    <EmbeddedResource Remove="XSL\Email\NewFolder\**" />
+    <None Remove="XSL\Email\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="EFCore.BulkExtensions" Version="2.1.8" />
+    <PackageReference Include="IdentityModel" Version="3.10.4" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="2.1.1" />
+    <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
+    <PackageReference Include="Twilio.AspNet.Core" Version="5.20.1" />
+    <PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="2.1.34" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ewApps.Payment.Common\ewApps.Payment.Common.csproj" />
+    <ProjectReference Include="..\ewApps.Payment.CQRSData\ewApps.Payment.QData.csproj" />
+    <ProjectReference Include="..\ewApps.Payment.Data\ewApps.Payment.Data.csproj" />
+    <ProjectReference Include="..\ewApps.Payment.DTO\ewApps.Payment.DTO.csproj" />
+    <ProjectReference Include="..\ewApps.Payment.Entity\ewApps.Payment.Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ewApps.Core.AppDeeplinkService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.AppDeeplinkService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.BaseService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.BaseService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.CommonService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.CommonService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.DeeplinkServices">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.DeeplinkServices.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.DMService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.DMService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.EmailService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.EmailService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.ExceptionService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.ExceptionService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.Money">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.Money.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.NotificationService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.NotificationService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.ScheduledJobService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.ScheduledJobService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.SerilogLoggingService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.SerilogLoggingService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.ServiceProcessor">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.ServiceProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.SMSService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.SMSService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.TimeZoneService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.TimeZoneService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.UniqueIdentityGeneratorService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.UniqueIdentityGeneratorService.dll</HintPath>
+    </Reference>
+    <Reference Include="ewApps.Core.UserSessionService">
+      <HintPath>..\..\Services\ewApps.Core.Services.ConsoleTest\bin\Debug\netcoreapp2.1\ewApps.Core.UserSessionService.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core">
+      <HintPath>..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.core\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="XSL\Email\en\CustAdvancePaymentSecuredForBusiness.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\Email\en\CustAdvancePaymentSecuredForCustomer.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\Email\en\CustPreAuthorizationInitiated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\Email\en\BizAdvancePaymentSecuredForCustomer.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\Email\en\BizAdvancePaymentSecuredForBusiness.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\Email\en\CustARInvoicePaymentInitiated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\Email\en\BizPreAuthorizationInitiated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\Email\en\BizARInvoicePaymentInitiated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PaymentDoneToBusinessUser_New.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\SystemCancelsRefundBusinessPartner.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\SystemCancelsRefundBusiness.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PaymentVoid.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PaymentRefund.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PaymentDone.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\InvoiceDeleted.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\NewInvoiceAdded.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\BusinessForgotPasswordEmail.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PartnerForgotPasswordEmail.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PartnerUserInvitationEmail.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\BusinessUserInvitationEmail.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PrimaryBusinessUserInvitationEmail.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PrimaryPartnerUserInvitationEmail.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PublisherUserInvitationEmail.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\NewInvoiceCreatedToBusinessPartnerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PaymentBusinessExistingUserInvite.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PaymentBusinessNewUserInvite.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\NewInvoiceCreatedToBusinessUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PaymentDoneToBusinessUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\en\PaymentDoneToCustomerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\IshNew\BusinessPartnerUserStatusChangedToBusinessUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\IshNew\BusinessPartnerUserStatusChangedToCustomerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\IshNew\BusinessPartnerUserDeletedToCustomerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\IshNew\BusinessPartnerDeletedToBusinessUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\IshNew\BusinessPartnerDeletedToCustomerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\IshNew\BusinessPartnerOtherUserExistingEmailIdInvited.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\IshNew\BusinessPartnerOtherUserNewEmailIdInvited.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\IshNew\BusinessPartnerPrimaryUserExistingEmailIdInvited.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\IshNew\BusinessPartnerPrimaryUserNewEmailIdInvited.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\IshNew\TransactionStatusChangedToCustomerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\IshNew\TransactionStatusChangedToBusinessUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\NewXSL\PaymentDoneToBusinessUser_New.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\NewXSL\PaymentDoneToCustomerUser_New.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\TransactionVoidToBusinessUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\TransactionVoidToCustomerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\TransactionRefundRequestedToBusinessUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\TransactionRefundRequestedToCustomerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\AutoPaymentForInvoiceByReccuringOrderToCustomerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\AutoPaymentForInvoiceByReccuringOrderToBusinessUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\NewRecurringOrderCreatedToBusinessUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\BusinessPaymentGivenApplicationAccess.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\NewRecurringOrderCreatedToCustomerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\BusinessPaymnetUserPermissionChanged.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\BusinessPaymentUserAccountStatusChanged.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\NewPaymentBusinessUserOnboard.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\BusinessPaymentUserDeleted.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\Dheeraj Done\PaymentBusinessUserSetPasswordSuccess.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\BusinessPartnerUserNewEmailIdAdded.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\BusinessPartnerUserExistingEmailIdAdded.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\PaymentBusinessUserForgotPassword.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\PaymentBusinessCustomerForgotPassword.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\PaymentDoneByBusinessPartnerUserToBusinessUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\New\PaymentDoneByBusinessPartnerUserToCustomerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\SMS\Dheeraj\CustARInvoicePaymentInitiated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\SMS\Dheeraj\BizARInvoicePaymentInitiated.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\SMS\en\NewInvoiceCreatedToPartnerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+	 <None Update="XSL\SMS\en\NewInvoiceCreatedToBusinessUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+	 <None Update="XSL\SMS\en\PaymentDoneByCustomerUserToBusinessUser.xslt">
+	   <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	 </None>
+	 <None Update="XSL\SMS\en\PaymentDoneByCustomerUserToPartnerUser.xslt">
+	   <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	 </None>
+	 <None Update="XSL\SMS\en\PaymentStatusUpdatedToCustomerUser.xslt">
+	   <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	 </None>
+	 <None Update="XSL\SMS\en\PaymentStatusUpdatedToBusinessUser.xslt">
+	   <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	 </None>
+    <None Update="XSL\SMS\en\PaymentDoneByBusinessUserToBusinessUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="XSL\SMS\en\PaymentDoneByBusinessUserToPartnerUser.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

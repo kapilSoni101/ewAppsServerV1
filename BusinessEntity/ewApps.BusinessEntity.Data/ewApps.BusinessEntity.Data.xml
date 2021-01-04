@@ -1,0 +1,2069 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.BusinessEntity.Data</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.BusinessEntity.Data.BusinessEntityDbContext">
+            <summary>  
+            This class contains a session of core database and can be used to query and 
+            save instances of core entities. It is a combination of the Unit Of Work and Repository patterns.  
+            </summary>
+            <summary>  
+            This class contains a session of core database and can be used to query and 
+            save instances of core entities. It is a combination of the Unit Of Work and Repository patterns.  
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BusinessEntityDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.BusinessEntity.Data.BusinessEntityDbContext},System.String)">
+            <summary>
+            Default constructor to initialize member variables (if any).
+            </summary>
+            <param name="options">The DbContextOptions instance carries configuration information such as: 
+            (a) The database provider to use, UseSqlServer or UseSqlite
+            (b) Connection string or identifier of the database instance    
+            </param>
+            <param name="connString">The Core database connection string.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BusinessEntityDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.BusinessEntity.Data.BusinessEntityDbContext},Microsoft.Extensions.Options.IOptions{ewApps.BusinessEntity.Common.BusinessEntityAppSettings},ewApps.Core.DbConProvider.IConnectionManager)">
+            <summary>
+            Constructor to initialize member variables (if any).
+            </summary>
+            <param name="options">The DbContextOptions instance carries configuration information such as: 
+            (a) The database provider to use, UseSqlServer or UseSqlite
+            (b) Connection string or identifier of the database instance    
+            </param>
+            <param name="appSetting">Instance of Appsettings object that contains core database 
+            connection string.
+            </param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BusinessEntityDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />  
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BusinessEntityDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <inheritdoc />  
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAARInvoice">
+            <summary>
+            DbSet&lt;BAARInvoice&gt; can be used to query and save instances of BAARInvoice entity. 
+            Linq queries can written using DbSet&lt;BAARInvoice&gt; that will be translated to sql query and executed against database BAARInvoice table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAARInvoiceItem">
+            <summary>
+            DbSet&lt;BAARInvoiceItem&gt; can be used to query and save instances of BAARInvoiceItem entity. 
+            Linq queries can written using DbSet&lt;BAARInvoiceItem&gt; that will be translated to sql query and executed against database BAARInvoiceItem table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAARInvoiceAttachment">
+            <summary>
+            DbSet&lt;BAARInvoiceAttachment&gt; can be used to query and save instances of BAARInvoiceAttachment entity. 
+            Linq queries can written using DbSet&lt;BAARInvoiceAttachment&gt; that will be translated to sql query and executed against database BAARInvoiceAttachment table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAAPInvoice">
+            <summary>
+            DbSet&lt;BAAPInvoice&gt; can be used to query and save instances of BAAPInvoice entity. 
+            Linq queries can written using DbSet&lt;BAAPInvoice&gt; that will be translated to sql query and executed against database BAARInvoice table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAAPInvoiceItem">
+            <summary>
+            DbSet&lt;BAAPInvoiceItem&gt; can be used to query and save instances of BAAPInvoiceItem entity. 
+            Linq queries can written using DbSet&lt;BAAPInvoiceItem&gt; that will be translated to sql query and executed against database BAARInvoiceItem table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAAPInvoiceAttachment">
+            <summary>
+            DbSet&lt;BAAPInvoiceAttachment&gt; can be used to query and save instances of BAAPInvoiceAttachment entity. 
+            Linq queries can written using DbSet&lt;BAAPInvoiceAttachment&gt; that will be translated to sql query and executed against database BAARInvoiceAttachment table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAContract">
+            <summary>
+            DbSet&lt;BAContract&gt; can be used to query and save instances of BAContract entity. 
+            Linq queries can written using DbSet&lt;BAContract&gt; that will be translated to sql query and executed against database BAContract table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAVendorContract">
+            <summary>
+            DbSet&lt;BAVendorContract&gt; can be used to query and save instances of BAVendorContract entity. 
+            Linq queries can written using DbSet&lt;BAVendorContract&gt; that will be translated to sql query and executed against database BAVendorContract table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BACustomer">
+            <summary>
+            DbSet&lt;BACustomer&gt; can be used to query and save instances of BACustomer entity. 
+            Linq queries can written using DbSet&lt;BACustomer&gt; that will be translated to sql query and executed against database BACustomer table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BACustomerAddress">
+            <summary>
+            DbSet&lt;BACustomerAddress&gt; can be used to query and save instances of BACustomerAddress entity. 
+            Linq queries can written using DbSet&lt;BACustomerAddress&gt; that will be translated to sql query and executed against database BACustomerAddress table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BACustomerContact">
+            <summary>
+            DbSet&lt;BACustomerContact&gt; can be used to query and save instances of BACustomerContact entity. 
+            Linq queries can written using DbSet&lt;BACustomerContact&gt; that will be translated to sql query and executed against database BACustomerContact table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BACustomerPaymentDetail">
+            <summary>
+            DbSet&lt;BACustomerPaymentDetail&gt; can be used to query and save instances of BACustomerPaymentDetail entity. 
+            Linq queries can written using DbSet&lt;BACustomerPaymentDetail&gt; that will be translated to sql query and executed against database BACustomerPaymentDetail table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAVendor">
+            <summary>
+            DbSet&lt;BAVendor&gt; can be used to query and save instances of BAVendor entity. 
+            Linq queries can written using DbSet&lt;BAVendor&gt; that will be translated to sql query and executed against database BAVendor table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAVendorAddress">
+            <summary>
+            DbSet&lt;BAVendorAddress&gt; can be used to query and save instances of BAVendorAddress entity. 
+            Linq queries can written using DbSet&lt;BAVendorAddress&gt; that will be translated to sql query and executed against database BAVendorAddress table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAVendorContact">
+            <summary>
+            DbSet&lt;BAVendorContact&gt; can be used to query and save instances of BAVendorContact entity. 
+            Linq queries can written using DbSet&lt;BAVendorContact&gt; that will be translated to sql query and executed against database BAVendorContact table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BADelivery">
+            <summary>
+            DbSet&lt;BADelivery&gt; can be used to query and save instances of BADelivery entity. 
+            Linq queries can written using DbSet&lt;BADelivery&gt; that will be translated to sql query and executed against database BADelivery table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BADeliveryItem">
+            <summary>
+            DbSet&lt;BADeliveryItem&gt; can be used to query and save instances of BADeliveryItem entity. 
+            Linq queries can written using DbSet&lt;BADeliveryItem&gt; that will be translated to sql query and executed against database BADeliveryItem table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BADeliveryAttachment">
+            <summary>
+            DbSet&lt;BADeliveryAttachment&gt; can be used to query and save instances of BADeliveryAttachment entity. 
+            Linq queries can written using DbSet&lt;BADeliveryAttachment&gt; that will be translated to sql query and executed against database BADeliveryAttachment table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAItemMaster">
+            <summary>
+            DbSet&lt;BAItemMaster&gt; can be used to query and save instances of BAItemMaster entity. 
+            Linq queries can written using DbSet&lt;BAItemMaster&gt; that will be translated to sql query and executed against database BAItemMaster table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAItemMasterAttachment">
+            <summary>
+            DbSet&lt;BAItemMasterAttachment&gt; can be used to query and save instances of BAItemMasterAttachment entity. 
+            Linq queries can written using DbSet&lt;BAItemMasterAttachment&gt; that will be translated to sql query and executed against database BAItemMasterAttachment table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAPurchaseInquiry">
+            <summary>
+            DbSet&lt;BAPurchaseInquiry&gt; can be used to query and save instances of BAPurchaseInquiry entity. 
+            Linq queries can written using DbSet&lt;BAPurchaseInquiry&gt; that will be translated to sql query and executed against database BAPurchaseInquiry table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAPurchaseInquiryItem">
+            <summary>
+            DbSet&lt;BAPurchaseInquiryItem&gt; can be used to query and save instances of BAPurchaseInquiryItem entity. 
+            Linq queries can written using DbSet&lt;BAPurchaseInquiryItem&gt; that will be translated to sql query and executed against database BAPurchaseInquiryItem table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAPurchaseOrder">
+            <summary>
+            DbSet&lt;BAPurchaseOrder&gt; can be used to query and save instances of BAPurchaseOrder entity. 
+            Linq queries can written using DbSet&lt;BAPurchaseOrder&gt; that will be translated to sql query and executed against database BAPurchaseOrder table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAPurchaseOrderAttachment">
+            <summary>
+            DbSet&lt;BAPurchaseOrder&gt; can be used to query and save instances of BAPurchaseOrderAttachment entity. 
+            Linq queries can written using DbSet&lt;BAPurchaseOrderAttachment&gt; that will be translated to sql query and executed against database BAPurchaseOrderAttachment table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAPurchaseOrderItem">
+            <summary>
+            DbSet&lt;BAPurchaseOrderItem&gt; can be used to query and save instances of BAPurchaseOrderItem entity. 
+            Linq queries can written using DbSet&lt;BAPurchaseOrderItem&gt; that will be translated to sql query and executed against database BAPurchaseOrderItem table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BASalesOrder">
+            <summary>
+            DbSet&lt;BASalesOrder&gt; can be used to query and save instances of TenantAppService entity. 
+            Linq queries can written using DbSet&lt;BASalesOrder&gt; that will be translated to sql query and executed against database BASalesOrder table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BASalesOrderItem">
+            <summary>
+            DbSet&lt;BASalesOrder&gt; can be used to query and save instances of BASalesOrderItem entity. 
+            Linq queries can written using DbSet&lt;BASalesOrderItem&gt; that will be translated to sql query and executed against database BASalesOrder table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BASalesOrderAttachment">
+            <summary>
+            DbSet&lt;BASalesOrderAttachment&gt; can be used to query and save instances of BASalesOrderAttachment entity. 
+            Linq queries can written using DbSet&lt;BASalesOrderAttachment&gt; that will be translated to sql query and executed against database BASalesOrderAttachment table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BASalesQuotation">
+            <summary>
+            DbSet&lt;BASalesQuotation&gt; can be used to query and save instances of BASalesQuotation entity. 
+            Linq queries can written using DbSet&lt;BASalesQuotation&gt; that will be translated to sql query and executed against database BASalesOrder table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BASalesQuotationItem">
+            <summary>
+            DbSet&lt;BASalesQuotationItem&gt; can be used to query and save instances of BASalesQuotationItem entity. 
+            Linq queries can written using DbSet&lt;BASalesQuotationItem&gt; that will be translated to sql query and executed against database BASalesOrder table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BASalesQuotationAttachment">
+            <summary>
+            DbSet&lt;BASalesQuotationAttachment&gt; can be used to query and save instances of BASalesQuotationAttachment entity. 
+            Linq queries can written using DbSet&lt;BASalesQuotationAttachment&gt; that will be translated to sql query and executed against database BASalesQuotationAttachment table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.Role">
+            <summary>
+            DbSet&lt;Role&gt; can be used to query and save instances of Role entity. 
+            Linq queries can written using DbSet&lt;role &gt; that will be translated to sql query and executed against database role table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAContractItem">
+            <summary>
+            DbSet&lt;BAContractItem&gt; can be used to query and save instances of BAContractItem entity. 
+            Linq queries can written using DbSet&lt;BAContractItem&gt; that will be translated to sql query and executed against database BAContractItem table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAContractAttachment">
+            <summary>
+            DbSet&lt;BAContractAttachment&gt; can be used to query and save instances of BAContractAttachment entity. 
+            Linq queries can written using DbSet&lt;BAContractAttachment&gt; that will be translated to sql query and executed against database BAContractAttachment table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.RoleLinking">
+            DbSet&lt;role linking&gt; can be used to query and save instances of role linking entity. 
+            Linq queries can written using DbSet&lt;RL&gt; that will be translated to sql query and executed against database role linking table.    /// DbSet&lt;VerifiedAddress&gt; can be used to query and save instances of VerifiedAddress entity. 
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.ERPConnector">
+            <summary>
+            DbSet&lt;ERPConnector&gt; can be used to query and save instances of ERPConnector entity. 
+            Linq queries can written using DbSet&lt;ERPConnector&gt; that will be translated to sql query and executed against database ERPConnector table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.ERPConnectorConfig">
+            <summary>
+            DbSet&lt;ERPConnectorConfig&gt; can be used to query and save instances of ERPConnectorConfig entity. 
+            Linq queries can written using DbSet&lt;ERPConnectorConfig&gt; that will be translated to sql query and executed against database ERPConnectorConfig table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.SyncHistory">
+            <summary>
+            DbSet&lt;SyncHistory&gt; can be used to query and save instances of SyncHistory entity. 
+            Linq queries can written using DbSet&lt;SyncHistory&gt; that will be translated to sql query and executed against database SyncHistory table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.SyncTimeLog">
+            <summary>
+            DbSet&lt;SyncTimeLog&gt; can be used to query and save instances of SyncTimeLog entity. 
+            Linq queries can written using DbSet&lt;SyncTimeLog&gt; that will be translated to sql query and executed against database SyncTimeLog table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAASN">
+            <summary>
+            DbSet&lt;BAASN&gt; can be used to query and save instances of BAASN entity. 
+            Linq queries can written using DbSet&lt;BAASN&gt; that will be translated to sql query and executed against database BAASN table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAASNItem">
+            <summary>
+            DbSet&lt;BAASNItem&gt; can be used to query and save instances of BAASNItem entity. 
+            Linq queries can written using DbSet&lt;BAASNItem&gt; that will be translated to sql query and executed against database BAASNItem table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAASNAttachment">
+            <summary>
+            DbSet&lt;BAASNAttachment&gt; can be used to query and save instances of BAASNAttachment entity. 
+            Linq queries can written using DbSet&lt;BAASNAttachment&gt; that will be translated to sql query and executed against database BAASNAttachment table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.ASNotification">
+            <summary>
+            DbSet&lt;ASNotification&gt; can be used to query and save instances of ASNotification entity. 
+            Linq queries can written using DbSet&lt;ASNotification&gt; that will be translated to sql query and executed against database ASNotification table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.TenantUserAppPreference">
+            <summary>
+            DbSet&lt;TenantUserAppPreference&gt; can be used to query and save instances of TenantUserAppPreference entity. 
+            Linq queries can written using DbSet&lt;TenantUserAppPreference&gt; that will be translated to sql query and executed against database TenantUserAppPreference table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBADeliveryDTOQuery">
+            <summary>
+            This is use to get BusBADeliveryDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBADeliveryDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBADeliveryViewDTOQuery">
+            <summary>
+            This is use to get BusBADeliveryViewDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBADeliveryViewDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBADeliveryItemDTOQuery">
+            <summary>
+            This is use to get BusBADeliveryItemDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBADeliveryItemDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBADeliveryAttachmentDTOQuery">
+            <summary>
+            This is use to get BusBADeliveryAttachmentDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBADeliveryAttachmentDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBAContractDTOQuery">
+            <summary>
+            This is use to get BusBAContractDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBAContractDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBAContractItemDTOQuery">
+            <summary>
+            This is use to get BusBAContractItemDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBAContractItemDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBAContractAttachmentDTOQuery">
+            <summary>
+            This is use to get BusBAContractAttachmentDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBAContractAttachmentDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBAContractViewDTOQuery">
+            <summary>
+            This is use to get BusBAContractViewDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBAContractViewDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBASalesQuotationDTOQuery">
+            <summary>
+            This is use to get BusBASalesQuotationDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBASalesQuotationDTOQuery.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBASalesQuotationViewDTOQuery">
+            <summary>
+            This is use to get BusBASalesQuotationViewDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBASalesQuotationViewDTOQuery.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBASalesQuotationItemDTOQuery">
+            <summary>
+            This is use to get BusBASalesQuotationItemDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBASalesQuotationItemDTOQuery.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBASalesQuotationAttachmentDTOQuery">
+            <summary>
+            This is use to get BusBASalesQuotationAttachmentDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBASalesQuotationAttachmentDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBASalesOrderDTOQuery">
+            <summary>
+            This is use to get BusBASalesOrderDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBASalesOrderDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAPurchaseOrderItemDTOQuery">
+            <summary>
+            DbSet&lt;BAPurchaseOrderItem&gt; can be used to query and save instances of BAPurchaseOrderItem entity. 
+            Linq queries can written using DbSet&lt;BAPurchaseOrderItem&gt; that will be translated to sql query and executed against database BAPurchaseOrderItem table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAPurchaseOrderDTOQuery">
+            <summary>
+            This is use to get BAPurchaseOrderDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BAPurchaseOrderDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BAPurchaseOrderViewDTOQuery">
+            <summary>
+            This is use to get BAPurchaseOrderViewDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BAPurchaseOrderViewDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBASalesOrderViewDTOQuery">
+            <summary>
+            This is use to get BusBASalesOrderViewDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBASalesOrderViewDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBASalesOrderItemDTOQuery">
+            <summary>
+            This is use to get BusBASalesOrderItemDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBASalesOrderItemDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBASalesOrderAttachmentDTOQuery">
+            <summary>
+            This is use to get BusBASalesOrderAttachmentDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBASalesOrderAttachmentDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.CustBASalesOrderViewDTOQuery">
+            <summary>
+            This is use to get BusBASalesOrderViewDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBASalesOrderViewDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.CustBADeliveryViewDTOQuery">
+            <summary>
+            This is use to get BusBADeliveryViewDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBADeliveryViewDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBAASNDTOQuery">
+            <summary>
+            This is use to get BusBAASNDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBAASNDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBAASNItemDTOQuery">
+            <summary>
+            This is use to get BusBAASNItemDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBAASNItemDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBAASNAttachmentDTOQuery">
+            <summary>
+            This is use to get BusBAASNAttachmentDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBAASNAttachmentDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBAASNViewDTOQuery">
+            <summary>
+            This is use to get BusBAASNViewDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBAASNViewDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBAARInvoiceAttachmentDTOQuery">
+            <summary>
+            This is use to get BusBAARInvoiceAttachmentDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBAARInvoiceAttachmentDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.CustBASalesOrderAttachmentDTOQuery">
+            <summary>
+            This is use to get BusBAARInvoiceAttachmentDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBAARInvoiceAttachmentDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBAItemAttachmentDTOQuery">
+            <summary>
+            This is use to get BusBAItemAttachmentDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of BusBAItemAttachmentDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.CustBAItemAttachmentDTOQuery">
+            <summary>
+            This is use to get CustBAItemAttachmentDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of CustBAItemAttachmentDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBAVendorContractDTOQuery">
+            <summary>
+            This is use to get VendorBAContractDTOQuery view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of VendorBAContractDTOQuery.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.BusBAVendorContractViewDTOQuery">
+            <summary>
+            This is use to get VendorBAContractViewDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of VendorBAContractViewDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.VendorBAContractDTOQuery">
+            <summary>
+            This is use to get VendorBAContractDTOQuery view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of VendorBAContractDTOQuery.
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Data.BusinessEntityDbContext.VendorBAContractViewDTOQuery">
+            <summary>
+            This is use to get VendorBAContractViewDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of VendorBAContractViewDTO.
+            </remarks>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.MasterData">
+            <summary>
+            This class is responsible to generate master data at the time of database creation
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.MasterData.Init(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Startup method to generate master data. It is called from DB Context on database creation.
+            </summary>
+            <param name="builder">The model builder</param>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAARInvoiceAttachmentRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are 
+            intrecting with the DB for retriving the data related to BAARinvoiceAttachment entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAARInvoiceItemRepository">
+            This interface provides methods to execute all database operations to get InvoiceItem and
+            related data transfer objects.
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAARInvoiceItemRepository.GetInvoiceItemListByInvoiceIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice items by invoice id.
+            </summary>
+            <param name="invoiceId">InvoiceID</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAARInvoiceRepository">
+            This interface provides methods to execute all database operations to get Invoice and
+            related data transfer objects.
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAARInvoiceRepository.IsInvoiceExistAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Whether invoice exists.
+            </summary>
+            <param name="erpARInvoiceKey">ERP invoice unique key.</param>        
+            <returns>return list of sales order entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAARInvoiceRepository.GetInvoiceByERPInvoiceKeyAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice.
+            </summary>
+            <param name="erpARInvoiceKey">ERP invoice unique key.</param>        
+            <returns>return invoice.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAARInvoiceRepository.GetInvoiceByTenant(ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice list.
+            Invoice list will be filter by Tenant and from/todate.
+            </summary>
+            <param name="filter">Contains filter clause to get filter invoice list.</param>
+            <param name="tenatId">Tenant id.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAARInvoiceRepository.IsInvoiceExistsAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Invoice exist for customer.
+            </summary>
+            <param name="customerId">CustomerId</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAASNAttachmentRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are 
+            intrecting with the DB for retriving the data related to BAASNAttachment entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAASNItemRepositorty.GetASNItemListByASNId(System.Guid)">
+            <summary>
+            Gets the asn item list by asn id.
+            </summary>
+            <param name="asnId">The asn identifier.</param>
+            <returns>Returns ASN Items list that matches provided ASN id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAASNRepositorty.GetASNListByBusinessTenantId(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.String)">
+            <summary>
+            Gets the asn list by business tenant id and provided filter.
+            </summary>
+            <param name="businessTenantId">The business tenant id.</param>
+            <param name="listDateFilterDTO">The list date filter dto.</param>
+            <returns>Returns list of ASN list that matches provided </returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAASNRepositorty.GetASNDetailByASNIdAsync(System.Guid,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the asn detail by asn identifier.
+            </summary>
+            <param name="asnId">The asn identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns ASN detail with line items that matches provided asn id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAASNRepositorty.GetASNDetailByASNIdAsyncForCust(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the cust asn detail by asn identifier.
+            </summary>
+            <param name="asnId">The asn identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns ASN detail with line items that matches provided asn id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAContractAttachmentRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are 
+            intrecting with the DB for retriving the data related to BAContractAttachment entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAContractItemRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are 
+            intrecting with the DB for retriving the data related to BAContractItem entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAContractItemRepository.GetContractItemListByContractId(System.Guid,System.Guid)">
+            <summary>
+            Gets the contract item list by business tenant id and contract identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant id.</param>
+            <param name="contractId">The contract identifier.</param>
+            <returns>Returns contarct item list that matches the provided business tenant id and contract  id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAContractRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are 
+            intrecting with the DB for retriving the data related to BAContract entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAContractRepository.GetContractListByTenantId(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <summary>
+            Gets the contract list by tenant id.
+            </summary>
+            <param name="tenantId">The tenant id to filter contract list.</param>
+            <param name="listDateFilterDTO">The DTO to filter contract list.</param>
+            <returns>Returns contract list that matches given tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAContractRepository.GetContractDetailByContractIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the contract detail by business tenant id and contract identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <param name="contractId">The contract identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns contract detail that matches given business tenant  and contract id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAVendorContractRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are 
+            intrecting with the DB for retriving the data related to BAVendorContract entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAVendorContractRepository.GetContractListByTenantId(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <summary>
+            Gets the contract list by tenant id.
+            </summary>
+            <param name="tenantId">The tenant id to filter contract list.</param>
+            <param name="listDateFilterDTO">The DTO to filter contract list.</param>
+            <returns>Returns contract list that matches given tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAVendorContractRepository.GetContractDetailByContractIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the contract detail by business tenant id and contract identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <param name="contractId">The contract identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns contract detail that matches given business tenant  and contract id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBACustomerAddressRepository">
+            <summary>
+            Contains supportive method for Address entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBACustomerAddressRepository.GetCustomerAddressEntityListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer address entity list.
+            </summary>
+            <param name="customerId">CustomerId</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBACustomerContactRepository.GetCustomerContactListByCustomerIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get BACustomer contact by customerid.
+            </summary>
+            <param name="customerId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBACustomerRepository.GetCustomerListByTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Customer list.
+            </summary>
+            <param name="tenatId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBACustomerRepository.GetCustomerListByStatusAndTenantIdAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get customer list.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="status">Status of customer</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBACustomerRepository.GetCustomerDetailByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Customer list.
+            </summary>
+            <param name="customerId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBACustomerRepository.GetCustomerListForBizSetupApp(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="tenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBADeliveryAttachmentRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are 
+            intrecting with the DB for retriving the data related to BADeliveryAttachment entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBADeliveryAttachmentRepository.GetDeliveryAttachmentListByDeliveryIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the delivery item list by delivery identifier.
+            </summary>
+            <param name="deliveryId">The delivery identifier to find items.</param>
+            <param name="cancellationToken">The async task cancellation token.</param>
+            <returns>Returns list of delivery items that matches provided delivery id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBADeliveryItemRepository">
+            This interface provides methods to execute all database operations to get InvoiceItem and
+            related data transfer objects.
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBADeliveryItemRepository.GetDeliveryItemNameListByDeliveryId(System.Guid)">
+            <summary>
+            Gets the delivery item name list by delivery id.
+            </summary>
+            <param name="deliveryId">The delivery to find delivery items.</param>
+            <returns>Returns list of delivery item name list that matches provided delivery id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBADeliveryItemRepository.GetDeliveryItemListByDeliveryId(System.Guid)">
+            <summary>
+            Gets the delivery item list by delivery identifier.
+            </summary>
+            <param name="deliveryId">The delivery identifier to find items.</param>
+            <returns>Returns list of delivery items that matches provided delivery id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBADeliveryRepository">
+            This interface provides methods to execute all database operations to get Invoice and
+            related data transfer objects.
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBADeliveryRepository.GetDeliveryListByBusinessTenantId(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <summary>
+            Gets the delivery list by business tenant identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBADeliveryDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBADeliveryRepository.GetDeliveryDetailByDeliveryIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the delivery detail with items by delivery identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant id.</param>
+            <param name="deliveryId">The delivery identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns delivery detail with items that matches provided delivery id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAItemAttachmentRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are 
+            intrecting with the DB for retriving the data related to BAItemMasterAttachment entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAItemMasterRepository">
+            This interface provides methods to execute all database operations to get Invoice and
+            related data transfer objects.
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAItemMasterRepository.GetItemMasterListByBusTenantId(System.Guid,System.String)">
+            <summary>
+            Gets the item master list by business tenant id and item type asynchronous.
+            </summary>
+            <param name="tenantId">The tenant id to filter item master list.</param>    
+            <param name="itemType">The item type to filter item master list.</param>
+            <returns>Returns list of item that matches the given tenant id and item type.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAItemMasterRepository.GetItemMasterByBusTenantIdAndItemId(System.Guid,System.Guid)">
+            <summary>
+            Gets the item master list by bus tenant identifier and item identifier.
+            </summary>
+            <param name="tenantId">The tenant identifier.</param>
+            <param name="itemId">The item identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAItemMasterRepository.GetItemMasterListByBusTenantIdForCust(System.Guid)">
+            <summary>
+            Gets the item master list by bus tenant identifier asynchronous.
+            </summary>
+            <param name="tenantId">The tenant identifier.</param>    
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAItemMasterRepository.GetItemMasterByBusTenantIdAndItemIdForCust(System.Guid,System.Guid)">
+            <summary>
+            Gets the item master list by bus tenant identifier and item identifier.
+            </summary>
+            <param name="tenantId">The tenant identifier.</param>
+            <param name="itemId">The item identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAPurchaseInquiryItemRepository">
+            This interface provides methods to execute all database operations to get InvoiceItem and
+            related data transfer objects.
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAPurchaseInquiryRepository">
+            This interface provides methods to execute all database operations to get Invoice and
+            related data transfer objects.
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAPurchaseOrderAttachmentRepository.GetPurchaseOrderAttachmentListByOrderIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get purchase order attachment list.
+            </summary>
+            <param name="pOrderId">Purchase orderid.</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAPurchaseOrderItemRepository">
+            This interface provides methods to execute all database operations to get InvoiceItem and
+            related data transfer objects.
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBAPurchaseOrderRepository">
+            This interface provides methods to execute all database operations to get Invoice and
+            related data transfer objects.
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAPurchaseOrderRepository.GetPurchaseOrderListByBusinessTenantIdAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get purchase order list by tenantid.
+            </summary>
+            <param name="businessTenantId">Tenant id</param>
+            <param name="listDateFilterDTO">filter object</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAPurchaseOrderRepository.GetPurcahseDetailByPOIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get purchase order detail by purcheid and tenant id.
+            </summary>
+            <param name="businessTenantId">Business tenantid</param>
+            <param name="poId">purchase order id.</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBAPurchaseOrderRepository.GetPurchaseOrderItemListByPOIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get purchase order item by purchaseid.
+            </summary>
+            <param name="poId">Purchase orderid.</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBASalesOrderAttachmentRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are 
+            intrecting with the DB for retriving the data related to BASalesOrderAttachment entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBASalesOrderItemRepository">
+            This interface provides methods to execute all database operations to get InvoiceItem and
+            related data transfer objects.
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBASalesOrderItemRepository.GetSalesOrderItemsListBySalesOrderIdAsync(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get sales order item list by teanntid.
+            </summary>
+            <param name="salesOrderId">salesOrderId unique id.</param>
+            <param name="includeDeleted">return all sales order item with deleted items if flag is true.</param>        
+            <returns>return list of sales order entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBASalesOrderItemRepository.GetSalesOrderItemListBySOIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the sales order item list by sales order identifier.
+            </summary>
+            <param name="soId">The so identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns list of sales order item that matches provieded sales order id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBASalesOrderRepository">
+            This interface provides methods to execute all database operations to get Invoice and
+            related data transfer objects.
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBASalesOrderRepository.GetSalesOrderListByTenantIdAsync(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get sales order item list by teanntid.
+            </summary>
+            <param name="tenantId">Tenant unique id.</param>
+            <param name="includeDeleted">return sales order with deleted items.</param>        
+            <returns>return list of sales order entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBASalesOrderRepository.GetSalesOrderListByBusinessTenantId(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <summary>
+            Gets the sales order list by business tenant identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <returns>Returns sales order list that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBASalesOrderRepository.GetSalesOrderDetailBySOIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets sales order detail that matches the provided business tenant id and sales order id.
+            </summary>
+            <param name="businessTenantId">The business tenant id.</param>
+            <param name="soId">The sales order identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns <see cref="T:ewApps.BusinessEntity.DTO.BusBASalesOrderViewDTO"/> that matches provided business tenant and sales order id.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBASalesQuotationAttachmentRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are 
+            intrecting with the DB for retriving the data related to BASalesQuotationAttachment entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBASalesQuotationItemRepository">
+            This interface provides methods to execute all database operations to get InvoiceItem and
+            related data transfer objects.
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBASalesQuotationItemRepository.GetSalesQuotationItemsListBySalesOrderIdAsync(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get sales quotration item list by teanntid.
+            </summary>
+            <param name="salesQuotationId">salesQuotationId unique id.</param>
+            <param name="includeDeleted">return all sales quotation item with deleted items if flag is true.</param>        
+            <returns>return list of sales order entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBASalesQuotationItemRepository.GetSalesQuotationItemsListByERPSalesOrderKeyAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get sales quotation item list by ERP sales quotation key.
+            </summary>
+            <param name="erpSalesQuotationKey">erpSalesQuotationKey unique key of connector.</param>
+            <param name="includeDeleted">return all sales order item with deleted items if flag is true.</param>        
+            <returns>return list of sales order entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBASalesQuotationItemRepository.GetSalesQuotationItemListBySalesQuotationId(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="salesQuotationId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IBASalesQuotationRepository">
+            This interface provides methods to execute all database operations to get Invoice and
+            related data transfer objects.
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBASalesQuotationRepository.GetSalesQuotationListByTenantIdAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get BASales Quotation list by teanntid.
+            </summary>
+            <param name="tenantId">Tenant unique id.</param>
+            <param name="includeDeleted">return BASalesQuotation with deleted items.</param>        
+            <returns>return list of BASalesQuotation entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBASalesQuotationRepository.GetSalesQuotationByERPKeyAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get BASales Quotation by ERP unique key.
+            </summary>
+            <param name="erpSalesQuotationKey">SalesQuotationKey is a ERP unique key.</param>
+            <param name="token"></param>
+            <returns>return BASalesQuotation entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBASalesQuotationRepository.GetSalesQuotationListByBusinessTenantId(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <summary>
+            Gets the SalesQuotation list by business tenant identifier.
+            </summary>
+            <param name="businessTenantId">The business tenant identifier.</param>
+            <returns>Returns list of <see cref="T:ewApps.BusinessEntity.DTO.BusBASalesQuotationDTO"/> that matches provided business tenant id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IBASalesQuotationRepository.GetSalesQuotationDetailBySalesQuotationIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the SalesQuotation detail with items by SalesQuotation identifier.
+            </summary>
+            <param name="sqID"></param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns delivery detail with items that matches provided delivery id.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IERPConnectorConfigRepository.GetBusinessAppConnectorConfigByBusinessIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get all the Application list subscribed by a business tenant.
+            </summary>
+            <param name="businessId">Id of Business Tenant</param>
+            <param name="token"></param>
+            <returns>return list of application.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IERPConnectorConfigRepository.GetConnectorConfigByTenantIdAndAppIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get business detail by tenantId And AppId.
+            </summary>
+            <param name="tenantId">Id of Business Tenant</param>
+            <param name="appId">Id of Business Application</param>
+            <param name="token"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IERPConnectorRepository.GetConnectorListAsync(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IASNotificationRepository.GetASNotificationList(System.Guid,System.Guid,System.Guid,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="TenantUserId"></param>
+            <param name="fromCount"></param>
+            <param name="toCount"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IASNotificationRepository.GetUnreadASNotificationList(System.Guid,System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="appId"></param>
+            <param name="tenantId"></param>
+            <param name="TenantUserId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IRoleLinkingRepository">
+            <summary>
+            Manages the role linking related CRUD methods
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IRoleRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are intrecting with the DB for retriving the data related to Role entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IRoleRepository.GetEntityByAppUserAndAppId(System.Guid,System.Guid)">
+            <summary>
+            Gets the role entity by appid and userid.
+            </summary>
+            <param name="appId">AppId</param>
+            <param name="tenantUserId">tenant user id</param>
+            <returns>Role entity.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.ITenantUserAppPreferenceRepository">
+            <summary>
+            Manages the Preferences related CRUD methods
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.ISyncHistoryRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are 
+            intrecting with the DB for retriving the data related to SyncHistory entity.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.ISyncTimeLogRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are 
+            intrecting with the DB for retriving the data related to SyncTimeLog entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.ISyncTimeLogRepository.GetSyncTimeLogAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get detail from sync time log by tenantId
+            </summary>
+            <param name="tenantid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAAPInvoiceAttachmentRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAAPInvoiceItemRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAAPInvoiceRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAARInvoiceAttachmentRepository">
+            <summary>
+            This class implements standard database logic and operations for BAARinvoiceAttachment entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAARInvoiceAttachmentRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAARInvoiceAttachmentRepository.GetInvoiceAttachmentListByInvoiceIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAARInvoiceItemRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice item and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAARInvoiceItemRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BAARInvoiceItemRepository"/> class.
+            </summary>
+            <param name="context">Instance of PaymentDBContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAARInvoiceItemRepository.GetInvoiceItemListByInvoiceIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice items by invoice id.
+            </summary>
+            <param name="invoiceId">InvoiceID</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAARInvoiceRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAARInvoiceRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BADeliveryRepository"/> class.
+            </summary>
+            <param name="context">Instance of PaymentDBContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAARInvoiceRepository.IsInvoiceExistAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Whether invoice exists.
+            </summary>
+            <param name="erpARInvoiceKey">ERP invoice unique key.</param>        
+            <returns>return list of sales order entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAARInvoiceRepository.IsInvoiceExistsAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Invoice exist for customer.
+            </summary>
+            <param name="customerId">CustomerId</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAARInvoiceRepository.GetInvoiceByERPInvoiceKeyAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice.
+            </summary>
+            <param name="erpARInvoiceKey">ERP invoice unique key.</param>        
+            <returns>return invoice entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAARInvoiceRepository.GetInvoiceByTenant(ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAASNAttachmentRepository">
+            <summary>
+            This class implements standard database logic and operations for BADeliveryAttachment entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAASNAttachmentRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAASNAttachmentRepository.GetASNAttachmentListByASNIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAASNAttachmentRepository.GetASNAttachmentListByASNIdAsyncForCust(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAASNItemRepositorty.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAASNRepositorty.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAASNRepositorty.GetASNListByBusinessTenantId(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.String)">
+            <inhritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAASNRepositorty.GetASNDetailByASNIdAsync(System.Guid,System.String,System.Threading.CancellationToken)">
+            <inhritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAASNRepositorty.GetASNListByBusinessTenantIdForCust(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <inhritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAASNRepositorty.GetASNDetailByASNIdAsyncForCust(System.Guid,System.Threading.CancellationToken)">
+            <inhritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAContractAttachmentRepository">
+            <summary>
+            This class implements standard database logic and operations for BAContractAttachment entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAContractAttachmentRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAContractAttachmentRepository.GetContractAttachmentListByContractIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAContractAttachmentRepository.GetContractAttachmentListByContractIdForCustAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAContractItemRepository">
+            <summary>
+            This class implements standard database logic and operations for BAContractItem entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAContractItemRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAContractItemRepository.GetContractItemListByContractId(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAContractItemRepository.GetContractItemListByContractIdForCust(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAContractRepository">
+            <summary>
+            This class implements standard database logic and operations for BAContractRepositorty entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAContractRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAContractRepository.GetContractListByTenantId(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAContractRepository.GetContractDetailByContractIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAContractRepository.GetContractListByTenantIdForCust(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAContractRepository.GetContractDetailByContractIdAsyncForCust(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAVendorContractRepository">
+            <summary>
+            This class implements standard database logic and operations for BAVendorContractRepositorty entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorContractRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorContractRepository.GetContractListByTenantId(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorContractRepository.GetContractDetailByContractIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorContractRepository.GetContractListByTenantIdForVendor(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorContractRepository.GetContractDetailByContractIdForVendor(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BACustomerAddressRepository">
+            <summary>
+            Contains supportive method for Address entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerAddressRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+             Constructor initializing the base variables
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerAddressRepository.GetCustomerAddressListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerAddressRepository.GetCustomerAddressEntityListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer address entity list.
+            </summary>
+            <param name="customerId">Unqique customerid.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BACustomerContactRepository">
+            <summary>
+            Provides CRUD operations for customer entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerContactRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BACustomerRepository"/> class.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sessionManager">The session manager.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerContactRepository.GetCustomerContactListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerContactRepository.GetCustomerContactListByCustomerIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BACustomerPaymentDetailRepository">
+            <summary>
+            Provides CRUD operations for customer entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerPaymentDetailRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BACustomerRepository"/> class.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BACustomerRepository">
+            <summary>
+            Provides CRUD operations for customer entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BACustomerRepository"/> class.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sessionManager">The session manager.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerRepository.GetCustomerListByTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerRepository.GetCustomerListByStatusAndTenantIdAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerRepository.GetCustomerDetailByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerRepository.GetCustomerListForBizSetupApp(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BACustomerRepository.GetCustomerDetailForBizSetupApp(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BADeliveryAttachmentRepository">
+            <summary>
+            This class implements standard database logic and operations for BADeliveryAttachment entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BADeliveryAttachmentRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BADeliveryAttachmentRepository.GetDeliveryAttachmentListByDeliveryIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BADeliveryAttachmentRepository.GetDeliveryAttachmentListByDeliveryIdForCustAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BADeliveryItemRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice item and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BADeliveryItemRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BADeliveryItemRepository"/> class.
+            </summary>
+            <param name="context">Instance of PaymentDBContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BADeliveryItemRepository.GetDeliveryItemNameListByDeliveryId(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BADeliveryItemRepository.GetDeliveryItemListByDeliveryId(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BADeliveryItemRepository.GetDeliveryItemListByDeliveryIdForCust(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BADeliveryRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BADeliveryRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BADeliveryRepository"/> class.
+            </summary>
+            <param name="context">Instance of PaymentDBContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BADeliveryRepository.GetDeliveryListByBusinessTenantId(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BADeliveryRepository.GetDeliveryDetailByDeliveryIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BADeliveryRepository.GetDeliveryListByBusinessTenantIdForCust(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BADeliveryRepository.GetDeliveryDetailByDeliveryIdAsyncForCust(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAItemAttachmentRepository">
+            <summary>
+            This class implements standard database logic and operations for BADeliveryAttachment entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAItemAttachmentRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAItemAttachmentRepository.GetItemAttachmentListByItemIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAItemAttachmentRepository.GetItemAttachmentListByItemIdForCustAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAItemMasterRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice item and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAItemMasterRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BAARInvoiceItemRepository"/> class.
+            </summary>
+            <param name="context">Instance of PaymentDBContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAItemMasterRepository.GetItemMasterListByBusTenantId(System.Guid,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAItemMasterRepository.GetItemMasterByBusTenantIdAndItemId(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAItemMasterRepository.GetItemMasterListByBusTenantIdForCust(System.Guid)">
+            <summary>
+            Get platform branding
+            </summary>
+            <param name="tenantId"></param>        
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAItemMasterRepository.GetItemMasterByBusTenantIdAndItemIdForCust(System.Guid,System.Guid)">
+            <summary>
+            Gets the item master list by bus tenant identifier and item identifier.
+            </summary>
+            <param name="tenantId">The tenant identifier.</param>
+            <param name="itemId">The item identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAPurchaseInquiryItemRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice item and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAPurchaseInquiryItemRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BAARInvoiceItemRepository"/> class.
+            </summary>
+            <param name="context">Instance of PaymentDBContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAPurchaseInquiryRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAPurchaseInquiryRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BAARInvoiceRepository"/> class.
+            </summary>
+            <param name="context">Instance of PaymentDBContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAPurchaseOrderAttachmentRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAPurchaseOrderAttachmentRepository.GetPurchaseOrderAttachmentListByOrderIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get purchase order attachment list.
+            </summary>
+            <param name="pOrderId">Purchase orderid.</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAPurchaseOrderItemRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAPurchaseOrderItemRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BAARInvoiceRepository"/> class.
+            </summary>
+            <param name="context">Instance of PaymentDBContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BAPurchaseOrderRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice item and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAPurchaseOrderRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BAARInvoiceItemRepository"/> class.
+            </summary>
+            <param name="context">Instance of PaymentDBContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAPurchaseOrderRepository.GetPurchaseOrderListByBusinessTenantIdAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAPurchaseOrderRepository.GetPurchaseOrderListByBusinessTenantIdForVendAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAPurchaseOrderRepository.GetPurcahseDetailByPOIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAPurchaseOrderRepository.GetPurchaseOrderItemListByPOIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAPurchaseOrderRepository.GetPurchaseOrderAttachmentListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BASalesOrderAttachmentRepository">
+            <summary>
+            This class implements standard database logic and operations for BASalesOrderAttachment entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesOrderAttachmentRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesOrderAttachmentRepository.GetSalesOrderAttachmentListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesOrderAttachmentRepository.GetSalesOrderAttachmentListByIdForCustAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BASalesOrderItemRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesOrderItemRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BAARInvoiceRepository"/> class.
+            </summary>
+            <param name="context">Instance of PaymentDBContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesOrderItemRepository.GetSalesOrderItemsListBySalesOrderIdAsync(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get sales order item list by teanntid.
+            </summary>
+            <param name="salesOrderId">salesOrderId unique id.</param>
+            <param name="includeDeleted">return all sales order item with deleted items if flag is true.</param>        
+            <returns>return list of sales order entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesOrderItemRepository.GetSalesOrderItemsListByERPSalesOrderKeyAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get sales order item list by ERP sales order key.
+            </summary>
+            <param name="erpSalesOrderKey">salesOrderKey unique key of connector.</param>
+            <param name="includeDeleted">return all sales order item with deleted items if flag is true.</param>        
+            <returns>return list of sales order entity.</returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BASalesOrderRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice item and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesOrderRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BASalesOrderRepository"/> class.
+            </summary>
+            <param name="context">Instance of PaymentDBContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesOrderRepository.GetSalesOrderListByTenantIdAsync(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get sales order item list by teanntid.
+            </summary>
+            <param name="tenantId">Tenant unique id.</param>
+            <param name="includeDeleted">return sales order with deleted items.</param>        
+            <returns>return list of sales order entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesOrderRepository.GetSalesOrderListByBusinessTenantId(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesOrderRepository.GetSalesOrderDetailBySOIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesOrderRepository.GetSalesOrderListByBusinessTenantIdForCust(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesOrderRepository.GetSalesOrderDetailBySOIdAsyncForCust(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BASalesQuotationAttachmentRepository">
+            <summary>
+            This class implements standard database logic and operations for BASalesQuotationAttachment entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationAttachmentRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationAttachmentRepository.GetSalesQuotationAttachmentListBySalesQuotationIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationAttachmentRepository.GetSalesQuotationAttachmentListBySalesQuotationIdForCustAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BASalesQuotationItemRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationItemRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BASalesQuotationItemRepository"/> class.
+            </summary>
+            <param name="context">Instance of PaymentDBContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationItemRepository.GetSalesQuotationItemsListBySalesOrderIdAsync(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get sales quotration item list by teanntid.
+            </summary>
+            <param name="salesQuotationId">salesQuotationId unique id.</param>
+            <param name="includeDeleted">return all sales quotation item with deleted items if flag is true.</param>        
+            <returns>return list of sales order entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationItemRepository.GetSalesQuotationItemsListByERPSalesOrderKeyAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get sales quotation item list by ERP sales quotation key.
+            </summary>
+            <param name="erpSalesQuotationKey">erpSalesQuotationKey unique key of connector.</param>
+            <param name="includeDeleted">return all sales order item with deleted items if flag is true.</param>        
+            <returns>return list of sales order entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationItemRepository.GetSalesQuotationItemListBySalesQuotationId(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationItemRepository.GetSalesQuotationItemListBySalesQuotationIdForCust(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.BASalesQuotationRepository">
+            <summary>
+            This class contains methods to perform all database operations related to Invoice item and related information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.BASalesQuotationRepository"/> class.
+            </summary>
+            <param name="context">Instance of CoreDbContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationRepository.GetSalesQuotationListByTenantIdAsync(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get BASales Quotation list by teanntid.
+            </summary>
+            <param name="tenantId">Tenant unique id.</param>
+            <param name="includeDeleted">return BASalesQuotation with deleted items.</param>        
+            <returns>return list of BASalesQuotation entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationRepository.GetSalesQuotationByERPKeyAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get BASales Quotation by ERP unique key.
+            </summary>
+            <param name="erpSalesQuotationKey">SalesQuotationKey is a ERP unique key.</param>
+            <param name="token"></param>
+            <returns>return BASalesQuotation entity.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationRepository.GetSalesQuotationListByBusinessTenantId(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationRepository.GetSalesQuotationDetailBySalesQuotationIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationRepository.GetSalesQuotationListByPartnerTenantIdForCust(System.Guid,ewApps.BusinessEntity.DTO.ListDateFilterDTO)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BASalesQuotationRepository.GetSalesQuotationDetailBySalesQuotationIdAsyncForCust(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorAddressRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorAddressRepository.GetVendorAddressListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorAddressRepository.GetVendorAddressEntityListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer address entity list.
+            </summary>
+            <param name="vendorId">Unqique customerid.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorContactRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorContactRepository.GetVendorContactListByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorContactRepository.GetVendorContactListByVendorIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorRepository.GetVendorListByStatusAndTenantIdAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorRepository.GetVendorDetailByIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorRepository.GetVendorListForBizSetupApp(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.BAVendorRepository.GetVendorDetailForBizSetupApp(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.ERPConnectorConfigRepository">
+            <summary>
+            Contains application connector setting.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.ERPConnectorConfigRepository.GetBusinessAppConnectorConfigByBusinessIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get all the Application list subscribed by a business tenant.
+            </summary>
+            <param name="businessId">Id of Business Tenant</param>
+            <param name="token"></param>
+            <returns>return list of application.</returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.ERPConnectorConfigRepository.GetConnectorConfigByTenantIdAndAppIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get business detail by tenantId And AppId.
+            </summary>
+            <param name="tenantId">Id of Business Tenant</param>
+            <param name="appId">Id of Business Application</param>
+            <param name="token"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.ERPConnectorRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+             Constructor initializing the base variables
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.ERPConnectorRepository.GetConnectorListAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get Connector List
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.RoleLinkingRepository">
+            <summary>
+            This class implements standard database logic and operations for RoleLinking entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.RoleLinkingRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.RoleRepository">
+            <summary>
+            This class implements standard database logic and operations for Role entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.RoleRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+             <param name="connectionManager"></param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.RoleRepository.GetEntityByAppUserAndAppId(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.SyncHistoryRepository">
+            <summary>
+            This class implements standard database logic and operations for SyncHistory entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.SyncHistoryRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.SyncTimeLogRepository">
+            <summary>
+            This class implements standard database logic and operations for SyncTimeLog entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.SyncTimeLogRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.SyncTimeLogRepository.GetSyncTimeLogAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get Sync Time log details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+            //TO Query @"SELECT *FROM be.SyncTimeLog WHERE be.SyncTimeLog.TenantId = @TenantId";
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.TenantUserAppPreferenceRepository">
+            <summary>
+            This class implements standard database logic and operations for TenantUserAppPreference entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.TenantUserAppPreferenceRepository.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">ship Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.IUnitOfWork">
+            <summary>
+            UnitOfWork Interface for Core Enitty
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IUnitOfWork.Save">
+            <summary>
+            Saves this instance.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IUnitOfWork.SaveAsync">
+            <summary>
+            Saves the asynchronous.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.IUnitOfWork.SaveAll(System.Boolean)">
+            <summary>
+            Saves all instances.
+            </summary>
+            <param name="enableSaveChnages">if set to <c>true</c> [enable save chnages].</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Data.UnitOfWork">
+            <summary>
+            This class provides methods save enitty 
+            </summary>
+            <seealso cref="!:ewApps.Core.Data.IUnitOfWork" />
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.UnitOfWork.#ctor(ewApps.BusinessEntity.Data.BusinessEntityDbContext,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.BusinessEntity.Data.UnitOfWork"/> class.
+            </summary>
+            <param name="coreDbContext">The core database context.</param>
+            <param name="disableSaveChanges">if set to <c>true</c> [disable save changes].</param>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.UnitOfWork.Save">
+            <summary>
+            Saves this instance.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.UnitOfWork.SaveAsync">
+            <summary>
+            Saves the asynchronous.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Data.UnitOfWork.SaveAll(System.Boolean)">
+            <summary>
+            Saves all instances.
+            </summary>
+            <param name="enableSaveChnages">if set to <c>true</c> [enable save chnages].</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.AppPortal.Common</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.AppPortal.Common.AppPortalConstants">
+            <summary>
+            This class provides all the constants used in the application.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.AppPortalConstants.SAPConnectorKey">
+            <summary>
+            Value of SAP connector key.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.AppPortalConstants.BMEConnectorKey">
+            <summary>
+            Value of BME connector key.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.AppPortalConstants.PublisherIdentityNumberStart">
+            <summary>
+            Starter number for the identity number of the publisher.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.AppPortalConstants.PublisherApplicationId">
+            <summary>
+            Publisher application Guid.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.AppPortalConstants.CustomerSetUpApplicationId">
+            <summary>
+            Publisher application Guid.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.AppPortalConstants.VendorSetUpApplicationId">
+            <summary>
+            Publisher application Guid.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.AppPortalConstants.CustomerApplicationId">
+            <summary>
+            Publisher application Guid.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Common.BusinessAddressTypeEnum">
+            <summary>
+            This class provides business Address type .
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.BusinessAddressTypeEnum.DefaultBusinessAddress">
+            <summary>
+            Business Default Adress type
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.BusinessAddressTypeEnum.ShipFromAddress">
+            <summary>
+            Business Ship Address type
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Common.BusinessTokenTypeEnum">
+            <summary>
+            Enum for business notification event Token Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformTokenTypeEnum.PlatformUserWithNewEmailInvite">
+            <summary>
+            Platform other user  with new email.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformTokenTypeEnum.PlatformUserExistingEmailInvite">
+            <summary>
+            Platform other user email.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformTokenTypeEnum.PlatformUserForgotPassword">
+            <summary>
+            Platform user forgot password email .
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformTokenTypeEnum.PublisherPrimaryUserWithNewEmailInvite">
+            <summary>
+            Publisher primary user with new email.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformTokenTypeEnum.PublisherPrimaryUserWithExistingEmailInvite">
+            <summary>
+            Publisher primary user with new email.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum">
+            <summary>
+            This class provides publisher prefernces list.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum.None">
+            <summary>
+            All the prefernece are false.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum.NewPublisherOnboared">
+            <summary>
+            New Publisher Onboared.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum.PublisherActiveInactive">
+            <summary>
+            Publisher Active Inactive.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum.MyPermissionChanged">
+            <summary>
+            My Permission Changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum.MyActiveInactive">
+            <summary>
+            My ActiveInactive.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum.NewPlatformUserOnboard">
+            <summary>
+            New Platform User Joined.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum.TenantTicketStatusChanged">
+            <summary>
+            Tenant Ticket Status Changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum.TenantTicketReassigned">
+            <summary>
+            Tenant’s Ticket is reassigned.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum.TenantTicketPriorityChanged">
+            <summary>
+            Tenant’s Ticket priority is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum.TenantTicketNewCommentAdded">
+            <summary>
+            New Comment added in Tenant’s Ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum.TenantTicketAttachmentAdded">
+            <summary>
+            attachment added in Tenant’s Ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformEmailPreferenceEnum.All">
+            <summary>
+            All the prefernece are true.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Common.PlatformSMSPreferenceEnum">
+            <summary>
+            This class provides publisher prefernces list.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformSMSPreferenceEnum.None">
+            <summary>
+            All the prefernece are false.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PlatformSMSPreferenceEnum.All">
+            <summary>
+            All the prefernece are true.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Common.PublisherAddressTypeEnum">
+            <summary>
+            This class provides Publisher Address type .
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherAddressTypeEnum.DefaultPublisherAddress">
+            <summary>
+            Publisher Default Adress type
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherAddressTypeEnum.ShipFromAddress">
+            <summary>
+            Publisher Ship Address type
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Common.PublisherTokenTypeEnum">
+            <summary>
+            Enum for Publisher Token Type.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherTokenTypeEnum.PublisherUserWithNewEmailInvite">
+            <summary>
+            Publisher user invitation with new email.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherTokenTypeEnum.PublisherUserWithExistingEmailInvite">
+            <summary>
+            Publisher user invitation with existing email.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherTokenTypeEnum.PublisherUserForgotPassword">
+            <summary>
+            Publisher user forgot password.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherTokenTypeEnum.BusinessPrimaryUserWithNewEmailInvite">
+            <summary>
+            Business primary user with new email invite.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherTokenTypeEnum.BusinessPrimaryUserWithExistingEmailInvite">
+            <summary>
+            Business primary user with existing email invite.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum">
+            <summary>
+            This class provides publisher prefernces list.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum.None">
+            <summary>
+            All the prefernece are false.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum.NewTenantOnboard">
+            <summary>
+            New Tenant Onboard.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum.TenantActiveInactive">
+            <summary>
+            Tenant Active Inactive.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum.MyPermissionsChanged">
+            <summary>
+            My Permissions Changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum.MyActiveInactive">
+            <summary>
+            My Active Inactive.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum.NewPublisherUserOnboard">
+            <summary>
+            New Platform User Joined.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum.TenantTicketStatusChanged">
+            <summary>
+            Tenant Ticket Status Changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum.TenantTicketReassigned">
+            <summary>
+            Tenant’s Ticket is reassigned.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum.TenantTicketPriorityChanged">
+            <summary>
+            Tenant’s Ticket priority is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum.TenantTicketNewCommentAdded">
+            <summary>
+            New Comment added in Tenant’s Ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum.TenantTicketAttachmentAdded">
+            <summary>
+            attachment added in Tenant’s Ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherEmailPreferenceEnum.All">
+            <summary>
+            All the prefernece are true.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Common.PublisherSMSPreferenceEnum">
+            <summary>
+            This class provides publisher prefernces list.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherSMSPreferenceEnum.None">
+            <summary>
+            All the prefernece are false.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.PublisherSMSPreferenceEnum.All">
+            <summary>
+            All the prefernece are true.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Common.VendorTokenTypeEnum">
+            <summary>
+            Enum for Vendor notification event Token Type.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Common.SupportPriorityEnum">
+            <summary>
+            Describe the priority of the support ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.SupportPriorityEnum.High">
+            <summary>
+            high priority
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.SupportPriorityEnum.Medium">
+            <summary>
+            medium priority
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Common.SupportPriorityEnum.Low">
+            <summary>
+            Low priority
+            </summary>
+        </member>
+    </members>
+</doc>

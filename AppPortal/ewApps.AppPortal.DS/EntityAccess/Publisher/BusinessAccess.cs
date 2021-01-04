@@ -1,0 +1,54 @@
+﻿/* Copyright © 2018 eWorkplace Apps (https://www.eworkplaceapps.com/). All Rights Reserved.
+* Unauthorized copying of this file, via any medium is strictly prohibited
+* Proprietary and confidential
+* 
+* Author: Sanjeev Khanna <skhanna@eworkplaceapps.com>
+* Date: 24 September 2018
+* 
+* Contributor/s: Nitin Jain
+* Last Updated On: 10 October 2018
+*/
+
+using System;
+using ewApps.AppPortal.Common;
+using ewApps.Core.BaseService;
+using ewApps.Core.UserSessionService;
+
+namespace ewApps.AppPortal.DS {
+
+    public class BusinessAccess:PublisherEntityAccess, IBusinessAccess {
+
+        PublisherUserPublisherAppPermissionEnum permEnum;
+
+        public BusinessAccess(IUserSessionManager sessionManager, IRoleDS roleDS) : base(sessionManager, roleDS) {
+        }
+
+        public override bool[] AccessList(Guid entityId) {
+            bool[] accessVector = new bool[1];
+            accessVector[0] = CheckAccess((int)PublisherUserPublisherAppPermissionEnum.ManageBusinesses, Guid.Empty);
+
+            return accessVector;
+        }
+
+        public override bool CheckAccess(int operation, Guid entityId) {
+            bool hasPermission = false;
+            UserSession session = _userSessionManager.GetSession();
+            InitPermission();
+
+            // Get the permission bit mask.
+            PublisherUserPublisherAppPermissionEnum bitmask = (PublisherUserPublisherAppPermissionEnum)_permission.PermissionBitMask;
+
+            switch(operation) {
+
+                case (int)OperationType.Add:
+                case (int)OperationType.Update:
+                case (int)OperationType.Delete:
+                    hasPermission = (bitmask & PublisherUserPublisherAppPermissionEnum.ManageBusinesses) == PublisherUserPublisherAppPermissionEnum.ManageBusinesses;
+                    break;
+            }
+
+            return hasPermission;
+        }
+
+    }
+}

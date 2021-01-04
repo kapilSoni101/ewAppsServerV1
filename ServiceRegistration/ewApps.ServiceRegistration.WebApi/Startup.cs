@@ -1,0 +1,128 @@
+﻿/* Copyright © 2018 eWorkplace Apps (https://www.eworkplaceapps.com/). All Rights Reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * 
+ * Author:Asha Sharda
+ * Date: 4 Sept 2019
+ *
+ */
+
+
+using ewApps.ServiceRegistration.DI;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Serialization;
+using Swashbuckle.AspNetCore.Swagger;
+using System;
+using System.IO;
+using System.Reflection;
+using ewApps.Core.CacheService;
+
+namespace ewApps.ServiceRegistration.WebApi
+{
+
+  public class Startup
+  {
+
+    public Startup(IConfiguration configuration)
+    {
+      Configuration = configuration;
+
+    }
+
+    public IConfiguration Configuration
+    {
+      get;
+    }
+
+    // This method gets called by the runtime. Use this method to add services to the container.
+    public void ConfigureServices(IServiceCollection services)
+    {
+      services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddJsonOptions((options) => { options.SerializerSettings.ContractResolver = new DefaultContractResolver(); }); ;
+
+      // Dependency Injection    
+      services.AddServiceDependency(Configuration);
+      services.AddCors();
+      services.AddHttpContextAccessor();
+
+      //Add EWAppsDistributedCache
+      CacheConfigurationOptions cacheOptions = CreateCacheConfiguration();
+      services.AddCacheService(cacheOptions);
+
+
+      
+      // Register the Swagger generator, defining 1 or more Swagger documents
+      services.AddSwaggerGen(c =>
+      {
+        c.SwaggerDoc("v1", new Info
+        {
+          Version = "v1",
+          Title = "Service Registration API",
+          Description = "Service Registration API",
+          TermsOfService = "None",
+          Contact = new Contact
+          {
+            Name = "eWorkplace Apps",
+            Email = "support@eworkplaceapps.com",
+            Url = "https://eworkplaceapps.com"
+          },
+          License = new License
+          {
+            Name = "Use under LICX",
+            Url = "https://example.com/license"
+          }
+        });
+
+        // Set the comments path for the Swagger JSON and UI.
+        var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+        var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+        c.IncludeXmlComments(xmlPath);
+
+      });
+
+    }
+
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+
+      app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+      if (env.IsDevelopment())
+      {
+        app.UseDeveloperExceptionPage();
+      }
+      else
+      {
+        app.UseHsts();
+      }
+      // Enable middleware to serve swagger - ui(HTML, JS, CSS, etc.), 
+      // Enable middleware to serve generated Swagger as a JSON endpoint.            
+      // specifying the Swagger JSON endpoint.
+      app.UseSwagger();
+      app.UseSwaggerUI(c =>
+      {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Service Registration");
+        c.RoutePrefix = string.Empty;
+      });
+
+      app.UseHttpsRedirection();
+      app.UseMvc();
+    }
+    private CacheConfigurationOptions CreateCacheConfiguration()
+    {
+      //Read the configuration from config file, right now it is hard coded
+      CacheConfigurationOptions cacheOptions = new CacheConfigurationOptions();
+      cacheOptions.Host = "127.0.0.1";
+      cacheOptions.Port = 6379;
+      cacheOptions.CacheType = "Redis";
+      cacheOptions.InstanceName = "";
+      return cacheOptions;
+    }
+
+  
+  }
+}

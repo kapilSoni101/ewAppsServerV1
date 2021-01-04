@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.LoggingService</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Core.LoggingService.Logger">
+            <summary>
+            Contains static methods to log diffrent type of messages.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.LoggingService.Logger.LogInfo(System.String)">
+            <summary>
+            Log information message.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="infoMessage"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:ewApps.Core.LoggingService.Logger.LogError(System.Exception,System.String)">
+            <summary>
+            Log error detail.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="message"></param>
+            <param name="ex"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:ewApps.Core.LoggingService.Logger.LogWarning(System.String)">
+            <summary>
+            Log the warning message.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="message"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:ewApps.Core.LoggingService.Logger.LineBreak(Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            Set the line break
+            </summary>        
+            <param name="level">Level is used to define the type of error message for which we are giving the line break.</param>
+        </member>
+        <member name="M:ewApps.Core.LoggingService.Logger.Seperator(Microsoft.Extensions.Logging.LogLevel,System.String)">
+            <summary>
+            Enter seperator in log file.
+            </summary>        
+            <param name="seperator">seperator given by user.</param>
+        </member>
+    </members>
+</doc>

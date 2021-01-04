@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<Import Project="..\..\..\ewAppsAssets\AssemblyVersions\ServerVersion.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServer\Payment\ewApps.Payment.Common\ewApps.Payment.Common.xml</DocumentationFile>
+    <WarningLevel>0</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,3433 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.BusinessEntity.Entity</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.BusinessEntity.Entity.ASNotification">
+            <summary>
+            Publisher table represting all the Publisher.
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.ASNotification.EntityName">
+            <summary>
+            The entity name publisher.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:ewApps.BusinessEntity.Entity.BAAPInvoice" -->
+        <member name="F:ewApps.BusinessEntity.Entity.BAAPInvoice.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.ERPAPInvoiceKey">
+            <summary>
+            Unique key of invoice (Invoice generated from ERP).
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.ERPDocNum">
+            <summary>
+            Unique number of invoice (Invoice generated from ERP).
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.ERPConnectorKey">
+            <summary>
+            Connector key of invoice (Invoice generated from ERP connector name).
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.ERPVendorKey">
+            <summary>
+            Unique key of customer (customer generated from ERP portal).
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.VendorId">
+            <summary>
+            Vendor table unique id.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.VendorName">
+            <summary>
+            Name of customer.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.ContactPerson">
+            <summary>
+            Name of conatct person.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.VendorRefNo">
+            <summary>
+            Vendor referenceid is coming from ERP portal, If invoice generated from ERP.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.LocalCurrency">
+            <summary>
+            Local currency from where invoice generated.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.Status">
+            <summary>
+            Status of invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.StatusText">
+            <summary>
+            Currenct status test.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.PostingDate">
+            <summary>
+            Invoice posting date. 
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.DocumentDate">
+            <summary>
+            Document date.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.DueDate">
+            <summary>
+            Due date.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.SalesEmployee">
+            <summary>
+            Sales Employees.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.Owner">
+            <summary>
+            Owner of invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.TotalBeforeDiscount">
+            <summary>
+            Invoice actual amount without discount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.TotalBeforeDiscountFC">
+            <summary>
+            Invoice actual amount without discount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.Discount">
+            <summary>
+            Discount apply on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.DiscountFC">
+            <summary>
+            Discount apply on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.Freight">
+            <summary>
+            Freight charges apply on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.FreightFC">
+            <summary>
+            Freight charges apply on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.Tax">
+            <summary>
+            Tax charges apply on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.TaxFC">
+            <summary>
+            Tax charges apply on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.TotalPaymentDue">
+            <summary>
+            Due amount on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.TotalPaymentDueFC">
+            <summary>
+            Due amount on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.AppliedAmount">
+            <summary>
+            Appled amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.AppliedAmountFC">
+            <summary>
+            Appled amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.BalanceDue">
+            <summary>
+            Balanace due on invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.BalanceDueFC">
+            <summary>
+            Balanace due on invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.Remarks">
+            <summary>
+            Note for invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.ShipFromAddress">
+            <summary>
+            Ship to address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.ShipFromAddressKey">
+            <summary>
+            Ship from address key, coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.ShipToAddress">
+            <summary>
+            Ship to address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.ERPShipToAddressKey">
+            <summary>
+            Ship to address key, coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.ERPBillToAddressKey">
+            <summary>
+            Bill to address key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.BillToAddress">
+            <summary>
+            Bill to address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.ShippingType">
+            <summary>
+            Shipping Type.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.ShippingTypeText">
+            <summary>
+            Shipping type text.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoice.TrackingNo">
+            <summary>
+            Invoice tracking number.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Entity.BAAPInvoice.Validate(System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData}@)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.BusinessEntity.Entity.BAAPInvoice.BrokenRules(ewApps.BusinessEntity.Entity.BAAPInvoice)">
+            <inheritdoc />
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoiceAttachment.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoiceAttachment.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoiceAttachment.FreeText">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAAPInvoiceAttachment.AttachmentDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BAAPInvoiceItem.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Entity.BAAPInvoiceItem.Validate(System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData}@)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.BusinessEntity.Entity.BAAPInvoiceItem.BrokenRules(ewApps.BusinessEntity.Entity.BAAPInvoiceItem)">
+            <inheritdoc />
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BAARInvoice">
+            <summary>
+            Invoice table storing all the invoice data.
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BAARInvoice.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.ERPARInvoiceKey">
+            <summary>
+            Unique key of invoice (Invoice generated from ERP).
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.ERPDocNum">
+            <summary>
+            Unique number of invoice (Invoice generated from ERP).
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.ERPConnectorKey">
+            <summary>
+            Connector key of invoice (Invoice generated from ERP connector name).
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.ERPCustomerKey">
+            <summary>
+            Unique key of customer (customer generated from ERP portal).
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.CustomerId">
+            <summary>
+            Customer table unique id.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.CustomerName">
+            <summary>
+            Name of customer.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.ContactPerson">
+            <summary>
+            Name of conatct person.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.CustomerRefNo">
+            <summary>
+            Customer referenceid is coming from ERP portal, If invoice generated from ERP.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.LocalCurrency">
+            <summary>
+            Local currency from where invoice generated.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.Status">
+            <summary>
+            Status of invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.StatusText">
+            <summary>
+            Currenct status test.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.PostingDate">
+            <summary>
+            Invoice posting date. 
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.DocumentDate">
+            <summary>
+            Document date.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.DueDate">
+            <summary>
+            Due date.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.SalesEmployee">
+            <summary>
+            Sales Employees.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.Owner">
+            <summary>
+            Owner of invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.TotalBeforeDiscount">
+            <summary>
+            Invoice actual amount without discount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.TotalBeforeDiscountFC">
+            <summary>
+            Invoice actual amount without discount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.Discount">
+            <summary>
+            Discount apply on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.DiscountFC">
+            <summary>
+            Discount apply on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.Freight">
+            <summary>
+            Freight charges apply on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.FreightFC">
+            <summary>
+            Freight charges apply on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.Tax">
+            <summary>
+            Tax charges apply on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.TaxFC">
+            <summary>
+            Tax charges apply on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.TotalPaymentDue">
+            <summary>
+            Due amount on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.TotalPaymentDueFC">
+            <summary>
+            Due amount on Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.AppliedAmount">
+            <summary>
+            Appled amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.AppliedAmountFC">
+            <summary>
+            Appled amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.BalanceDue">
+            <summary>
+            Balanace due on invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.BalanceDueFC">
+            <summary>
+            Balanace due on invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.Remarks">
+            <summary>
+            Note for invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.ShipFromAddress">
+            <summary>
+            Ship to address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.ShipFromAddressKey">
+            <summary>
+            Ship from address key, coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.ShipToAddress">
+            <summary>
+            Ship to address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.ERPShipToAddressKey">
+            <summary>
+            Ship to address key, coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.ERPBillToAddressKey">
+            <summary>
+            Bill to address key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.BillToAddress">
+            <summary>
+            Bill to address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.ShippingType">
+            <summary>
+            Shipping Type.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.ShippingTypeText">
+            <summary>
+            Shipping type text.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoice.TrackingNo">
+            <summary>
+            Invoice tracking number.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Entity.BAARInvoice.Validate(System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData}@)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.BusinessEntity.Entity.BAARInvoice.BrokenRules(ewApps.BusinessEntity.Entity.BAARInvoice)">
+            <inheritdoc />
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoiceAttachment.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoiceAttachment.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoiceAttachment.FreeText">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAARInvoiceAttachment.AttachmentDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BAARInvoiceItem.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Entity.BAARInvoiceItem.Validate(System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData}@)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.BusinessEntity.Entity.BAARInvoiceItem.BrokenRules(ewApps.BusinessEntity.Entity.BAARInvoiceItem)">
+            <inheritdoc />
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BAASN">
+            <summary>
+            Represents properties for ASN entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASN.ERPConnectorKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASN.ERPCustomerKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASN.CustomerId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASN.CustomerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASN.ERPASNKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASN.ERPDocNum">
+            <summary>
+            Unique number of ASN .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNAttachment.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNAttachment.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNAttachment.FreeText">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNAttachment.AttachmentDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BAASNItem">
+            <summary>
+            Represents properties for ASN Item entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.ERPASNKey">
+            <summary>
+            Represents the ERP delivery item key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.ERPConnectorKey">
+            <summary>
+            Represents the ERP contract key
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.ASNId">
+            <summary>
+            Represents the ERP delivery id
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.ERPItemKey">
+            <summary>
+            Represents the ERP   item key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.ItemID">
+            <summary>
+            Represents the  item id.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.ItemName">
+            <summary>
+            Represents the   delivery item name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.Quantity">
+            <summary>
+            Represents the   delivery item Quantity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.QuantityUnit">
+            <summary>
+            Unit of item.
+            </summary>    
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.UnitPrice">
+            <summary>
+            Represents the   delivery item UnitPrice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.UnitPriceFC">
+            <summary>
+            Represents the   delivery item UnitPrice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.Unit">
+            <summary>
+            Represents the   delivery item UnitPrice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.DiscountPercent">
+            <summary>
+            Represents the   delivery item DiscountPercent.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.DiscountAmount">
+            <summary>
+            Discount amount after applied discount on actual amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.TaxCode">
+            <summary>
+            Represents the ERP delivery   TaxCode.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.TaxPercent">
+            <summary>
+            Represents the   delivery TaxPercent
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.TotalLC">
+            <summary>
+            Represents the   delivery TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.TotalLCFC">
+            <summary>
+            Represents the   delivery TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.BlanketAgreementNo">
+            <summary>
+            Represents the Blanket Agreement No
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.Freight">
+            <summary>
+            Represents the ERP delivery Freight.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.FreightFC">
+            <summary>
+            Represents the ERP delivery Freight.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.SerialOrBatchNo">
+            <summary>
+            Represents the Serial Or BatchNo
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.GLAmount">
+            <summary>
+            TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.ShipFromAddress">
+            <summary>
+            Ship from address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.ShipToAddress">
+            <summary>
+            ShipToAddress
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAASNItem.BillToAddress">
+            <summary>
+            Bill to address.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BAContract">
+            <summary>
+            Represents properties for BAContract entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.ERPConnectorKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.ERPCustomerKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.ERPDocNum">
+            <summary>
+            Unique number of Contract .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.CustomerId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.CustomerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.ContactPerson">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.CustomerRefNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.BPCurrency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.TelephoneNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.DocumentNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.AgreementMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.StartDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.EndDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.BPProject">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.TerminationDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.SigningDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.AgreementType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.PaymentTerms">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.PaymentMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.ShippingType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.ShippingTypeText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.StatusText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContract.Remarks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BAContractAttachment">
+            <summary>
+            Represents properties for BAContract entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractAttachment.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractAttachment.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractAttachment.FreeText">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractAttachment.AttachmentDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BAContractItem">
+            <summary>
+            Represents properties for BAContract entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.ERPConnectorKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.ERPContractKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.ERPItemKey">
+            <summary>
+            Unique key of item coming from ERP connector.
+            </summary>    
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.ContractId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.ItemNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.ItemDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.ItemGroup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.PlannedQuantity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.UnitPrice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.CumulativeCommittedQuantity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.CumulativeAmountLC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.OpenAmountLC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.Project">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.FreeText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.EndOfWarranty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.UoMName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.UoMGroup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.ItemsPerUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.PortionofReturnsPerc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.ShippingType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.ShippingTypeText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.ItemRowStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAContractItem.ItemRowStatusText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BACustomer">
+            <summary>
+            Represents properties for customer entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.ERPConnectorKey">
+            <summary>
+            SAP connector key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.ERPCustomerKey">
+            <summary>
+            SAP customer key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.CustomerName">
+            <summary>
+            Name of customer .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.BusinessPartnerTenantId">
+            <summary>
+            customer tenant id .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.Group">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.Currency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.FederalTaxID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.AddressLine1">
+            <summary>
+            Customer Address 1 .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.AddressLine2">
+            <summary>
+             Customer address 2 .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.Street">
+            <summary>
+             Customer Address street .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.StreetNo">
+            <summary>
+            Customer Address street number .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.City">
+            <summary>
+            Customer Address city .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.ZipCode">
+            <summary>
+            Customer Address zipcode .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.State">
+            <summary>
+            Customer Address state .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.Country">
+            <summary>
+            Customer Address country .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.Tel1">
+            <summary>
+            Customer  telephone number1 .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.Tel2">
+            <summary>
+            Customer  telephone number2 .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.MobilePhone">
+            <summary>
+            Customer  mobile number .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.Fax">
+            <summary>
+            Customer  fax number.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.Email">
+            <summary>
+            Customer  email .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.Website">
+            <summary>
+            Customer  website .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.ShippingType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.ShippingTypeText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.StatusText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomer.Remarks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BACustomerAddress">
+            <summary>
+            Represents properties for CustomerAddress entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.ERPConnectorKey">
+            <summary>
+            SAP connector key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.ERPCustomerKey">
+            <summary>
+            SAP customer key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.CustomerId">
+            <summary>
+            customer unique id .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.Label">
+            <summary>
+            Customer address label.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.ObjectType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.ObjectTypeText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.AddressName">
+            <summary>
+            Customer address name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.Line1">
+            <summary>
+            Customer address line 1.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.Line2">
+            <summary>
+            Customer address line 2.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.Line3">
+            <summary>
+            Customer address line 3.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.Street">
+            <summary>
+            Customer street .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.StreetNo">
+            <summary>
+            Customer street no .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.City">
+            <summary>
+            Customer city.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.ZipCode">
+            <summary>
+            Customer ZipCode.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.State">
+            <summary>
+            Customer state. 
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerAddress.Country">
+            <summary>
+            Customer country.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BACustomerContact">
+            <summary>
+            Represents properties for BACustomerContact entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerContact.ERPContactKey">
+            <summary>
+            SAP contact key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerContact.ERPConnectorKey">
+            <summary>
+            SAP connector key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerContact.CustomerId">
+            <summary>
+            Unique id of customer .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerContact.ERPCustomerKey">
+            <summary>
+            SAP customer key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerContact.Default">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerContact.FirstName">
+            <summary>
+            custome contact first name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerContact.LastName">
+            <summary>
+            custome contact last name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerContact.Title">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerContact.Position">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerContact.Address">
+            <summary>
+            custome contact address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerContact.Telephone">
+            <summary>
+            custome contact telephone number.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerContact.Email">
+            <summary>
+            custome contact email.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail">
+            <summary>
+            Represents properties for CustomerPaymentDetail entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.ERPConnectorKey">
+            <summary>
+            SAP connector key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.CustomerId">
+            <summary>
+            unique key for customer .
+            </summary> 
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.ERPCustomerKey">
+            <summary>
+            SAP customer key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.CreditCardType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.CreditCardTypeText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.CreditCardNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.ExpirationDate">
+            <summary>
+            Card expiration date .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.IDNumber">
+            <summary>
+            IDNumber
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.BankCountry">
+            <summary>
+            customer bank country .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.BankName">
+            <summary>
+            customer bank name .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.BankCode">
+            <summary>
+            customer bank code .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.Account">
+            <summary>
+            customer bank account .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.BICSWIFTCode">
+            <summary>
+            customer BICSWIFTCode .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.BankAccountName">
+            <summary>
+            customer bank account name .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.Branch">
+            <summary>
+            customer banl branch name .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.Default">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.ABARouteNumber">
+            <summary>
+            customer route number . 
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.AccountType">
+            <summary>
+            customer accont type .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BACustomerPaymentDetail.AccountTypeText">
+            <summary>
+            string value of customer accont type.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BADelivery">
+            <summary>
+            Represents the delivery related properties.
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BADelivery.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.ERPDeliveryKey">
+            <summary>
+            Represents the ERP delivery key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.ERPDocNum">
+            <summary>
+            Unique number of Deliver.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.ERPConnectorKey">
+            <summary>
+            Represents the ERP connctor key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.ERPCustomerKey">
+            <summary>
+            Represents the ERP customer key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.CustomerID">
+            <summary>
+            Represents the cust id
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ewApps.BusinessEntity.Entity.BADelivery.CustomerName" -->
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.ContactPerson">
+            <summary>
+            Represents the contact person name of customer.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.CustomerRefNo">
+            <summary>
+            Represents the  Customer Referenvce No.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.LocalCurrency">
+            <summary>
+            Represents the LocalCurrency
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.Status">
+            <summary>
+            Represents the delivery status.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.StatusText">
+            <summary>
+            Represents the status text.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.PostingDate">
+            <summary>
+            Represents the posting date of delivery.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.DeliveryDate">
+            <summary>
+            Represents the DeliveryDate
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.DocumentDate">
+            <summary>
+            Represents the DocumentDate
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.SalesEmployee">
+            <summary>
+            Represents the SalesEmployee
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.Owner">
+            <summary>
+            Represents the Owner
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.TotalBeforeDiscount">
+            <summary>
+            Represents the  Total amount Before Discount
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.TotalBeforeDiscountFC">
+            <summary>
+            Represents the  Total amount Before Discount fc
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.Discount">
+            <summary>
+            Represents the Discount amount
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.DiscountFC">
+            <summary>
+            Represents the Discount amount
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.Freight">
+            <summary>
+            Represents the Freight
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ewApps.BusinessEntity.Entity.BADelivery.FreightFC" -->
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.Tax">
+            <summary>
+            Represents the Tax
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.TaxFC">
+            <summary>
+            Represents the Tax
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.TotalPaymentDue">
+            <summary>
+            Represents the Total Paymen tDue
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.TotalPaymentDueFC">
+            <summary>
+            Represents the Total PaymentDue
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.Remarks">
+            <summary>
+            Represents the Remarks
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.ShipToAddress">
+            <summary>
+            Represents the ShipToAddress
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.ERPBillToAddressKey">
+            <summary>
+            Represents the   ERP Bill To AddressKey
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.BillToAddress">
+            <summary>
+            Represents the Bill To Address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.ShippingType">
+            <summary>
+            Represents the ShippingType.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.ShippingTypeText">
+            <summary>
+            Represents the ShippingType text.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.TrackingNo">
+            <summary>
+            Represents the TrackingNo.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.StampNo">
+            <summary>
+            Represents the StampNo.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.PickAndPackRemarks">
+            <summary>
+            Represents the PickAndPackRemarks
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.ERPShipToAddressKey">
+            <summary>
+            Represents the ERP connctor key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.ShipFromAddress">
+            <summary>
+            Represents the ship from addrses.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADelivery.ShipFromAddressKey">
+            <summary>
+            Represents the ship from address key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryAttachment.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryAttachment.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryAttachment.FreeText">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryAttachment.AttachmentDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BADeliveryItem">
+            <summary>
+            Represents the delivery item related properties.
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BADeliveryItem.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.ERPDeliveryKey">
+            <summary>
+            Represents the ERP delivery item key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.ERPConnectorKey">
+            <summary>
+            Represents the ERP contract key
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.DeliveryID">
+            <summary>
+            Represents the ERP delivery id
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.ERPItemKey">
+            <summary>
+            Represents the ERP   item key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.LotNo">
+            <summary>
+            Represents the lot number.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.ItemID">
+            <summary>
+            Represents the  item id.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.ItemName">
+            <summary>
+            Represents the   delivery item name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.ItemType">
+            <summary>
+            Represents the   delivery item type.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.ItemTypeText">
+            <summary>
+            Represents the  Item Type Text
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.Quantity">
+            <summary>
+            Represents the   delivery item Quantity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.UnitPrice">
+            <summary>
+            Represents the   delivery item UnitPrice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.UnitPriceFC">
+            <summary>
+            Represents the   delivery item UnitPrice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.DiscountPercent">
+            <summary>
+            Represents the   delivery item DiscountPercent.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.TaxCode">
+            <summary>
+            Represents the ERP delivery   TaxCode.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.TaxPercent">
+            <summary>
+            Represents the   delivery TaxPercent
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.TotalLC">
+            <summary>
+            Represents the   delivery TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.TotalLCFC">
+            <summary>
+            Represents the   delivery TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.BlanketAgreementNo">
+            <summary>
+            Represents the Blanket Agreement No
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.Freight">
+            <summary>
+            Represents the ERP delivery Freight.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.FreightFC">
+            <summary>
+            Represents the ERP delivery Freight.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BADeliveryItem.SerialOrBatchNo">
+            <summary>
+            Represents the Serial Or BatchNo
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BAItemMaster">
+            <summary>
+            Represents properties for ItemMaster entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.ERPConnectorKey">
+            <summary>
+            SAP connector key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.ERPItemKey">
+            <summary>
+            SAP item key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.ItemType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.ItemName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.BarCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.Price">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PriceFC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PriceUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PriceUniText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.ShippingType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.ShippingTypeText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.ManagedItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.Active">
+            <summary>
+            Application active flag.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseLengthUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseLengthUnitText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseWidth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseWidthUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseWidthUnitText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseHeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseHeightUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseHeightUnitText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseVolume">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseVolumeUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseVolumeUnitText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseWeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseWeightUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.PurchaseWeightUnitText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesLengthUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesLengthUnitText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesWidth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesWidthUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesWidthUnitText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesHeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesHeightUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesHeightUnitText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesVolume">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesVolumeUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesVolumeUnitText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesWeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesWeightUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.SalesWeightUnitText">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMaster.Remarks">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMasterAttachment.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMasterAttachment.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMasterAttachment.FreeText">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAItemMasterAttachment.AttachmentDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.ERPPurchaseEnquiryItemKey">
+            <summary>
+            Represents the ERP delivery item key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.ERPConnectorKey">
+            <summary>
+            Represents the ERP Connector Key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.PurchaseEnquiryID">
+            <summary>
+            Represents the ERP contract key
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.ERPPurchaseInquiryKey">
+            <summary>
+            Represents the ERP Purchase Inquiry Key
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.ERPItemKey">
+            <summary>
+            Represents the ERP item Key
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.ItemID">
+            <summary>
+            Represents the ERP item id
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.ItemName">
+            <summary>
+            Represents the ERP   item name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.ItemType">
+            <summary>
+            Represents the item type.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.ItemTypeText">
+            <summary>
+            Represents the item type text.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.QuantityUnit">
+            <summary>
+            Represents the  Item Type Text
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.Quantity">
+            <summary>
+            Represents the   delivery item Quantity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.UnitPrice">
+            <summary>
+            Represents the   delivery item UnitPrice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.Unit">
+            <summary>
+            Represents the   delivery item unit.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.DiscountPercent">
+            <summary>
+            Represents the   DiscountPercent.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.TotalLC">
+            <summary>
+            Represents the   delivery TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.BlanketAgreementNo">
+            <summary>
+            Represents the Blanket Agreement No
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.PriceSource">
+            <summary>
+            Represents the PriceSource
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.ERPShipToAddressKey">
+            <summary>
+            Represents the ERPShipToAddressKey
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.ShipToAdress">
+            <summary>
+            Represents the ShipToAdress
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.ERPPayToAddressKey">
+            <summary>
+            Represents the ERP Pay To AddressKey
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseEnquiryItem.PayToAddress">
+            <summary>
+            Represents the Pay To Address
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BAPurchaseInquiry">
+            <summary>
+            Theme entity represting all PurchaseInquiry properties.
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.ERPCustomerKey">
+            <summary>
+            Represents the ERP Customer key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.CustomerName">
+            <summary>
+            Represents the customer name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.ContactPerson">
+            <summary>
+            Represents the contact person name of customer.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.CustomerRefNo">
+            <summary>
+            Represents the customer ref no.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.Status">
+            <summary>
+            Represents the status.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.StatusText">
+            <summary>
+            Represents the status text.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.PostingDate">
+            <summary>
+            Represents the posting date of purchase inquiry.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.ValidUntil">
+            <summary>
+            Represents the Valid date of purchase inquiry
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.DocumentDate">
+            <summary>
+            Represents the document date
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.Total">
+            <summary>
+            Represents the total
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.Remarks">
+            <summary>
+            Represents the remarks
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.ERPShipToAddressKey">
+            <summary>
+            Represents the ERPShipToAddressKey
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.ShipToAddress">
+            <summary>
+            Represents the ShipToAddress
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.ERPPayToAddressKey">
+            <summary>
+            Represents the ERPPayToAddressKey
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.PayToAddress">
+            <summary>
+            Represents the PayToAddress
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.ShippingType">
+            <summary>
+            Represents the ShippingType
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiry.ShippingText">
+            <summary>
+            Represents the ShippingText
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.ERPPurchaseEnquiryItemKey">
+            <summary>
+            Represents the ERP delivery item key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.PurchaseEnquiryID">
+            <summary>
+            Represents the ERP contract key
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.ItemID">
+            <summary>
+            Represents the ERP delivery id
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.ItemName">
+            <summary>
+            Represents the ERP   item key.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.QuantityUnit">
+            <summary>
+            Represents the  Item Type Text
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.Quantity">
+            <summary>
+            Represents the   delivery item Quantity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.UnitPrice">
+            <summary>
+            Represents the   delivery item UnitPrice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.Unit">
+            <summary>
+            Represents the   delivery item DiscountPercent.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.TotalLC">
+            <summary>
+            Represents the   delivery TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.PriceSource">
+            <summary>
+            Represents the price source.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.ERPShipToAddressKey">
+            <summary>
+            Represents the ERPShipToAddressKey
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.ShipToAddress">
+            <summary>
+            Represents the ShipToAdress
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.ERPPayToAddressKey">
+            <summary>
+            Represents the ERP pay to address ker;
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseInquiryItem.PayToAddress">
+            <summary>
+            Represents the pay to address.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BAPurchaseOrder">
+            <summary>
+            Theme entity represting all PurchaseOrder properties.
+            </summary>
+            
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BAPurchaseOrder.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrder.ERPDocNum">
+            <summary>
+            Unique number of SalesOrder .
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BAPurchaseOrderAttachment">
+            <summary>
+            Theme entity represting all PurchaseOrder properties.
+            </summary>
+            
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BAPurchaseOrderAttachment.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.ERPPurchaseOrderItemKey">
+            <summary>
+            Unique key of sales order item key coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.ERPConnectorKey">
+            <summary>
+            Unique key of ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.PurchaseOrderId">
+            <summary>
+            Unique key of sales order table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.ERPPurchaseOrderKey">
+            <summary>
+            Unique key of sales order table coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.ERPItemKey">
+            <summary>
+            Unique key of item coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.ItemId">
+            <summary>
+            Unique key of ItemMaster table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.SerialOrBatchNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.ItemName">
+            <summary>
+            Item name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.Quantity">
+            <summary>
+            # quanity of item.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.QuantityUnit">
+            <summary>
+            Unit of item.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.UnitPrice">
+            <summary>
+            Price of item.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.UnitPriceFC">
+            <summary>
+            Price of item.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.Unit">
+            <summary>
+            Price of unit. It may be like per item/dozen/gram etc.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.DiscountPercent">
+            <summary>
+            Discount percent in invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.DiscountAmount">
+            <summary>
+            Discount amount after applied discount on actual amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.DiscountAmountFC">
+            <summary>
+            Discount amount after applied discount on actual amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.TaxCode">
+            <summary>
+             Tax code.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.TaxPercent">
+            <summary>
+            Tax persent appled on item.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.TotalLC">
+            <summary>
+            TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.TotalLCFC">
+            <summary>
+            TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.BlanketAgreementNo">
+            <summary>
+            BlanketAgreementNo
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.ShipFromAddress">
+            <summary>
+            Ship from address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.ShipFromAddressKey">
+            <summary>
+            ShipFromAddressKey will be not null if coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.ShipToAddress">
+            <summary>
+            ShipToAddress
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.ERPShipToAddressKey">
+            <summary>
+            ShipTOAddressKey will be not null if coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.BillToAddress">
+            <summary>
+            Bill to address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAPurchaseOrderItem.ERPBillToAddressKey">
+            <summary>
+            Bill to addressKey will be not null if coming from ERP connector.
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BASalesOrder.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrder.ERPDocNum">
+            <summary>
+            Unique number of SalesOrder .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderAttachment.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderAttachment.FreeText">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderAttachment.AttachmentDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BASalesOrderItem.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.ERPSalesOrderItemKey">
+            <summary>
+            Unique key of sales order item key coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.ERPConnectorKey">
+            <summary>
+            Unique key of ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.SalesOrderId">
+            <summary>
+            Unique key of sales order table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.ERPSalesOrderKey">
+            <summary>
+            Unique key of sales order table coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.ERPItemKey">
+            <summary>
+            Unique key of item coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.ItemId">
+            <summary>
+            Unique key of ItemMaster table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.SerialOrBatchNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.ItemName">
+            <summary>
+            Item name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.Quantity">
+            <summary>
+            # quanity of item.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.QuantityUnit">
+            <summary>
+            Unit of item.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.UnitPrice">
+            <summary>
+            Price of item.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.UnitPriceFC">
+            <summary>
+            Price of item.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.Unit">
+            <summary>
+            Price of unit. It may be like per item/dozen/gram etc.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.DiscountPercent">
+            <summary>
+            Discount percent in invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.DiscountAmount">
+            <summary>
+            Discount amount after applied discount on actual amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.DiscountAmountFC">
+            <summary>
+            Discount amount after applied discount on actual amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.TaxCode">
+            <summary>
+             Tax code.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.TaxPercent">
+            <summary>
+            Tax persent appled on item.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.TotalLC">
+            <summary>
+            TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.TotalLCFC">
+            <summary>
+            TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.BlanketAgreementNo">
+            <summary>
+            BlanketAgreementNo
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.ShipFromAddress">
+            <summary>
+            Ship from address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.ShipFromAddressKey">
+            <summary>
+            ShipFromAddressKey will be not null if coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.ShipToAddress">
+            <summary>
+            ShipToAddress
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.ERPShipToAddressKey">
+            <summary>
+            ShipTOAddressKey will be not null if coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.BillToAddress">
+            <summary>
+            Bill to address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesOrderItem.ERPBillToAddressKey">
+            <summary>
+            Bill to addressKey will be not null if coming from ERP connector.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Entity.BASalesOrderItem.Validate(System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData}@)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.BusinessEntity.Entity.BASalesOrderItem.BrokenRules(ewApps.BusinessEntity.Entity.BASalesOrderItem)">
+            <inheritdoc />
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BASalesQuotation.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.ERPSalesQuotationKey">
+            <summary>
+            ERPSalesQuotationKey will be not null if comingfrom ERP connector.
+            It unique id of SalesQuotation table of ERP connector table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.ERPDocNum">
+            <summary>
+            Unique number of SalesQuotation .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.ERPConnectorKey">
+            <summary>
+            ERP connector key.        
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.ERPCustomerKey">
+            <summary>
+            ERPCustomerKey will be not null if coming from ERP connector.
+            It unique id of Customer table of ERP connector table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.CustomerId">
+            <summary>
+            Unique id of Customet table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.CustomerName">
+            <summary>
+            Customer name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.CustomerRefNo">
+            <summary>
+            Reference id of customer.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.LocalCurrency">
+            <summary>
+            Local currency.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.Status">
+            <summary>
+            Current status of SalesQuotation.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.StatusText">
+            <summary>
+            Status display text.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.PostingDate">
+            <summary>
+            Posting date.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.ValidUntil">
+            <summary>
+            SalesQuote Valid untill.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.DocumentDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.SalesEmployee">
+            <summary>
+            Sales Employees.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.Owner">
+            <summary>
+            Owner
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.TotalBeforeDiscount">
+            <summary>
+            Total amount before discount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.TotalBeforeDiscountFC">
+            <summary>
+            Total amount before discount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.Discount">
+            <summary>
+            Discount on  quote.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.DiscountFC">
+            <summary>
+            Discount on  quote.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.Freight">
+            <summary>
+            Frright charges.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.FreightFC">
+            <summary>
+            Frright charges.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.Tax">
+            <summary>
+            Tax on quote.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.TaxFC">
+            <summary>
+            Tax on quote.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.TotalPaymentDue">
+            <summary>
+            Total payment due.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.TotalPaymentDueFC">
+            <summary>
+            Total payment due.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.Remarks">
+            <summary>
+            Comment on notes.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.ERPShipToAddressKey">
+            <summary>
+            ERPShipToAddressKey will be not null if coming from ERP connector.
+            It unique id of address table of ERP connector table.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.ShipFromAddress">
+            <summary>
+            ShipFromAddress 
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.ShipFromAddressKey">
+            <summary>
+            ShipFromAddressKey will be not null if coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.ShipToAddress">
+            <summary>
+            Ship to address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.ERPBillToAddressKey">
+            <summary>
+            ERPBillToAddressKey will be not null if coming from ERP connector.
+            It unique id of address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.BillToAddress">
+            <summary>
+            bill to address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.ShippingType">
+            <summary>
+            TYpe of shipping.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotation.ShippingTypeText">
+            <summary>
+            shipping text.
+            </summary>
+        </member>
+        <member name="M:ewApps.BusinessEntity.Entity.BASalesQuotation.Validate(System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData}@)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.BusinessEntity.Entity.BASalesQuotation.BrokenRules(ewApps.BusinessEntity.Entity.BASalesQuotation)">
+            <inheritdoc />
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationAttachment.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationAttachment.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationAttachment.FreeText">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationAttachment.AttachmentDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.BASalesQuotationItem.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.ERPConnectorKey">
+            <summary>        
+            ERPConnectorKey will be not null if coming from ERP connector.        
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.SalesQuotationId">
+            <summary>
+            Unique id of SalesQuotationId.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.ERPSalesQuotationKey">
+            <summary>
+            ERPSalesQuotationKey will be not null if coming from ERP connector. Unique id of  ERPSalesQuotationKey.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.ERPItemKey">
+            <summary>
+            ERPItemKey will be not null if coming from ERP connector. Unique id of ERPItemKey.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.ItemId">
+            <summary>
+            Unique id of item master.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.SerialOrBatchNo">
+            <summary>
+            SerialOrBatchNo
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.ItemName">
+            <summary>
+            Name of item master
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.QuantityUnit">
+            <summary>
+            QuantityUnit
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.UnitPrice">
+            <summary>
+            Unit price.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.UnitPriceFC">
+            <summary>
+            Unit price.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.Unit">
+            <summary>
+            Cost per unit.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.DiscountPercent">
+            <summary>
+            Discount percent.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.DiscountAmount">
+            <summary>
+            Discount amount on total cost.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.DiscountAmountFC">
+            <summary>
+            Discount amount on total cost.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.TaxCode">
+            <summary>
+            Tax code.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.TaxPercent">
+            <summary>
+            Tax percent apply on cost.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.TotalLC">
+            <summary>
+            TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.TotalLCFC">
+            <summary>
+            TotalLC
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.GLAccount">
+            <summary>
+            GLAccount.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.BlanketAgreementNo">
+            <summary>
+            BlanketAgreementNo
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.ShipFromAddress">
+            <summary>
+            Ship from address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.ShipFromAddressKey">
+            <summary>
+            ShipFromAddressKey not null if coming from ERP connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.ShipToAddress">
+            <summary>
+            Ship to address.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.ERPBillToAddressKey">
+            <summary>
+            Bill to address key, Will be non nullable if coming from ERP.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BASalesQuotationItem.BillToAddress">
+            <summary>
+            Bill to address.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BAVendor">
+            <summary>
+            Represents properties for vendor entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.ERPConnectorKey">
+            <summary>
+            SAP connector key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.ERPVendorKey">
+            <summary>
+            SAP customer key .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.VendorName">
+            <summary>
+            Name of customer .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.BusinessPartnerTenantId">
+            <summary>
+            customer tenant id .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.Group">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.Currency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.FederalTaxID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.AddressLine1">
+            <summary>
+            Customer Address 1 .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.AddressLine2">
+            <summary>
+             Customer address 2 .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.Street">
+            <summary>
+             Customer Address street .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.StreetNo">
+            <summary>
+            Customer Address street number .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.City">
+            <summary>
+            Customer Address city .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.ZipCode">
+            <summary>
+            Customer Address zipcode .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.State">
+            <summary>
+            Customer Address state .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.Country">
+            <summary>
+            Customer Address country .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.Tel1">
+            <summary>
+            Customer  telephone number1 .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.Tel2">
+            <summary>
+            Customer  telephone number2 .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.MobilePhone">
+            <summary>
+            Customer  mobile number .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.Fax">
+            <summary>
+            Customer  fax number.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.Email">
+            <summary>
+            Customer  email .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.Website">
+            <summary>
+            Customer  website .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.ShippingType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.ShippingTypeText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.StatusText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendor.Remarks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.BAVendorContract">
+            <summary>
+            Represents properties for BAContract entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.ERPConnectorKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.ERPVendorKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.ERPDocNum">
+            <summary>
+            Unique number of Contract .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.VendorId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.VendorName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.ContactPerson">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.VendorRefNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.BPCurrency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.TelephoneNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.DocumentNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.AgreementMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.StartDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.EndDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.BPProject">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.TerminationDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.SigningDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.AgreementType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.PaymentTerms">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.PaymentMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.ShippingType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.ShippingTypeText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.StatusText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.BAVendorContract.Remarks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.TenantUserAppPreference">
+            <summary>
+            AppUserPreference table represting all the applications and tenant wise notification preferences data.
+            </summary>
+            <seealso cref="T:ewApps.Core.BaseService.BaseEntity" />
+        </member>
+        <member name="F:ewApps.BusinessEntity.Entity.TenantUserAppPreference.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.TenantUserAppPreference.TenantUserId">
+            <summary>
+            TenantUser Identifier.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.TenantUserAppPreference.AppId">
+            <summary>
+            App to which this linking belowngs to.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.TenantUserAppPreference.EmailPreference">
+            <summary>
+            Email preference bit mask of the user for the application in this tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.TenantUserAppPreference.ASPreference">
+            <summary>
+            AS preference bit mask of the user for the application in this tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.TenantUserAppPreference.SMSPreference">
+            <summary>
+            SMS preference bit mask of the user for the application in this tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.ERPConnector.Name">
+            <summary>
+            The name  of Connector.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.ERPConnector.Active">
+            <summary>
+            Connector active status identifier.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.ERPConnector.ConnectorKey">
+            <summary>
+             For which connector set.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.ERPConnectorConfig.ConnectorKey">
+            <summary>
+             For which connector app config set.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.ERPConnectorConfig.Status">
+            <summary>
+            Contain connector status.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.ERPConnectorConfig.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.Role">
+            <summary>
+            A user role is a customizable set of rights and privileges. 
+            Two roles are pre-defined in the system and cannot be edited or deleted 
+            i.e. Administrator and System Administrator. Role table contains different 
+            user role (rights and privileges) for users.
+            System role will be identified by system field in role table.
+            </summary>
+            <remarks>
+            Following fields are mandatory:
+            <list type="bullet">  
+            <item>RoleId (System generated)</item>
+            <item>Name</item>
+            <item>Active</item> 
+            <item>CreatedBy</item> 
+            <item>CreatedDate</item> 
+            <item>ModifiedBy</item> 
+            <item>ModifiedDate</item> 
+            <item>TenantId</item>  
+            <item>ApplicationId</item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.Role.RoleName">
+            <summary>
+            Name of the role admin for admin else ID which is a guid.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.Role.RoleKey">
+            <summary>
+            Admin for admin else same as name.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.Role.PermissionBitMask">
+            <summary>
+            PermissionBitMask is integer value set of all the permission of the users.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.Role.AppId">
+            <summary>
+            Application identifier of the user.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.Role.Active">
+            <summary>
+            Active inactive status of the role.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.Role.UserType">
+            <summary>
+            Defines the portal to which this role belongs.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.Role.TenantId">
+            <summary>
+            Tenant identifier of the role this column is not required in this table beacause role is a master table does not belong to a particular tenant.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.RoleLinking">
+            <summary>
+            It contains linking between User and Role.
+            </summary>
+            <remarks>
+            Following fields are mandatory:
+            <list type="bullet"> 
+            <item>RoleLinkingId [System Generated]</item>  
+            <item>UserId</item>    
+            <item>RolePermissionId</item>   
+            </list>
+            </remarks>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.RoleLinking.TenantUserId">
+            <summary>
+            App user for which this role linking belongs to .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.RoleLinking.RoleId">
+            <summary>
+            Role identifier of the user.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.RoleLinking.AppId">
+            <summary>
+            App identifier of the user.
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.SyncHistory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.ERPConnectorKey">
+            <summary>
+            Connector key of sync entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.ERPEntityKey">
+            <summary>
+             key of sync entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.ActionStartTime">
+            <summary>
+            data receive from time.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.ActionEndTime">
+            <summary>
+            data receive to time.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.StatusCode">
+            <summary>
+            data receive to time.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.StatusMessage">
+            <summary>
+            data receive to time.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.ReqFromSyncTime">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.ReqToSyncTime">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.NumItems">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.SyncRequestData">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.SyncReplyData">
+             <summary>
+            .
+             </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.ExecutionTimeInMS">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.ResponseChunkSize">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncHistory.TenantName">
+            <summary>
+            Tenan name .
+            </summary>
+        </member>
+        <member name="T:ewApps.BusinessEntity.Entity.SyncTimeLog">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncTimeLog.ERPConnectorKey">
+            <summary>
+            Connector key of sync entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncTimeLog.ERPEntityKey">
+            <summary>
+             key of sync entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncTimeLog.ReceiveFromTime">
+            <summary>
+            data receive fromtime.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncTimeLog.ReceiveToTime">
+            <summary>
+            data receive totime.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncTimeLog.SendSyncFromTime">
+            <summary>
+            data send fromtime.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncTimeLog.SendSyncToTime">
+            <summary>
+            data receive totime.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncTimeLog.LastReceiveRowId">
+            <summary>
+            receive row id.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncTimeLog.LastSendRowId">
+            <summary>
+            send row id.
+            </summary>
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncTimeLog.LastSyncStatusText">
+            <summary>
+            Last Sync Status text.
+            </summary>        
+        </member>
+        <member name="P:ewApps.BusinessEntity.Entity.SyncTimeLog.LastSyncStatus">
+            <summary>
+            Last Sync Status .
+            </summary>        
+        </member>
+    </members>
+</doc>

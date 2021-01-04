@@ -1,0 +1,1085 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.AppPortal.Entity</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.AppPortal.Entity.ASNotification">
+            <summary>
+            Publisher table represting all the Publisher.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Entity.ASNotification.EntityName">
+            <summary>
+            The entity name publisher.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.Business">
+            <summary>
+            Theme entity represting all Business properties.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.CurrencyCode">
+             <summary>
+            CurrencyCode 
+             </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.GroupValue">
+             <summary>
+            GroupValue
+             </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.GroupSeperator">
+             <summary>
+            Powered By  
+             </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.DecimalSeperator">
+             <summary>
+            DecimalSeperator 
+             </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.DecimalPrecision">
+             <summary>
+            DecimalPrecision
+             </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.CanUpdateCurrency">
+            <summary>
+            CanUpdateCurrency
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.InitDB">
+            <summary>
+            CanUpdateCurrency
+            </summary>       
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.Website">
+            <summary>
+            website
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.Language">
+            <summary>
+            Tenant Language
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.TimeZone">
+            <summary>
+             Tenant TimeZone
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.DateTimeFormat">
+            <summary>
+             Tenant DateTimeFormat
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.IdentityNumber">
+            <summary>
+            IdentityNumber
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.LogoThumbnailId">
+            <summary>
+            Tenant LogoThumbnailId  
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.PrintLabelLayout">
+            <summary>
+             print lable layout
+            </summary>        
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.WeightUnit">
+            <summary>
+            Business default WeightUnit 
+            </summary>     
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.SizeUnit">
+            <summary>
+            Business default SizeUnit
+            </summary>      
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.FederalTexId">
+            <summary>
+            FederalTexId of Business 
+            </summary>      
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.TelePhone1">
+             <summary>
+            Telephone no 2 .
+             </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.TelePhone2">
+            <summary>
+            Telephone no 2 .
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.MobilePhone">
+            <summary>
+            Phone.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.Email">
+            <summary>
+            Email.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.Status">
+            <summary>
+            Status of BUsiness
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.IntegratedMode">
+            <summary>
+            IntegratedMode of Business
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Business.Configured">
+            <summary>
+            Configured of Business
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.BusinessAddress.BusinessId">
+            <summary>
+            The Id  of ParentEntity.
+            </summary>
+            
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.BusinessAddress.Label">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.BusinessAddress.AddressStreet1">
+            <summary>
+            AddressStreet1.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.BusinessAddress.AddressStreet2">
+            <summary>
+            AddressStreet2.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.BusinessAddress.AddressStreet3">
+            <summary>
+            AddressStreet3.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.BusinessAddress.City">
+            <summary>
+            City.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.BusinessAddress.Country">
+            <summary>
+            Country.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.BusinessAddress.State">
+            <summary>
+            State.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.BusinessAddress.ZipCode">
+            <summary>
+            ZipCode.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.BusinessAddress.FaxNumber">
+            <summary>
+            FaxNumber.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.BusinessAddress.Phone">
+            <summary>
+            Phone.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.BusinessAddress.AddressType">
+            <summary>
+            AddressType.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Customer.BusinessPartnerTenantId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Customer.CanUpdateCurrency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Customer.Configured">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Customer.Currency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Customer.IdentityNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Customer.DateTimeFormat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Customer.DecimalPrecision">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Customer.DecimalSeperator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Customer.GroupSeperator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Customer.GroupValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Customer.Language">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Customer.TimeZone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.Favorite">
+            <summary>
+            Favorite entity represting all the Favorite related properties.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Favorite.TenantUserId">
+            <summary>
+            TenantUserId
+            </summary>        
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Favorite.MenuKey">
+            <summary>
+            MenuId
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Favorite.Url">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Favorite.PortalKey">
+            <summary>
+            Portal key
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Favorite.AppId">
+            <summary>
+            AppId
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Favorite.System">
+            <summary>
+            System filed
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.Platform">
+            <summary>
+            Platform table is plaform extenstion table.
+            //ToDo: Nitin: Review: LIke This entity contains info extented information of Platform tenant.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Entity.Platform.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.Name">
+            <summary>
+            Name of the platform.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.CurrencyCode">
+            <summary>
+            CurrencyCode  for the platform
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.GroupValue">
+            <summary>
+            Group Value related to currency.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.GroupSeperator">
+            <summary>
+            Group Seperator value related to currency.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.DecimalSeperator">
+            <summary>
+            Decimal Seperator related to currency.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.DecimalPrecision">
+            <summary>
+            Decimal Precision related to currency.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.CanUpdateCurrency">
+            <summary>
+            Can Update Currency flag for the currency.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.LogoThumbnailId">
+            <summary>
+            Tenant Logo ThumbnailId.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.Language">
+            <summary>
+            Tenant language for the platform.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.TimeZone">
+            <summary>
+            Tenant Time Zone  for the platform.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.DateTimeFormat">
+            <summary>
+            Tenant DateTime format for the platform.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.PoweredBy">
+            <summary>
+            Powered By for the platform.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Platform.Copyright">
+            <summary>
+            Tenant Copyright for the platform.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.Portal">
+            <summary>
+            Portal table represting all the portal applications.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Portal.Name">
+            <summary>
+            The name  of application.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Portal.UserType">
+            <summary>
+            Type of the user.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Portal.PortalKey">
+            <summary>
+            key of the portal application.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Portal.TenantId">
+            <summary>
+            Tenant identifier.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.PortalAppLinking">
+            <summary>
+            This table represent linking of portal application with app.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PortalAppLinking.AppId">
+            <summary>
+            The Id of Application
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PortalAppLinking.PortalId">
+            <summary>
+            The Id of Portal Application
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PortalAppLinking.TenantId">
+            <summary>
+            Tenant identifier.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PubBusinessSubsPlan.PlanName">
+            <summary>
+            The name  of Plan.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PubBusinessSubsPlan.PriceInDollar">
+            <summary>
+            The PriceInDollar.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.PubBusinessSubsPlanAppService">
+            <summary>
+            This class contains all application services a publisher owned for their business.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.Publisher">
+            <summary>
+            Publisher table represting all the Publisher.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Entity.Publisher.EntityName">
+            <summary>
+            The entity name publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.Name">
+            <summary>
+            The name  of the Publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.IdentityNumber">
+            <summary>
+            Identity number for ui of the publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.Active">
+            <summary>
+            Publisher active status identifier.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.InactiveComment">
+            <summary>
+            Publisher Inactive Comment when publisher is inactive.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.ContactPersonName">
+            <summary>
+            Contact PersonName of the publisher admin user.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.ContactPersonDesignation">
+            <summary>
+            Contact Person Designation of the publisher admin user.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.ContactPersonEmail">
+            <summary>
+            Contact Person Email of the publisher admin user.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.ContactPersonPhone">
+            <summary>
+            Contact Person Phone of the publisher admin user.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.Website">
+            <summary>
+            Website of the publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.CurrencyCode">
+            <summary>
+            Currency Code related to currency of publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.GroupValue">
+            <summary>
+            Group Value related to currency of publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.GroupSeperator">
+            <summary>
+            Group seperator related to currency of publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.DecimalSeperator">
+            <summary>
+            Decimal Seperator related to currency of publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.DecimalPrecision">
+            <summary>
+            Decimal Precision related to currency of publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.CanUpdateCurrency">
+            <summary>
+            Can Update Currency related to currency of publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.LogoThumbnailId">
+            <summary>
+            Tenant LogoThumbnailId  
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.Language">
+            <summary>
+            Tenant language of publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.TimeZone">
+            <summary>
+            Tenant Time Zone of the publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.DateTimeFormat">
+            <summary>
+            Tenant DateTime format of the publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.PoweredBy">
+            <summary>
+            Powered By of the publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.Copyright">
+            <summary>
+            Tenant Copyright of the publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.CustomizedLogoThumbnail">
+            <summary>
+            Publisher Customerzied Logo Thumbnail Flag.
+            </summary>       
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.ApplyPoweredBy">
+            <summary>
+            Publisher Apply Powered By Flag.
+            </summary>        
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.CanUpdateCopyright">
+            <summary>
+            CanUpdateCopyRight Flag Indicate The Right Of Publisher To change CopyRight Tag.
+            </summary>        
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Publisher.CustomizedCopyright">
+            <summary>
+            CustomizedCopyright flag is use to check Copyright is shown to its own publisher Copyright or platform copyright
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Entity.Publisher.Validate(System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData}@)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.AppPortal.Entity.Publisher.BrokenRules(ewApps.AppPortal.Entity.Publisher)">
+            <inheritdoc />
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAddress.PublisherId">
+            <summary>
+            The Id  of ParentEntity.
+            </summary>
+            
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAddress.Label">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAddress.AddressStreet1">
+            <summary>
+            AddressStreet1.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAddress.AddressStreet2">
+            <summary>
+            AddressStreet2.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAddress.AddressStreet3">
+            <summary>
+            AddressStreet3.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAddress.City">
+            <summary>
+            City.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAddress.Country">
+            <summary>
+            Country.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAddress.State">
+            <summary>
+            State.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAddress.ZipCode">
+            <summary>
+            ZipCode.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAddress.FaxNumber">
+            <summary>
+            FaxNumber.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAddress.Phone">
+            <summary>
+            Phone.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAddress.AddressType">
+            <summary>
+            AddressType.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.PublisherAppSetting">
+            <summary>
+            Entity responsible for storing data related to the application for the publisher and the lower entity of the publisher.(Publisher refered by the teanntId)
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAppSetting.Name">
+            <summary>
+            Name of the application for the publisher and its lower level entity. 
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAppSetting.ThumbnailId">
+            <summary>
+            Thumbnail id for the publisher (Direct we have to refer this).
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAppSetting.CopyrightsText">
+            <summary>
+            Tenant Copyright of the application for the publisher.;
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAppSetting.AppId">
+            <summary>
+            The Id of Application from master data.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAppSetting.Customized">
+            <summary>
+            flag fro the powered by text customization.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAppSetting.Active">
+            <summary>
+            The PublisherSetting status .
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAppSetting.ThemeId">
+            <summary>
+            The Id of Theme for the particular application of the publisher for its lower entity.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.PublisherAppSetting.InactiveComment">
+            <summary>
+            Application Inactive Comment for the publisher for its lower entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Entity.PublisherAppSetting.Validate(System.Collections.Generic.IList{ewApps.Core.ExceptionService.EwpErrorData}@)">
+            <inheritdoc />
+        </member>
+        <member name="M:ewApps.AppPortal.Entity.PublisherAppSetting.BrokenRules(ewApps.AppPortal.Entity.PublisherAppSetting)">
+            <inheritdoc />
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.Role">
+            <summary>
+            A user role is a customizable set of rights and privileges. 
+            Two roles are pre-defined in the system and cannot be edited or deleted 
+            i.e. Administrator and System Administrator. Role table contains different 
+            user role (rights and privileges) for users.
+            System role will be identified by system field in role table.
+            </summary>
+            <remarks>
+            Following fields are mandatory:
+            <list type="bullet">  
+            <item>RoleId (System generated)</item>
+            <item>Name</item>
+            <item>Active</item> 
+            <item>CreatedBy</item> 
+            <item>CreatedDate</item> 
+            <item>ModifiedBy</item> 
+            <item>ModifiedDate</item> 
+            <item>TenantId</item>  
+            <item>ApplicationId</item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Role.RoleName">
+            <summary>
+            Name of the role admin for admin else ID which is a guid.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Role.RoleKey">
+            <summary>
+            Admin for admin else same as name.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Role.PermissionBitMask">
+            <summary>
+            PermissionBitMask is integer value set of all the permission of the users.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Role.AppId">
+            <summary>
+            Application identifier of the user.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Role.Active">
+            <summary>
+            Active inactive status of the role.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Role.UserType">
+            <summary>
+            Defines the portal to which this role belongs.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Role.TenantId">
+            <summary>
+            Tenant identifier of the role this column is not required in this table beacause role is a master table does not belong to a particular tenant.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.RoleLinking">
+            <summary>
+            It contains linking between User and Role.
+            </summary>
+            <remarks>
+            Following fields are mandatory:
+            <list type="bullet"> l
+            <item>RoleLinkingId [System Generated]</item>  
+            <item>UserId</item>    
+            <item>RolePermissionId</item>   
+            </list>
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.RoleLinking.TenantUserId">
+            <summary>
+            App user for which this role linking belongs to .
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.RoleLinking.RoleId">
+            <summary>
+            Role identifier of the user.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.RoleLinking.AppId">
+            <summary>
+            App identifier of the user.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.LevelTransitionHistory">
+            <summary>
+            LevelTransitionHistory table represting all the Level Transition History.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Entity.LevelTransitionHistory.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.LevelTransitionHistory.AppKey">
+            <summary>
+            AppKey
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.LevelTransitionHistory.SourceLevel">
+            <summary>
+            SourceLevel
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.LevelTransitionHistory.TargetLevel">
+            <summary>
+            TargetLevel
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.LevelTransitionHistory.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.LevelTransitionHistory.SupportId">
+            <summary>
+            SupportId
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.SupportComment">
+            <summary>
+            This class represents a record of SupportComment table.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Entity.SupportComment.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportComment.CommentText">
+            <summary>
+            Gets or sets the comment text.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportComment.CreatorLevel">
+            <summary>
+            Gets or sets the creator support level.
+            </summary>
+            <remarks>It should be any value of <see cref="!:SupportLevelEnum"/>.</remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportComment.SupportId">
+            <summary>
+            Parent support ticket reference id.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportComment.CreatorId">
+            <summary>
+            Support ticket creator id.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.SupportGroup">
+            <summary>
+            SupportGroup table represting all the Support Group.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Entity.SupportGroup.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportGroup.Level">
+            <summary>
+            Level
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ewApps.AppPortal.Entity.SupportGroup.DisplayName" -->
+        <member name="P:ewApps.AppPortal.Entity.SupportGroup.Active">
+            <summary>
+            Active
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportGroup.AppKey">
+            <summary>
+            AppKey
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.SupportTicket">
+            <summary>
+            This class represents a Record of SupportTicket table.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Entity.SupportTicket.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportTicket.IdentityNumber">
+            <summary>
+            A unique support ticket number.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportTicket.Title">
+            <summary>
+            Support ticket title.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportTicket.Description">
+            <summary>
+            Support ticket description.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportTicket.Priority">
+            <summary>
+            Support ticket priority.
+            </summary>
+            <remarks>It should be any value of <see cref="!:SupportPriorityEnum"/>.</remarks>
+        </member>
+        <member name="F:ewApps.AppPortal.Entity.SupportTicket.StatusPropertyName">
+            <summary>
+            A constant have Status property name.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportTicket.Status">
+            <summary>
+            Support ticket current status
+            </summary>
+            <remarks>It should be any value of <see cref="!:SupportStatusTypeEnum"/>.</remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportTicket.GenerationLevel">
+            <summary>
+            Support ticket generation level.
+            </summary>
+            <remarks>It should be any value of <see cref="!:SupportLevelEnum"/>.</remarks>
+        </member>
+        <member name="F:ewApps.AppPortal.Entity.SupportTicket.CurrentLevelPropertyName">
+            <summary>
+            A constant have current level property name.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportTicket.CurrentLevel">
+            <summary>
+            Support ticket current level.
+            </summary>
+            <remarks>It should be any value of <see cref="!:SupportLevelEnum"/>.</remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportTicket.AppKey">
+            <summary>
+            Application key of support ticket.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportTicket.CustomerId">
+            <summary>
+            Parent customer id of support ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Entity.SupportTicket.CreatorIdPropertyName">
+            <summary>
+            A constant have creator id property name.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.SupportTicket.CreatorId">
+            <summary>
+            Support ticket creator id.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.TenantAppLinking">
+            <summary>
+            Publisher table represting all the Publisher.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Entity.TenantAppLinking.EntityName">
+            <summary>
+            The entity name publisher.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Entity.TenantUserAppPreference">
+            <summary>
+            AppUserPreference table represting all the applications and tenant wise notification preferences data.
+            </summary>
+        </member>
+        <member name="F:ewApps.AppPortal.Entity.TenantUserAppPreference.EntityName">
+            <summary>
+            The entity name.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.TenantUserAppPreference.TenantUserId">
+            <summary>
+            TenantUser Identifier.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.TenantUserAppPreference.AppId">
+            <summary>
+            App to which this linking belowngs to.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.TenantUserAppPreference.EmailPreference">
+            <summary>
+            Email preference bit mask of the user for the application in this tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.TenantUserAppPreference.ASPreference">
+            <summary>
+            AS preference bit mask of the user for the application in this tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.TenantUserAppPreference.SMSPreference">
+            <summary>
+            SMS preference bit mask of the user for the application in this tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.TenantUserAppPreference.ID">
+            <summary>
+            ID identifier.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.TenantUserAppPreference.CreatedBy">
+            <summary>
+            CreatedBy identifier.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.TenantUserAppPreference.CreatedOn">
+            <summary>
+            CreatedOn identifier.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.TenantUserAppPreference.UpdatedBy">
+            <summary>
+            UpdatedBy identifier.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.TenantUserAppPreference.UpdatedOn">
+            <summary>
+            UpdatedOn identifier.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.TenantUserAppPreference.Deleted">
+            <summary>
+            Gets or sets a value indicating whether this is deleted.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.TenantUserAppPreference.TenantId">
+            <summary>
+            Gets or sets the tenant identifier.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Vendor.BusinessPartnerTenantId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Vendor.CanUpdateCurrency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Vendor.Configured">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Vendor.Currency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Vendor.IdentityNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Vendor.DateTimeFormat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Vendor.DecimalPrecision">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Vendor.DecimalSeperator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Vendor.GroupSeperator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Vendor.GroupValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Vendor.Language">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Entity.Vendor.TimeZone">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

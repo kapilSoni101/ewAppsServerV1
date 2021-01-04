@@ -1,0 +1,424 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.StorageService</name>
+    </assembly>
+    <members>
+        <member name="M:ewApps.Core.StorageService.IStorageService.DeleteFile(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Interface for StorageService
+            </summary>
+            <see cref="!:StorageService.cs"/>
+        </member>
+        <member name="F:ewApps.Core.StorageService.StorageOptions.Filename">
+            <summary>
+            Base class for storage options used in storing files when uploading.
+            Each provider will have its derived class.
+            Note that some options set here are not binding. They may be ignored by the provider. 
+            </summary>
+            
+        </member>
+        <member name="F:ewApps.Core.StorageService.StorageOptions.CustomData">
+            <summary>
+            To add custom properties for StorageOption.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.StorageService.StorageOptions.GetStorageFileDirectoryPath(System.Guid)">
+            <summary>
+            Return application storage path with the tenantid and storageid.
+            For example: documentRootPath/TenantId/StorageId
+            </summary>
+            <param name="storageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.StorageService.GetFile(System.Guid,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Download document
+            </summary>
+            <param name="fileHandle"></param>
+            <param name="token"></param>
+            <returns>FileStream if successful</returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.StorageService.UploadFile(System.IO.Stream,ewApps.Core.StorageService.UploadOptions,ewApps.Core.StorageService.StorageOptions,System.Threading.CancellationToken)">
+            <summary>
+            Upload document
+            </summary>
+            <param name="fileStream"></param>
+            <param name="uploadOptions"></param>
+            <param name="storagOptions"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.StorageService.UpdateFile(System.Guid,System.IO.Stream,ewApps.Core.StorageService.UploadOptions,ewApps.Core.StorageService.StorageOptions,System.Threading.CancellationToken)">
+            <summary>
+            Overwrite a stored file. This is essentially a two step process:
+            (1) Delete the current stored file
+            (2) Upload the updated file
+            This will generate a NEW file handle
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.StorageService.StorageService.DeleteFile(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Delete file
+            </summary>
+            <param name="fileHandle"></param>
+            <param name="token"></param>
+            <returns>True if successful</returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.StorageService.GenerateThumbnail(System.Guid,ewApps.Core.StorageService.ThumbnailParameters,ewApps.Core.StorageService.StorageOptions,System.Threading.CancellationToken)">
+            <summary>
+            Generate a thumbnail for an uploaded file.
+            The thumbnail may be generated only for certail mime types.
+            Like, Image files, Video files.
+            For other files, it will return null.
+            </summary>
+            <param name="fileHandle"></param>
+            <param name="thumbnailParams"></param>
+            <param name="storageOptions"></param>
+            <param name="token"></param>
+            <returns>Thumbnail stream</returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.StorageService.QueryFileMetadata(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets stored file's metadata
+            </summary>
+            <param name="filehandle"></param>
+            <returns>All metadata files in the form of key/value pairs</returns>
+        </member>
+        <member name="F:ewApps.Core.StorageService.StorageServiceCapabilities._canUploadFileStream">
+            <summary>
+            This class maintains a list of capabilitie of a storage provider.
+            Note that a field may be initialized by only a class in this assembly.
+            </summary>
+            
+        </member>
+        <member name="F:ewApps.Core.StorageService.ThumbnailParameters.Width">
+            <summary>
+            This class is base class for Thumbnail generation parameters
+            Each provider will have its derived class.
+            Note that the options set here are not binding. They may be ignored by the provider. 
+            </summary>
+            
+            <summary>
+            If 0, auto calculate maintaing the original file's aspect ratio.
+            If both 0, return the original size,
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.StorageService.UploadOptions.Timeout">
+            <summary>
+            Base class options used in uploading
+            Each provider will have its derived class.
+            Note that the options set here are not binding. They may be ignored by the provider. 
+            </summary>
+            
+            <summary>
+            Timeout for file uploading. 0 means no timeout
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.StorageService.UploadOptions.FullBlockUpload">
+            <summary>
+            Upload file block is complete file.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.StorageService.UploadOptions.BlockSize">
+            <summary>
+            Block size of file
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.StorageService.UploadOptions.TotalBlockCount">
+            <summary>
+            Total block of a file to received.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.StorageService.UploadOptions.BlockIndex">
+            <summary>
+            Block Index of a  of a file.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.StorageService.UploadOptions.UploadId">
+            <summary>
+            Its unqiueid for a file. All block(chunks) of a file will pass UploadId with each block when uploading a file.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.StorageService.UploadOptions.CustomData">
+            <summary>
+            To add custom properties for UploadOption.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.UploadFile(System.IO.Stream,ewApps.Core.StorageService.UploadOptions,ewApps.Core.StorageService.StorageOptions,System.Threading.CancellationToken)">
+            <summary>
+            Generate the document path and Save the document in EwApps Storage.    
+            </summary>
+            <param name="blockStream"></param>
+            <param name="uploadOptions"></param>
+            <param name="storagOptions"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.UpdateFile(System.Guid,System.IO.Stream,ewApps.Core.StorageService.UploadOptions,ewApps.Core.StorageService.StorageOptions,System.Threading.CancellationToken)">
+            <summary>
+            Generate the document path and Save the document in EwApps Storage.    
+            </summary>
+            <param name="blockStream"></param>
+            <param name="uploadOptions"></param>
+            <param name="storagOptions"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.DeleteFile(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Delete the stored document meta data.
+            </summary>
+            <param name="storageFileId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.DeleteFile(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Delete storage row and document with specific version number.
+            If version number is negative then, it will delete all documents.
+            </summary>
+            <param name="documentId"></param>
+            <param name="versionNumber"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.DeleteDocumentFileAndThumbnail(System.String,System.String)">
+            <summary>
+            Deleteing the document file from physical location.
+            </summary>
+            <param name="documentId"></param>
+            <param name="tenantId"></param>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.GetThumbnailBase64(System.String,System.String,System.Int32@,System.Int32@,System.Int32,System.Int32)">
+            <summary>
+            Gets the thumbnail base64.
+            </summary>
+            <param name="filePath">The base64 string.</param>
+            <param name="fileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.GenerateThumbnail(System.Guid,ewApps.Core.StorageService.ThumbnailParameters,ewApps.Core.StorageService.StorageOptions,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="fileHandle"></param>
+            <param name="thumbnailParams"></param>
+            <param name="storageOptions"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.QueryFileMetadata(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets stored file's metadata
+            </summary>
+            <param name="storageFileId"></param>
+            <returns>All metadata files in the form of key/value pairs</returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.StoreFile(System.IO.Stream,ewApps.Core.StorageService.UploadOptions,ewApps.Core.StorageService.StorageOptions,System.Threading.CancellationToken)">
+            <summary>
+            Generate the document path and Save the document in EwApps Storage.    
+            </summary>
+            <param name="fileStream"></param>
+            <param name="uploadOptions"></param>
+            <param name="storagOptions"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.GenerateFileFullPath(ewApps.Core.StorageService.StorageOptions)">
+            <summary>
+            Generate the filepath and return it.
+            </summary>
+            <param name="storageOption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.SaveFileIntoPhysicalLocation(System.IO.Stream,System.String)">
+            <summary>
+            Save the document into a passed file path.
+            </summary>
+            <param name="fileStream"></param>
+            <param name="fileFullPath"></param>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.UpdateFileToStore(System.Guid,System.IO.Stream,ewApps.Core.StorageService.UploadOptions,ewApps.Core.StorageService.StorageOptions,System.Threading.CancellationToken)">
+            <summary>
+            Generate the document path and Save the document in EwApps Storage.    
+            </summary>
+            <param name="blockStream"></param>
+            <param name="uploadOptions"></param>
+            <param name="storagOptions"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.EWAppsStorageService.SaveThumbnailToPhysicalLocation(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Save to thumbnail into physical location.
+            </summary>
+            <param name="thumbnailId">The thumbnail identifier.</param>
+            <param name="base64String">The base64 string.</param>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ewApps.Core.StorageService.EWAppsStorageService.GetStorageFilePath(System.Guid,System.Guid,System.Int32)" -->
+        <member name="T:ewApps.Core.StorageService.FileStorageStatus">
+            <summary>
+            Enums to define the current file storage status.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.StorageService.FileUpload.UploadFile(System.IO.Stream,ewApps.Core.StorageService.UploadOptions,ewApps.Core.StorageService.StorageOptions)">
+            <summary>
+            Upload the document into a physical location and return the StorageResponseModel.
+            </summary>
+            <param name="blockStream"></param>
+            <param name="stOption"></param>
+            <param name="upOption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.FileUpload.UploadBlockFile(System.IO.Stream,ewApps.Core.StorageService.UploadOptions,ewApps.Core.StorageService.StorageOptions,ewApps.Core.StorageService.BlockCacheType)">
+            <summary>
+            Store the block(chunk) of a file in a temp location. then call Merge method to Merge all block(chunk) of a file.
+            </summary>
+            <param name="upOption"></param>
+            <param name="stOption"></param>  
+        </member>
+        <member name="T:ewApps.Core.StorageService.FileUpload.FileSaveInfo">
+            <summary>
+            Using for returning temp file info.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.StorageService.FileUpload.MergeFile(System.String[],System.String,ewApps.Core.StorageService.UploadOptions,ewApps.Core.StorageService.StorageOptions)">
+            <summary>    
+            Objective = Loop through files in folder, look for all matching parts of file. If found, merge and return Response model.
+            </summary>
+            <param name="blocFilekPathList"></param>
+            <param name="tempChunkDirecotryName">temp directory name where all block file resides.</param>
+            <param name="upOption"></param>
+            <param name="stOption"></param>  
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.FileUpload.SaveSingleBlockFile(System.IO.Stream,ewApps.Core.StorageService.UploadOptions,ewApps.Core.StorageService.StorageOptions)">
+            <summary>
+            Save the document into the permenant location and return the Storage information.
+            </summary>
+            <param name="fileStream"></param>
+            <param name="stOption"></param>
+            <param name="upOption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.FileUpload.AddFileStreamBlockIntoMemory(System.IO.Stream,ewApps.Core.StorageService.UploadOptions,ewApps.Core.StorageService.StorageOptions)">
+            <summary>
+            Adding file block in memory.
+            </summary>
+            <param name="blockStream"></param>
+            <param name="uploadId">Unique id for all file blocks, It will be passed from client.</param>
+            <param name="fileName"></param>
+            <param name="FileBlockIndex"></param>
+        </member>
+        <member name="M:ewApps.Core.StorageService.FileUpload.IsMemoryStreamLastBlock(System.Collections.Generic.Dictionary{System.String,System.IO.Stream},ewApps.Core.StorageService.UploadOptions)">
+            <summary>
+             If we have received all the file block(chunks) then return true.
+            </summary>
+            <param name="blockFileDict"></param>
+            <param name="upOption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.FileUpload.MergeInMemoryFileStream(ewApps.Core.StorageService.UploadOptions,ewApps.Core.StorageService.StorageOptions,System.Collections.Generic.Dictionary{System.String,System.IO.Stream})">
+            <summary>    
+            Objective = Loop through all stream reside in in-memory, look for all matching parts of file. If found, merge and return Response model.
+            </summary>
+            <param name="FileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.FileUpload.CompareChecksums(System.IO.Stream,ewApps.Core.StorageService.UploadOptions)">
+            <summary>
+            return true if file is valid.
+            </summary>
+            <param name="blockStream"></param>
+            <param name="upOption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.FileUpload.GenerateResponseModel(ewApps.Core.StorageService.FileStorageStatus,System.Guid,System.String,System.String)">
+            <summary>
+            Generate the response model and return it.
+            </summary>
+            <param name="fileUploadStatus"></param>
+            <param name="storageId"></param>
+            <param name="filePath"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.FileUpload.SaveFile(System.IO.Stream,System.String)">
+            <summary>
+            Save the file into the the fileFullPath location.
+            </summary>
+            <param name="fileStream"></param>
+            <param name="fileFullPath"></param>
+        </member>
+        <member name="T:ewApps.Core.StorageService.FileUploadResponseModel">
+            <summary>
+            Class contains the rsponse model properties after uploading the file into server.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.StorageService.FileUploadResponseModel.UploadFileName">
+            <summary>
+            Uploaded filename.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.StorageService.FileUploadResponseModel.StorageId">
+            <summary>
+            File save into physical location with a storageid, Its unique id for each stored files.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.StorageService.FileUploadResponseModel.StorageFilePath">
+            <summary>
+            Saved physical location of stored file.
+            </summary>
+        </member>
+        <member name="F:ewApps.Core.StorageService.FileUploadResponseModel.UploadStorageStatus">
+            <summary>
+            Tell use whether file is stored or Blocks uploading are InProcess.
+            For example: In case of chunk uploading, After uploading each block, Status will be InProcess untill all blocks are uploaded.
+            Once all blocks uploaded and merge into a file and save into actual physical location then status will be Uploaded.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.StorageService.MergeFileManager">
+            <summary>
+            It is used to add the file in merge list.
+            Also remove the filter list once all are merge.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.StorageService.MergeFileManager.AddFile(System.String)">
+            <summary>
+            Add file in Mergelist.
+            </summary>
+            <param name="BaseFileName">Name of the file to add in Merge file, Every file has unique name.</param>
+        </member>
+        <member name="M:ewApps.Core.StorageService.MergeFileManager.InUse(System.String)">
+            <summary>
+            Method check whethere file with a name already exist.
+            </summary>
+            <param name="BaseFileName">name of the file to check where it exist in Merge file.</param>
+            <returns>return true if file exist in Mergelist.</returns>
+        </member>
+        <member name="M:ewApps.Core.StorageService.MergeFileManager.RemoveFile(System.String)">
+            <summary>
+            Remove the file from the merge list.
+            </summary>
+            <param name="BaseFileName">Remove the file with the name.</param>
+            <returns>return true if file exist in Mergelist.</returns>
+        </member>
+        <member name="T:ewApps.Core.StorageService.SortedFile">
+            <summary>
+            Sorter file with the name and order of the file it exist in list.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.StorageService.SortedFile.FileOrder">
+            <summary>
+            Sort order of the file.
+            </summary>
+        </member>
+        <member name="P:ewApps.Core.StorageService.SortedFile.FileName">
+            <summary>
+             Name of the file.
+            </summary>
+        </member>
+    </members>
+</doc>

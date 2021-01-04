@@ -1,0 +1,1023 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.AppPortal.Data</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.AppPortal.Data.AppPortalDbContext">
+            <summary>  
+            This class contains a session of core database and can be used to query and 
+            save instances of core entities. It is a combination of the Unit Of Work and Repository patterns.  
+            </summary>
+            <summary>  
+            This class contains a session of core database and can be used to query and 
+            save instances of core entities. It is a combination of the Unit Of Work and Repository patterns.  
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.AppPortalDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.AppPortal.Data.AppPortalDbContext},System.String)">
+            <summary>
+            Default constructor to initialize member variables (if any).
+            </summary>
+            <param name="options">The DbContextOptions instance carries configuration information such as: 
+            (a) The database provider to use, UseSqlServer or UseSqlite
+            (b) Connection string or identifier of the database instance    
+            </param>
+            <param name="connString">The Core database connection string.</param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.AppPortalDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ewApps.AppPortal.Data.AppPortalDbContext},Microsoft.Extensions.Options.IOptions{ewApps.AppPortal.Common.AppPortalAppSettings},ewApps.Core.DbConProvider.IConnectionManager)">
+            <summary>
+            Constructor to initialize member variables (if any).
+            </summary>
+            <param name="options">The DbContextOptions instance carries configuration information such as: 
+            (a) The database provider to use, UseSqlServer or UseSqlite
+            (b) Connection string or identifier of the database instance    
+            </param>
+            <param name="appSetting">Instance of Appsettings object that contains core database 
+            connection string.
+            </param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.AppPortalDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />  
+        </member>
+        <member name="M:ewApps.AppPortal.Data.AppPortalDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <inheritdoc />  
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.Support">
+            <summary>
+            DbSet&lt;Support&gt; can be used to query and save instances of Support entity. 
+            Linq queries can written using DbSet&lt;Support&gt; that will be translated to sql query and executed against database Support table. 
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.SupportGroup">
+            <summary>
+            DbSet&lt;SupportGroup&gt; can be used to query and save instances of SupportGroup entity. 
+            Linq queries can written using DbSet&lt;SupportGroup&gt; that will be translated to sql query and executed against database SupportGroup table. 
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.SupportTicket">
+            <summary>
+            DbSet&lt;SupportTicket&gt; can be used to query and save instances of SupportTicket entity. 
+            Linq queries can written using DbSet&lt;SupportTicket&gt; that will be translated to sql query and executed against database SupportTicket table. 
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.SupportComment">
+            <summary>
+            DbSet&lt;SupportTicket&gt; can be used to query and save instances of SupportTicket entity. 
+            Linq queries can written using DbSet&lt;SupportTicket&gt; that will be translated to sql query and executed against database SupportTicket table. 
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.LevelTransitionHistory">
+            <summary>
+            DbSet&lt;LevelTransitionHistory&gt; can be used to query and save instances of LevelTransitionHistory entity. 
+            Linq queries can written using DbSet&lt;LevelTransitionHistory&gt; that will be translated to sql query and executed against database LevelTransitionHistory table. 
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.BusinessAddress">
+            <summary>
+            DbSet&lt;BusinessAddress&gt; can be used to query and save instances of BusinessAddress entity. 
+            Linq queries can written using DbSet&lt;BusinessAddress&gt; that will be translated to sql query and executed against database BusinessAddress table.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.Customer">
+            <summary>
+            DbSet&lt;Customer&gt; can be used to query and save instances of Customer entity. 
+            Linq queries can written using DbSet&lt;Customer&gt; that will be translated to sql query and executed against database Customer table.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.Vendor">
+            <summary>
+            DbSet&lt;Vendor&gt; can be used to query and save instances of Vendor entity. 
+            Linq queries can written using DbSet&lt;Vendor&gt; that will be translated to sql query and executed against database Vendor table.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.Portal">
+            <summary>
+            DbSet&lt;Portal&gt; can be used to query and save instances of Portal entity. 
+            Linq queries can written using DbSet&lt;Portal&gt; that will be translated to sql query and executed against database Portal table.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.PortalAppLinking">
+            <summary>
+            DbSet&lt;PortalAppLinking&gt; can be used to query and save instances of PortalAppLinking entity. 
+            Linq queries can written using DbSet&lt;PortalAppLinking&gt; that will be translated to sql query and executed against database PortalAppLinking table.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.Publisher">
+            <summary>
+            DbSet&lt;Publisher&gt; can be used to query and save instances of PortalAppLinking entity. 
+            Linq queries can written using DbSet&lt;Publisher&gt; that will be translated to sql query and executed against database Publisher table.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.PublisherAddress">
+            <summary>
+            DbSet&lt;PublisherAddress&gt; can be used to query and save instances of PublisherAddress entity. 
+            Linq queries can written using DbSet&lt;PublisherAddress&gt; that will be translated to sql query and executed against database PublisherAddress table.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.Role">
+            <summary>
+            DbSet&lt;Role&gt; can be used to query and save instances of Role entity. 
+            Linq queries can written using DbSet&lt;role &gt; that will be translated to sql query and executed against database role table.
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.RoleLinking">
+            DbSet&lt;role linking&gt; can be used to query and save instances of role linking entity. 
+            Linq queries can written using DbSet&lt;RL&gt; that will be translated to sql query and executed against database role linking table. 
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.PubBusinessSubsPlanAppService">
+            DbSet&lt;role linking&gt; can be used to query and save instances of PublisherAppService entity. 
+            Linq queries can written using DbSet&lt;RL&gt; that will be translated to sql query and executed against database PublisherAppService table.    
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.PubBusinessSubsPlan">
+            DbSet&lt;PubBusinessSubsPlan&gt; can be used to query and save instances of PubBusinessSubsPlan entity. 
+            Linq queries can written using DbSet&lt;RL&gt; that will be translated to sql query and executed against database PubBusinessSubsPlan table.    
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.CustomerAccountDetail">
+            DbSet&lt;CustomerAccountDetail&gt; can be used to query and save instances of CustomerAccountDetail entity. 
+            Linq queries can written using DbSet&lt;RL&gt; that will be translated to sql query and executed against database CustomerAccountDetail table.    
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.Favorite">
+            <summary>
+            DbSet&lt;Favorite&gt; can be used to query and save instances of Favorite entity. 
+            Linq queries can written using DbSet&lt;Favorite&gt; that will be translated to sql query and executed against database Favorite table. 
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.ASNotification">
+            <summary>
+            DbSet&lt;ASNotification&gt; can be used to query and save instances of Favorite entity. 
+            Linq queries can written using DbSet&lt;ASNotification&gt; that will be translated to sql query and executed against database ASNotification table. 
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.ViewSettings">
+            <summary>
+            DbSet&lt;ViewSettings&gt; can be used to query and save instances of ViewSettings entity. 
+            Linq queries can written using DbSet&lt;ViewSettings&gt; that will be translated to sql query and executed against database ViewSettings table. 
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.SupportMyTicketDTOQuery">
+            <summary>
+            This is use to get SupportMyTicketDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of SupportMyTicketDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.SupportTicketDTOQuery">
+            <summary>
+            This is use to get SupportTicketDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of SupportTicketDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.SupportTicketDetailDTOQuery">
+            <summary>
+            This is use to get SupportTicketDetailDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of SupportTicketDetailDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.SupportCommentDTOQuery">
+            <summary>
+            This is use to get SupportCommentDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of SupportCommentDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.AppDetailDTOQuery">
+            <summary>
+            This is use to get AppDetailDTO view data. Any linq queries against Microsoft.EntityFrameworkCore.DbQuery`1 
+            is translated into database query.
+            </summary>
+            <remarks>
+            All database queries to get Microsoft.EntityFrameworkCore.DbQuery`1 should contains all the columns corresponding 
+            to properties of AppDetailDTO.
+            </remarks>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.BusBASyncTimeLogDTOQuery">
+            <summary>
+            Get Business Sync Time Log
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.FavoriteAddDTOQuery">
+            <summary>
+            Add Favorite item
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.FavoriteViewDTOQuery">
+            <summary>
+            Favorite menu view model
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.FavoriteDTOQuery">
+            <summary>
+            Check Favorite menu is System default or not
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.ViewSettingDTOQuery">
+            <summary>
+            View Setting DTo 
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.ASNotificationDTOQuery">
+            <summary>
+            AS Notification view model
+            </summary>
+        </member>
+        <member name="P:ewApps.AppPortal.Data.AppPortalDbContext.PreferenceViewDTOQuery">
+            <summary>
+            AS preferences view model
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.MasterData">
+            <summary>
+            This class is responsible to generate master data at the time of database creation
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.MasterData.Init(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Startup method to generate master data. It is called from DB Context on database creation.
+            </summary>
+            <param name="builder">The model builder</param>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.IBusinessAddressRepository">
+            <summary>
+            Contains supportive method for Address entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IBusinessAddressRepository.GetAddressListByParentEntityIdAndAddressTypeAsync(System.Guid,System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get address detail list by parentEntityid and addressType.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="businessId"></param>
+            <param name="addressType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IBusinessAddressRepository.GetAddressListEntityByParentEntityIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get address detail information by parentEntityid.
+            </summary>
+            <param name="parentEntityId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IBusinessAddressRepository.GetAddressEntityListByParentEntityIdAndAddressTypeAsync(System.Guid,System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get address detail list by parent and entityid.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="parentEntityId"></param>
+            <param name="addressType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.IBusinessRepository">
+            <summary>
+            Business repositiory connecto with database are provide all database operation like add/update/delete/get.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IBusinessRepository.GetBusinessByTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get business by tenantid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IBusinessRepository.GetBusinessTenantDetailModelDTOAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get tenant model by tenant id.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ICustomerRepository.GetCustomerByBusinesPartnerIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer by business partner id.
+            </summary>
+            <param name="busPartnerId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.IFavoriteRepository">
+            <summary>
+            Favorite 
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IFavoriteRepository.GetFavoriteMenuList(System.Guid,System.String,System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get favorite menu item list
+            </summary>
+            <param name="appid"></param>
+            <param name="portalkey"></param>
+            <param name="TenantId"></param>
+            <param name="TenantUserId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.IPortalAppLinkingRepository">
+            <summary>
+            This interface defines repository methods to get <see cref="T:ewApps.AppPortal.Entity.PortalAppLinking"/> entity related data.
+            </summary>
+            <seealso cref="T:ewApps.Core.BaseService.IBaseRepository`1" />
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:ewApps.AppPortal.Data.IPortalRepository" -->
+        <member name="T:ewApps.AppPortal.Data.IRoleLinkingRepository">
+            <summary>
+            Manages the role linking related CRUD methods
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.IRoleRepository">
+            <summary>
+            This interface responsible for exposing all the methods that are intrecting with the DB for retriving the data related to Role entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IRoleRepository.GetEntityByAppUserAndAppId(System.Guid,System.Guid)">
+            <summary>
+            Gets the role entity by appid and userid.
+            </summary>
+            <param name="appId">AppId</param>
+            <param name="tenantUserId">tenant user id</param>
+            <returns>Role entity.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IViewSettingsRepository.GetViewSettingsListAsync(System.String,System.String,System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get View Settings List
+            </summary>
+            <param name="id"></param>
+            <param name="appkey"></param>
+            <param name="tenantId"></param>
+            <param name="tenantUserId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.IPlatformRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IPlatformRepository.GetPlatformBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get platform branding details
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.IPubBusinessSubsPlanAppServiceRepository">
+            <summary>
+            Class contains tenant/app service support methods.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IPubBusinessSubsPlanAppServiceRepository.GetListPubBusinessSubsPlanAppService(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the list.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <param name="tenantId">The tenant identifier.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.IPubBusinessSubsPlanRepository">
+            <summary>
+            This class implements standard database logic and operations for PubBusinessSubsPlan entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IPubBusinessSubsPlanRepository.GetByPublisherTenantAndAppAndPlanIdAsync(System.Guid,System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the by publisher tenant and application and plan identifier.
+            </summary>
+            <param name="publisherTenantId">The publisher tenant identifier.</param>
+            <param name="appId">The application identifier.</param>
+            <param name="subscriptionPlanId">The subscription plan identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns <see cref="T:ewApps.AppPortal.Entity.PubBusinessSubsPlan"/> that matches given publisher tenant, app id and subscription plan id.</returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.IPublisherAddressRepository">
+            <summary>
+            Contains supportive method for Address entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IPublisherAddressRepository.GetAddressListByPublisherIdAndAddressTypeAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get address detail list by parentEntityid and addressType.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="publisherId"></param>
+            <param name="addressType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IPublisherAddressRepository.GetAddressListEntityByParentEntityIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get address detail information by parentEntityid.
+            </summary>
+            <param name="parentEntityId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IPublisherAddressRepository.GetAddressEntityListByParentEntityIdAndAddressTypeAsync(System.Guid,System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get address detail list by parent and entityid.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="publisherId"></param>
+            <param name="addressType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.IPublisherAppSettingRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IPublisherAppSettingRepository.GetByAppIdAndPublisherTenantIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the by application identifier and publisher tenant identifier.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <param name="pubTenantId">The pub tenant identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Returns PublisherAppSetting record that matches provided app and publisher tenant id.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IPublisherAppSettingRepository.GetAppNameListByPublisherId(System.Guid)">
+            <summary>
+            Gets the business application name list by publisher identifier.
+            </summary>
+            <param name="publisherId">The publisher identifier.</param>
+            <returns>Returns business application name list that matches the provided publisher id.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IPublisherRepository.GetPublisherByPublisherTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get publisher by publisher tenantid.
+            </summary>
+            <param name="pubTenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IPublisherRepository.GetPublisherListByAppIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets the publisher list by application identifier asynchronous.
+            </summary>
+            <param name="appId">The application identifier.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.ILevelTransitionHistoryRepository">
+            <summary>
+            This is the repository responsible for filtering data realted to Support and services related to it
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.ISupportCommentRepository">
+            <summary>
+            This interface defines repository methods to get <see cref="!:ewApps.Core.Entity.SupportComment"/> entity related data.
+            </summary>
+            <seealso cref="!:ewApps.Core.Entity.SupportComment"/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ISupportCommentRepository.GetCommentListBySupportId(System.Guid)">
+            <summary>
+            Gets list of <see cref="T:ewApps.AppPortal.Entity.SupportComment"/> (in form of <see cref="T:ewApps.AppPortal.DTO.SupportCommentDTO"/> that matches given support id.
+            </summary>
+            <param name="supportId">Support ticket id to find related comments.</param>
+            <returns>Returns list of <see cref="T:ewApps.AppPortal.DTO.SupportCommentDTO"/> that matches given support ticket id.</returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.ISupportGroupRepository">
+            <summary>
+            This is the repository responsible for filtering data realted to Support and services related to it
+            </summary>
+            
+        </member>
+        <member name="T:ewApps.AppPortal.Data.ISupportTicketRepository">
+            <summary>
+            This interface defines repository methods to get <see cref="!:ewApps.Core.Entity.SupportTicket"/> entity related data.
+            </summary>
+            <seealso cref="!:ewApps.Core.Entity.SupportTicket"/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ISupportTicketRepository.GetUserSupportTicketByCreatorAndCustomerAndTenantId(System.String,System.Guid,System.Int32,System.Guid,System.Nullable{System.Guid},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets <see cref="!:ewApps.Core.Entity.SupportTicket"/> entity list in form of <see cref="!:ewApps.Core.DTO.SupportMyTicketDTO"/> 
+            based on requested application, tenant, ticket's generation level, ticket creater user and customer (if applicable).
+            </summary>
+            <param name="appKey">Requester application key.</param>
+            <param name="tenantId">Tenant id to filter specific tenant tickets.</param>
+            <param name="generationLevel">Support generation level.</param>
+            <param name="creatorId">Support ticket creater user id.</param>
+            <param name="customerId">Customer id (in-case of customer support ticket).</param>
+            <param name="onlyDeleted">If true return only deleted support ticket otherwise return non-deleted support tickets.</param>
+            <returns>Returns List&lt;SupportMyTicketDTO&gt; based on input parameters.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ISupportTicketRepository.GetSupportTicketByAppAndTenantIdAndLevel(System.String,System.Guid,System.Int16,System.Boolean)">
+            <summary>
+            Gets <see cref="!:ewApps.Core.Entity.SupportTicket"/> entity list in form of <see cref="!:ewApps.Core.DTO.SupportTicketDTO"/> 
+            based on requested application, tenant, ticket's generation level.
+            </summary>
+            <param name="appKey">Requester application key.</param>
+            <param name="tenantId">Tenant id to filter specific tenant tickets.</param>
+            <param name="generationLevel">Support generation level.</param>
+            <param name="includeDeleted">True to include all deleted items.</param>
+            <returns>Returns List&lt;SupportTicketDTO&gt; based on input parameters.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ISupportTicketRepository.GetSupportTicketByEscalationLevel(System.Int16,System.Boolean)">
+            <summary>
+            Gets <see cref="!:ewApps.Core.Entity.SupportTicket"/> entity list in form of <see cref="!:ewApps.Core.DTO.SupportTicketDTO"/> 
+            based on support escalation level.
+            </summary>
+            <param name="escalationLevel">Support escalation level.</param>
+            <param name="includeDeleted">True to include all deleted items.</param>
+            <returns>Returns List&lt;SupportTicketDTO&gt; based on input parameters.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ISupportTicketRepository.GetSupportTicketDetailById(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets <see cref="!:ewApps.Core.Entity.SupportTicket"/> entity detail (with comments) in form of <see cref="!:ewApps.Core.DTO.SupportTicketDTO"/> 
+            based on unique id of <see cref="!:ewApps.Core.Entity.SupportTicket"/>.
+            </summary>
+            <param name="supportId">Support ticket id.</param>
+            <param name="includeDeleted">True to include all deleted items.</param>
+            <returns>Returns <see cref="!:ewApps.Core.DTO.SupportTicketDTO"/> that matches given support ticket id.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ISupportTicketRepository.SupportTicketAssignedToLevel3(System.Guid,System.Int32)">
+            <summary>
+            Evaluates <see cref="!:ewApps.Core.Entity.SupportTicket"/> is ever assigned to <see cref="!:ewApps.Core.Common.SupportLevelEnum.Level3"/> for requested unique id of <see cref="!:ewApps.Core.Entity.SupportTicket"/>.
+            </summary>
+            <param name="supportTicketId">Support ticket id.</param>
+            <param name="level">Support ticket id.</param>
+            <returns>Returns true if requested <see cref="!:ewApps.Core.Entity.SupportTicket"/> is ever assigned to <see cref="!:ewApps.Core.Common.SupportLevelEnum.Level3"/>.</returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ISupportTicketRepository.GetSupportTicketAssignedToLevel2List(System.String,System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="appKey"></param>
+            <param name="level2TenantId"></param>
+            <param name="includeDeleted"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ISupportTicketRepository.GetSupportTicketAssignedToLevel3List(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="publisherTenantId"></param>
+            <param name="includeDeleted"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ISupportTicketRepository.GetSupportTicketAssignedToLevel4List(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="platformTenantId"></param>
+            <param name="includeDeleted"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ISupportTicketRepository.GetSupportTicketAssignedToLevel2BusinessList(System.Guid,System.Boolean,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="level2TenantId"></param>
+            <param name="includeDeleted"></param>
+            <param name="generationLevel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ISupportTicketRepository.GetSupportTicketAssignedToLevel2CustomerList(System.Guid,System.Boolean,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="level2TenantId"></param>
+            <param name="includeDeleted"></param>
+            <param name="generationLevel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ISupportTicketRepository.GetBusinessSupportNotificationData(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="supportId"></param>
+            <param name="includeDeleted"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.BusinessAddressRepository">
+            <summary>
+            Contains supportive method for Address entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.BusinessAddressRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+             Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.BusinessAddressRepository.GetAddressListByParentEntityIdAndAddressTypeAsync(System.Guid,System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get address detail list by parent and entityid.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="businessId"></param>
+            <param name="addressType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.BusinessAddressRepository.GetAddressListEntityByParentEntityIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get address detail information by parentEntityid.
+            </summary>
+            <param name="businessId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.BusinessAddressRepository.GetAddressEntityListByParentEntityIdAndAddressTypeAsync(System.Guid,System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get address detail list by parent and entityid.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="parentEntityId"></param>
+            <param name="addressType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.BusinessRepository">
+            <summary>
+            This class contains methods to perform all database operations related to business information (like Data Transfer Object).
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.BusinessRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.Data.BusinessRepository"/> class.
+            </summary>
+            <param name="context">Instance of BusinessDbContext to executes database operations.</param>
+            <param name="sessionManager">User session manager instance to get login user details.</param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.BusinessRepository.GetBusinessByTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get business by tenantid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.BusinessRepository.GetBusinessTenantDetailModelDTOAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.CustomerAccountDetailRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.Data.CustomerRepository"/> class.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sessionManager">The session manager.</param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.CustomerAccountDetailRepository.GetCustomerAccListByCustomerIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.CustomerRepository">
+            <summary>
+            Provides CRUD operations for customer entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.CustomerRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.Data.CustomerRepository"/> class.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sessionManager">The session manager.</param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.CustomerRepository.GetCustomerByBusinesPartnerIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer by business partner id.
+            </summary>
+            <param name="busPartnerId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.FavoriteRepository">
+            <summary>
+            favorite
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.FavoriteRepository.GetFavoriteMenuList(System.Guid,System.String,System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get favorite menu item list by Appkey, tenantId, TenantUserId
+            </summary>
+            <param name="appid"></param>
+            <param name="portalkey"></param>
+            <param name="tenantId"></param>
+            <param name="tenantUserId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PlatformRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PlatformRepository.GetPlatformBrandingAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get platform branding
+            </summary>
+            <param name="tenantId"></param>
+            <param name="appId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.PortalAppLinkingRepository">
+            <summary>
+            This interface defines repository methods to get <see cref="!:ewApps.Core.Entity.PortalAppLinking"/> entity related data.
+            </summary>
+            <seealso cref="T:ewApps.Core.BaseService.BaseRepository`2" />
+            <seealso cref="T:ewApps.AppPortal.Data.IPortalAppLinkingRepository" />
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PortalAppLinkingRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="!:AppUserTypeLinkingRepository"/> class.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.PortalRepository">
+            <summary>
+            This interface defines repository methods to get <see cref="!:ewApps.Core.Entity.Portal"/> entity related data.
+            </summary>
+            <seealso cref="T:ewApps.Core.BaseService.BaseRepository`2" />
+            <seealso cref="T:ewApps.AppPortal.Data.IPortalRepository" />
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PortalRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.Data.PortalRepository"/> class.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.PubBusinessSubsPlanAppServiceRepository">
+            <summary>
+            It will Add/Update/Delete the subservices of a Application for a Tenant.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.PubBusinessSubsPlanRepository">
+            <summary>
+            This class implements standard database logic and operations for PubBusinessSubsPlan entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PubBusinessSubsPlanRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+             Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PubBusinessSubsPlanRepository.GetByPublisherTenantAndAppAndPlanIdAsync(System.Guid,System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>   
+        </member>
+        <member name="T:ewApps.AppPortal.Data.PublisherAddressRepository">
+            <summary>
+            Contains supportive method for Address entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PublisherAddressRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+             Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PublisherAddressRepository.GetAddressListByPublisherIdAndAddressTypeAsync(System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get address detail list by publisherid and entityid.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PublisherAddressRepository.GetAddressListEntityByParentEntityIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get address detail information by parentEntityid.
+            </summary>
+            <param name="publisherId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PublisherAddressRepository.GetAddressEntityListByParentEntityIdAndAddressTypeAsync(System.Guid,System.Guid,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get address detail list by parent and entityid.
+            </summary>
+            <param name="tenantId"></param>
+            <param name="publisherId"></param>
+            <param name="addressType"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PublisherAppSettingRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+            <param name="connectionManager"></param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PublisherAppSettingRepository.GetByAppIdAndPublisherTenantIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PublisherAppSettingRepository.GetAppNameListByPublisherId(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PublisherRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+             Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PublisherRepository.GetPublisherByPublisherTenantIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get publisher by publisher tenantid.
+            </summary>
+            <param name="pubTenantId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.PublisherRepository.GetPublisherListByAppIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.RoleLinkingRepository">
+            <summary>
+            This class implements standard database logic and operations for RoleLinking entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.RoleLinkingRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context">AppPortal Db context reference</param>
+            <param name="sessionManager">Session manager reference</param>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.RoleRepository">
+            <summary>
+            This class implements standard database logic and operations for Role entity.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.RoleRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+             <param name="connectionManager"></param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.RoleRepository.GetRoleAsync(System.Int64,System.Nullable{System.Guid},System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.RoleRepository.GetEntityByAppUserAndAppId(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.LevelTransitionHistoryRepository">
+            <summary>
+            This class implements standard database logic and operations for level transition.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.LevelTransitionHistoryRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+             Constructor initializing the base variables
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.SupportCommentRepository">
+            <summary>
+            This repository class implements <seealso cref="T:ewApps.AppPortal.Data.ISupportCommentRepository"/> interface to get <see cref="T:ewApps.AppPortal.Entity.SupportComment"/> entity related data.
+            </summary>
+            <seealso cref="T:ewApps.AppPortal.Entity.SupportComment"/>
+            <seealso cref="!:CoreDbContext"/>
+            <seealso cref="T:ewApps.AppPortal.Data.ISupportTicketRepository"/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.SupportCommentRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes the member variables and required dependencies.
+            </summary>
+            <param name="context">An instance of <see cref="!:CoreDbContext"/> to communicate with data storage.</param>
+            <param name="sessionManager">An instance of <see cref="T:ewApps.Core.UserSessionService.IUserSessionManager"/> to get requester user session information.</param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.SupportCommentRepository.GetCommentListBySupportId(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.SupportGroupRepository">
+            <summary>
+            This class implements standard database logic and operations for support group.
+            </summary>
+            
+        </member>
+        <member name="M:ewApps.AppPortal.Data.SupportGroupRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+             Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+            <param name="sessionManager"></param>
+            
+        </member>
+        <member name="T:ewApps.AppPortal.Data.SupportTicketRepository">
+            <summary>
+            This repository class implements <seealso cref="T:ewApps.AppPortal.Data.ISupportTicketRepository"/> interface to get <see cref="T:ewApps.AppPortal.Entity.SupportTicket"/> entity related data.
+            </summary>
+            <seealso cref="T:ewApps.AppPortal.Entity.SupportTicket"/>
+            <seealso cref="!:CoreDbContext"/>
+            <seealso cref="T:ewApps.AppPortal.Data.ISupportTicketRepository"/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.SupportTicketRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes the member variables.
+            </summary>
+            <param name="context">An instance of <see cref="!:CoreDbContext"/> to communicate with data storage.</param>
+            <param name="sessionManager">An instance of <see cref="T:ewApps.Core.UserSessionService.IUserSessionManager"/> to get requester user session information.</param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.SupportTicketRepository.GetUserSupportTicketByCreatorAndCustomerAndTenantId(System.String,System.Guid,System.Int32,System.Guid,System.Nullable{System.Guid},System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.SupportTicketRepository.GetSupportTicketByAppAndTenantIdAndLevel(System.String,System.Guid,System.Int16,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.SupportTicketRepository.GetSupportTicketByEscalationLevel(System.Int16,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.SupportTicketRepository.GetSupportTicketDetailById(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.SupportTicketRepository.SupportTicketAssignedToLevel3(System.Guid,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.SupportTicketRepository.GetBusinessSupportNotificationData(System.Guid,System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.TenantAppLinkingRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.Data.TokenInfoRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.TokenInfoRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.Data.TokenInfoRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.VendorRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Constructor initializing the base variables
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.ViewSettingsRepository.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.Data.ViewSettingsRepository"/> class.
+            </summary>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.IUnitOfWork">
+            <summary>
+            UnitOfWork Interface for Core Enitty
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IUnitOfWork.Save">
+            <summary>
+            Saves this instance.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IUnitOfWork.SaveAsync">
+            <summary>
+            Saves the asynchronous.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.IUnitOfWork.SaveAll(System.Boolean)">
+            <summary>
+            Saves all instances.
+            </summary>
+            <param name="enableSaveChnages">if set to <c>true</c> [enable save chnages].</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.AppPortal.Data.UnitOfWork">
+            <summary>
+            This class provides methods save enitty 
+            </summary>
+            <seealso cref="!:ewApps.Core.Data.IUnitOfWork" />
+        </member>
+        <member name="M:ewApps.AppPortal.Data.UnitOfWork.#ctor(ewApps.AppPortal.Data.AppPortalDbContext,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.AppPortal.Data.UnitOfWork"/> class.
+            </summary>
+            <param name="coreDbContext">The core database context.</param>
+            <param name="disableSaveChanges">if set to <c>true</c> [disable save changes].</param>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.UnitOfWork.Save">
+            <summary>
+            Saves this instance.
+            </summary>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.UnitOfWork.SaveAsync">
+            <summary>
+            Saves the asynchronous.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.AppPortal.Data.UnitOfWork.SaveAll(System.Boolean)">
+            <summary>
+            Saves all instances.
+            </summary>
+            <param name="enableSaveChnages">if set to <c>true</c> [enable save chnages].</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Report.Common</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Report.Common.ReportAppSettings">
+            <summary>
+            This class contains application settings.
+            Note that AppSettings objects are parsed from json.
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.Common.PublisherPermissionEnum">
+            <summary>
+            This class provides publisher permission list.
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.None">
+            <summary>
+            Dont have any permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.ViewApplications">
+            <summary>
+            View Applications permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.ManageApplications">
+            <summary>
+            Manage Applications permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.ViewTenants">
+            <summary>
+            View Tenants permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.ManageTenants">
+            <summary>
+            Manage Tenants permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.ViewSubscriptions">
+            <summary>
+            View Subscriptions permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.ManageSubscriptions">
+            <summary>
+            Manage Subscriptions permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.AccessConnectors">
+            <summary>
+            Access connector permission 
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.AccessReports">
+            <summary>
+            View Reports permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.ViewPublisherPortalSettings">
+            <summary>
+            View Publisher Portal Settings permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.ManagePublisherPortalSettings">
+            <summary>
+            Manage Publisher Portal Settings permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.ViewTickets">
+            <summary>
+            View Tickets
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.ManageTickets">
+            <summary>
+            Manage Tickets
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.Common.PublisherPermissionEnum.All">
+            <summary>
+            Have aall permission
+            </summary>
+        </member>
+    </members>
+</doc>

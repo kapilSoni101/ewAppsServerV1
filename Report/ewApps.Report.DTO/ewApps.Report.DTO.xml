@@ -1,0 +1,2062 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Report.DTO</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Report.DTO.BACInvoiceStatusCountDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.BACInvoiceStatusCountDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BACInvoiceStatusCountDTO.TotalOpenInvoices">
+            <summary>
+            total no of open or unpaid invoices.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BACInvoiceStatusCountDTO.PartialPaid">
+            <summary>
+            total no of partial paid invoices.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BACInvoiceStatusCountDTO.TotalPaidInvoices">
+            <summary>
+            total no of paid invoices.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BACInvoiceStatusCountDTO.PaidLastWeek">
+            <summary>
+            total no of last week paid invoices.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BACInvoiceStatusCountDTO.AmountPaidLaskWeek">
+            <summary>
+            total amount paid last week.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BACInvoiceStatusCountDTO.PartialPaidPercentage">
+            <summary>
+            percentage of partial paid invoices.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BACInvoiceStatusCountDTO.PaidPercentage">
+            <summary>
+            percentage of paid invoices.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BACInvoiceStatusCountDTO.NotPaidPercentage">
+            <summary>
+            percentage of not paid invoices.
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.InoviceAndMonthNameDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.InoviceAndMonthNameDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.InoviceAndMonthNameDTO.TotalBusinessaddedinthisMonth">
+            <summary>
+            total no of business added.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.InoviceAndMonthNameDTO.MonthNames">
+            <summary>
+            name of month.
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.RecentPaymentDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.RecentPaymentDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentPaymentDTO.Id">
+            <summary>
+            system generated payment Id .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentPaymentDTO.PaymentNo">
+            <summary>
+            system generated invoice no.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentPaymentDTO.CustomerName">
+            <summary>
+            name of customer.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentPaymentDTO.CreatedOn">
+            <summary>
+            Payment creation date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentPaymentDTO.Status">
+            <summary>
+            Payment status.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentPaymentDTO.Amount">
+            <summary>
+            Payment Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentPaymentDTO.CreditAmount">
+            <summary>
+            Paid Payment Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentPaymentDTO.CalculateAmount">
+            <summary>
+            calulated excahge rate Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentPaymentDTO.CalculateCreditAmount">
+            <summary>
+            Calulated Amountpaid as per exchangerate.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentPaymentDTO.DocumentCurrencyCode">
+            <summary>
+            customer currency code.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentPaymentDTO.FinalConversionRate">
+            <summary>
+            Currency conversion rate FromCurrency to ToCurrency.
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.UpComingPaymentDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.UpComingPaymentDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingPaymentDTO.Id">
+            <summary>
+            system generated payment Id .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingPaymentDTO.InvoiceNo">
+            <summary>
+            system generated invoice Id .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingPaymentDTO.CustomerName">
+            <summary>
+            name of the customer.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingPaymentDTO.CreatedOn">
+            <summary>
+            Payment creation date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingPaymentDTO.DueDate">
+            <summary>
+            Payment due date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingPaymentDTO.Amount">
+            <summary>
+            Payment Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingPaymentDTO.OutStanding">
+            <summary>
+            remaining amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingPaymentDTO.CalculateAmount">
+            <summary>
+            calulated excahge rate Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingPaymentDTO.CalculateOutStanding">
+            <summary>
+            Calulated Amountpaid as per exchangerate.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingPaymentDTO.DocumentCurrencyCode">
+            <summary>
+            customer currency code.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingPaymentDTO.FinalConversionRate">
+            <summary>
+            Currency conversion rate FromCurrency to ToCurrency.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingPaymentDTO.InvoiceFlag">
+            <summary>
+            Invoice flag diffrenciate between payment and recurring payment data
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.ApplicationPublisherCountDTO">
+            <summary>
+            This class contain apppublisher count 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationPublisherCountDTO.NoOfPublisher">
+            <summary>
+            No of User in Application 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationPublisherCountDTO.Application">
+            <summary>
+            Name of the Application
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationPublisherCountDTO.PercentageOfPublisher">
+            <summary>
+            Percentage of User In application
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.PlatAppAndBusinessCountDTO">
+            <summary>
+            This class Contain App And BUsiness Count 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppAndBusinessCountDTO.TotalApplications">
+            <summary>
+            Total no of APplication 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppAndBusinessCountDTO.ActiveApplications">
+            <summary>
+            Total no of Active APplication 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppAndBusinessCountDTO.InActiveApplications">
+            <summary>
+            Total no of InActive APplication 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppAndBusinessCountDTO.TotalBusiness">
+            <summary>
+            Total no of Business 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppAndBusinessCountDTO.BusinessWithApplication">
+            <summary>
+            Total no of Business with APplication 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppAndBusinessCountDTO.BusinessWithOutApplication">
+            <summary>
+            Total no of Business without APplication 
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ewApps.Report.DTO.PlatAppAndBusinessCountDTO.TotalPublisher" -->
+        <member name="T:ewApps.Report.DTO.PlatDashboardAppBusinessAndPublisherCount">
+            <summary>
+            This class contain all platform dashboard DTO count 
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.PublisherTenantCountDTO">
+            <summary>
+            This class contain apppublisher count 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PublisherTenantCountDTO.NoOfBusiness">
+            <summary>
+            No of Business in Publisher 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PublisherTenantCountDTO.Publisher">
+            <summary>
+            Name of the Publisher
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PublisherTenantCountDTO.PercentageOfBusiness">
+            <summary>
+            Percentage of Tenants In publisher
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.ShipmentBusinessAddedCountAndMonthDTO">
+            <summary>
+            This DTO Provide Month name and No of Business Added in that month 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessAddedCountAndMonthDTO.TotalBusinessaddedinthisMonth">
+            <summary>
+             No of Business Added in that month
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessAddedCountAndMonthDTO.MonthNames">
+            <summary>
+             Month Name 
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.ShipmentBusinessNameAndSumCount">
+            <summary>
+            This class Contain Business Name and Sum of invoice 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessNameAndSumCount.BusinessName">
+            <summary>
+            Business Name 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessNameAndSumCount.SalesOrders">
+            <summary>
+            Sum of Invoice for Business
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessNameAndSumCount.ServiceName">
+            <summary>
+            Business Name 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessNameAndSumCount.ID">
+            <summary>
+            UniqueIdentifier of Business.
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.AppAndBusinessCountDTO">
+            <summary>
+            This class Contain App And BUsiness Count 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.AppAndBusinessCountDTO.TotalApplications">
+            <summary>
+            Total no of APplication 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.AppAndBusinessCountDTO.ActiveApplications">
+            <summary>
+            Total no of Active APplication 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.AppAndBusinessCountDTO.InActiveApplications">
+            <summary>
+            Total no of InActive APplication 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.AppAndBusinessCountDTO.TotalBusiness">
+            <summary>
+            Total no of Business 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.AppAndBusinessCountDTO.BusinessWithApplication">
+            <summary>
+            Total no of Business with APplication 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.AppAndBusinessCountDTO.BusinessWithOutApplication">
+            <summary>
+            Total no of Business without APplication 
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.ApplicationUserCountDTO">
+            <summary>
+            This class contain appuser count 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationUserCountDTO.NoofUser">
+            <summary>
+            No of User in Application 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationUserCountDTO.Application">
+            <summary>
+            Name of the Application
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationUserCountDTO.PercentageOfUser">
+            <summary>
+            Percentage of User In application
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.BusinessAddedCountAndMonthDTO">
+            <summary>
+            This DTO Provide Month name and No of Business Added in that month 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessAddedCountAndMonthDTO.TotalBusinessaddedinthisMonth">
+            <summary>
+             No of Business Added in that month
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessAddedCountAndMonthDTO.MonthNames">
+            <summary>
+             Month Name 
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.BusinessCountDTO">
+            <summary>
+            This class Contain Business Count information 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessCountDTO.NoofBusiness">
+            <summary>
+            Total No of Business
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessCountDTO.Application">
+            <summary>
+            Application Name 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessCountDTO.PercentageOfBusiness">
+            <summary>
+            Business Total Percentage
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.BusinessNameAndSumCount">
+            <summary>
+            This class Contain Business Name and Sum of invoice 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessNameAndSumCount.BusinessName">
+            <summary>
+            Business Name 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessNameAndSumCount.TotalBusinessSum">
+            <summary>
+            Sum of Invoice for Business
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.RecentShipmentsDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.RecentShipmentsDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentShipmentsDTO.ID">
+            <summary>
+            system generated shipment Id .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentShipmentsDTO.CustomerName">
+            <summary>
+            Name of Customer .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentShipmentsDTO.ShipmentRefId">
+            <summary>
+            system generated shipment ref Id  .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentShipmentsDTO.ShippingNo">
+            <summary>
+            No of Shipping  .
+            </summary>       
+        </member>
+        <member name="P:ewApps.Report.DTO.RecentShipmentsDTO.PostedOn">
+            <summary>
+            Shipment posted date and time (in UTC).
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.SaleOrderCreatedMonthWiseDTO">
+            <summary>
+            This DTO Provide Month name and No of Sales Order Added in that month 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SaleOrderCreatedMonthWiseDTO.SalesOrderinthisMonth">
+            <summary>
+             No of Business Added in that month
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SaleOrderCreatedMonthWiseDTO.MonthNames">
+            <summary>
+             Month Name 
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.SalesOrderStatusDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.SalesOrderStatusDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SalesOrderStatusDTO.TotalOpenOrders">
+            <summary>
+            total no of open or unpaid orders.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SalesOrderStatusDTO.PartialDeliveredOrders">
+            <summary>
+            total no of partial delivered order.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SalesOrderStatusDTO.CompletedOrders">
+            <summary>
+            total no of completed orders.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SalesOrderStatusDTO.TotalSales">
+            <summary>
+            total no of sales.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SalesOrderStatusDTO.PartialDeliveredOrdersPercentage">
+            <summary>
+            percentage of partial delivered .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SalesOrderStatusDTO.CompletedOrdersPercentage">
+            <summary>
+            percentage of paid invoices.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SalesOrderStatusDTO.OpenOrdersPercentage">
+            <summary>
+            percentage of not deliver orders.
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.ShipmentServiceNameAndCountDTO">
+            <summary>
+            This class contain shipmentservice count 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentServiceNameAndCountDTO.NoOfShipment">
+            <summary>
+            No of Shipment in AppService 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentServiceNameAndCountDTO.ServiceName">
+            <summary>
+            Name of the Service
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentServiceNameAndCountDTO.PercentageOfShipment">
+            <summary>
+            Percentage of Shipment In Services
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.ShippingStatusDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.ShippingStatusDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShippingStatusDTO.PendingShipping">
+            <summary>
+            total no of ready to ship orders.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShippingStatusDTO.TotalShipped">
+            <summary>
+            total no of shipped order.
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.TotalDeliveriesMonthWiseDTO">
+            <summary>
+            This DTO Provide Month name and No of Delievers Added in that month 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TotalDeliveriesMonthWiseDTO.TotalDeliveriesinthisMonth">
+            <summary>
+             No of Delievries Added in that month
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TotalDeliveriesMonthWiseDTO.MonthNames">
+            <summary>
+             Month Name 
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.TotalSalesMonthWiseDTO">
+            <summary>
+            This DTO Provide Month name and No of Delievers Added in that month 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TotalSalesMonthWiseDTO.TotalSalesinthisMonth">
+            <summary>
+             No of Delievries Added in that month
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TotalSalesMonthWiseDTO.MonthNames">
+            <summary>
+             Month Name 
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.UpComingShipmentsDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="!:UpcomingShipmentsDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingShipmentsDTO.ID">
+            <summary>
+            system generated shipment Id .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingShipmentsDTO.OrderRefId">
+            <summary>
+            system generated order ref Id  .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingShipmentsDTO.CustomerRefId">
+            <summary>
+            system generated customer ref Id  .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.UpComingShipmentsDTO.CustomerName">
+            <summary>
+            Name of Customer .
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.ValuableCustomerDTO">
+            <summary>
+            This DTO Provide 5 Most Valuable Customer Payment Information 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ValuableCustomerDTO.Name">
+            <summary>
+             Customer Name 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ValuableCustomerDTO.Quantity">
+            <summary>
+             Quantity of Order
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ValuableCustomerDTO.Value">
+            <summary>
+             Total Amount Value 
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.NameDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.NameDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.NameDTO.Name">
+            <summary>
+            Name of Application.
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.BizAppUserReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.BizAppUserReportDTO"/>.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizAppUserReportDTO.ID">
+            <summary>
+            System generated unique AppUser id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizAppUserReportDTO.UserName">
+            <summary>
+            The username.
+            </summary>
+            <remarks>It's empty if not applicable.</remarks>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizAppUserReportDTO.InvitedBy">
+            <summary>
+            The name of the user who invited.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizAppUserReportDTO.InvitedOn">
+            <summary>
+            AppUser invite date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizAppUserReportDTO.JoinedOn">
+            <summary>
+            AppUser joining date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizAppUserReportDTO.Role">
+            <summary>
+            AppUser Role.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizAppUserReportDTO.PermissionBitMask">
+            <summary>
+            Total Number of Permissions in BitMask
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizAppUserReportDTO.Permissions">
+            <summary>
+            Total Number of Permissions which user have.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizAppUserReportDTO.Active">
+            <summary>
+            It indicate user is active or not
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizAppUserReportDTO.Deleted">
+            <summary>
+            It indicate user is delete or not
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.DTO.BizAppUserReportDTO._status">
+            <summary>
+            AppUser Status value according to deleted,Active or inactive user 
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.BizCustomerWisePaymentReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.BizCustomerWisePaymentReportDTO"/>.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizCustomerWisePaymentReportDTO.ID">
+            <summary>
+            System generated unique Payment id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizCustomerWisePaymentReportDTO.CustomerID">
+            <summary>
+            System generated CustomerId id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizCustomerWisePaymentReportDTO.CreditAmount">
+            <summary>
+            Amount Paid BY Customer 
+            </summary> 
+        </member>
+        <member name="P:ewApps.Report.DTO.BizCustomerWisePaymentReportDTO.CalculateCreditAmount">
+            <summary>
+            calulate credit amount with excahge rate Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizCustomerWisePaymentReportDTO.DocumentCurrencyCode">
+            <summary>
+            customer currency code.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizCustomerWisePaymentReportDTO.FinalConversionRate">
+            <summary>
+            Currency conversion rate FromCurrency to ToCurrency.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizCustomerWisePaymentReportDTO.CustomerName">
+            <summary>
+            The CustomerName.
+            </summary>
+            <remarks>It's empty if not applicable.</remarks>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizCustomerWisePaymentReportDTO.PaidInvoices">
+            <summary>
+            Total Number of Paid Invoices By Customer
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizCustomerWisePaymentReportDTO.PartialPaidInvoices">
+            <summary>
+            Total Number of Partially Paid Invoices By Customer
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizCustomerWisePaymentReportDTO.OpenInvoices">
+            <summary>
+            Total Number of UnPaid Invoices By Customer
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.BizInvoiceReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.BizInvoiceReportDTO"/>.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizInvoiceReportDTO.ID">
+            <summary>
+            System generated unique invoice id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizInvoiceReportDTO.InvoiceNo">
+            <summary>
+            System generated unique invoice No.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizInvoiceReportDTO.InvoiceName">
+            <summary>
+            The InvoiceName.
+            </summary>
+            <remarks>It's empty if not applicable.</remarks>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizInvoiceReportDTO.CustomerName">
+            <summary>
+            The CustomerName.
+            </summary>
+            <remarks>It's empty if not applicable.</remarks>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizInvoiceReportDTO.Amount">
+            <summary>
+            Invoice AMount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizInvoiceReportDTO.DueDate">
+            <summary>
+            Invoice Due date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizInvoiceReportDTO.PaidOn">
+            <summary>
+            Invoice Paid date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizInvoiceReportDTO.AmountPaid">
+            <summary>
+            Invoice Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizInvoiceReportDTO.OutStanding">
+            <summary>
+            Invoice Remaining Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizInvoiceReportDTO.Status">
+            <summary>
+            Invoice Status.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizInvoiceReportDTO.Deleted">
+            <summary>
+            Deleted invoice .
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.DTO.BizInvoiceReportDTO._statusText">
+            <summary>
+            Invoice Status According to Deleted,Paid OR Partially paid   
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.BizPaymentReceivedReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.BizPaymentReceivedReportDTO"/>.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.ID">
+            <summary>
+            System generated unique invoice id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.IdentityNumber">
+            <summary>
+            System generated unique payment number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.Status">
+            <summary>
+            Payment Status.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.Service">
+            <summary>
+            Payment Services.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.Type">
+            <summary>
+            Payment Mode or Payment Type like COD,Card,Internet Banking.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.PaidOn">
+            <summary>
+            Payment Paid date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.CreditAmount">
+            <summary>
+            Paid AMount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.CustomerId">
+            <summary>
+            System generated unique Customer id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.CustomerName">
+            <summary>
+            name of the CUstomer.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.InvoiceId">
+            <summary>
+            System generated unique invoice no as Invoice id .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.InvoiceName">
+            <summary>
+            Invoice Name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.DueDate">
+            <summary>
+            payment due date  .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.OriginalAmount">
+            <summary>
+            Amount According to Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizPaymentReceivedReportDTO.Deleted">
+            <summary>
+            Payment Deleted or not.
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.DTO.BizPaymentReceivedReportDTO._statusText">
+            <summary>
+            Payment Status According to Deleted Payment and Status Value .
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.BizSupportTicketReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.BizSupportTicketReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizSupportTicketReportDTO.ID">
+            <summary>
+            System generated unique support id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizSupportTicketReportDTO.Title">
+            <summary>
+            support ticket title.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizSupportTicketReportDTO.CustomerId">
+            <summary>
+            System generated customer number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizSupportTicketReportDTO.CustomerName">
+            <summary>
+            name of the customer.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizSupportTicketReportDTO.CreatedOn">
+            <summary>
+            Support ticket creation date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizSupportTicketReportDTO.IdentityNumber">
+            <summary>
+            System generated unique support ticket number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizSupportTicketReportDTO.AssignTo">
+            <summary>
+            support ticket owner 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizSupportTicketReportDTO.ModifiedOn">
+            <summary>
+            Support ticket last modified date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizSupportTicketReportDTO.ModifiedBy">
+            <summary>
+            Support ticket last modified by.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizSupportTicketReportDTO.Deleted">
+            <summary>
+            deleted flag is to check support ticket is deleted or not.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizSupportTicketReportDTO.Status">
+            <summary>
+            Support ticket status value.
+            </summary>
+            <remarks>It should be any value of <see cref="!:ewApps.Core.Common.SupportStatusTypeEnum"/>.</remarks>
+        </member>
+        <member name="P:ewApps.Report.DTO.BizSupportTicketReportDTO.CurrentLevel">
+            <summary>
+            Support ticket's current support level enum value.
+            </summary>
+            <remarks>It should be any value of <see cref="!:ewApps.Core.Common.SupportLevelEnum"/>.</remarks>
+        </member>
+        <member name="T:ewApps.Report.DTO.CustomerReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.CustomerReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.CustomerReportDTO.ID">
+            <summary>
+            System generated unique support id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.CustomerReportDTO.Customer">
+            <summary>
+            customer Name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.CustomerReportDTO.InvitedBy">
+            <summary>
+            Name of the user who invited customer
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.CustomerReportDTO.InvitedOn">
+            <summary>
+            customer invitation date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.CustomerReportDTO.JoinedOn">
+            <summary>
+            customer joining date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.CustomerReportDTO.TotalInvoices">
+            <summary>
+            Total Number of Invoices 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.CustomerReportDTO.OpenInvoices">
+            <summary>
+            Total Number of Open or Not Paid Invoies  
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.CustomerReportDTO.UpcomingDueDate">
+            <summary>
+            customer upcoming due date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.CustomerReportDTO.LastPaymentOn">
+            <summary>
+            customer last payment date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.CustomerReportDTO.Active">
+            <summary>
+            Active flag indicate payment is active or not 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.CustomerReportDTO.Deleted">
+            <summary>
+            Active flag indicate payment is deleted or not 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.CustomerReportDTO.CustomerRefId">
+            <summary>
+            System Genereated CUstomer Reference Id 
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.DTO.CustomerReportDTO._status">
+            <summary>
+            Payment Status According to Deleted Payment and Status Value .
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.PartAppUserReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.PartAppUserReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartAppUserReportDTO.ID">
+            <summary>
+            System generated unique appuser id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartAppUserReportDTO.UserName">
+            <summary>
+            name of user .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartAppUserReportDTO.InvitedBy">
+            <summary>
+            Name of the owner who invited User 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartAppUserReportDTO.InvitedOn">
+            <summary>
+            User invitation date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartAppUserReportDTO.JoinedOn">
+            <summary>
+            User joining date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartAppUserReportDTO.Role">
+            <summary>
+            User role.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartAppUserReportDTO.PermissionBitMask">
+            <summary>
+            total User permission bit mask value 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartAppUserReportDTO.Permissions">
+            <summary>
+            Total Number of permission user have 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartAppUserReportDTO.Active">
+            <summary>
+            Active flag indicate user is active or not 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartAppUserReportDTO.Deleted">
+            <summary>
+            Active flag indicate user is deleted or not 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartAppUserReportDTO.BusinessPartnerTenantId">
+            <summary>
+            Business Partner TenantId.
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.DTO.PartAppUserReportDTO._status">
+            <summary>
+            user Status According to Deleted Payment and active Value .
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.PartInvoiceReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.PartInvoiceReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.ID">
+            <summary>
+            System generated unique invoice id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.InvoiceName">
+            <summary>
+            Invoice name.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.InvoiceNo">
+            <summary>
+            System generated invoice no .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.Amount">
+            <summary>
+            invoice amount 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.DueDate">
+            <summary>
+            invoice due date  .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.PaidOn">
+            <summary>
+            invoice payment date  .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.AmountPaid">
+            <summary>
+            invoice paid amount  .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.OutStanding">
+            <summary>
+            invoice remaining amount  .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.CalculateAmount">
+            <summary>
+            calulated excahge rate Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.CalculateAmountPaid">
+            <summary>
+            calulated excahge rate Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.CalculateOutStanding">
+            <summary>
+            Calulated Amountpaid as per exchangerate.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.DocumentCurrencyCode">
+            <summary>
+            customer currency code.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.FinalConversionRate">
+            <summary>
+            Currency conversion rate FromCurrency to ToCurrency.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.Status">
+            <summary>
+            invoice status  .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartInvoiceReportDTO.Deleted">
+            <summary>
+            Deleted invoice .
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.DTO.PartInvoiceReportDTO._statusText">
+            <summary>
+            Payment Status According to Deleted Payment and Status Value .
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.PartPaymentReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.PartPaymentReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.ID">
+            <summary>
+            System generated unique payment id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.IdentityNumber">
+            <summary>
+            System generated unique payment number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.Status">
+            <summary>
+            Payment Status.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.Service">
+            <summary>
+            Payment Services.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.Type">
+            <summary>
+            Payment Mode or Payment Type like COD,Card,Internet Banking.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.PaidOn">
+            <summary>
+            Payment Paid date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.CreditAmount">
+            <summary>
+            Paid AMount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.InvoiceId">
+            <summary>
+            System generated unique invoice no as Invoice id .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.InvoiceName">
+            <summary>
+            name of invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.DueDate">
+            <summary>
+            payment due date  .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.OriginalAmount">
+            <summary>
+            Amount According to Invoice.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.CalculateCreditAmount">
+            <summary>
+            calulated excahge rate Amount.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.CalculateOriginalAmount">
+            <summary>
+            Calulated Amountpaid as per exchangerate.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.DocumentCurrencyCode">
+            <summary>
+            customer currency code.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.FinalConversionRate">
+            <summary>
+            Currency conversion rate FromCurrency to ToCurrency.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartPaymentReportDTO.Deleted">
+            <summary>
+            Payment Deleted or not.
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.DTO.PartPaymentReportDTO._statusText">
+            <summary>
+            Payment Status According to Deleted Payment and Status Value .
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.PartReportSupportTicketParamDTO">
+            <summary>
+            Represents a request DTO with to request support ticket list
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartReportSupportTicketParamDTO.AppKey">
+            <summary>
+            Gets or sets the application key.
+            </summary>
+            <value>
+            The application key to get specific application support tickets.
+            </value>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartReportSupportTicketParamDTO.TenantId">
+            <summary>
+            Gets or sets the tenant id.
+            </summary>
+            <value>
+            The tenant id to get specific tenant's support tickets.
+            </value>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartReportSupportTicketParamDTO.GenerationLevel">
+            <summary>
+            Gets or sets the generation level.
+            </summary>
+            <value>
+            The generation level.
+            </value>
+            <remarks>It should be any value of <see cref="!:SupportLevelEnum"/>.</remarks>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartReportSupportTicketParamDTO.CustomerId">
+            <summary>
+            Gets or sets the customer identifier.
+            </summary>
+            <value>
+            The customer id to filter specific customer support ticket.
+            </value>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartReportSupportTicketParamDTO.CreatorId">
+            <summary>
+            Gets or sets the creator user id.
+            </summary>
+            <value>
+            The user id of support ticket creator.
+            </value>
+        </member>
+        <member name="T:ewApps.Report.DTO.PartSupportTicketReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.PartSupportTicketReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartSupportTicketReportDTO.ID">
+            <summary>
+            System generated unique support id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartSupportTicketReportDTO.IdentityNumber">
+            <summary>
+            System generated unique support ticket number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartSupportTicketReportDTO.Title">
+            <summary>
+            support ticket title.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartSupportTicketReportDTO.CreatedOn">
+            <summary>
+            Support ticket creation date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartSupportTicketReportDTO.AssignTo">
+            <summary>
+            support ticket owner 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartSupportTicketReportDTO.ModifiedOn">
+            <summary>
+            Support ticket last modified date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartSupportTicketReportDTO.ModifiedBy">
+            <summary>
+            Support ticket last modified by.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PartSupportTicketReportDTO.Status">
+            <summary>
+            Support ticket status value.
+            </summary>
+            <remarks>It should be any value of <see cref="!:ewApps.Core.Common.SupportStatusTypeEnum"/>.</remarks>
+        </member>
+        <member name="T:ewApps.Report.DTO.PlatApplicationReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.PlatApplicationReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatApplicationReportDTO.ID">
+            <summary>
+            System generated unique application id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatApplicationReportDTO.IdentityNumber">
+            <summary>
+            System generated unique application number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatApplicationReportDTO.ApplicationName">
+            <summary>
+            name of the application .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatApplicationReportDTO.ServiceCount">
+            <summary>
+            no of subscription .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatApplicationReportDTO.PublisherCount">
+            <summary>
+            no of publisher .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatApplicationReportDTO.TenantCount">
+            <summary>
+            no of tenants .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatApplicationReportDTO.Active">
+            <summary>
+            it indicate application is active or not.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatApplicationReportDTO.Deleted">
+            <summary>
+            it indicate application is deleted or not.
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.PlatAppUserReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.PlatPublisherReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppUserReportDTO.ID">
+            <summary>
+            System generated unique appuser id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppUserReportDTO.UserName">
+            <summary>
+            name of user .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppUserReportDTO.InvitedBy">
+            <summary>
+            Name of the owner who invited User 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppUserReportDTO.InvitedOn">
+            <summary>
+            User invitation date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppUserReportDTO.JoinedOn">
+            <summary>
+            User joining date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppUserReportDTO.Role">
+            <summary>
+            User role.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppUserReportDTO.PermissionBitMask">
+            <summary>
+            total User permission bit mask value 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppUserReportDTO.Permissions">
+            <summary>
+            Total Number of permission user have 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppUserReportDTO.Active">
+            <summary>
+            Active flag indicate user is active or not 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatAppUserReportDTO.Deleted">
+            <summary>
+            Active flag indicate user is deleted or not 
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.DTO.PlatAppUserReportDTO._status">
+            <summary>
+            user Status According to Deleted Payment and active Value .
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.PlatPublisherReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.PlatPublisherReportDTO"/> .
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ewApps.Report.DTO.PlatPublisherReportDTO.ID" -->
+        <member name="P:ewApps.Report.DTO.PlatPublisherReportDTO.CreatedByName">
+            <summary>
+            Identity number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatPublisherReportDTO.CreatedOn">
+            <summary>
+            Identity number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatPublisherReportDTO.Deleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatPublisherReportDTO.IdentityNumber">
+            <summary>
+            Identity number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatPublisherReportDTO.Name">
+            <summary>
+            The name  of Publisher.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatPublisherReportDTO.ApplicationCount">
+            <summary>
+            Publisher Inactive Comment
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatPublisherReportDTO.TenantCount">
+            <summary>
+            Publisher Inactive Comment
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatPublisherReportDTO.UserCount">
+            <summary>
+            Publisher Inactive Comment
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatPublisherReportDTO.ActiveTenantCount">
+            <summary>
+            Publisher Active Tenant
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatPublisherReportDTO.Status">
+            <summary>
+            Publisher Status
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.PlatSupportTicketReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.PlatSupportTicketReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatSupportTicketReportDTO.ID">
+            <summary>
+            System generated unique support id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatSupportTicketReportDTO.IdentityNumber">
+            <summary>
+            System generated unique support ticket number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatSupportTicketReportDTO.Title">
+            <summary>
+            support ticket title.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatSupportTicketReportDTO.TenantIdentityNumber">
+            <summary>
+            System generated unique tenant number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatSupportTicketReportDTO.TenantName">
+            <summary>
+            name of the tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatSupportTicketReportDTO.AssignTo">
+            <summary>
+            support ticket owner 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatSupportTicketReportDTO.CreatedOn">
+            <summary>
+            Support ticket creation date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatSupportTicketReportDTO.ModifiedOn">
+            <summary>
+            Support ticket last modified date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatSupportTicketReportDTO.ModifiedBy">
+            <summary>
+            Support ticket last modified by.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatSupportTicketReportDTO.Deleted">
+            <summary>
+            deleted flag is to check support ticket is deleted or not.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatSupportTicketReportDTO.Status">
+            <summary>
+            Support ticket status value.
+            </summary>
+            <remarks>It should be any value of <see cref="!:ewApps.Core.Common.SupportStatusTypeEnum"/>.</remarks>
+        </member>
+        <member name="P:ewApps.Report.DTO.PlatSupportTicketReportDTO.CurrentLevel">
+            <summary>
+            Support ticket's current support level enum value.
+            </summary>
+            <remarks>It should be any value of <see cref="!:ewApps.Core.Common.SupportLevelEnum"/>.</remarks>
+        </member>
+        <member name="T:ewApps.Report.DTO.TransactionJournalReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.TransactionJournalReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.PublisherId">
+            <summary>
+            System generated unique public number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.PublisherName">
+            <summary>
+            Name of the Publisher .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.BusinessId">
+            <summary>
+            System generated unique business number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.BusinessName">
+            <summary>
+            Name of the Business .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.CustomerId">
+            <summary>
+            System generated unique Customer number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.CustomerName">
+            <summary>
+            Name of the Customer .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.PayeeId">
+            <summary>
+            System generated unique Payee number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.PayeeUserName">
+            <summary>
+            Name of the Payee(TenantUser) .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.PayeeUserType">
+            <summary>
+            Type of the Payee(Ex BUsiness or Customer) .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.TransactionId">
+            <summary>
+            System generated unique Transaction number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.TransactionStatus">
+            <summary>
+            Status of the Transaction .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.TransactionDateTime">
+            <summary>
+            Date and Time of the Transaction .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.TransactionAmount">
+            <summary>
+            The transaction value (or amount)
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.ServiceAttributeName">
+            <summary>
+            Name of the Service And Attribute.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.ClientIP">
+            <summary>
+            Client Ip address where Payment done 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.ClientBrowser">
+            <summary>
+            Client Browser Information where Payment Done 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.TransactionJournalReportDTO.ClientOS">
+            <summary>
+            Client Operating System Information where Payment Done 
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.ApplicationReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.ApplicationReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationReportDTO.ID">
+            <summary>
+            System generated unique application id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationReportDTO.IdentityNumber">
+            <summary>
+            System generated unique application number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationReportDTO.ApplicationName">
+            <summary>
+            name of the application .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationReportDTO.Subscriptions">
+            <summary>
+            no of subscription .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationReportDTO.Services">
+            <summary>
+            no of subscription .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationReportDTO.Tenants">
+            <summary>
+            no of tenants .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationReportDTO.Active">
+            <summary>
+            it indicate application is active or not.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ApplicationReportDTO.Deleted">
+            <summary>
+            it indicate application is deleted or not.
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.PubAppUserReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.PubAppUserReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubAppUserReportDTO.ID">
+            <summary>
+            System generated unique appuser id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubAppUserReportDTO.UserName">
+            <summary>
+            name of user .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubAppUserReportDTO.InvitedBy">
+            <summary>
+            Name of the owner who invited User 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubAppUserReportDTO.InvitedOn">
+            <summary>
+            User invitation date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubAppUserReportDTO.JoinedOn">
+            <summary>
+            User joining date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubAppUserReportDTO.Role">
+            <summary>
+            User role.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubAppUserReportDTO.PermissionBitMask">
+            <summary>
+            total User permission bit mask value 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubAppUserReportDTO.Permissions">
+            <summary>
+            Total Number of permission user have 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubAppUserReportDTO.Active">
+            <summary>
+            Active flag indicate user is active or not 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubAppUserReportDTO.Deleted">
+            <summary>
+            Active flag indicate user is deleted or not 
+            </summary>
+        </member>
+        <member name="F:ewApps.Report.DTO.PubAppUserReportDTO._status">
+            <summary>
+            user Status According to Deleted Payment and active Value .
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.PubSupportTicketReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.PubSupportTicketReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.ID">
+            <summary>
+            System generated unique support id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.IdentityNumber">
+            <summary>
+            System generated unique support ticket number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.Title">
+            <summary>
+            support ticket title.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.TenantIdentityNumber">
+            <summary>
+            System generated unique tenant number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.TenantName">
+            <summary>
+            name of the tenant.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.CustomerId">
+            <summary>
+            System generated customer number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.CustomerName">
+            <summary>
+            name of the customer.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.AssignTo">
+            <summary>
+            support ticket owner 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.CreatedOn">
+            <summary>
+            Support ticket creation date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.ModifiedOn">
+            <summary>
+            Support ticket last modified date and time (in UTC).
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.ModifiedBy">
+            <summary>
+            Support ticket last modified by.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.Deleted">
+            <summary>
+            deleted flag is to check support ticket is deleted or not.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.Status">
+            <summary>
+            Support ticket status value.
+            </summary>
+            <remarks>It should be any value of <see cref="!:ewApps.Core.Common.SupportStatusTypeEnum"/>.</remarks>
+        </member>
+        <member name="P:ewApps.Report.DTO.PubSupportTicketReportDTO.CurrentLevel">
+            <summary>
+            Support ticket's current support level enum value.
+            </summary>
+            <remarks>It should be any value of <see cref="!:ewApps.Core.Common.SupportLevelEnum"/>.</remarks>
+        </member>
+        <member name="T:ewApps.Report.DTO.SubscriptionReportDTO">
+            <summary>
+            This class is a DTO with consolidate information of <see cref="T:ewApps.Report.DTO.SubscriptionReportDTO"/> .
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SubscriptionReportDTO.ID">
+            <summary>
+            System generated unique subscription id.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SubscriptionReportDTO.IdentityNumber">
+            <summary>
+            System generated subscription number.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SubscriptionReportDTO.SubscriptionName">
+            <summary>
+            name of the subscription.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SubscriptionReportDTO.Term">
+            <summary>
+            subscription term.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SubscriptionReportDTO.PaymentCycle">
+            <summary>
+            payment cycle.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SubscriptionReportDTO.PriceInDollar">
+            <summary>
+            price in dollar.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SubscriptionReportDTO.Application">
+            <summary>
+            name of the application.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SubscriptionReportDTO.Tenants">
+            <summary>
+            total no of subscription tenat.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SubscriptionReportDTO.Active">
+            <summary>
+            active flag is to check subscription is active or not.
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.SubscriptionReportDTO.Deleted">
+            <summary>
+            deleted flag is to check subscription is deleted or not.
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.AapNameAndBusinessCountDTO">
+            <summary>
+            class Contain Application Name And Business Count 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.AapNameAndBusinessCountDTO.TotalBusiness">
+            <summary>
+            No of Buiness 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.AapNameAndBusinessCountDTO.TotalBusinessUser">
+            <summary>
+            Total No of Business User 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.AapNameAndBusinessCountDTO.AppName">
+            <summary>
+            Name Of Applciation 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.AapNameAndBusinessCountDTO.ActiveBusiness">
+            <summary>
+            NO of Active Business 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.AapNameAndBusinessCountDTO.InActiveBusiness">
+            <summary>
+            no of InActive Business 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.AapNameAndBusinessCountDTO.BusinessAddedLaskWeek">
+            <summary>
+            No of Business Added Lask Week
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.ShipmentAapNameAndBusinessCountDTO">
+            <summary>
+            class Contain Application Name And Business Count 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentAapNameAndBusinessCountDTO.TotalBusiness">
+            <summary>
+            No of Buiness 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentAapNameAndBusinessCountDTO.TotalBusinessUser">
+            <summary>
+            Total No of Business User 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentAapNameAndBusinessCountDTO.AppName">
+            <summary>
+            Name Of Applciation 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentAapNameAndBusinessCountDTO.ActiveBusiness">
+            <summary>
+            NO of Active Business 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentAapNameAndBusinessCountDTO.InActiveBusiness">
+            <summary>
+            no of InActive Business 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentAapNameAndBusinessCountDTO.BusinessAddedLaskWeek">
+            <summary>
+            No of Business Added Lask Week
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.BusinessAndSubscriptionCountDTO">
+            <summary>
+            class Contain Business And Subscription Count 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessAndSubscriptionCountDTO.TotalBusiness">
+            <summary>
+            No of Buiness 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessAndSubscriptionCountDTO.TotalBusinessUser">
+            <summary>
+            Total No of Business User 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessAndSubscriptionCountDTO.TenantSubscription">
+            <summary>
+            No of Business Subcription 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessAndSubscriptionCountDTO.ActiveBusiness">
+            <summary>
+            NO of Active Business 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessAndSubscriptionCountDTO.InActiveBusiness">
+            <summary>
+            no of InActive Business 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessAndSubscriptionCountDTO.BusinessAddedLaskWeek">
+            <summary>
+            No of Business Added Lask Week
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.BusinessAndSubscriptionCountDTO.AppName">
+            <summary>
+            Name Of Applciation 
+            </summary>
+        </member>
+        <member name="T:ewApps.Report.DTO.ShipmentBusinessAndSubscriptionCountDTO">
+            <summary>
+            class Contain Business And Subscription Count 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessAndSubscriptionCountDTO.TotalBusiness">
+            <summary>
+            No of Buiness 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessAndSubscriptionCountDTO.TotalBusinessUser">
+            <summary>
+            Total No of Business User 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessAndSubscriptionCountDTO.TenantSubscription">
+            <summary>
+            No of Business Subcription 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessAndSubscriptionCountDTO.ActiveBusiness">
+            <summary>
+            NO of Active Business 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessAndSubscriptionCountDTO.InActiveBusiness">
+            <summary>
+            no of InActive Business 
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessAndSubscriptionCountDTO.BusinessAddedLaskWeek">
+            <summary>
+            No of Business Added Lask Week
+            </summary>
+        </member>
+        <member name="P:ewApps.Report.DTO.ShipmentBusinessAndSubscriptionCountDTO.AppName">
+            <summary>
+            Name Of Applciation 
+            </summary>
+        </member>
+    </members>
+</doc>

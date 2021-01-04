@@ -1,0 +1,978 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Core.CommonService</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "T:ewApps.Core.CommonService.CacheHelper" -->
+        <member name="M:ewApps.Core.CommonService.CacheHelper.#cctor">
+            <summary>
+            Static constructor to initialize the members.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.CacheHelper.GetCacheKey(System.String,System.Guid)">
+            <summary>
+            Generates unique key to look up item in cache.
+            </summary>
+            <param name="entityName">Entity name to be look in cache.</param>
+            <param name="id">Record id to find in cache.</param>
+            <returns>A unique key, combination of entityName and id.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.CacheHelper.GetCacheKey(System.String,System.Int32)">
+            <summary>
+            Generates unique key to look up item in cache.
+            </summary>
+            <param name="entityName">Entity name to be look in cache.</param>
+            <param name="id">Record id to find in cache.</param>
+            <returns>A unique key, combination of entityName and id.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.CacheHelper.GetCacheKey(System.String,System.String)">
+            <summary>
+            Generates unique key to look up item in cache.
+            </summary>
+            <param name="entityName">Entity name to be look in cache.</param>
+            <param name="compositIds">Composit Ids seperated by - sign to find in cache.</param>
+            <returns>A unique key, combination of entityName and id.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.CacheHelper.GetData``1(System.String)">
+            <summary>
+            Gets the cache data for a given cache key from given cache block.
+            </summary>
+            <typeparam name="T">Type of cached item to cast from object to actual type.</typeparam>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <returns>The cache entry that is identified by key.</returns>
+            <remarks>
+            Since the cache manager returns the data as an object, type cast to the given type, T, is required.
+            </remarks>
+        </member>
+        <member name="M:ewApps.Core.CommonService.CacheHelper.RemoveData(System.String)">
+            <summary>
+            Removes the cache entry from the cache.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+        </member>
+        <member name="M:ewApps.Core.CommonService.CacheHelper.FlushCache">
+            <summary>
+            Flush the specified cache block data.
+            </summary>
+            <remarks>
+            Once the cache block is disposed, any query for cache item returns null unless cache block is reinitialize.
+            </remarks>
+        </member>
+        <member name="M:ewApps.Core.CommonService.CacheHelper.IsInCache(System.String)">
+             <summary>
+             Checks whether the cache entry already exists in the cache.
+             </summary>
+             <param name="key">A unique identifier for the cache entry.</param>
+            <returns>true if the cache contains a cache entry with the same key value as key; otherwise, false.</returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.CryptoHelper.EncryptionAlgorithm">
+            <summary>
+            This class encrypts a string or decrypts an encrypted string.
+            It implements two encryption algorithms - 3DES and AES.
+            It uses predefined Key and IV for each algorithm.
+            
+            Some Web references:
+            Used code from 
+                https://www.c-sharpcorner.com/article/tripledes-encryption-in-c-sharp/
+                https://www.c-sharpcorner.com/article/aes-encryption-in-c-sharp/
+            Other methods of encrytion/decryption:
+                https://dotnetcodr.com/2015/10/23/encrypt-and-decrypt-plain-string-with-triple-des-in-c/
+                https://www.selamigungor.com/post/7/encrypt-decrypt-a-string-in-csharp
+            Tutorial:
+                 https://www.tutorialspoint.com/cryptography/index.htm
+             DataProtectionService:  
+                 https://stackoverflow.com/questions/38795103/encrypt-string-in-net-core    /// </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.CryptoHelper.#ctor">
+            <summary>
+            Public constructor. Does nothing.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.CryptoHelper.Encrypt(System.String,ewApps.Core.CommonService.CryptoHelper.EncryptionAlgorithm)">
+            <summary>
+            Encrypt a given string (plaintext)
+            </summary>
+            <param name="plaintext">string to be encryped</param>
+            <param name="algorithm">Either TripleDES or AES</param>
+            <returns>Encrypted result as a Base64 string</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.CryptoHelper.Decrypt(System.String,ewApps.Core.CommonService.CryptoHelper.EncryptionAlgorithm)">
+            <summary>
+            Descrypt an encrypted string (As a Base64 string)
+            </summary>
+            <param name="ciphertext">Encrypted byte array as a Base64 string</param>
+            <param name="algorithm">TripleDES or AES</param>
+            <returns>Original unencrypted string</returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.DateTimeHelper">
+            <summary>
+            Provides methods to validate and parse different DateTime formats.   
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.IsValidDate(System.String,System.String@)">
+            <summary>
+            Validate text by diffrent date format and cast text into date, if it is 
+            of date time type.
+            </summary>
+            <param name="searchText">Search text.</param>
+            <param name="searchDate">Valid date in output.</param>
+            <returns>True, if date is valid.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.DateFormates">
+            <summary>
+            Provides possible date formates.
+            </summary>
+            <returns>Array of date formates.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.CompareDatesWithMinutes(System.DateTime,System.DateTime)">
+            <summary>
+            Compares the value of first System.DateTime instance to a second System.DateTime value
+            and returns an integer that indicates whether first instance is earlier than,
+            the same as, or later than the second System.DateTime value.
+            </summary>
+            <param name="date1">The first date to be compare.</param>
+            <param name="date2">The second date to compare.</param>
+            <returns>
+            A signed number indicating the relative values of first instance and the second parameter.
+            Value Description Less than zero means first instance is earlier than
+            value. Zero means first instance is the same as second value.
+            Greater than zero means first instance is later than second value.
+            </returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.GetDateExcludingSeconds(System.DateTime)">
+            <summary>
+            Gets the date excluding seconds.
+            </summary>
+            <param name="date">The date.</param>
+            <returns></returns>
+        </member>
+        <member name="P:ewApps.Core.CommonService.DateTimeHelper.SQLMinDate">
+            <summary>
+            Gets the SQL minimum date.
+            </summary>
+            <value>
+            The SQL minimum date.
+            </value>
+        </member>
+        <member name="P:ewApps.Core.CommonService.DateTimeHelper.SQLMaxDate">
+            <summary>
+            Gets the SQL maximum date.
+            </summary>
+            <value>
+            The SQL maximum date.
+            </value>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.GetTimeDifferenceInGivenUnit(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Gets the time difference between date1 and date2 in given unit by substracting second date from first date.
+            </summary>
+            <param name="date1">First date of which is to substract second date.</param>
+            <param name="date2">Second date to be substract from date1.</param>
+            <param name="frequencyType">The unit in which value is return.</param>
+            <returns>Returns difference between two dates in given unit.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.StringFromDate(System.Nullable{System.DateTime},System.Boolean,System.Boolean)">
+            <summary>
+            Gets Strings from ns date.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="inMillisec">if set to <c>true</c> [in millisec].</param>
+            <param name="useUTC">if set to <c>true</c> [use UTC].</param>
+            <returns>Returns string from ns date.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.DateFromString(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Convert the date string in POSIX date format and return the date as NSDate 2013-12-15T01:47:44.026.
+            </summary>
+            <param name="s">The s.</param>
+            <param name="inMillisec">if set to <c>true</c> [in millisec].</param>
+            <param name="useUTC">if set to <c>true</c> [use UTC].</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.FormatDate(System.Nullable{System.DateTime},System.Boolean,System.DateTimeKind)">
+            <summary>
+            Formats the date.
+            </summary>
+            <param name="dateTime">The date time.</param>
+            <param name="removeSeconds">if set to <c>true</c> [remove seconds].</param>
+            <param name="kind">The kind.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.ToDateTime(System.String)">
+            <summary>
+            Converts the specified string to an equivalent date and time.
+            </summary>
+            <param name="dateTime">A string that contains a date and time to convert.</param>
+            <returns>Returns the date and time equivalent of the given datetime string.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.GetLastWeekStartAndEndDate(System.DateTime)">
+            <summary>
+            Gets the last week start and end date.
+            </summary>
+            <param name="currentDate">The current date.</param>
+            <returns>Returns Start and End date of last week of given date.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.GetCurrentWeekStartAndEndDate(System.DateTime)">
+            <summary>
+            Gets the current week start and end date.
+            </summary>
+            <param name="currentDate">The current date.</param>
+            <returns>Returns Start and End date of current week of given date.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.AppendTimePart(System.DateTime,System.String)">
+            <summary>
+            Appends the time part of source date with provided time part.
+            </summary>
+            <param name="sourceDate">The source date.</param>
+            <param name="timePart">The time part.</param>
+            <returns>Returns the updated date.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.DateTimeHelper.GetNextWeekday(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Gets the next weekday.
+            </summary>
+            <param name="startDate">The start date.</param>
+            <param name="day">The day.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.EmailHelper">
+            <summary>
+            This class provides utility methods to send emails. 
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.CommonService.EncryptionHelper">
+            <summary>
+            This class provides encryption/decription methods based on one fixed key.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.EncryptionHelper.Encrypt(System.String)">
+            <summary>
+            Encrypts the specified clear text.
+            </summary>
+            <param name="clearText">The clear text.</param>
+            <returns>Returns encrypted string.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.EncryptionHelper.Decrypt(System.String)">
+            <summary>
+            Decrypts the specified cipher text.
+            </summary>
+            <param name="cipherText">The cipher text.</param>
+            <returns>Returns decrypted plain text.</returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.EnumHelper">
+            <summary>
+            This class provides utility methods for enum functionality.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.EnumHelper.ToEnum``1(System.String,``0)">
+            <summary> 
+            This method converts enum string value to given enum type.
+            If value does not falls in enum type it returns default value.
+            </summary>
+            <typeparam name="TEnum">Enum type.</typeparam>
+            <param name="strEnumValue">String enum value.</param>
+            <param name="defaultValue">Default value of enum if string not found in enum.</param>
+            <returns>Enum value.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.EnumHelper.ToEnum``1(System.Int32,``0)">
+            <summary> 
+            This method converts enum string value to given enum type.
+            If value does not falls in enum type it returns default value.
+            </summary>
+            <typeparam name="TEnum">Enum type.</typeparam>
+            <param name="strEnumValue">Int enum value.</param>
+            <param name="defaultValue">Default value of enum if string not found in enum.</param>
+            <returns>Enum value.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.EnumHelper.ToEnum``1(System.String)">
+            <summary> 
+            This method converts enum string value to given enum type.
+            </summary>
+            <typeparam name="TEnum">Enum type.</typeparam>
+            <param name="strEnumValue">String enum value.</param>
+            <returns>Enum value.</returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.EnumUtils">
+            <summary>
+            This class provides utility methods for enum functionality.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.EnumUtils.ToEnum``1(System.String,``0)">
+            <summary> 
+            This method converts enum string value to given enum type.
+            If value does not falls in enum type it returns default value.
+            </summary>
+            <typeparam name="TEnum">Enum type.</typeparam>
+            <param name="strEnumValue">String enum value.</param>
+            <param name="defaultValue">Default value of enum if string not found in enum.</param>
+            <returns>Enum value.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.EnumUtils.ToEnum``1(System.Int32,``0)">
+            <summary> 
+            This method converts enum string value to given enum type.
+            If value does not falls in enum type it returns default value.
+            </summary>
+            <typeparam name="TEnum">Enum type.</typeparam>
+            <param name="strEnumValue">Int enum value.</param>
+            <param name="defaultValue">Default value of enum if string not found in enum.</param>
+            <returns>Enum value.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.EnumUtils.ToEnum``1(System.String)">
+            <summary> 
+            This method converts enum string value to given enum type.
+            </summary>
+            <typeparam name="TEnum">Enum type.</typeparam>
+            <param name="strEnumValue">String enum value.</param>
+            <returns>Enum value.</returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.FileHelper">
+            <summary>
+            It provides abstract methods for File I/O operations.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetFileStreamFromFilePath(System.String)">
+            <summary>
+            Get stream from physical location of a file.
+            </summary>
+            <remarks>
+            Always require full file path. Ex. "C:\Temp\abc.doc".
+            </remarks>
+            <param name="filePath">Source file full path.</param>
+            <returns>File stream object.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetBytesFromFilePath(System.String)">
+            <summary>
+            Get bytes from file path.
+            </summary>
+            <param name="filePath">Source file full path.</param>
+            <returns>Bytes array.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.SaveStreamToFile(System.IO.Stream,System.String)">
+            <summary>
+            Save file stream object on given location.
+            </summary>
+            <remarks>
+            If given file path does not exists then it creates a new directory for a given location.
+            </remarks>
+            <param name="stream">Source file stream object.</param>
+            <param name="fileFullPath">Target file path.</param>   
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.SaveBytesToFile(System.Byte[],System.String)">
+            <summary>
+            Save bytes array into file on a given location.
+            </summary>
+            <remarks>
+            If given file path does not exists then it creates a new directory for a given location.
+            </remarks>
+            <param name="fileFullPath">Target file path.</param>
+            <param name="bytes">bytes array of file.</param>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.DeleteFile(System.String)">
+            <summary>
+            Deletes file from a given location.
+            </summary>
+            <param name="fileFullPath">File full path.</param>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.DeleteDirectory(System.String)">
+            <summary>
+            Deletes the directory.
+            </summary>
+            <param name="directoryPath">The directory path.</param>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetFileExtention(System.String)">
+            <summary>
+            Gets the file extention.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetFileNameWithoutExt(System.String)">
+            <summary>
+            Get file name without extention.
+            </summary>
+            <param name="fileName">File Name.</param>
+            <returns>File name without extention. Ex. if file name is test.doc then output is test.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetDirectorySizeInGB(System.String)">
+            <summary>
+            Get size of directory in GB.
+            </summary>
+            <param name="directory">Directory path.</param>
+            <returns>Total size of files exits in directory and subdirectroy</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetDirectorySizeInMB(System.String)">
+            <summary>
+            Get size of directory in MB.
+            </summary>
+            <param name="directory">Directory path.</param>
+            <returns>Total size of files exits in directory and subdirectroy</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetDirectorySizeInBytes(System.String)">
+            <summary>
+            Get size of directory in Bytes.
+            </summary>
+            <param name="directory">Directory path.</param>
+            <returns>Total size of files exits in directory and subdirectroy</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetBytes(System.String)">
+            <summary>
+            Get bytes array from string .
+            </summary>
+            <param name="text">Input string.</param>
+            <returns>Bytes array.</returns>  
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.CreateDirectory(System.String)">
+            <summary>
+            Create directory of given path.
+            </summary>
+            <param name="path">Directory full path.</param>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetByteSizeInKB(System.Int64)">
+            <summary>
+            Convert byte to kb.It always round decimal value. 
+            </summary>
+            <param name="byes">Size in byes.</param>
+            <returns>Size in KB</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetByteSizeInMB(System.Int64)">
+            <summary>
+            Convert byte to kb.It always round decimal value. 
+            </summary>
+            <param name="byes">Size in mb.</param>
+            <returns>Size in MB</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.MoveFile(System.String,System.String)">
+            <summary>
+            Moves a specified file to a new location.
+            </summary>
+            <param name="sourceFile"> The name of the file to move.</param>
+            <param name="targetFile">The new path for the file.</param>
+            <remarks>If target directory doesn't exist create target directory.</remarks>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetImageBase64(System.Drawing.Image,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+             Converts the bitmap to Base64 string.
+            </summary>
+            <param name="image">The image that convert to string.</param>
+            <param name="format">The image format that conver to string.</param>
+            <returns>Returns converted Base64 string.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetImage(System.String)">
+            <summary>
+            Converts base64 to image.
+            </summary>
+            <param name="base64String">The base64 string that convert to Image.</param>
+            <returns>Returns converted Image.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetImageFormat(System.String)">
+            <summary>
+            Gets the image format from file extension.
+            </summary>
+            <param name="extension">The file extension to get ImageFormat.</param>
+            <returns>Returns ImageFormat enum if given file extension matched otherwise return null.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetImageMIMEType(System.Guid)">
+            <summary>
+            Gets the MIME type from raw format.
+            </summary>
+            <param name="rawFormatId">The raw format identifier.</param>
+            <returns>
+            Returns Image mime type from given image object.
+            </returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetDefaultExtension(System.String)">
+            <summary>
+            Get image extension from mime type
+            </summary>
+            <param name="mimeType">Image mime type</param>
+            <returns>Image extension</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.GetBase64FileSizeInKB(System.String)">
+            <summary>
+            Gets the base64 file size in kb.
+            </summary>
+            <param name="base64String">The base64 string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.CompressFile(System.IO.DirectoryInfo,System.String)">
+            <summary>
+            Compresses the specified directory selected.
+            </summary>
+            <param name="directorySelected">The directory selected.</param>
+            <param name="filePath">The file path.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FileHelper.StreamToString(System.IO.Stream)">
+            <summary>
+            Make string from stream object.
+            </summary>
+            <param name="s">Stream object.</param>
+            <returns>String.</returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.FlagEnumHelper">
+            <summary>
+            This class provides the helper method to work on mask value.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FlagEnumHelper.IsSet``1(``0,``0)">
+            <summary>
+            Determines whether the specified flag item is set in masked flag value.
+            </summary>
+            <typeparam name="T">The type of Flag datatype.</typeparam>
+            <param name="flags">The masked flag value.</param>
+            <param name="flag">The item to be check in masked value.</param>
+            <returns>Returns true if specified value is set in masked flag value.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FlagEnumHelper.Set``1(``0@,``0)">
+            <summary>
+            Sets the specified item in masked flag value.
+            </summary>
+            <typeparam name="T">The type of Flag datatype.</typeparam>
+            <param name="flags">The masked flag value.</param>
+            <param name="flag">The item to be set in masked input value.</param>
+        </member>
+        <member name="M:ewApps.Core.CommonService.FlagEnumHelper.Unset``1(``0@,``0)">
+            <summary>
+            Unsets the specified item in masked flag value
+            </summary>
+            <typeparam name="T">The type of Flag datatype.</typeparam>
+            <param name="flags">The masked flag value.</param>
+            <param name="flag">The item to be unset in masked input value.</param>
+        </member>
+        <member name="T:ewApps.Core.CommonService.JsonSerializer">
+            <summary>
+             Provides ParsingHelper
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.JsonSerializer.Serialize``1(``0)">
+            <summary>
+            Parses to json.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:ewApps.Core.CommonService.JsonSerializer.DeSerialize``1(System.String)">
+            <summary>
+            Parses to json.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="T:ewApps.Core.CommonService.KeyValuePairHelper">
+             <summary>
+            Key Value Pair Extensions.
+             </summary>            
+        </member>
+        <member name="M:ewApps.Core.CommonService.KeyValuePairHelper.IsNull``2(System.Collections.Generic.KeyValuePair{``0,``1})">
+            <summary>
+            Determines whether this instance is null.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TU">The type of the u.</typeparam>
+            <param name="pair">The pair.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.ParsingHelper">
+            <summary>
+             Provides ParsingHelper
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.ParsingHelper.ParseToJSON``1(``0)">
+            <summary>
+            Parses to json.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:ewApps.Core.CommonService.ParsingHelper.ParseJSONToObject``1(System.String)">
+            <summary>
+            Parses to json.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="T:ewApps.Core.CommonService.RegularExpressionHelper">
+            <summary>
+            Provide methods that contains regular expression.
+            </summary>
+        </member>
+        <member name="T:ewApps.Core.CommonService.HttpHeaderHelper">
+            <summary>
+            It provides abstract methods for Http Header.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.HttpHeaderHelper.SetHeaderValue(System.String,System.Object)">
+            <summary>
+            Set value in http response header
+            </summary>
+            <param name="key">Key</param>
+            <param name="value">Value</param>
+        </member>
+        <member name="M:ewApps.Core.CommonService.HttpRequestProcessor.ExecuteGetRequestAsync``1(System.String,System.String,ewApps.Core.CommonService.AcceptMediaType,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            Executes the get request with given uri parameters and header values.
+            </summary>
+            <typeparam name="T">Expected response result type.</typeparam>
+            <param name="requestUri">The base URI.</param>
+            <param name="requestUri">The request URI.</param>
+            <param name="responseType">Requested response format type.</param>
+            <param name="headerParameters">The header parameters.</param>
+            <param name="pathParameters">The path parameters.</param>
+            <param name="uriParameters">The URI parameters.</param>
+            <returns>
+            Returns response result in requested format.
+            </returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.HttpRequestProcessor.ExecutePOSTRequestAndReturnAsStringAsync``1(System.String,System.String,ewApps.Core.CommonService.AcceptMediaType,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},``0)">
+            <summary>
+            Executes the post request with given uri parameters and header values.
+            </summary>
+            <param name="baseUri">The base URI.</param>
+            <param name="requestUri">The request URI.</param>
+            <param name="responseType">Requested response format type.</param>
+            <param name="headerParameters">The header parameters.</param>
+            <param name="pathParameters">The path parameters.</param>
+            <param name="uriParameters">The URI parameters.</param>
+            <param name="bodyParam">The body parameter.</param>
+            <returns>
+            Returns response result in requested format.
+            </returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.HttpRequestProcessor.ExecutePOSTRequestAndReturnAsStringAsync(System.String,System.String,ewApps.Core.CommonService.AcceptMediaType,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            Executes the post request with given uri parameters and header values.
+            </summary>
+            <param name="baseUri">The base URI.</param>
+            <param name="requestUri">The request URI.</param>
+            <param name="responseType">Requested response format type.</param>
+            <param name="headerParameters">The header parameters.</param>
+            <param name="pathParameters">The path parameters.</param>
+            <param name="uriParameters">The URI parameters.</param>
+            <returns>
+            Returns response result in requested format.
+            </returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.HttpRequestProcessor.ExecutePUTRequestAndReturnAsStringAsync``1(System.String,System.String,ewApps.Core.CommonService.AcceptMediaType,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},``0)">
+            <summary>
+            Executes the post request with given uri parameters and header values.
+            </summary>
+            <param name="baseUri">The base URI.</param>
+            <param name="requestUri">The request URI.</param>
+            <param name="responseType">Requested response format type.</param>
+            <param name="headerParameters">The header parameters.</param>
+            <param name="pathParameters">The path parameters.</param>
+            <param name="uriParameters">The URI parameters.</param>
+            <param name="bodyParam">The body parameter.</param>
+            <returns>
+            Returns response result in requested format.
+            </returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.HttpRequestProcessor.ValidateRequest(System.Object)">
+            <summary>
+            Validates the request.
+            </summary>
+            <param name="request">The request.</param>
+            <exception cref="!:EwpNullRequestArgumentException">Throw when request argument is null.</exception>
+        </member>
+        <member name="M:ewApps.Core.CommonService.HttpRequestProcessor.ExecuteGetRequest``1(System.String,System.String,ewApps.Core.CommonService.AcceptMediaType,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            Executes the get request with given uri parameters and header values.
+            </summary>
+            <typeparam name="T">Expected response result type.</typeparam>
+            <param name="baseUri">The base URI.</param>
+            <param name="requestUri">The request URI.</param>
+            <param name="responseType">Requested response format type.</param>
+            <param name="headerParameters">The header parameters.</param>
+            <param name="pathParameters">The path parameters.</param>
+            <param name="uriParameters">The URI parameters.</param>
+            <returns>
+            Returns response result in requested format.
+            </returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.HttpRequestProcessor.ExecutePOSTRequestAndReturnAsString``1(System.String,System.String,ewApps.Core.CommonService.AcceptMediaType,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},``0)">
+            <summary>
+            Executes the post request with given uri parameters and header values.
+            </summary>
+            <param name="baseUri">The base URI.</param>
+            <param name="requestUri">The request URI.</param>
+            <param name="responseType">Requested response format type.</param>
+            <param name="headerParameters">The header parameters.</param>
+            <param name="pathParameters">The path parameters.</param>
+            <param name="uriParameters">The URI parameters.</param>
+            <param name="bodyParam">The body parameter.</param>
+            <returns>
+            Returns response result in requested format.
+            </returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.HttpRequestProcessor.ExecutePUTRequestAndReturnAsString``1(System.String,System.String,ewApps.Core.CommonService.AcceptMediaType,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},``0)">
+            <summary>
+            Executes the post request with given uri parameters and header values.
+            </summary>
+            <param name="baseUri">The base URI.</param>
+            <param name="requestUri">The request URI.</param>
+            <param name="responseType">Requested response format type.</param>
+            <param name="headerParameters">The header parameters.</param>
+            <param name="pathParameters">The path parameters.</param>
+            <param name="uriParameters">The URI parameters.</param>
+            <param name="bodyParam">The body parameter.</param>
+            <returns>
+            Returns response result in requested format.
+            </returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.ResourceHelper">
+            <summary>
+            This class implements standard business logic and operations for Resource Helper.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.ResourceHelper.GetLocalizedResouce``1(System.String,System.String,System.String,System.String)">
+            <summary>
+            Gets the localized resouce.
+            </summary>
+            <typeparam name="T">Requested resource type.</typeparam>
+            <param name="sateliteAssemblyName">Name of the satelite assembly.</param>
+            <param name="resourceBaseName">Name of the resource base.</param>
+            <param name="languageCode">The language code.</param>
+            <param name="resourceName">Name of the resource.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.StringHelper">
+            <summary>
+            Provides  StringHelper
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.StringHelper.GetFirstNameAndLastName(System.String)">
+            <summary>
+            Splits the full name of the name into first name and last.
+            </summary>
+            <param name="fullName">The full name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.StringHelper.SpilitAndConcatenate(System.String,System.Char[],System.StringSplitOptions,System.String)">
+            <summary>
+            Spilits the string  and concatenate.
+            </summary>
+            <param name="inputString">The input string.</param>
+            <param name="seperator">The seperator character array.</param>
+            <param name="option">The string split option.</param>
+            <param name="jointSeperator">The joint seperator to join seperated string array.</param>
+            <returns>
+            Returns a string seperated with provided seperator and joint with provided join character.
+            </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:ewApps.Core.CommonService.Validater" -->
+        <member name="M:ewApps.Core.CommonService.Validater.ValidateEmail(System.String)">
+            <summary>
+            Method to validate the input email.
+            </summary>
+            <param name="inputEmail">The email to be validated.</param>
+            <returns>A boolean if the email is valid or not</returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.XMLSerialzer">
+            <summary>
+            It provides object serialization and de-serialization into xml.
+            </summary>  
+        </member>
+        <member name="M:ewApps.Core.CommonService.XMLSerialzer.SerialzeObject``1(``0)">
+            <summary>
+            Serizlize the object into xml string.
+            </summary>
+            <typeparam name="T">Object type.</typeparam>
+            <param name="obj">Object.</param>
+            <returns>String.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XMLSerialzer.DeSerializeObject``1(System.String)">
+            <summary>
+            Deserialize string into object.
+            </summary>
+            <typeparam name="T">Object type.</typeparam>
+            <param name="xml">XML String.</param>
+            <returns>Object.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XMLSerialzer.ToXmlWriter(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            Converts a list of KeyValuePair&lt;string,string&gt; to xml document in below mention format. <br/>
+            &lt;DataList&gt;
+              &lt;Data Key="Key1String" Value="Key1Value" /&gt;
+              &lt;Data Key="Key2String" Value="Key2Value" /&gt;
+            &lt;DataList/&gt;
+            </summary>
+            <param name="keyValueList">The key value list to be convert in xml.</param>
+            <returns>Returns converted xml document.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XMLSerialzer.ToXmlWriter(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})">
+            <summary>
+            To the XML writer.
+            </summary>
+            <param name="keyValueList">The key value list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XMLSerialzer.Serialize``1(``0)">
+            <summary>
+            Serizlize the object into xml string.
+            </summary>
+            <typeparam name="T">Object type.</typeparam>
+            <param name="value">Object.</param>
+            <returns>String.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XMLSerialzer.Deserialize``1(System.String)">
+            <summary>
+            Deserialize string into object.
+            </summary>
+            <typeparam name="T">Object type.</typeparam>
+            <param name="xml">XML String.</param>
+            <returns>Object.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XMLSerialzer.GetBytes(System.String)">
+            <summary>
+            Returns byte array.
+            </summary>
+            <param name="str">XML String.</param>
+            <returns>byte[].</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XMLSerialzer.GetString(System.Byte[])">
+            <summary>
+            Returns string.
+            </summary>
+            <param name="bytes">Array of bytes.</param>
+            <returns>string of characters.</returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.XSLHelper">
+            <summary>
+            It provides helper methods for XSL transformation operations.
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XSLHelper.XSLTransform(System.String,System.Xml.XmlDocument,System.String@,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Generates required contents by transforming xsl template.
+            </summary>
+            <param name="xsltText">XSL string to be transform.</param>
+            <param name="xmlDoc">XML information used in XSL transformation.</param>
+            <param name="title">The title.</param>
+            <param name="xsltParam">Parameter collection used in XSL transformation.</param>
+            <returns>
+            Transformed content in form string.
+            </returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XSLHelper.XSLTransform(System.String,System.String@,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Generates required contents by transforming xsl template.
+            </summary>
+            <param name="xslDocumentPath">XSL template document path.</param>
+             <param name="title">Title generated in XSL transformation.</param>
+            <param name="xsltParam">Parameter collection used in XSL transformation.</param>
+            <returns>Transformed content in form string.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XSLHelper.XSLTransform(System.String,System.String,System.String@,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            XSLs the transform.
+            </summary>
+            <param name="xsltText">The XSLT text.</param>
+            <param name="xmlText">The XML text.</param>
+            <param name="title">The title.</param>
+            <param name="xsltParam">The XSLT parameter.</param>
+            <returns>Returns a string type XSLTransform</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XSLHelper.XSLTransformUsingXMLString(System.String,System.String,System.String@,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            XSLs the transform using XML string.
+            </summary>
+            <param name="xsltText">The XSLT text.</param>
+            <param name="xmlText">The XML text.</param>
+            <param name="title">The title.</param>
+            <param name="xsltParam">The XSLT parameter.</param>
+            <returns>Returns a srting type value</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XSLHelper.XSLTransform(System.Xml.XmlDocument,System.String,System.String@,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Generates required contents by transforming xsl template.
+            </summary>
+            <param name="xmlDoc">The XML document.</param>
+            <param name="xslDocumentPath">XSL template document path.</param>
+            <param name="title">Title generated in XSL transformation.</param>
+            <param name="xsltParam">Parameter collection used in XSL transformation.</param>
+            <returns>
+            Transformed content in form string.
+            </returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XSLHelper.XSLTransformToPlainText(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            XSLs the transform to plain text.
+            </summary>
+            <param name="xsltText">The XSLT text.</param>
+            <param name="xsltParam">The XSLT parameter.</param>
+            <returns>Returns astring type value</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XSLHelper.XSLTransformByXmlStringAndXSLPath(System.String,System.String,System.String@,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            XSLs the transform by XML string and XSL path.
+            </summary>
+            <param name="xmlString">The XML string.</param>
+            <param name="xslDocumentPath">The XSL document path.</param>
+            <param name="title">The title.</param>
+            <param name="xsltParam">The XSLT parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XSLHelper.XSLTransformByXmlAndTags(System.String,System.String,System.String,System.String,System.String@,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Generates required contents by transforming xsl template based on given xml, xsl and tags.
+            </summary>
+            <param name="xmlString">The XML string.</param>
+            <param name="xslDocumentPath">The XSL document path.</param>
+            <param name="titleTag">The title tag.</param>
+            <param name="bodyTag">The body tag.</param>
+            <param name="title">The title.</param>
+            <param name="xsltParam">The XSLT parameter.</param>
+            <returns>Transformed content in form string.</returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XSLHelper.XSLTransformByStringAndTags(System.String,System.String,System.String,System.String,System.String@,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            XSLs the transform by string and tags.
+            </summary>
+            <param name="xsltText">The XSLT text.</param>
+            <param name="xmlText">The XML text.</param>
+            <param name="titleTag">The title tag.</param>
+            <param name="bodyTag">The body tag.</param>
+            <param name="title">The title.</param>
+            <param name="xsltParam">The XSLT parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Core.CommonService.XSLTHelper">
+            <summary>
+            IT does io and cache operation to get Required XSLT file
+            </summary>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XSLTHelper.GetPushXsltFile(System.String)">
+            <summary>
+            Gets the Push  XSLT file based on user language from the cache if available
+            otherwise load from the file system.
+            </summary>
+            <param name="regionLanguage">user language</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ewApps.Core.CommonService.XSLTHelper.GetEmailXsltFile(System.String)" -->
+        <member name="M:ewApps.Core.CommonService.XSLTHelper.GetEmailLocalizedTemplatePath(System.String,System.String)">
+            <summary>
+            Gets the XSLT template language specific path from cache or generates from localized strings 
+            </summary>
+            <param name="language"></param>
+            <param name="xsltResourcePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Core.CommonService.XSLTHelper.GetPUSHLocalizedTemplatePath(System.String,System.String)">
+            <summary>
+            Gets the XSLT template language specific path from cache or generates from localized strings 
+            </summary>
+            <param name="language"></param>
+            <param name="xsltResourcePath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Core.Common.ElapsedTimer">
+            <summary>
+            Measures elapsed time from Start to End
+            Includes method to log output in Debug mode
+            Can chain calls like: timer.End().Log() etc
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServerV1\AppPortal\ewApps.AppPortal.Common\ewApps.AppPortal.Common.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Enum\Business\User\Permission\" />
+    <Folder Include="Enum\Business\User\Preference\" />
+    <Folder Include="Enum\Platform\User\" />
+    <Folder Include="Enum\Vendor\User\" />
+  </ItemGroup>
+
+</Project>

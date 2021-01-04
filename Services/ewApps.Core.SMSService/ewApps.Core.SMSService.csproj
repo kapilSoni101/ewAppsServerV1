@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <Import Project="..\..\..\ewAppsAssets\AssemblyVersions\CoreServiceVersion.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.EntityFrameworkCore">
+      <HintPath>..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+      <HintPath>..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="esendex-dotnet-sdk" Version="3.8.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.1.1" />
+    <PackageReference Include="Twilio.AspNet.Core" Version="5.33.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ewApps.Core.DeeplinkServices\ewApps.Core.DeeplinkServices.csproj" />
+    <ProjectReference Include="..\ewApps.Core.ExceptionMiddleware\ewApps.Core.ExceptionService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.ScheduledJobServices\ewApps.Core.ScheduledJobService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.SerilogLoggingService\ewApps.Core.SerilogLoggingService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.UserSessionService\ewApps.Core.UserSessionService.csproj" />
+    <ProjectReference Include="..\ewApps.Core.Webhook.Server\ewApps.Core.Webhook.Server.csproj" />
+  </ItemGroup>
+
+</Project>

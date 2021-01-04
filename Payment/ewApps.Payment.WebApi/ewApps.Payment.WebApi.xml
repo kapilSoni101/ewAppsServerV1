@@ -1,0 +1,519 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Payment.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Payment.WebApi.Controllers.InvoiceController">
+            <summary>
+            Invoice class is used to get invoice list.
+            Add/delete invoice method.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.InvoiceController.#ctor(ewApps.Payment.DS.IPaymentAndInvoiceDS,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initlize local variables.
+            </summary>
+            <param name="paInvoiceDS">Queried invoice service.</param>
+            <param name="sessionManager">Session manager.</param>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.InvoiceController.GetInvoicesByInvoiceIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice by id.
+            </summary>
+            <param name="invoiceId">invoiceId</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.InvoiceController.GetInvoicesByInvoiceIdAsync(System.Guid,System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice by id.
+            </summary>
+            <param name="invoiceId">invoiceId</param>
+            <param name="erpARInvoiceKey">ERPARInvoiceKey</param>
+            <param name="integratedMode">Application running in integration mode.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.InvoiceController.GetInvoiceByTenantAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice list by tenant id.
+            </summary>
+            <param name="filter">Filter object to filter invoice by date.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.InvoiceController.GetBAARInvoiceDTOByInvoiceIdAsync(System.Collections.Generic.List{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+            Get invoice list by invoiceIds.
+            </summary>
+            <param name="invoiceId">Ids of invoice.</param>
+            <param name="token">A token that can be use to propogate async operation cancel notification. Using this token async operation duration can be control.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.InvoiceController.GetCancelInvoiceByTenantAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice list by tenant id.
+            </summary>
+            <param name="filter">Filter object to filter invoice by date.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.InvoiceController.GetInvoiceByCustomerAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get customer invoices by customer tenantid and filter by date.
+            </summary>
+            <param name="filter">Contains filter criteria.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.InvoiceController.GetQuickPayInvoicesByTenantAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get quick pay invoice list.
+            </summary>
+            <param name="filter"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.InvoiceController.GetPaybleInvoiceByCustomerAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer payble invoices list.
+            </summary>
+            <param name="customerId">customer id</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Payment.WebApi.Controllers.PayAppServiceController">
+            <summary>
+            Payment is used to get invoice list.
+            Add/delete invoice method.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PayAppServiceController.GetBusinessAppServiceListByAppIdsAndTenantIdAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+             Get Branding Setting Detail
+             <paramref name="appid">App Id </paramref>
+             <paramref name="tenantid">tenant Id</paramref>
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.WebApi.Controllers.PaymentController">
+            <summary>
+            Invoice class is used to get invoice list.
+            Add/delete invoice method.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.#ctor(ewApps.Payment.DS.IPaymentAndInvoiceDS,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initlize local variables.
+            </summary>
+            <param name="paInvoiceDS">Queried invoice service.</param>
+            <param name="sessionManager">Session manager.</param>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.AddMulitplePayment(ewApps.Payment.DTO.AddPaymentDTO[],System.Threading.CancellationToken)">
+            <summary>
+            Add muliple invoice payment.
+            </summary>
+            <param name="payments">AddPaymentDTO object</param>
+            <param name="token">Cancellation token for async operations</param>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.AddAdvancePayment(ewApps.Payment.DTO.AddAdvancedPaymentDTO,System.Threading.CancellationToken)">
+            <summary>
+            Add muliple invoice payment.
+            </summary>
+            <param name="payments">AddPaymentDTO object</param>
+            <param name="token">Cancellation token for async operations</param>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.GetPaymentDTOAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets Payment DTO given its  id and inventoryid.
+            </summary>
+            <param name="paymentId">  paymentId, unique key</param>
+            <param name="invoiceId">  invoiceId</param>
+            <param name="token">Cancellation token</param>
+            <returns>Found Payment DTO</returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.GetPaymentDTOAsyncByPaymentIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get payment detail by paymentid.
+            </summary>
+            <param name="paymentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.GetAdvancePaymentDTOAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets advance Payments detail by given Payment id.
+            </summary>
+            <param name="paymentId">  Id, unique key</param>        
+            <param name="token">Cancellation token</param>
+            <returns>Found Payment DTO</returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.GetInvoicesByPaymentId(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of invoices paid in a single transection(payment).
+            <param name="paymentId">  paymentId, unique key</param>
+            </summary>        
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.GetTenantPaymentHistoryAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets Payment history by tenant and from/todate for a invoice by partnerid.
+            </summary>
+            <param name="filter">filter for getting tenant payment list.</param>
+            <param name="token">For cancellation</param>
+            <returns>IList of Payment entities</returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.GetPaymentHistoryAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets list of Payments for a invoice by partnerid.
+            </summary>
+            <param name="filter">filter for getting customer payment list.</param>
+            <param name="token">For cancellation</param>
+            <returns>IList of Payment entities</returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.GetVoidPaymentHistoryAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets Payment history by tenant and from/todate.
+            Method return all payyment with the status void.
+            </summary>
+            <param name="filter">filter for getting tenant payment list.</param>
+            <param name="token">For cancellation</param>
+            <returns>IList of Payment entities</returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.GetSattledPaymentHistoryAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets Payment history by tenant and from/todate.
+            Method return all payyment with the status Sattled.
+            </summary>voidpay
+            <param name="filter">filter for getting tenant payment list.</param>
+            <param name="token">For cancellation</param>
+            <returns>IList of Payment entities</returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.GetPaymentHistoryByInvoiceAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets list of Payments for a invoice.
+            </summary>
+            <param name="invoiceId">invoiceId Guid</param>
+            <param name="token">For cancellation</param>
+            <returns>IList of Payment entities</returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.GetFilterTenantAdvancePaymentHistoryAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get advance payment list by tenantid.
+            </summary>
+            <param name="filter">Filter object contains filter criteria.</param>
+            <param name="token"></param>
+            <returns></returns>      
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.GetCustomerAdvanceFilterPaymentHistoryAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get customer advance payment list by partnerid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.GetStatusListAsync(System.Guid,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get payment transection status flow.
+            </summary>
+            <param name="id">Unique paymentId</param>
+            <param name="paymentmode">Mode of payment Vericheck or card</param>
+            <param name="token"></param>
+            <returns>retun payment status.</returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.VoidPayment(System.Guid,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Void the payment/transaction
+            </summary>        
+            <param name="id">PaymentId</param>
+            <param name="serviceName">service used for paying invoice</param>
+            <param name="token">Cancellation token for async operations</param>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.PaymentController.RefundPayment(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Void the payment/transaction
+            </summary>        
+            <param name="token">Cancellation token for async operations</param>
+            <param name="id">PaymentId</param>
+        </member>
+        <member name="T:ewApps.Payment.WebApi.Controllers.QuickPaymentController">
+            <summary>
+            Invoice class is used to get invoice list.
+            Add/delete invoice method.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.QuickPaymentController.#ctor(ewApps.Payment.DS.IPaymentDataService,ewApps.Payment.DS.IPaymentAndInvoiceDS,ewApps.Core.AppDeeplinkService.IAppDeeplinkManager,ewApps.Core.UserSessionService.IUserSessionManager,Microsoft.Extensions.Options.IOptions{ewApps.Payment.Common.PaymentAppSettings})">
+            <summary>
+            Initilize local variables.
+            </summary>
+            <param name="paymentDataService"></param>
+            <param name="paymentAndInvoiceDS"></param>
+            <param name="appDeeplinkManager"></param>
+            <param name="sessionManager"></param>
+            <param name="appSetting"></param>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.QuickPaymentController.GenerateQuickPaylink(ewApps.Payment.DTO.AddDeepLinkDTO,System.Threading.CancellationToken)">
+            <summary>
+            Generate deeplink of a invoice.
+            </summary>
+            <param name="deepLinkRequestModel"></param>
+            <param name="token">Cancellation token</param>
+            <returns>Found Payment DTO</returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.QuickPaymentController.GetInvoiceCustomerPaymentDetailAsyncByQuickPaylink(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice detail by deeplink shorturl.
+            </summary>
+            <param name="shortUrlKey"></param>
+            <param name="machineIPAddress"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.QuickPaymentController.AddMulitplePayment(ewApps.Payment.DTO.AddPaymentDTO[],System.String,System.Threading.CancellationToken)">
+            <summary>
+            Add muliple invoice payment.
+            </summary>
+            <param name="payments">AddPaymentDTO object</param>
+            <param name="token">Cancellation token for async operations</param>
+        </member>
+        <member name="T:ewApps.Payment.WebApi.Controllers.VendorInvoiceController">
+            <summary>
+            APInvoice class is used to get invoice list.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.VendorInvoiceController.#ctor(ewApps.Payment.DS.IVendorPaymentAndInvoiceDS,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initlize local variables.
+            </summary>
+            <param name="paInvoiceDS">Queried invoice service.</param>
+            <param name="sessionManager">Session manager.</param>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.VendorInvoiceController.GetInvoicesByInvoiceIdAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice by id.
+            </summary>
+            <param name="invoiceId">invoiceId</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.VendorInvoiceController.GetInvoicesByInvoiceIdAsync(System.Guid,System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice by id.
+            </summary>
+            <param name="invoiceId">invoiceId</param>
+            <param name="erpARInvoiceKey">ERPARInvoiceKey</param>
+            <param name="integratedMode">Application running in integration mode.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.VendorInvoiceController.GetInvoiceByTenantAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice list by tenant id.
+            </summary>
+            <param name="filter">Filter object to filter invoice by date.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.VendorInvoiceController.GetInvoiceByVendorAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get customer invoices by customer tenantid and filter by date.
+            </summary>
+            <param name="filter">Contains filter criteria.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.VendorInvoiceController.GetBAAPInvoiceDTOByInvoiceIdAsync(System.Collections.Generic.List{System.Guid},System.Threading.CancellationToken)">
+            <summary>
+            Get invoice list by invoiceIds.
+            </summary>
+            <param name="invoiceId">Ids of invoice.</param>
+            <param name="token">A token that can be use to propogate async operation cancel notification. Using this token async operation duration can be control.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.VendorInvoiceController.GetCancelInvoiceByTenantAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get invoice list by tenant id.
+            </summary>
+            <param name="filter">Filter object to filter invoice by date.</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.VendorInvoiceController.GetQuickPayInvoicesByTenantAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Get quick pay invoice list.
+            </summary>
+            <param name="filter"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.VendorInvoiceController.GetPaybleInvoiceByVendorAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get customer payble invoices list.
+            </summary>
+            <param name="vendorId">vendor id</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Payment.WebApi.Controllers.VendorPaymentController">
+            <summary>
+            APInvoice class is used to get invoice list.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.VendorPaymentController.#ctor(ewApps.Payment.DS.IVendorPaymentAndInvoiceDS,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initlize local variables.
+            </summary>
+            <param name="paInvoiceDS">Queried invoice service.</param>
+            <param name="sessionManager">Session manager.</param>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.VendorPaymentController.GetTenantPaymentHistoryAsync(ewApps.Payment.DTO.ListDateFilterDTO,System.Threading.CancellationToken)">
+            <summary>
+            Gets Payment history by tenant and from/todate for a invoice by partnerid.
+            </summary>
+            <param name="filter">filter for getting tenant payment list.</param>
+            <param name="token">For cancellation</param>
+            <returns>IList of Payment entities</returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.Controllers.VendorPaymentController.GetPaymentHistoryByInvoiceAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets list of Payments for vendor invoice.
+            </summary>
+            <param name="invoiceId">invoiceId Guid</param>
+            <param name="token">For cancellation</param>
+            <returns>IList of Payment entities</returns>
+        </member>
+        <member name="T:ewApps.Payment.WebApi.PreAuthPaymentController">
+            <summary>
+            Invoice class is used to get invoice list.
+            Add/delete invoice method.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PreAuthPaymentController.#ctor(ewApps.Payment.DS.IPreAuthPaymentDS,ewApps.Core.UserSessionService.IUserSessionManager)">
+            <summary>
+            Initlize local variables.
+            </summary>
+            <param name="preAuthPaymentDS">Preauthrization Payment service.</param>
+            <param name="sessionManager">Session manager.</param>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PreAuthPaymentController.AuthorizePayment(ewApps.Payment.DTO.AddPreAuthPaymentDTO,System.Threading.CancellationToken)">
+            <summary>
+            Authorize/Block Amount from Credit card for future use.
+            </summary>
+            <param name="payment">Payment authorize object</param>
+            <param name="token">Cancellation token for async operations</param>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PreAuthPaymentController.VoidPreAuthPayment(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Void the pre auth transaction
+            </summary>        
+            <param name="id">Pre Authorization PaymentId</param>        
+            <param name="token">Cancellation token for async operations</param>
+        </member>
+        <member name="T:ewApps.Payment.WebApi.PaymentPreferenceController">
+            <summary>
+            Get preferences list
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentPreferenceController.#ctor(ewApps.Payment.DS.ITenantUserAppPreferenceDS)">
+            <summary>
+            BusPaymentPreferenceController
+            </summary>
+            <param name="tenantUserAppPreferenceDS"></param>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentPreferenceController.GetBusPayPreferenceListAsync(System.Guid)">
+            <summary>
+            Get Business Protal payment preferences list
+            <paramref name="appid"></paramref>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentPreferenceController.GetCustPayPreferenceListAsync(System.Guid)">
+            <summary>
+            Get Customer Protal payment preferences list
+            <paramref name="appid"></paramref>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentPreferenceController.UpdateBusPayPreferenceListAsync(ewApps.Payment.DTO.PreferenceUpdateDTO)">
+            <summary>
+            Update business portal payment app preferece list
+            </summary>
+            <param name="preferenceUpdateDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentPreferenceController.UpdateCustPayPreferenceListAsync(ewApps.Payment.DTO.PreferenceUpdateDTO)">
+            <summary>
+            Update customer potal payment app preferece list
+            </summary>
+            <param name="preferenceUpdateDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentPreferenceController.UpdateVendorPayPreferenceListAsync(ewApps.Payment.DTO.PreferenceUpdateDTO)">
+            <summary>
+            Update vendor potal payment app preferece list.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentPreferenceController.AddBusPayPreferenceListAsync(ewApps.Payment.DTO.PreferenceUpdateDTO)">
+            <summary>
+            Add business portal payment app preferece list
+            </summary>
+            <param name="preferenceUpdateDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentPreferenceController.AddCustPayPreferenceListAsync(ewApps.Payment.DTO.PreferenceUpdateDTO)">
+            <summary>
+            Add customer potal payment app preferece list
+            </summary>
+            <param name="preferenceUpdateDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentPreferenceController.AddVendorPayPreferenceListAsync(ewApps.Payment.DTO.PreferenceUpdateDTO)">
+            <summary>
+            Add customer potal payment app preferece list
+            </summary>
+            <param name="preferenceUpdateDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentWebhookEventDelegate.#ctor(Microsoft.Extensions.Logging.ILogger{ewApps.Payment.WebApi.PaymentWebhookSubscriptionManager},System.IServiceProvider)">
+            <summary>
+            Initlize local variables.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentWebhookEventDelegate.WebhookEventHandlerAsync(ewApps.Core.Webhook.Subscriber.WebhookSubscription,System.Collections.Generic.List{ewApps.Core.Webhook.Subscriber.WebhookEvent},System.Threading.CancellationToken)">
+            <inheridoc/>
+        </member>
+        <member name="T:ewApps.Payment.WebApi.PaymentWebhookSubscriptionManager">
+            <summary>
+            This class manage payment subscripton event registration and event handing
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentWebhookSubscriptionManager.#ctor(System.IServiceProvider,Microsoft.Extensions.Logging.ILogger{ewApps.Payment.WebApi.PaymentWebhookSubscriptionManager})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ewApps.Payment.WebApi.PaymentWebhookSubscriptionManager"/> class.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentWebhookSubscriptionManager.InitWebhookSubscription(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Initializes the webhook subscription.
+            </summary>
+            <param name="app">The application.</param>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentWebhookSubscriptionManager.GetWebhookSubscriptionDefination(ewApps.Core.Webhook.Subscriber.WebhookSubscriptionManager,Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Gets the webhook subscription defination.
+            </summary>
+            <param name="manager">The manager.</param>
+            <param name="app">The application.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.WebApi.PaymentWebhookSubscriptionManager.HandleEvent(ewApps.Core.Webhook.Subscriber.WebhookSubscription,System.Collections.Generic.List{ewApps.Core.Webhook.Subscriber.WebhookEvent},System.Threading.CancellationToken)">
+            <summary>
+            Handles the event.
+            </summary>
+            <param name="subscription">The subscription.</param>
+            <param name="webhookEvent">The webhook event.</param>
+            <param name="token">The token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ewApps.Platform.WebApi.SwaggerUIRequestHeaderFilter">
+            <summary>
+            Operation filter to add the custom header parameters.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,593 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ewApps.Payment.Common</name>
+    </assembly>
+    <members>
+        <member name="T:ewApps.Payment.Common.PaymentAppSettings">
+            <summary>
+            This class contains application settings.
+            Note that AppSettings objects are parsed from json.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Common.Constants">
+            <summary>
+            This class provides all the constants used in the application.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.IsOriginaleKey">
+            <summary>
+            Original Exception flag key.
+            </summary>  
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.IsWrapperKey">
+            <summary>
+            Wrapper Exception flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.IsPassThroughKey">
+            <summary>
+            Pass Through Exception flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.IsRethrowKey">
+            <summary>
+            Re-throw Exception flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.IsNewKey">
+            <summary>
+            New Exception flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.SeverityKey">
+            <summary>
+            Exception Severity key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.AdditionalMsgKey">
+            <summary>
+            Additional message key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.IsLoggedKey">
+            <summary>
+            Exception is logged flag key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.HttpStatusCodeKey">
+            <summary>
+            Http status code.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.PassThroughPolicyKey">
+            <summary>
+            PassThrough Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.NewPolicyKey">
+            <summary>
+            New Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.LogPolicyKey">
+            <summary>
+            Log Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.DataPolicyKey">
+            <summary>
+            Data Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.DataServicePolicyKey">
+            <summary>
+            DataService Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.SyncPolicyKey">
+            <summary>
+            DataService Policy Key Constant. 
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.AdminRoleNames">
+            <summary>
+            Admin role name list.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.AdminRoleKey">
+            <summary>
+            Value of admin role key.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.Constants.AppKey">
+            <summary>
+            Value of admin role key.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Common.PaymentStatusEnum">
+            <summary>
+            Contains all payment status.    
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentStatusEnum.Pending">
+            <summary>
+            Pending 
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentStatusEnum.Originated">
+            <summary>
+            Originated
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentStatusEnum.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentStatusEnum.VoidRequested">
+            <summary>
+            VoidRequested
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentStatusEnum.Voided">
+            <summary>
+            Voided
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentStatusEnum.RefundRequested">
+            <summary>
+            RefundRequested
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentStatusEnum.Refunded">
+            <summary>
+            Refunded
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentStatusEnum.Settled">
+            <summary>
+            Payment sattled.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum">
+            <summary>
+            This class provides publisher prefernces list.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.None">
+            <summary>
+            All the prefernece are false.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.NewCustomerOnboard">
+            <summary>
+            New Customer Onboard.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.CustomerAccountStatusChanged">
+            <summary>
+            Customer account status is changed
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.InvoicePaymentReceived">
+            <summary>
+            Invoice payment is received.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.InvoicePaymentStatusChanged">
+            <summary>
+            Invoice payment status is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.MyPermissionsChanged">
+            <summary>
+            My permissions changed
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.MyAccountStatusChanged">
+            <summary>
+            My user account status changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.NewPortalUserJoined">
+            <summary>
+            New portal user joined.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.MyTicketStatusChanged">
+            <summary>
+            My Ticket Status is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.MyTicketReassigned">
+            <summary>
+            My Ticket is reassigned.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.MyTicketPriorityChanged">
+            <summary>
+            My Ticket Priority is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.MyTicketNewCommentAdded">
+            <summary>
+            New Comment added in My Ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.MyTicketAttachmentAdded">
+            <summary>
+            New Attachment added in My Ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.CustomerTicketStatusChanged">
+            <summary>
+            Customer Ticket Status Changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.CustomerTicketReassigned">
+            <summary>
+            Customer’s Ticket is reassigned.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.CustomerTicketPriorityChanged">
+            <summary>
+            Customer’s Ticket priority is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.CustomerTicketNewCommentAdded">
+            <summary>
+            New Comment added in Customer’s Ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.CustomerTicketAttachmentAdded">
+            <summary>
+            New Attachment added in Customer’s Ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessEmailPreferenceEnum.All">
+            <summary>
+            All the prefernece are true.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Common.PaymentBusinessSMSPreferenceEnum">
+            <summary>
+            This class provides payment business user sms prefernces list.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessSMSPreferenceEnum.None">
+            <summary>
+            All the prefernece are false.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessSMSPreferenceEnum.InvoicePaymentReceived">
+            <summary>
+            Invoice payment is received.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessSMSPreferenceEnum.InvoicePaymentStatusChanged">
+            <summary>
+            Invoice payment status is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessSMSPreferenceEnum.All">
+            <summary>
+            All the prefernece are true.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Common.PaymentBusinessUserPermissionEnum">
+            <summary>
+            Enum containing all the permissions for the business user for payment Application
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserPermissionEnum.None">
+            <summary>
+            Dont have any permission.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserPermissionEnum.ViewCustomers">
+            <summary>
+            View Customers permission.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserPermissionEnum.ManageCustomers">
+            <summary>
+            Manage Customers permission.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserPermissionEnum.ViewInvoices">
+            <summary>
+            View Invoices permission.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserPermissionEnum.ManageInvoices">
+            <summary>
+            Manage Invoices permission.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserPermissionEnum.AccessTransactionHistory">
+            <summary>
+            Access Transaction History
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserPermissionEnum.AccessReports">
+            <summary>
+            Access Reports.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserPermissionEnum.ManageBusinessPortalSettings">
+            <summary>
+            Manage Portal Settings permission.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserPermissionEnum.ViewTickets">
+            <summary>
+            View Ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserPermissionEnum.ManageTickets">
+            <summary>
+            Manage Ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserPermissionEnum.All">
+            <summary>
+            Have all permission.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Common.PaymentBusinessUserTokenTypeEnum">
+            <summary>
+            Token Type enum for payment.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserTokenTypeEnum.PaymentBusinessNewUserInvite">
+            <summary>
+            Business User SetPassword.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserTokenTypeEnum.PaymentBusinessExistingUserInvite">
+            <summary>
+            Payment Business User with existing emailid Invited.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserTokenTypeEnum.BusinessPartnerPrimaryUserNewEmailIdInvited">
+            <summary>
+            Business Partner Primary User New EmailId Invited.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserTokenTypeEnum.BusinessPartnerPrimaryUserExistingEmailIdInvited">
+            <summary>
+            Business Partner Primary User Existing EmailId Invited.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserTokenTypeEnum.BusinessPartnerOtherUserNewEmailIdInvited">
+            <summary>
+            Business Partner Other User New EmailId Invited.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserTokenTypeEnum.BusinessPartnerOtherUserExistingEmailIdInvited">
+            <summary>
+            Business Partner Other User Existing EmailId Invited.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessUserTokenTypeEnum.PaymentBusinessUserForgotPasswordEmail">
+            <summary>
+            Payment Business User Forgot Password Email.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum">
+            <summary>
+            This class provides publisher prefernces list.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.None">
+            <summary>
+            All the prefernece are false.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.NewInvoiceReceived">
+            <summary>
+            New Invoice is received.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.NewRecurringOrderCreated">
+            <summary>
+            New Recurring Order is created
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.InvoicePaymentStatusChanged">
+            <summary>
+            Invoice payment status is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.InvoiceCancelled">
+            <summary>
+            Invoice is cancelled.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.MyPermissionsChanged">
+            <summary>
+            My permissions changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.MyAccountStatusChanged">
+            <summary>
+            My user account status changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.NewPortalUserJoined">
+            <summary>
+            New portal user joined.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.MyTicketStatusChanged">
+            <summary>
+            My Ticket Status is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.MyTicketReassigned">
+            <summary>
+            My Ticket is reassigned.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.MyTicketPriorityChanged">
+            <summary>
+            My Ticket Priority is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.MyTicketNewCommentAdded">
+            <summary>
+            New Comment added in My Ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.MyTicketAttachmentAdded">
+            <summary>
+            New Attachment added in My Ticket.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerEmailPreferenceEnum.All">
+            <summary>
+            All the prefernece are true.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Common.PaymentBusinessPartnerSMSPreferenceEnum">
+            <summary>
+            This class provides payment business partner user sms prefernces list.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerSMSPreferenceEnum.None">
+            <summary>
+            All the prefernece are false.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerSMSPreferenceEnum.NewInvoiceReceived">
+            <summary>
+            New Invoice is received.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerSMSPreferenceEnum.InvoicePaymentInitiated">
+            <summary>
+            Invoice Payment is initiated.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerSMSPreferenceEnum.InvoicePaymentStatusChanged">
+            <summary>
+            Invoice payment status is changed.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerSMSPreferenceEnum.All">
+            <summary>
+            All the prefernece are true.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Common.PaymentBusinessPartnerUserPermissionEnum">
+            <summary>
+            Permissions for the business partner user on payment aplication.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerUserPermissionEnum.None">
+            <summary>
+            Dont have any permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerUserPermissionEnum.ViewInvoices">
+            <summary>
+            View Invoices permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerUserPermissionEnum.ManageInvoices">
+            <summary>
+            Manage Invoices permission
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerUserPermissionEnum.AccessTransactionHistory">
+            <summary>
+            Access Transaction History
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerUserPermissionEnum.AccessReports">
+            <summary>
+            Access Reports permission.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerUserPermissionEnum.ManageCustomerPortalSettings">
+            <summary>
+             Manage Customer Portal Settings permission.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerUserPermissionEnum.All">
+            <summary>
+            Have All permission.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Common.PaymentBusinessPartnerUserTokenTypeEnum">
+            <summary>
+            Token Type enum for payment business partner user.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerUserTokenTypeEnum.BusinessPartnerUserNewEmailIdAdded">
+            <summary>
+            Business Partner User NewEmailId is inviated.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerUserTokenTypeEnum.BusinessPartnerUserExistingEmailIdAdded">
+            <summary>
+            Business Partner User Existing EmailId is invited.
+            </summary>
+        </member>
+        <member name="F:ewApps.Payment.Common.PaymentBusinessPartnerUserTokenTypeEnum.PaymentBusinessCustomerForgotPassword">
+            <summary>
+            Payment Business Customer Forgot Password.
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Common.TermPeriod">
+            <summary>
+            List of term period types. 
+            </summary>
+        </member>
+        <member name="T:ewApps.Payment.Common.RecurringPaymentHelper">
+            <summary>
+            This is helper class to assist RecurringPayment implementation.
+            It is a static class.
+            </summary>
+        </member>
+        <member name="M:ewApps.Payment.Common.RecurringPaymentHelper.CalculateEndDate(System.DateTime,System.Int32,ewApps.Payment.Common.TermPeriod)">
+            <summary>
+            Calculate EndDate. Note that it is >= StartDate.
+            </summary>
+            <param name="startDate">Start date of recurring periods</param>
+            <param name="nTerms">Number of terms</param>
+            <param name="period">Cyclic period of terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:ewApps.Payment.Common.RecurringPaymentHelper.GetAllScheduledPaymentDates(System.DateTime,System.DateTime,ewApps.Payment.Common.TermPeriod)">
+            <summary>
+            Get a list of all scheduled payments for the given start/end dates.
+            </summary>
+            <param name="startDate">Start date of recurring periods</param>
+            <param name="endDate">End date of recurring periods</param>
+            <param name="period">Cyclic period of terms</param>
+            <returns>List of scheduled payment dates. Empty if none.</returns>
+        </member>
+        <member name="M:ewApps.Payment.Common.RecurringPaymentHelper.GetNextScheduledPaymentDate(System.DateTime,System.DateTime,ewApps.Payment.Common.TermPeriod,System.DateTime)">
+            <summary>
+            Given some DateTime, calculate the next schedule payment date
+            </summary>
+            <param name="startDate">Start date of recurring periods</param>
+            <param name="endDate">End date of recurring periods</param>
+            <param name="period">Cyclic period of terms</param>
+            <param name="fromDate">Date from which the next scheduled payment date is calculated. It may be DateTime.Now</param>
+            <returns>Next scheduled payment since fromdate. If none, returns Minimum DateTime</returns>
+        </member>
+        <member name="M:ewApps.Payment.Common.RecurringPaymentHelper.GetRemainingPaymentTerms(System.DateTime,System.DateTime,ewApps.Payment.Common.TermPeriod,System.DateTime)">
+            <summary>
+            Given some dateTime, calculate the remainingnumber of scheduled payments 
+            </summary>
+            <param name="startDate">Start date of recurring periods</param>
+            <param name="endDate">End date of recurring periods</param>
+            <param name="period">Cyclic period of terms</param>
+            <param name="fromDate">Date from which the next scheduled payment date is calculated. It may be DateTime.Now</param>
+            <returns>Remaining scheduled payments since fromdate. If none, returns 0</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServer\Report\ewApps.Report.Console.Test\ewApps.Report.Console.Test.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ewApps.Report.Common\ewApps.Report.Common.csproj" />
+    <ProjectReference Include="..\ewApps.Report.DI\ewApps.Report.DI.csproj" />
+    <ProjectReference Include="..\ewApps.Report.DTO\ewApps.Report.DTO.csproj" />
+    <ProjectReference Include="..\ewApps.Report.QData\ewApps.Report.QData.csproj" />
+    <ProjectReference Include="..\ewApps.Report.QDS\ewApps.Report.QDS.csproj" />
+  </ItemGroup>
+
+</Project>

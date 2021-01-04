@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <Import Project="..\..\..\ewAppsAssets\AssemblyVersions\CoreServiceVersion.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\ewAppsServices\ewAppsServer\Services\ewApps.Core.GeocodingService\ewApps.Core.GeocodingService.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ewApps.Core.CommonService\ewApps.Core.CommonService.csproj" />
+  </ItemGroup>
+
+</Project>
